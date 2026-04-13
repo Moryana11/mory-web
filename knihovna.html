@@ -68,12 +68,16 @@ function zkontrolujHeslo() {
 
     var heslo = document.getElementById("heslo").value;
 
-    if (heslo === "knihovna") {
+  if (heslo === "knihovna") {
 
-        document.getElementById("dvere").src = "dvere_otevrene.png";
-        document.getElementById("zprava").textContent = "";
+    document.getElementById("dvere").src = "dvere_otevrene.png";
 
-    } else {
+    document.getElementById("odkaz").href = "index.html";
+
+    document.getElementById("zprava").textContent =
+        "Dveře jsou otevřené. Klikni na ně.";
+
+} else {
 
         document.getElementById("zprava").textContent = "Špatné heslo.";
 
