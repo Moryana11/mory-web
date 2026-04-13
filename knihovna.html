@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<title>Tajná knihovna</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: white;
+    text-align: center;
+    margin: 0;
+}
+
+header {
+    background: #222;
+    padding: 20px;
+}
+
+img {
+    max-width: 500px;
+    margin-top: 30px;
+    border-radius: 10px;
+}
+
+input {
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.message {
+    margin-top: 15px;
+    color: #ff6666;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h1>Tajná knihovna</h1>
+<a href="index.html" style="color:#ffd700;">Domů</a>
+</header>
+
+<img id="dvere" src="dvere_zavrene.png" alt="Zavřené dveře">
+
+<br>
+
+<input type="password" id="heslo" placeholder="Zadej heslo">
+<button onclick="zkontrolujHeslo()">Otevřít dveře</button>
+
+<p class="message" id="zprava"></p>
+
+<script>
+function zkontrolujHeslo() {
+
+    var heslo = document.getElementById("heslo").value;
+
+    if (heslo === "knihovna") {
+
+        document.getElementById("dvere").src = "dvere_otevrene.png";
+        document.getElementById("zprava").textContent = "";
+
+    } else {
+
+        document.getElementById("zprava").textContent = "Špatné heslo.";
+
+    }
+}
+</script>
+
+</body>
+</html>
