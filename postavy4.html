@@ -32,17 +32,21 @@ h1 {
     font-family: 'MedievalSharp', cursive;
     color: #d4af37;
     font-size: 36px;
+    margin-top: 10px;
 }
 
-.character {
-    margin: 40px auto;
+.characters {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+    flex-wrap: wrap;
 }
 
 .character img {
     width: 250px;
     border-radius: 10px;
     border: 2px solid #d4af37;
-
     box-shadow:
         0 0 8px rgba(212,175,55,0.6),
         0 0 18px rgba(212,175,55,0.4);
@@ -71,26 +75,30 @@ h1 {
 
 <h1>Postavy</h1>
 
+<div class="characters">
+
 <div class="character">
-    <a href="davinci.html">
-        <img src="davinci.png" alt="Aron DaVinci">
-    </a>
+<a href="davinci.html">
+<img src="davinci.png" alt="DaVinci">
+</a>
 </div>
 
 <div class="character">
-    <a href="hander.html">
-        <img src="hander.png" alt="Jacque Hander">
-    </a>
+<a href="hander.html">
+<img src="hander.png" alt="Hander">
+</a>
 </div>
 
 <div class="character">
-    <a href="parsons.html">
-        <img src="parsons.png" alt="Sienna Parsons">
-    </a>
+<a href="parsons.html">
+<img src="parsons.png" alt="Parsons">
+</a>
+</div>
+
 </div>
 
 <div class="pagination">
-    <a href="postavy3.html">← Zpět</a>
+<a href="postavy3.html">← Zpět</a>
 </div>
 
 </body>
