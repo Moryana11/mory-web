@@ -5,8 +5,6 @@
 <meta charset="UTF-8">
 <title>Zamčené dveře</title>
 
-<!-- Fantasy písmo -->
-
 <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
 
 <style>
@@ -19,20 +17,29 @@ body {
     text-align: center;
 }
 
-/* Fantasy nadpis */
+/* Nadpis */
 h2 {
     font-family: 'MedievalSharp', cursive;
     color: #d4af37;
     margin-top: 30px;
+    font-size: 32px;
 }
 
-/* Text */
+/* Prostřední text */
 p {
     font-size: 18px;
     margin-top: 10px;
 }
 
-/* Jednotný rámeček jako jinde */
+/* Spodní věta ve stejném medieval stylu */
+.retry {
+    font-family: 'MedievalSharp', cursive;
+    color: #d4af37;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+/* Jednotný rámeček */
 .frame {
     width: 320px;
     max-width: 90%;
@@ -67,7 +74,7 @@ p {
     <img src="retezove_dvere.png" alt="Zamčené dveře" class="frame">
 </a>
 
-<p>Klikni na dveře a zkus to znovu.</p>
+<p class="retry">Zkus to znovu.</p>
 
 </body>
 </html>
