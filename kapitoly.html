@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<title>Kapitoly</title>
+
+<link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+
+<style>
+
+body {
+    margin: 0;
+    background-color: #000;
+    color: white;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+/* Navigace */
+nav {
+    margin-top: 20px;
+}
+
+nav a {
+    font-family: 'MedievalSharp', cursive;
+    color: #d4af37;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav a:hover {
+    color: #f1d27a;
+}
+
+/* Nadpis */
+h1 {
+    font-family: 'MedievalSharp', cursive;
+    color: #d4af37;
+    margin-top: 20px;
+    font-size: 32px;
+}
+
+/* Mřížka kapitol */
+.chapter-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    gap: 12px;
+
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+/* Jedno číslo kapitoly */
+.chapter-grid a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 50px;
+    height: 50px;
+
+    border: 1px solid #666;
+    color: white;
+
+    text-decoration: none;
+
+    font-family: 'MedievalSharp', cursive;
+    font-size: 20px;
+
+    transition: 0.2s;
+}
+
+/* Hover efekt */
+.chapter-grid a:hover {
+    border-color: #d4af37;
+    color: #d4af37;
+}
+
+/* Aktivní kapitola */
+.chapter-grid a.active {
+    background-color: #888;
+    color: black;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+    <a href="hlavni.html">Domů</a>
+</nav>
+
+<h1>Kapitoly</h1>
+
+<div class="chapter-grid">
+
+<a href="kapitola1.html">1</a> <a href="kapitola2.html">2</a> <a href="kapitola3.html">3</a> <a href="kapitola4.html">4</a> <a href="kapitola5.html">5</a> <a href="kapitola6.html">6</a> <a href="kapitola7.html">7</a> <a href="kapitola8.html">8</a> <a href="kapitola9.html">9</a> <a href="kapitola10.html">10</a> <a href="kapitola11.html">11</a> <a href="kapitola12.html">12</a> <a href="kapitola13.html">13</a> <a href="kapitola14.html">14</a> <a href="kapitola15.html">15</a> <a href="kapitola16.html">16</a>
+
+<a href="kapitola17.html">17</a> <a href="kapitola18.html">18</a> <a href="kapitola19.html">19</a> <a href="kapitola20.html">20</a> <a href="kapitola21.html">21</a> <a href="kapitola22.html">22</a> <a href="kapitola23.html">23</a> <a href="kapitola24.html">24</a> <a href="kapitola25.html">25</a> <a href="kapitola26.html">26</a> <a href="kapitola27.html">27</a> <a href="kapitola28.html">28</a> <a href="kapitola29.html">29</a> <a href="kapitola30.html">30</a>
+
+<a href="kapitola31.html">31</a> <a href="kapitola32.html">32</a> <a href="kapitola33.html">33</a> <a href="kapitola34.html">34</a> <a href="kapitola35.html">35</a>
+
+<a href="kapitola36.html" class="active">36</a>
+
+</div>
+
+</body>
+</html>
