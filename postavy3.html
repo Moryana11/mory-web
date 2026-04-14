@@ -17,10 +17,8 @@ body {
     font-family: Arial, sans-serif;
 }
 
-h1 {
-    font-family: 'MedievalSharp', cursive;
-    color: #d4af37;
-    margin-top: 30px;
+nav {
+    margin-top: 20px;
 }
 
 nav a {
@@ -30,43 +28,28 @@ nav a {
     font-size: 18px;
 }
 
-nav a:hover {
-    color: #f1d27a;
-}
-
-.container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 40px;
-    margin-top: 30px;
-}
-
-.frame {
-    width: 220px;
-    height: auto;
-
-    border-radius: 12px;
-    border: 1px solid #c9a646;
-
-    padding: 10px;
-    background-color: black;
-
-    box-shadow:
-        0 0 6px rgba(201, 166, 70, 0.4);
-
-    cursor: pointer;
-}
-
-.character-name {
+h1 {
     font-family: 'MedievalSharp', cursive;
     color: #d4af37;
-    margin-top: 10px;
+    font-size: 36px;
+}
+
+.character {
+    margin: 40px auto;
+}
+
+.character img {
+    width: 250px;
+    border-radius: 10px;
+    border: 2px solid #d4af37;
+
+    box-shadow:
+        0 0 8px rgba(212,175,55,0.6),
+        0 0 18px rgba(212,175,55,0.4);
 }
 
 .pagination {
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin: 40px 0;
 }
 
 .pagination a {
@@ -74,11 +57,6 @@ nav a:hover {
     color: #d4af37;
     text-decoration: none;
     margin: 0 10px;
-    font-size: 18px;
-}
-
-.pagination a:hover {
-    color: #f1d27a;
 }
 
 </style>
@@ -87,47 +65,33 @@ nav a:hover {
 
 <body>
 
-<h1>Postavy</h1>
-
 <nav>
     <a href="hlavni.html">Domů</a>
 </nav>
 
-<div class="container">
+<h1>Postavy</h1>
 
-<!-- Brienne -->
-
-<div>
+<div class="character">
     <a href="brienne.html">
-        <img src="brienne.png" alt="Brienne" class="frame">
+        <img src="brienne.png" alt="Brienne">
     </a>
-    <div class="character-name">Brienne</div>
 </div>
 
-<!-- Zarveth -->
-
-<div>
+<div class="character">
     <a href="zarveth.html">
-        <img src="zarveth.png" alt="Zarveth" class="frame">
+        <img src="zarveth.png" alt="Zarveth">
     </a>
-    <div class="character-name">Zarveth</div>
 </div>
 
-<!-- Morrkalil -->
-
-<div>
+<div class="character">
     <a href="morrkalil.html">
-        <img src="morrkalil.png" alt="Morrkalil" class="frame">
+        <img src="morrkalil.png" alt="Morr’kalil">
     </a>
-    <div class="character-name">Morrkalil</div>
-</div>
-
 </div>
 
 <div class="pagination">
-
-<a href="postavy.html">1</a> <a href="postavy2.html">2</a> <strong>3</strong> <a href="postavy4.html">4</a>
-
+    <a href="postavy2.html">← Zpět</a>
+    <a href="postavy4.html">Další →</a>
 </div>
 
 </body>
