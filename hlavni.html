@@ -1,59 +1,65 @@
 <!DOCTYPE html>
+
 <html lang="cs">
 <head>
 <meta charset="UTF-8">
 <title>Můj svět příběhů</title>
 
 <style>
-
 body {
-    margin: 0;
-    background-color: black;
-    color: #d4af37;
-    font-family: Georgia, serif;
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: white;
     text-align: center;
+    margin: 0;
 }
 
-/* horní menu */
-
+/* Navigace nahoře */
 nav {
-    padding: 25px;
-    font-size: 20px;
+    padding: 20px;
 }
 
 nav a {
     color: #d4af37;
     text-decoration: none;
-    margin: 0 18px;
+    margin: 0 20px;
+    font-size: 18px;
 }
 
 nav a:hover {
     text-decoration: underline;
 }
 
-/* obrázek */
-
-img {
+/* Jednotný rámeček pro všechny obrázky */
+.frame {
     width: 320px;
-    margin-top: 40px;
-    border-radius: 12px;
-    box-shadow:
-        0 0 12px rgba(212,175,55,0.5);
-}
+    max-width: 90%;
+    height: auto;
 
+    border-radius: 12px;
+    border: 1px solid #c9a646;
+
+    padding: 12px;
+    background-color: black;
+
+    box-shadow:
+        0 0 6px rgba(201, 166, 70, 0.4);
+
+    display: block;
+    margin: 40px auto;
+}
 </style>
+
 </head>
 
 <body>
 
 <nav>
-
-<a href="ome.html">O mně</a>
-<a href="kapitoly.html">Kapitoly</a>
-<a href="postavy.html">Postavy</a>
-<a href="galerie.html">Galerie</a>
-<a href="lokace.html">Lokace</a>
-
+    <a href="o_mne.html">O mně</a>
+    <a href="kapitoly.html">Kapitoly</a>
+    <a href="postavy.html">Postavy</a>
+    <a href="galerie.html">Galerie</a>
+    <a href="lokace.html">Lokace</a>
 </nav>
 
 <img src="knihy.png" alt="Knihy" class="frame">
