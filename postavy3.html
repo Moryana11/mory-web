@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<title>Postavy</title>
+
+<link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+
+<style>
+
+body {
+    margin: 0;
+    background-color: #000;
+    color: white;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    font-family: 'MedievalSharp', cursive;
+    color: #d4af37;
+    margin-top: 30px;
+}
+
+nav a {
+    font-family: 'MedievalSharp', cursive;
+    color: #d4af37;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav a:hover {
+    color: #f1d27a;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.frame {
+    width: 220px;
+    height: auto;
+
+    border-radius: 12px;
+    border: 1px solid #c9a646;
+
+    padding: 10px;
+    background-color: black;
+
+    box-shadow:
+        0 0 6px rgba(201, 166, 70, 0.4);
+
+    cursor: pointer;
+}
+
+.character-name {
+    font-family: 'MedievalSharp', cursive;
+    color: #d4af37;
+    margin-top: 10px;
+}
+
+.pagination {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.pagination a {
+    font-family: 'MedievalSharp', cursive;
+    color: #d4af37;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 18px;
+}
+
+.pagination a:hover {
+    color: #f1d27a;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Postavy</h1>
+
+<nav>
+    <a href="hlavni.html">Domů</a>
+</nav>
+
+<div class="container">
+
+<!-- Brienne -->
+
+<div>
+    <a href="brienne.html">
+        <img src="brienne.png" alt="Brienne" class="frame">
+    </a>
+    <div class="character-name">Brienne</div>
+</div>
+
+<!-- Zarveth -->
+
+<div>
+    <a href="zarveth.html">
+        <img src="zarveth.png" alt="Zarveth" class="frame">
+    </a>
+    <div class="character-name">Zarveth</div>
+</div>
+
+<!-- Morrkalil -->
+
+<div>
+    <a href="morrkalil.html">
+        <img src="morrkalil.png" alt="Morrkalil" class="frame">
+    </a>
+    <div class="character-name">Morrkalil</div>
+</div>
+
+</div>
+
+<div class="pagination">
+
+<a href="postavy.html">1</a> <a href="postavy2.html">2</a> <strong>3</strong> <a href="postavy4.html">4</a>
+
+</div>
+
+</body>
+</html>
