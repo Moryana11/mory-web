@@ -3,21 +3,21 @@
 <html lang="cs">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Aaliyah</title>
 
 <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
 
 <style>
-
 body {
+    background-color: black;
     margin: 0;
-    background-color: #000;
-    color: white;
     text-align: center;
     font-family: Arial, sans-serif;
 }
 
-/* Navigace */
+/* NAVIGACE */
 nav {
     margin-top: 20px;
 }
@@ -29,48 +29,63 @@ nav a {
     font-size: 18px;
 }
 
-nav a:hover {
-    color: #f1d27a;
-}
-
-/* Nadpis – zlatý */
+/* NADPIS */
 h1 {
     font-family: 'MedievalSharp', cursive;
     color: #d4af37;
-    margin-top: 20px;
-    font-size: 32px;
+    font-size: 42px;
+    margin-top: 10px;
 }
 
-/* Obrázek */
-.frame {
-    width: 320px;
-    max-width: 90%;
+/* OBRÁZEK */
+.character-img {
+    width: 100%;
+    max-width: 350px;
     height: auto;
 
-    border-radius: 12px;
-    border: 1px solid #c9a646;
+    margin-top: 30px;
 
-    padding: 12px;
-    background-color: black;
+    border-radius: 12px;
+    border: 2px solid #d4af37;
 
     box-shadow:
-        0 0 6px rgba(201, 166, 70, 0.4);
-
-    display: block;
-    margin: 30px auto;
+        0 0 0 2px #d4af37,
+        0 0 12px rgba(212,175,55,0.6);
 }
 
-/* Text – bílý */
-.character-text {
+/* TEXT */
+.description {
     color: white;
-    font-size: 18px;
-    line-height: 1.6;
 
-    max-width: 800px;
-    margin: 30px auto 40px auto;
-    padding: 0 20px;
+    font-size: 18px;
+    line-height: 1.7;
+
+    max-width: 750px;
+
+    margin: 30px auto;
+
+    padding: 0 18px;
+
+    text-align: center;
 }
 
+/* MOBIL */
+@media (max-width: 768px) {
+
+    h1 {
+        font-size: 36px;
+    }
+
+    .character-img {
+        max-width: 280px;
+    }
+
+    .description {
+        font-size: 19px;
+        line-height: 1.8;
+    }
+
+}
 </style>
 
 </head>
@@ -78,19 +93,21 @@ h1 {
 <body>
 
 <nav>
-    <a href="postavy.html">Zpět na postavy</a>
+<a href="postavy.html">Zpět na postavy</a>
 </nav>
 
 <h1>Aaliyah</h1>
 
-<img src="aaliyah.png" alt="Aaliyah" class="frame">
+<img src="aaliyah.png" alt="Aaliyah" class="character-img">
 
-<div class="character-text">
-Aaliyah pochází z přístavního města Vienta v zemi Stonegrad,
-kde se lidé od dětství učí vnímat oheň jako dar, nikoli prokletí.
+<div class="description">
+
+Aaliyah pochází z přístavního města Vienta v zemi Stonegrad, kde se lidé od dětství učí vnímat oheň jako dar, nikoli prokletí.
+
 Je mágyní ohně, která prošla výcvikem ve Svatyni Rudého dechu.
-Je impulzivní, odvážná a nezávislá, často mluví rychleji, než myslí,
-a její sarkastické poznámky dokážou zlehčit i ty nejtemnější chvíle.
+
+Aaliyah je impulzivní, odvážná a nezávislá, často mluví rychleji, než myslí, a její sarkastické poznámky zlehčují i ty nejtemnější chvíle.
+
 </div>
 
 </body>
