@@ -3,9 +3,7 @@
 <html lang="cs">
 <head>
 <meta charset="UTF-8">
-<title>Můj svět příběhů</title>
-
-<!-- Fantasy písmo -->
+<title>Hlavní stránka</title>
 
 <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
 
@@ -13,55 +11,51 @@
 
 body {
     margin: 0;
-    background-color: #000;
-    color: white;
-    font-family: Arial, sans-serif;
+    background-color: black;
     text-align: center;
+    font-family: Arial, sans-serif;
 }
 
-/* Menu */
-nav {
-    margin-top: 25px;
-}
-
-nav a {
-    font-family: 'MedievalSharp', cursive;
-    color: #d4af37;
-    text-decoration: none;
-    margin: 0 18px;
-    font-size: 22px;
-    transition: 0.2s;
-}
-
-nav a:hover {
-    color: #f1d27a;
-}
-
-/* Jednotný rámeček */
+/* Obrázek knih */
 .frame {
-    width: 320px;
+    width: 300px;
     max-width: 90%;
     height: auto;
 
+    margin-top: 40px;
+
     border-radius: 12px;
-    border: 1px solid #c9a646;
+    border: 2px solid #c9a646;
 
     padding: 12px;
     background-color: black;
 
     box-shadow:
-        0 0 6px rgba(201, 166, 70, 0.4);
-
-    display: block;
-    margin: 40px auto;
+        0 0 8px rgba(201, 166, 70, 0.5);
 }
 
-/* Responsivita */
-@media (max-width: 600px) {
-    nav a {
-        display: block;
-        margin: 10px 0;
-    }
+/* Navigace */
+.menu {
+    margin-top: 40px;
+}
+
+.menu a {
+    display: block;
+
+    font-family: 'MedievalSharp', cursive;
+    color: #d4af37;
+
+    text-decoration: none;
+
+    font-size: 22px;
+
+    margin: 12px 0;
+
+    transition: 0.2s;
+}
+
+.menu a:hover {
+    color: #f1d27a;
 }
 
 </style>
@@ -70,15 +64,21 @@ nav a:hover {
 
 <body>
 
-<nav>
-    <a href="omne.html">O mně</a>
-    <a href="kapitoly.html">Kapitoly</a>
-    <a href="postavy.html">Postavy</a>
-    <a href="galerie.html">Galerie</a>
-    <a href="lokace.html">Lokace</a>
-</nav>
-
 <img src="knihy.png" alt="Knihy" class="frame">
+
+<div class="menu">
+
+<a href="omne.html">O mě</a>
+
+<a href="kapitoly.html">Kapitoly</a>
+
+<a href="postavy.html">Postavy</a>
+
+<a href="lokace.html">Lokace</a>
+
+<a href="galerie.html">Galerie</a>
+
+</div>
 
 </body>
 </html>
