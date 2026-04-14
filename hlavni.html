@@ -3,7 +3,7 @@
 <html lang="cs">
 <head>
 <meta charset="UTF-8">
-<title>Hlavní stránka</title>
+<title>Můj svět příběhů</title>
 
 <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
 
@@ -16,32 +16,13 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/* Obrázek knih */
-.frame {
-    width: 300px;
-    max-width: 90%;
-    height: auto;
-
-    margin-top: 40px;
-
-    border-radius: 12px;
-    border: 2px solid #c9a646;
-
-    padding: 12px;
-    background-color: black;
-
-    box-shadow:
-        0 0 8px rgba(201, 166, 70, 0.5);
-}
-
-/* Navigace */
+/* Menu nahoře */
 .menu {
-    margin-top: 40px;
+    margin-top: 30px;
+    margin-bottom: 20px;
 }
 
 .menu a {
-    display: block;
-
     font-family: 'MedievalSharp', cursive;
     color: #d4af37;
 
@@ -49,7 +30,7 @@ body {
 
     font-size: 22px;
 
-    margin: 12px 0;
+    margin: 0 18px;
 
     transition: 0.2s;
 }
@@ -58,27 +39,37 @@ body {
     color: #f1d27a;
 }
 
+/* Obrázek */
+.frame {
+    width: 300px;
+    max-width: 90%;
+
+    border-radius: 12px;
+    border: 2px solid #c9a646;
+
+    padding: 12px;
+
+    background-color: black;
+
+    box-shadow:
+        0 0 8px rgba(201, 166, 70, 0.5);
+
+    margin-top: 30px;
+}
+
 </style>
 
 </head>
 
 <body>
 
-<img src="knihy.png" alt="Knihy" class="frame">
-
 <div class="menu">
 
-<a href="omne.html">O mě</a>
-
-<a href="kapitoly.html">Kapitoly</a>
-
-<a href="postavy.html">Postavy</a>
-
-<a href="lokace.html">Lokace</a>
-
-<a href="galerie.html">Galerie</a>
+<a href="omne.html">O mě</a> <a href="kapitoly.html">Kapitoly</a> <a href="postavy.html">Postavy</a> <a href="lokace.html">Lokace</a> <a href="galerie.html">Galerie</a>
 
 </div>
+
+<img src="knihy.png" alt="Knihy" class="frame">
 
 </body>
 </html>
