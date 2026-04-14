@@ -18,7 +18,7 @@ body {
 }
 
 /* OBRÁZEK DVEŘÍ */
-img {
+#dvere {
     width: 100%;
     max-width: 350px;
     height: auto;
@@ -26,13 +26,14 @@ img {
     border-radius: 12px;
     border: 2px solid #d4af37;
     box-shadow: 0 0 10px rgba(212,175,55,0.6);
+    cursor: pointer;
 }
 
 /* TEXT */
 p {
     color: #d4af37;
     font-family: 'MedievalSharp', cursive;
-    font-size: 18px;
+    font-size: 20px;
     margin-top: 20px;
 }
 
@@ -54,12 +55,13 @@ button {
 /* MOBIL */
 @media (max-width: 768px) {
 
-    img {
+    #dvere {
         max-width: 280px;
     }
 
     p {
-        font-size: 20px;
+        font-size: 22px;
+        padding: 0 15px;
     }
 
 }
@@ -69,7 +71,7 @@ button {
 
 <body>
 
-<img src="zavrene_dvere.png" alt="Zavřené dveře">
+<img id="dvere" src="zavrene_dvere.png" alt="Zavřené dveře">
 
 <p>Zadej heslo</p>
 
@@ -82,7 +84,16 @@ function zkontrolujHeslo() {
     var heslo = document.getElementById("heslo").value;
 
     if (heslo === "tajna") {
-        window.location.href = "otevrene_dvere.html";
+
+        document.getElementById("dvere").src = "otevrene_dvere.png";
+
+        document.querySelector("p").innerText =
+        "Dveře se otevírají. Klikni na dveře a vstup.";
+
+        document.getElementById("dvere").onclick = function() {
+            window.location.href = "hlavni.html";
+        };
+
     } else {
         window.location.href = "retezove_dvere.html";
     }
