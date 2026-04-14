@@ -1,77 +1,97 @@
 <!DOCTYPE html>
+
 <html lang="cs">
 <head>
-    <meta charset="UTF-8">
-    <title>Aaliyah – Postava</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background-color: #111;
-            color: #fff;
-            text-align: center;
-        }
+<meta charset="UTF-8">
+<title>Aaliyah</title>
 
-        header {
-            background: #222;
-            padding: 20px;
-        }
+<link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
 
-        nav a {
-            color: #ffd700;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-        }
+<style>
 
-        .content {
-            padding: 40px 20px;
-            max-width: 900px;
-            margin: auto;
-        }
+body {
+    margin: 0;
+    background-color: #000;
+    color: white;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
 
-        img {
-            max-width: 300px;
-            height: auto;
-            margin-bottom: 20px;
-        }
+/* Navigace */
+nav {
+    margin-top: 20px;
+}
 
-        footer {
-            background: #222;
-            padding: 10px;
-            margin-top: 40px;
-        }
-    </style>
+nav a {
+    font-family: 'MedievalSharp', cursive;
+    color: #d4af37;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav a:hover {
+    color: #f1d27a;
+}
+
+/* Nadpis – zlatý */
+h1 {
+    font-family: 'MedievalSharp', cursive;
+    color: #d4af37;
+    margin-top: 20px;
+    font-size: 32px;
+}
+
+/* Obrázek */
+.frame {
+    width: 320px;
+    max-width: 90%;
+    height: auto;
+
+    border-radius: 12px;
+    border: 1px solid #c9a646;
+
+    padding: 12px;
+    background-color: black;
+
+    box-shadow:
+        0 0 6px rgba(201, 166, 70, 0.4);
+
+    display: block;
+    margin: 30px auto;
+}
+
+/* Text – bílý */
+.character-text {
+    color: white;
+    font-size: 18px;
+    line-height: 1.6;
+
+    max-width: 800px;
+    margin: 30px auto 40px auto;
+    padding: 0 20px;
+}
+
+</style>
+
 </head>
 
 <body>
 
-<header>
-    <h1>Aaliyah</h1>
-    <nav>
-        <a href="postavy.html">Zpět na postavy</a>
-    </nav>
-</header>
+<nav>
+    <a href="postavy.html">Zpět na postavy</a>
+</nav>
 
-<div class="content">
+<h1>Aaliyah</h1>
 
-    <h2>Aaliyah</h2>
+<img src="aaliyah.png" alt="Aaliyah" class="frame">
 
-    <img src="aaliyah.png" alt="Aaliyah">
-
-   <p>
-   Aaliyah pochází z přístavního města Vienta na kontinentu Stonegrad,
-   kde se lidé od dětství učí vnímat oheň jako dar, nikoli prokletí.
-   Je mágyní ohně, která prošla výcvikem ve Svatyni Rudého dechu.
-   Aaliyah je impulzivní, odvážná a nezávislá, často mluví rychleji,
-   než myslí a její sarkastické poznámky zlehčují i ty nejtemnější chvíle.
-</p>
-
+<div class="character-text">
+Aaliyah pochází z přístavního města Vienta na kontinentu Stonegrad,
+kde se lidé od dětství učí vnímat oheň jako dar, nikoli prokletí.
+Je mágyní ohně, která prošla výcvikem ve Svatyni Rudého dechu.
+Je impulzivní, odvážná a nezávislá, často mluví rychleji, než myslí,
+a její sarkastické poznámky dokážou zlehčit i ty nejtemnější chvíle.
 </div>
-
-<footer>
-    <p>© 2026 Moryana</p>
-</footer>
 
 </body>
 </html>
