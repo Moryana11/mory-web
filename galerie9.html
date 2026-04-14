@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<title>Galerie</title>
+
+<link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+
+<style>
+
+body {
+    margin: 0;
+    background-color: black;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+/* Navigace */
+nav {
+    margin-top: 20px;
+}
+
+nav a {
+    font-family: 'MedievalSharp', cursive;
+    color: #d4af37;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav a:hover {
+    color: #f1d27a;
+}
+
+/* Nadpis */
+h1 {
+    font-family: 'MedievalSharp', cursive;
+    color: #d4af37;
+    font-size: 36px;
+    margin-top: 10px;
+}
+
+/* Řada obrázků */
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+/* Obrázky */
+.gallery img {
+    width: 250px;
+    border-radius: 10px;
+
+    border: 2px solid #d4af37;
+
+    box-shadow:
+        0 0 8px rgba(212,175,55,0.6),
+        0 0 18px rgba(212,175,55,0.4);
+
+    transition: transform 0.2s;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* Stránkování */
+.pagination {
+    margin: 40px 0;
+}
+
+.pagination a {
+    font-family: 'MedievalSharp', cursive;
+    color: #d4af37;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 18px;
+}
+
+.pagination a:hover {
+    color: #f1d27a;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+    <a href="hlavni.html">Domů</a>
+</nav>
+
+<h1>Galerie</h1>
+
+<div class="gallery">
+
+<img src="obrazek25.png" alt="Obrázek 25">
+<img src="obrazek26.png" alt="Obrázek 26">
+<img src="obrazek27.png" alt="Obrázek 27">
+
+</div>
+
+<div class="pagination">
+    <a href="galerie8.html">← Zpět</a>
+</div>
+
+</body>
+</html>
