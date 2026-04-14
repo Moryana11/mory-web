@@ -10,20 +10,24 @@
 <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
 
 <style>
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #111;
-    color: white;
-    text-align: center;
     margin: 0;
+    background-color: #000;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
 }
 
-/* Nadpisy a menu ve fantasy stylu */
-h1, h2, h3, nav a {
+/* Nadpis */
+h2 {
     font-family: 'MedievalSharp', cursive;
+    color: #d4af37;
+    margin-top: 30px;
+    font-size: 32px;
 }
 
-/* Jednotný rámeček pro všechny obrázky */
+/* Jednotný rámeček */
 .frame {
     width: 320px;
     max-width: 90%;
@@ -47,37 +51,46 @@ h1, h2, h3, nav a {
 /* Box pro heslo */
 .password-box {
     text-align: center;
-    margin-top: 25px;
+    margin-top: 20px;
 }
 
+/* Pole pro heslo */
 .password-box input {
     padding: 10px 14px;
-    font-size: 16px;
+    font-size: 18px;
     border-radius: 6px;
     border: 1px solid #c9a646;
     background-color: #111;
     color: white;
+
+    font-family: 'MedievalSharp', cursive;
 }
 
+/* Tlačítko */
 .password-box button {
     padding: 10px 18px;
-    font-size: 16px;
+    font-size: 18px;
     margin-left: 8px;
     border-radius: 6px;
     border: 1px solid #c9a646;
     background-color: #1a1a1a;
     color: #d4af37;
     cursor: pointer;
+
+    font-family: 'MedievalSharp', cursive;
 }
 
 .password-box button:hover {
     background-color: #2a2a2a;
 }
 
+/* Chybová zpráva */
 .message {
     margin-top: 15px;
     color: #ff6666;
+    font-family: 'MedievalSharp', cursive;
 }
+
 </style>
 
 </head>
@@ -109,7 +122,7 @@ function zkontrolujHeslo() {
         document.getElementById("odkaz").href = "hlavni.html";
 
         document.getElementById("zprava").textContent =
-        "Dveře jsou otevřené. Klikni na ně.";
+        "Dveře se otevírají.";
 
     } else {
 
