@@ -37,10 +37,9 @@ h1 {
     font-family: 'MedievalSharp', cursive;
     color: #d4af37;
     font-size: 36px;
-    margin-top: 10px;
 }
 
-/* Řada obrázků */
+/* Galerie */
 .gallery {
     display: flex;
     justify-content: center;
@@ -49,7 +48,6 @@ h1 {
     flex-wrap: wrap;
 }
 
-/* Obrázky */
 .gallery img {
     width: 250px;
     border-radius: 10px;
@@ -60,11 +58,35 @@ h1 {
         0 0 8px rgba(212,175,55,0.6),
         0 0 18px rgba(212,175,55,0.4);
 
-    transition: transform 0.2s;
+    cursor: pointer;
 }
 
-.gallery img:hover {
-    transform: scale(1.05);
+/* Lightbox */
+#lightbox {
+    display: none;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0,0,0,0.9);
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 999;
+}
+
+#lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+
+    border-radius: 10px;
+
+    border: 2px solid #d4af37;
 }
 
 /* Číslování stránek */
@@ -84,7 +106,6 @@ h1 {
     color: #f1d27a;
 }
 
-/* Aktuální stránka */
 .pagination a.active {
     color: white;
     font-weight: bold;
@@ -104,9 +125,9 @@ h1 {
 
 <div class="gallery">
 
-<img src="obrazek1.png" alt="Obrázek 1">
-<img src="obrazek2.png" alt="Obrázek 2">
-<img src="obrazek3.png" alt="Obrázek 3">
+<img src="obrazek1.png" onclick="openLightbox(this)">
+<img src="obrazek2.png" onclick="openLightbox(this)">
+<img src="obrazek3.png" onclick="openLightbox(this)">
 
 </div>
 
@@ -115,6 +136,23 @@ h1 {
 <a href="#" class="active">1</a> <a href="galerie2.html">2</a> <a href="galerie3.html">3</a> <a href="galerie4.html">4</a> <a href="galerie5.html">5</a> <a href="galerie6.html">6</a> <a href="galerie7.html">7</a> <a href="galerie8.html">8</a> <a href="galerie9.html">9</a>
 
 </div>
+
+<div id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img">
+</div>
+
+<script>
+
+function openLightbox(img) {
+    document.getElementById("lightbox").style.display = "flex";
+    document.getElementById("lightbox-img").src = img.src;
+}
+
+function closeLightbox() {
+    document.getElementById("lightbox").style.display = "none";
+}
+
+</script>
 
 </body>
 </html>
