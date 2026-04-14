@@ -17,7 +17,6 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/* Navigace */
 nav {
     margin-top: 20px;
 }
@@ -29,11 +28,6 @@ nav a {
     font-size: 18px;
 }
 
-nav a:hover {
-    color: #f1d27a;
-}
-
-/* Nadpis */
 h1 {
     font-family: 'MedievalSharp', cursive;
     color: #d4af37;
@@ -41,7 +35,6 @@ h1 {
     font-size: 32px;
 }
 
-/* Mřížka kapitol */
 .chapter-grid {
     display: flex;
     flex-wrap: wrap;
@@ -52,8 +45,7 @@ h1 {
     margin: 40px auto;
 }
 
-/* Otevřená kapitola */
-.chapter-grid a {
+.chapter {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -64,44 +56,31 @@ h1 {
     border: 1px solid #666;
     color: white;
 
-    text-decoration: none;
-
     font-family: 'MedievalSharp', cursive;
     font-size: 20px;
 
-    transition: 0.2s;
-}
-
-.chapter-grid a:hover {
-    border-color: #d4af37;
-    color: #d4af37;
-}
-
-/* Zamčená kapitola */
-.chapter-grid .locked {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 50px;
-    height: 50px;
-
-    border: 1px solid #444;
-    color: #777;
-
-    font-family: 'MedievalSharp', cursive;
-    font-size: 18px;
+    text-decoration: none;
 
     position: relative;
 }
 
-/* Ikona zámku */
-.chapter-grid .locked::after {
+.chapter.locked {
+    border: 1px solid #444;
+    color: #777;
+    pointer-events: none;
+}
+
+.chapter.locked::after {
     content: "🔒";
     position: absolute;
     bottom: 4px;
     right: 4px;
     font-size: 12px;
+}
+
+.chapter:hover {
+    border-color: #d4af37;
+    color: #d4af37;
 }
 
 </style>
@@ -116,49 +95,41 @@ h1 {
 
 <h1>Kapitoly</h1>
 
-<div class="chapter-grid">
-
-<!-- OTEVŘENÉ KAPITOLY -->
-
-<a href="kapitola1.html">1</a> <a href="kapitola2.html">2</a> <a href="kapitola3.html">3</a>
-
-<!-- ZAMČENÉ KAPITOLY -->
-
-<div class="locked">4</div>
-<div class="locked">5</div>
-<div class="locked">6</div>
-<div class="locked">7</div>
-<div class="locked">8</div>
-<div class="locked">9</div>
-<div class="locked">10</div>
-<div class="locked">11</div>
-<div class="locked">12</div>
-<div class="locked">13</div>
-<div class="locked">14</div>
-<div class="locked">15</div>
-<div class="locked">16</div>
-<div class="locked">17</div>
-<div class="locked">18</div>
-<div class="locked">19</div>
-<div class="locked">20</div>
-<div class="locked">21</div>
-<div class="locked">22</div>
-<div class="locked">23</div>
-<div class="locked">24</div>
-<div class="locked">25</div>
-<div class="locked">26</div>
-<div class="locked">27</div>
-<div class="locked">28</div>
-<div class="locked">29</div>
-<div class="locked">30</div>
-<div class="locked">31</div>
-<div class="locked">32</div>
-<div class="locked">33</div>
-<div class="locked">34</div>
-<div class="locked">35</div>
-<div class="locked">36</div>
-
+<div class="chapter-grid" id="chapterGrid">
 </div>
+
+<script>
+
+const totalChapters = 36;
+const grid = document.getElementById("chapterGrid");
+
+for (let i = 1; i <= totalChapters; i++) {
+
+    const link = document.createElement("a");
+    link.className = "chapter";
+    link.textContent = i;
+    link.href = "kapitola" + i + ".html";
+
+    fetch(link.href)
+        .then(response => response.text())
+        .then(text => {
+
+            if (text.trim().length < 200) {
+                link.classList.add("locked");
+                link.removeAttribute("href");
+            }
+
+        })
+        .catch(() => {
+            link.classList.add("locked");
+            link.removeAttribute("href");
+        });
+
+    grid.appendChild(link);
+
+}
+
+</script>
 
 </body>
 </html>
