@@ -17,6 +17,7 @@ body {
     font-family: Arial, sans-serif;
 }
 
+/* Navigace */
 nav {
     margin-top: 20px;
 }
@@ -32,6 +33,7 @@ nav a:hover {
     color: #f1d27a;
 }
 
+/* Nadpis */
 h1 {
     font-family: 'MedievalSharp', cursive;
     color: #d4af37;
@@ -39,24 +41,29 @@ h1 {
     font-size: 32px;
 }
 
+/* Kulatý obrázek bez bílého okraje */
 .frame {
-    width: 280px;
-    max-width: 90%;
-    height: auto;
+    width: 240px;
+    height: 240px;
 
-    border-radius: 12px;
-    border: 1px solid #c9a646;
+    border-radius: 50%;
 
-    padding: 12px;
+    border: 2px solid #c9a646;
+
+    padding: 0;
+
+    object-fit: cover;
+
     background-color: black;
 
     box-shadow:
-        0 0 6px rgba(201, 166, 70, 0.4);
+        0 0 8px rgba(201, 166, 70, 0.5);
 
     display: block;
     margin: 30px auto;
 }
 
+/* Text */
 .about-text {
     color: white;
     font-size: 18px;
