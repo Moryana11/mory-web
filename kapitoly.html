@@ -46,14 +46,13 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-
     gap: 12px;
 
     max-width: 900px;
     margin: 40px auto;
 }
 
-/* Jedno číslo kapitoly */
+/* Otevřená kapitola */
 .chapter-grid a {
     display: flex;
     align-items: center;
@@ -73,16 +72,36 @@ h1 {
     transition: 0.2s;
 }
 
-/* Hover efekt */
 .chapter-grid a:hover {
     border-color: #d4af37;
     color: #d4af37;
 }
 
-/* Aktivní kapitola */
-.chapter-grid a.active {
-    background-color: #888;
-    color: black;
+/* Zamčená kapitola */
+.chapter-grid .locked {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 50px;
+    height: 50px;
+
+    border: 1px solid #444;
+    color: #777;
+
+    font-family: 'MedievalSharp', cursive;
+    font-size: 18px;
+
+    position: relative;
+}
+
+/* Ikona zámku */
+.chapter-grid .locked::after {
+    content: "🔒";
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+    font-size: 12px;
 }
 
 </style>
@@ -99,13 +118,45 @@ h1 {
 
 <div class="chapter-grid">
 
-<a href="kapitola1.html">1</a> <a href="kapitola2.html">2</a> <a href="kapitola3.html">3</a> <a href="kapitola4.html">4</a> <a href="kapitola5.html">5</a> <a href="kapitola6.html">6</a> <a href="kapitola7.html">7</a> <a href="kapitola8.html">8</a> <a href="kapitola9.html">9</a> <a href="kapitola10.html">10</a> <a href="kapitola11.html">11</a> <a href="kapitola12.html">12</a> <a href="kapitola13.html">13</a> <a href="kapitola14.html">14</a> <a href="kapitola15.html">15</a> <a href="kapitola16.html">16</a>
+<!-- OTEVŘENÉ KAPITOLY -->
 
-<a href="kapitola17.html">17</a> <a href="kapitola18.html">18</a> <a href="kapitola19.html">19</a> <a href="kapitola20.html">20</a> <a href="kapitola21.html">21</a> <a href="kapitola22.html">22</a> <a href="kapitola23.html">23</a> <a href="kapitola24.html">24</a> <a href="kapitola25.html">25</a> <a href="kapitola26.html">26</a> <a href="kapitola27.html">27</a> <a href="kapitola28.html">28</a> <a href="kapitola29.html">29</a> <a href="kapitola30.html">30</a>
+<a href="kapitola1.html">1</a> <a href="kapitola2.html">2</a> <a href="kapitola3.html">3</a>
 
-<a href="kapitola31.html">31</a> <a href="kapitola32.html">32</a> <a href="kapitola33.html">33</a> <a href="kapitola34.html">34</a> <a href="kapitola35.html">35</a>
+<!-- ZAMČENÉ KAPITOLY -->
 
-<a href="kapitola36.html" class="active">36</a>
+<div class="locked">4</div>
+<div class="locked">5</div>
+<div class="locked">6</div>
+<div class="locked">7</div>
+<div class="locked">8</div>
+<div class="locked">9</div>
+<div class="locked">10</div>
+<div class="locked">11</div>
+<div class="locked">12</div>
+<div class="locked">13</div>
+<div class="locked">14</div>
+<div class="locked">15</div>
+<div class="locked">16</div>
+<div class="locked">17</div>
+<div class="locked">18</div>
+<div class="locked">19</div>
+<div class="locked">20</div>
+<div class="locked">21</div>
+<div class="locked">22</div>
+<div class="locked">23</div>
+<div class="locked">24</div>
+<div class="locked">25</div>
+<div class="locked">26</div>
+<div class="locked">27</div>
+<div class="locked">28</div>
+<div class="locked">29</div>
+<div class="locked">30</div>
+<div class="locked">31</div>
+<div class="locked">32</div>
+<div class="locked">33</div>
+<div class="locked">34</div>
+<div class="locked">35</div>
+<div class="locked">36</div>
 
 </div>
 
