@@ -1,19 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="cs">
 <head>
 <meta charset="UTF-8">
 <title>Zamčené dveře</title>
 
 <style>
-    body { ... }
-
-img {
-    max-width: 500px;
-    margin-top: 50px;
-    border-radius: 10px;
-    cursor: pointer;
-}
-          
 body {
     font-family: Arial, sans-serif;
     background-color: #111;
@@ -22,13 +14,37 @@ body {
     margin: 0;
 }
 
-img {
-    max-width: 500px;
-    margin-top: 50px;
-    border-radius: 10px;
+/* Jednotný rámeček pro všechny dveře a knihy */
+.frame {
+    width: 320px;
+    max-width: 90%;
+    height: auto;
+
+    border-radius: 12px;
+    border: 1px solid #c9a646;
+
+    padding: 12px;
+    background-color: black;
+
+    box-shadow:
+        0 0 6px rgba(201, 166, 70, 0.4);
+
+    display: block;
+    margin: 40px auto;
+
     cursor: pointer;
 }
+
+h2 {
+    margin-top: 30px;
+    color: #d4af37;
+}
+
+p {
+    color: #ccc;
+}
 </style>
+
 </head>
 
 <body>
@@ -37,7 +53,7 @@ img {
 <p>Někdo zadal špatné heslo.</p>
 
 <a href="index.html">
-    <img src="dvere_retez.png" class="frame">
+    <img src="retezove_dvere.png" class="frame" alt="Zamčené dveře s řetězem">
 </a>
 
 <p>Klikni na dveře a zkus to znovu.</p>
