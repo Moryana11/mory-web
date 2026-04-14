@@ -3,131 +3,88 @@
 <html lang="cs">
 <head>
 <meta charset="UTF-8">
-<title>Tajná knihovna</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Fantasy písmo -->
+<title>Vstup</title>
 
 <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
 
 <style>
-
 body {
-    margin: 0;
-    background-color: #000;
-    color: white;
-    font-family: Arial, sans-serif;
-    text-align: center;
-}
-
-/* Nadpis */
-h2 {
-    font-family: 'MedievalSharp', cursive;
-    color: #d4af37;
-    margin-top: 30px;
-    font-size: 32px;
-}
-
-/* Jednotný rámeček */
-.frame {
-    width: 320px;
-    max-width: 90%;
-    height: auto;
-
-    border-radius: 12px;
-    border: 1px solid #c9a646;
-
-    padding: 12px;
     background-color: black;
-
-    box-shadow:
-        0 0 6px rgba(201, 166, 70, 0.4);
-
-    display: block;
-    margin: 40px auto;
-
-    cursor: pointer;
+    margin: 0;
+    text-align: center;
+    font-family: Arial, sans-serif;
 }
 
-/* Box pro heslo */
-.password-box {
-    text-align: center;
+/* OBRÁZEK DVEŘÍ */
+img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    margin-top: 40px;
+    border-radius: 12px;
+    border: 2px solid #d4af37;
+    box-shadow: 0 0 10px rgba(212,175,55,0.6);
+}
+
+/* TEXT */
+p {
+    color: #d4af37;
+    font-family: 'MedievalSharp', cursive;
+    font-size: 18px;
     margin-top: 20px;
 }
 
-/* Pole pro heslo */
-.password-box input {
-    padding: 10px 14px;
-    font-size: 18px;
-    border-radius: 6px;
-    border: 1px solid #c9a646;
-    background-color: #111;
-    color: white;
-
-    font-family: 'MedievalSharp', cursive;
+/* INPUT */
+input {
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 10px;
 }
 
-/* Tlačítko */
-.password-box button {
-    padding: 10px 18px;
-    font-size: 18px;
-    margin-left: 8px;
-    border-radius: 6px;
-    border: 1px solid #c9a646;
-    background-color: #1a1a1a;
-    color: #d4af37;
+/* TLAČÍTKO */
+button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    font-size: 16px;
     cursor: pointer;
-
-    font-family: 'MedievalSharp', cursive;
 }
 
-.password-box button:hover {
-    background-color: #2a2a2a;
-}
+/* MOBIL */
+@media (max-width: 768px) {
 
-/* Chybová zpráva */
-.message {
-    margin-top: 15px;
-    color: #ff6666;
-    font-family: 'MedievalSharp', cursive;
-}
+    img {
+        max-width: 280px;
+    }
 
+    p {
+        font-size: 20px;
+    }
+
+}
 </style>
 
 </head>
 
 <body>
 
-<h2>Vstup do tajné knihovny</h2>
+<img src="zavrene_dvere.png" alt="Zavřené dveře">
 
-<a id="odkaz" href="#">
-    <img id="dvere" src="dvere_zavrene.png" alt="Zavřené dveře" class="frame">
-</a>
+<p>Zadej heslo</p>
 
-<div class="password-box">
-    <input type="password" id="heslo" placeholder="Zadej heslo">
-    <button onclick="zkontrolujHeslo()">Otevřít dveře</button>
-</div>
-
-<p class="message" id="zprava"></p>
+<input type="password" id="heslo">
+<br>
+<button onclick="zkontrolujHeslo()">Vstoupit</button>
 
 <script>
 function zkontrolujHeslo() {
-
     var heslo = document.getElementById("heslo").value;
 
-    if (heslo === "knihovna") {
-
-        document.getElementById("dvere").src = "dvere_otevrene.png";
-
-        document.getElementById("odkaz").href = "hlavni.html";
-
-        document.getElementById("zprava").textContent =
-        "Dveře se otevírají.";
-
+    if (heslo === "tajna") {
+        window.location.href = "otevrene_dvere.html";
     } else {
-
         window.location.href = "retezove_dvere.html";
-
     }
 }
 </script>
