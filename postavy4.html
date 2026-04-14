@@ -17,10 +17,8 @@ body {
     font-family: Arial, sans-serif;
 }
 
-h1 {
-    font-family: 'MedievalSharp', cursive;
-    color: #d4af37;
-    margin-top: 30px;
+nav {
+    margin-top: 20px;
 }
 
 nav a {
@@ -30,43 +28,28 @@ nav a {
     font-size: 18px;
 }
 
-nav a:hover {
-    color: #f1d27a;
-}
-
-.container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 40px;
-    margin-top: 30px;
-}
-
-.frame {
-    width: 220px;
-    height: auto;
-
-    border-radius: 12px;
-    border: 1px solid #c9a646;
-
-    padding: 10px;
-    background-color: black;
-
-    box-shadow:
-        0 0 6px rgba(201, 166, 70, 0.4);
-
-    cursor: pointer;
-}
-
-.character-name {
+h1 {
     font-family: 'MedievalSharp', cursive;
     color: #d4af37;
-    margin-top: 10px;
+    font-size: 36px;
+}
+
+.character {
+    margin: 40px auto;
+}
+
+.character img {
+    width: 250px;
+    border-radius: 10px;
+    border: 2px solid #d4af37;
+
+    box-shadow:
+        0 0 8px rgba(212,175,55,0.6),
+        0 0 18px rgba(212,175,55,0.4);
 }
 
 .pagination {
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin: 40px 0;
 }
 
 .pagination a {
@@ -74,11 +57,6 @@ nav a:hover {
     color: #d4af37;
     text-decoration: none;
     margin: 0 10px;
-    font-size: 18px;
-}
-
-.pagination a:hover {
-    color: #f1d27a;
 }
 
 </style>
@@ -87,47 +65,32 @@ nav a:hover {
 
 <body>
 
-<h1>Postavy</h1>
-
 <nav>
     <a href="hlavni.html">Domů</a>
 </nav>
 
-<div class="container">
+<h1>Postavy</h1>
 
-<!-- Aron DaVinci -->
-
-<div>
-    <a href="arondavinci.html">
-        <img src="arondavinci.png" alt="Aron DaVinci" class="frame">
+<div class="character">
+    <a href="davinci.html">
+        <img src="davinci.png" alt="Aron DaVinci">
     </a>
-    <div class="character-name">Aron DaVinci</div>
 </div>
 
-<!-- Jacque Hander -->
-
-<div>
-    <a href="jacquehander.html">
-        <img src="jacquehander.png" alt="Jacque Hander" class="frame">
+<div class="character">
+    <a href="hander.html">
+        <img src="hander.png" alt="Jacque Hander">
     </a>
-    <div class="character-name">Jacque Hander</div>
 </div>
 
-<!-- Sienna Parsons -->
-
-<div>
-    <a href="siennaparsons.html">
-        <img src="siennaparsons.png" alt="Sienna Parsons" class="frame">
+<div class="character">
+    <a href="parsons.html">
+        <img src="parsons.png" alt="Sienna Parsons">
     </a>
-    <div class="character-name">Sienna Parsons</div>
-</div>
-
 </div>
 
 <div class="pagination">
-
-<a href="postavy.html">1</a> <a href="postavy2.html">2</a> <a href="postavy3.html">3</a> <strong>4</strong>
-
+    <a href="postavy3.html">← Zpět</a>
 </div>
 
 </body>
