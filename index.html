@@ -1,11 +1,51 @@
 <!DOCTYPE html>
+
 <html lang="cs">
 <head>
 <meta charset="UTF-8">
 <title>Tajná knihovna</title>
 
+<!-- Fantasy písmo -->
+
+<link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+
 <style>
-    .password-box {
+body {
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: white;
+    text-align: center;
+    margin: 0;
+}
+
+/* Nadpisy a menu ve fantasy stylu */
+h1, h2, h3, nav a {
+    font-family: 'MedievalSharp', cursive;
+}
+
+/* Jednotný rámeček pro všechny obrázky */
+.frame {
+    width: 320px;
+    max-width: 90%;
+    height: auto;
+
+    border-radius: 12px;
+    border: 1px solid #c9a646;
+
+    padding: 12px;
+    background-color: black;
+
+    box-shadow:
+        0 0 6px rgba(201, 166, 70, 0.4);
+
+    display: block;
+    margin: 40px auto;
+
+    cursor: pointer;
+}
+
+/* Box pro heslo */
+.password-box {
     text-align: center;
     margin-top: 25px;
 }
@@ -34,97 +74,6 @@
     background-color: #2a2a2a;
 }
 
-body {
-    background-color: black;
-}
-
-/* TOTO je nový rámeček */
-
-img {
-    width: 320px;
-    max-width: 90%;
-    height: auto;
-    border-radius: 12px;
-    border: 1px solid #c9a646;
-    padding: 12px;
-    background-color: black;
-    box-shadow: 0 0 6px rgba(201, 166, 70, 0.4);
-    display: block;
-    margin: 30px auto;
-}
-
-img::before,
-img::after {
-    content: "";
-    position: absolute;
-    width: 18px;
-    height: 18px;
-    border: 1px solid #d4af37;
-}
-
-img::before {
-    top: 4px;
-    left: 4px;
-    border-right: none;
-    border-bottom: none;
-}
-
-img::after {
-    bottom: 4px;
-    right: 4px;
-    border-left: none;
-    border-top: none;
-}
-
-</style>
-    
-body {
-    font-family: Arial, sans-serif;
-    background-color: #111;
-    color: white;
-    text-align: center;
-    margin: 0;
-}
-
-header {
-    background: #222;
-    padding: 20px;
-}
-
-img {
-    width: 320px;
-    max-width: 90%;
-    height: auto;
-
-    border-radius: 12px;
-
-    border: 1px solid #c9a646;
-
-    padding: 12px;
-    background-color: black;
-
-    box-shadow:
-        0 0 6px rgba(201, 166, 70, 0.4);
-
-    display: block;
-    margin: 30px auto;
-
-    position: relative;
-}
-
-input {
-    padding: 10px;
-    margin-top: 20px;
-    font-size: 16px;
-}
-
-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    margin-left: 10px;
-    cursor: pointer;
-}
-
 .message {
     margin-top: 15px;
     color: #ff6666;
@@ -135,17 +84,15 @@ button {
 
 <body>
 
+<h2>Vstup do tajné knihovny</h2>
+
 <a id="odkaz" href="#">
     <img id="dvere" src="dvere_zavrene.png" alt="Zavřené dveře" class="frame">
 </a>
 
-<br>
-
 <div class="password-box">
-
-<input type="password" id="heslo" placeholder="Zadej heslo">
-<button onclick="zkontrolujHeslo()">Otevřít dveře</button>
-
+    <input type="password" id="heslo" placeholder="Zadej heslo">
+    <button onclick="zkontrolujHeslo()">Otevřít dveře</button>
 </div>
 
 <p class="message" id="zprava"></p>
@@ -155,16 +102,16 @@ function zkontrolujHeslo() {
 
     var heslo = document.getElementById("heslo").value;
 
-  if (heslo === "knihovna") {
+    if (heslo === "knihovna") {
 
-    document.getElementById("dvere").src = "dvere_otevrene.png";
+        document.getElementById("dvere").src = "dvere_otevrene.png";
 
-    document.getElementById("odkaz").href = "hlavni.html";
+        document.getElementById("odkaz").href = "hlavni.html";
 
-    document.getElementById("zprava").textContent =
+        document.getElementById("zprava").textContent =
         "Dveře jsou otevřené. Klikni na ně.";
 
-} else {
+    } else {
 
         window.location.href = "retezove_dvere.html";
 
