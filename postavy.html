@@ -17,14 +17,11 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/* Nadpis */
-h1 {
-    font-family: 'MedievalSharp', cursive;
-    color: #d4af37;
-    margin-top: 30px;
+/* Navigace */
+nav {
+    margin-top: 20px;
 }
 
-/* Odkaz zpět */
 nav a {
     font-family: 'MedievalSharp', cursive;
     color: #d4af37;
@@ -36,43 +33,33 @@ nav a:hover {
     color: #f1d27a;
 }
 
-/* Kontejner pro postavy */
-.container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 40px;
-    margin-top: 30px;
-}
-
-/* Rámeček obrázku */
-.frame {
-    width: 220px;
-    height: auto;
-
-    border-radius: 12px;
-    border: 1px solid #c9a646;
-
-    padding: 10px;
-    background-color: black;
-
-    box-shadow:
-        0 0 6px rgba(201, 166, 70, 0.4);
-
-    cursor: pointer;
-}
-
-/* Jméno postavy */
-.character-name {
+/* Nadpis */
+h1 {
     font-family: 'MedievalSharp', cursive;
     color: #d4af37;
+    font-size: 36px;
     margin-top: 10px;
 }
 
-/* Stránkování dole */
+/* Postavy */
+.character {
+    margin: 40px auto;
+}
+
+.character img {
+    width: 250px;
+    border-radius: 10px;
+
+    border: 2px solid #d4af37;
+
+    box-shadow:
+        0 0 8px rgba(212,175,55,0.6),
+        0 0 18px rgba(212,175,55,0.4);
+}
+
+/* Stránkování */
 .pagination {
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin: 40px 0;
 }
 
 .pagination a {
@@ -93,47 +80,32 @@ nav a:hover {
 
 <body>
 
-<h1>Postavy</h1>
-
 <nav>
     <a href="hlavni.html">Domů</a>
 </nav>
 
-<div class="container">
+<h1>Postavy</h1>
 
-<!-- Rowena -->
-
-<div>
+<div class="character">
     <a href="rowena.html">
-        <img src="rowena.png" alt="Rowena" class="frame">
+        <img src="rowena.png" alt="Rowena">
     </a>
-    <div class="character-name">Rowena</div>
 </div>
 
-<!-- Aaliyah -->
-
-<div>
+<div class="character">
     <a href="aaliyah.html">
-        <img src="aaliyah.png" alt="Aaliyah" class="frame">
+        <img src="aaliyah.png" alt="Aaliyah">
     </a>
-    <div class="character-name">Aaliyah</div>
 </div>
 
-<!-- James -->
-
-<div>
+<div class="character">
     <a href="james.html">
-        <img src="james.png" alt="James" class="frame">
+        <img src="james.png" alt="James">
     </a>
-    <div class="character-name">James</div>
-</div>
-
 </div>
 
 <div class="pagination">
-
-<strong>1</strong> <a href="postavy2.html">2</a> <a href="postavy3.html">3</a> <a href="postavy4.html">4</a>
-
+    <a href="postavy2.html">Další →</a>
 </div>
 
 </body>
