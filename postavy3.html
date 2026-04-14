@@ -32,17 +32,21 @@ h1 {
     font-family: 'MedievalSharp', cursive;
     color: #d4af37;
     font-size: 36px;
+    margin-top: 10px;
 }
 
-.character {
-    margin: 40px auto;
+.characters {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+    flex-wrap: wrap;
 }
 
 .character img {
     width: 250px;
     border-radius: 10px;
     border: 2px solid #d4af37;
-
     box-shadow:
         0 0 8px rgba(212,175,55,0.6),
         0 0 18px rgba(212,175,55,0.4);
@@ -71,27 +75,31 @@ h1 {
 
 <h1>Postavy</h1>
 
+<div class="characters">
+
 <div class="character">
-    <a href="brienne.html">
-        <img src="brienne.png" alt="Brienne">
-    </a>
+<a href="brienne.html">
+<img src="brienne.png" alt="Brienne">
+</a>
 </div>
 
 <div class="character">
-    <a href="zarveth.html">
-        <img src="zarveth.png" alt="Zarveth">
-    </a>
+<a href="zarveth.html">
+<img src="zarveth.png" alt="Zarveth">
+</a>
 </div>
 
 <div class="character">
-    <a href="morrkalil.html">
-        <img src="morrkalil.png" alt="Morr’kalil">
-    </a>
+<a href="morrkalil.html">
+<img src="morrkalil.png" alt="Morr’kalil">
+</a>
+</div>
+
 </div>
 
 <div class="pagination">
-    <a href="postavy2.html">← Zpět</a>
-    <a href="postavy4.html">Další →</a>
+<a href="postavy2.html">← Zpět</a>
+<a href="postavy4.html">Další →</a>
 </div>
 
 </body>
