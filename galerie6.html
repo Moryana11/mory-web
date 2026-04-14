@@ -67,7 +67,7 @@ h1 {
     transform: scale(1.05);
 }
 
-/* Stránkování */
+/* Číslování stránek */
 .pagination {
     margin: 40px 0;
 }
@@ -76,12 +76,18 @@ h1 {
     font-family: 'MedievalSharp', cursive;
     color: #d4af37;
     text-decoration: none;
-    margin: 0 10px;
+    margin: 0 8px;
     font-size: 18px;
 }
 
 .pagination a:hover {
     color: #f1d27a;
+}
+
+/* Aktuální stránka */
+.pagination a.active {
+    color: white;
+    font-weight: bold;
 }
 
 </style>
@@ -105,7 +111,9 @@ h1 {
 </div>
 
 <div class="pagination">
-    <a href="galerie5.html">← Zpět</a>
+
+<a href="galerie.html">1</a> <a href="galerie2.html">2</a> <a href="galerie3.html">3</a> <a href="galerie4.html">4</a> <a href="galerie5.html">5</a> <a href="#" class="active">6</a> <a href="galerie7.html">7</a> <a href="galerie8.html">8</a> <a href="galerie9.html">9</a>
+
 </div>
 
 </body>
