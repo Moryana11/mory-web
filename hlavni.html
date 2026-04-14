@@ -3,73 +3,69 @@
 <html lang="cs">
 <head>
 <meta charset="UTF-8">
-<title>Můj svět příběhů</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Hlavní stránka</title>
 
 <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
 
 <style>
-
 body {
-    margin: 0;
     background-color: black;
+    margin: 0;
     text-align: center;
     font-family: Arial, sans-serif;
 }
 
-/* Menu nahoře */
-.menu {
-    margin-top: 30px;
-    margin-bottom: 20px;
+/* MENU */
+nav {
+    margin-top: 20px;
 }
 
-.menu a {
+nav a {
     font-family: 'MedievalSharp', cursive;
     color: #d4af37;
-
     text-decoration: none;
-
-    font-size: 22px;
-
-    margin: 0 18px;
-
-    transition: 0.2s;
+    font-size: 20px;
+    margin: 0 15px;
 }
 
-.menu a:hover {
-    color: #f1d27a;
-}
-
-/* Obrázek */
-.frame {
-    width: 300px;
-    max-width: 90%;
-
+/* OBRÁZEK */
+img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    margin-top: 40px;
     border-radius: 12px;
-    border: 2px solid #c9a646;
-
-    padding: 12px;
-
-    background-color: black;
-
-    box-shadow:
-        0 0 8px rgba(201, 166, 70, 0.5);
-
-    margin-top: 30px;
+    border: 2px solid #d4af37;
+    box-shadow: 0 0 10px rgba(212,175,55,0.6);
 }
 
+/* MOBIL */
+@media (max-width: 768px) {
+
+    nav a {
+        display: block;
+        margin: 10px 0;
+        font-size: 22px;
+    }
+
+}
 </style>
 
 </head>
 
 <body>
 
-<div class="menu">
+<nav>
+<a href="ome.html">O mě</a>
+<a href="kapitoly.html">Kapitoly</a>
+<a href="postavy.html">Postavy</a>
+<a href="lokace.html">Lokace</a>
+<a href="galerie.html">Galerie</a>
+</nav>
 
-<a href="omne.html">O mě</a> <a href="kapitoly.html">Kapitoly</a> <a href="postavy.html">Postavy</a> <a href="lokace.html">Lokace</a> <a href="galerie.html">Galerie</a>
-
-</div>
-
-<img src="knihy.png" alt="Knihy" class="frame">
+<img src="knihy.png" alt="Knihy">
 
 </body>
 </html>
