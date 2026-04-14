@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Vstup</title>
+<title>Vstup do knihovny</title>
 
 <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
 
@@ -17,37 +17,52 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/* OBRÁZEK DVEŘÍ */
+/* KONTEJNER */
+.container {
+    margin-top: 40px;
+}
+
+/* DVEŘE */
 #dvere {
     width: 100%;
     max-width: 350px;
     height: auto;
-    margin-top: 40px;
+
     border-radius: 12px;
     border: 2px solid #d4af37;
-    box-shadow: 0 0 10px rgba(212,175,55,0.6);
+
+    box-shadow:
+        0 0 0 2px #d4af37,
+        0 0 12px rgba(212,175,55,0.6);
+
     cursor: pointer;
 }
 
 /* TEXT */
-p {
-    color: #d4af37;
+label {
+    display: block;
+    margin-top: 25px;
+
     font-family: 'MedievalSharp', cursive;
-    font-size: 20px;
-    margin-top: 20px;
+    color: #d4af37;
+    font-size: 22px;
 }
 
 /* INPUT */
 input {
+    margin-top: 15px;
     padding: 10px;
+    width: 250px;
+    max-width: 80%;
+
     font-size: 16px;
-    margin-top: 10px;
 }
 
 /* TLAČÍTKO */
 button {
+    margin-top: 15px;
     padding: 10px 20px;
-    margin-top: 10px;
+
     font-size: 16px;
     cursor: pointer;
 }
@@ -59,9 +74,12 @@ button {
         max-width: 280px;
     }
 
-    p {
-        font-size: 22px;
-        padding: 0 15px;
+    label {
+        font-size: 24px;
+    }
+
+    input {
+        width: 80%;
     }
 
 }
@@ -71,32 +89,55 @@ button {
 
 <body>
 
-<img id="dvere" src="zavrene_dvere.png" alt="Zavřené dveře">
+<div class="container">
 
-<p>Zadej heslo</p>
+<img id="dvere"
+  src="zavrene_dvere.png"
+  alt="Zavřené dveře">
 
-<input type="password" id="heslo">
+<label>Zadej heslo</label>
+
+<input type="password"
+    id="heslo"
+    placeholder="Zadej heslo">
+
 <br>
-<button onclick="zkontrolujHeslo()">Vstoupit</button>
+
+<button onclick="zkontrolujHeslo()">
+Vstoupit
+</button>
+
+</div>
 
 <script>
 function zkontrolujHeslo() {
-    var heslo = document.getElementById("heslo").value;
 
-    if (heslo === "tajna") {
+    var heslo =
+    document.getElementById("heslo").value;
 
-        document.getElementById("dvere").src = "otevrene_dvere.png";
+    if (heslo === "knihovna") {
 
-        document.querySelector("p").innerText =
-        "Dveře se otevírají. Klikni na dveře a vstup.";
+        document.getElementById("dvere").src =
+        "otevrene_dvere.png";
 
-        document.getElementById("dvere").onclick = function() {
-            window.location.href = "hlavni.html";
+        document.querySelector("label").innerText =
+        "Dveře se otevírají. Klikni na ně.";
+
+        document.getElementById("dvere").onclick =
+        function() {
+            window.location.href =
+            "hlavni.html";
         };
 
-    } else {
-        window.location.href = "retezove_dvere.html";
     }
+
+    else {
+
+        window.location.href =
+        "retezove_dvere.html";
+
+    }
+
 }
 </script>
 
