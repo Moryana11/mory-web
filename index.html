@@ -5,6 +5,51 @@
 <title>Tajná knihovna</title>
 
 <style>
+
+body {
+    background-color: black;
+}
+
+/* TOTO je nový rámeček */
+
+img {
+    width: 320px;
+    max-width: 90%;
+    height: auto;
+    border-radius: 12px;
+    border: 1px solid #c9a646;
+    padding: 12px;
+    background-color: black;
+    box-shadow: 0 0 6px rgba(201, 166, 70, 0.4);
+    display: block;
+    margin: 30px auto;
+}
+
+img::before,
+img::after {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #d4af37;
+}
+
+img::before {
+    top: 4px;
+    left: 4px;
+    border-right: none;
+    border-bottom: none;
+}
+
+img::after {
+    bottom: 4px;
+    right: 4px;
+    border-left: none;
+    border-top: none;
+}
+
+</style>
+    
 body {
     font-family: Arial, sans-serif;
     background-color: #111;
