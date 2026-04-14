@@ -1,80 +1,111 @@
 <!DOCTYPE html>
+
 <html lang="cs">
 <head>
 <meta charset="UTF-8">
-<title>Morrkalil – Postava</title>
+<title>Morr’kalil</title>
+
+<link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
 
 <style>
+
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
-    background-color: #111;
-    color: #fff;
+    background-color: #000;
+    color: white;
     text-align: center;
+    font-family: Arial, sans-serif;
 }
 
-header {
-    background: #222;
-    padding: 20px;
+/* Navigace */
+nav {
+    margin-top: 20px;
 }
 
 nav a {
-    color: #ffd700;
-    margin: 0 15px;
+    font-family: 'MedievalSharp', cursive;
+    color: #d4af37;
     text-decoration: none;
-    font-weight: bold;
+    font-size: 18px;
 }
 
-.content {
-    padding: 40px;
-    max-width: 900px;
-    margin: auto;
+nav a:hover {
+    color: #f1d27a;
 }
 
-img {
-    max-width: 320px;
-    border-radius: 10px;
-    margin: 20px 0;
+/* Nadpis – zlatý */
+h1 {
+    font-family: 'MedievalSharp', cursive;
+    color: #d4af37;
+    margin-top: 20px;
+    font-size: 32px;
 }
+
+/* Obrázek */
+.frame {
+    width: 320px;
+    max-width: 90%;
+    height: auto;
+
+    border-radius: 12px;
+    border: 1px solid #c9a646;
+
+    padding: 12px;
+    background-color: black;
+
+    box-shadow:
+        0 0 6px rgba(201, 166, 70, 0.4);
+
+    display: block;
+    margin: 30px auto;
+}
+
+/* Text – bílý */
+.character-text {
+    color: white;
+    font-size: 18px;
+    line-height: 1.6;
+
+    max-width: 800px;
+    margin: 30px auto 40px auto;
+    padding: 0 20px;
+}
+
 </style>
 
 </head>
 
 <body>
 
-<header>
-<h1>Morrkalil</h1>
-
 <nav>
-<a href="postavy.html">Zpět na postavy</a>
+    <a href="postavy.html">Zpět na postavy</a>
 </nav>
 
-</header>
+<h1>Morr’kalil</h1>
 
-<div class="content">
+<img src="morrkalil.png" alt="Morr’kalil" class="frame">
 
-<h2>Morrkalil</h2>
+<div class="character-text">
+Morr’kalil je temný bůh krve, utrpení a smrti,
+přebývající v Temnotě.
+Je posedlý utrpením a touží přetvořit svět
+v nekonečný chrám bolesti.
 
-<img src="morrkalil.png" alt="Morrkalil">
+Jeho stoupenci mu slouží ve fanatické víře,
+že skrze bolest přijde očista.
 
-<p>
-Morr’kalil je temný bůh krve, utrpení a smrti, přebývající v Temnotě.
-Je posedlý utrpením, touží přetvořit svět v nekonečný chrám bolesti.
-Jeho stoupenci mu slouží ve fanatické víře, že skrze bolest přijde očista.
-</p>
+Morr’kalil vládne prastaré temné magii,
+která mu umožňuje vysávat životní sílu z živých bytostí,
+ovládat krev a duše a vyvolávat nemrtvé.
 
-<p>
-Vládne prastaré temné magii, která mu umožňuje vysávat životní sílu z živých bytostí,
-ovládat krev a duše, vyvolávat nemrtvé. Dokáže šířit nákazu temnoty, měnit lidi
-v znetvořené služebníky a otevírat trhliny mezi světem živých a říší smrti.
-Jeho přítomnost láme vůli a probouzí strach i šílenství v srdcích smrtelníků.
-</p>
+Dokáže šířit nákazu temnoty,
+měnit lidi v znetvořené služebníky
+a otevírat trhliny mezi světem živých a říší smrti.
+
+Jeho přítomnost láme vůli
+a probouzí strach i šílenství v srdcích smrtelníků.
 
 </div>
-
-<footer>
-<p>© 2026 Moryana</p>
-</footer>
 
 </body>
 </html>
