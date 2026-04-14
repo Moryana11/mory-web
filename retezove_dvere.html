@@ -3,77 +3,67 @@
 <html lang="cs">
 <head>
 <meta charset="UTF-8">
-<title>Zamčené dveře</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Medieval písmo -->
+<title>Dveře zůstávají zamčené</title>
 
 <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
 
 <style>
-
 body {
+    background-color: black;
     margin: 0;
-    background-color: #000;
-    color: white;
     text-align: center;
     font-family: Arial, sans-serif;
 }
 
-/* Nadpis */
-h2 {
-    font-family: 'MedievalSharp', cursive;
-    color: #d4af37;
-    margin-top: 30px;
-    font-size: 32px;
-}
-
-/* Text ve stejném medieval stylu */
-.medieval-text {
-    font-family: 'MedievalSharp', cursive;
-    color: #d4af37;
-    font-size: 20px;
-    margin-top: 18px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Rámeček */
-.frame {
-    width: 320px;
-    max-width: 90%;
+/* OBRÁZEK */
+img {
+    width: 100%;
+    max-width: 350px;
     height: auto;
-
+    margin-top: 40px;
     border-radius: 12px;
-    border: 1px solid #c9a646;
-
-    padding: 12px;
-    background-color: black;
-
-    box-shadow:
-        0 0 6px rgba(201, 166, 70, 0.4);
-
-    display: block;
-    margin: 40px auto;
-
+    border: 2px solid #d4af37;
+    box-shadow: 0 0 10px rgba(212,175,55,0.6);
     cursor: pointer;
 }
 
+/* TEXT */
+p {
+    color: #d4af37;
+    font-family: 'MedievalSharp', cursive;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+/* MOBIL */
+@media (max-width: 768px) {
+
+    img {
+        max-width: 280px;
+    }
+
+    p {
+        font-size: 22px;
+        padding: 0 15px;
+    }
+
+}
 </style>
 
 </head>
 
 <body>
 
-<h2>Špatné heslo, příteli.</h2>
-
-<p class="medieval-text">
-Dveře zůstávají zamčené. Klikni na dveře a zkus to znovu.
-</p>
-
 <a href="index.html">
-    <img src="retezove_dvere.png" alt="Zamčené dveře" class="frame">
+    <img src="retezove_dvere.png" alt="Dveře s řetězem">
 </a>
+
+<p>
+Dveře zůstávají zamčené.  
+Klikni na dveře a zkus to znovu.
+</p>
 
 </body>
 </html>
