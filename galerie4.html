@@ -3,18 +3,21 @@
 <html lang="cs">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Galerie</title>
 
 <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
 
 <style>
 body {
-    margin: 0;
     background-color: black;
+    margin: 0;
     text-align: center;
     font-family: Arial, sans-serif;
 }
 
+/* DOMŮ */
 nav {
     margin-top: 20px;
 }
@@ -26,76 +29,66 @@ nav a {
     font-size: 18px;
 }
 
+/* NADPIS */
 h1 {
     font-family: 'MedievalSharp', cursive;
     color: #d4af37;
-    font-size: 36px;
+    font-size: 42px;
+    margin-top: 10px;
 }
 
-/* Galerie */
+/* KONTEJNER */
 .gallery {
     display: flex;
     justify-content: center;
-    gap: 40px;
+    gap: 30px;
     margin-top: 40px;
     flex-wrap: wrap;
 }
 
+/* OBRÁZKY */
 .gallery img {
-    width: 250px;
-    border-radius: 10px;
-    border: 2px solid #d4af37;
-    box-shadow: 0 0 8px rgba(212,175,55,0.6);
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+
     cursor: pointer;
+
+    border-radius: 12px;
+    border: 2px solid #d4af37;
+
+    box-shadow:
+        0 0 0 2px #d4af37,
+        0 0 12px rgba(212,175,55,0.6);
 }
 
-/* Lightbox */
-#lightbox {
+/* ZVĚTŠENÝ OBRÁZEK */
+.overlay {
     display: none;
+
     position: fixed;
     top: 0;
     left: 0;
+
     width: 100%;
     height: 100%;
+
     background-color: rgba(0,0,0,0.9);
+
     justify-content: center;
     align-items: center;
+
     z-index: 999;
 }
 
-#lightbox img {
-    max-width: 90%;
-    max-height: 90%;
-    border: 2px solid #d4af37;
+.overlay img {
+    max-width: 95%;
+    max-height: 95%;
 }
 
-/* Šipky */
-.arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 50px;
-    color: #d4af37;
-    cursor: pointer;
-    user-select: none;
-    padding: 20px;
-}
-
-.arrow:hover {
-    color: white;
-}
-
-#prev {
-    left: 20px;
-}
-
-#next {
-    right: 20px;
-}
-
-/* Číslování */
+/* STRÁNKOVÁNÍ */
 .pagination {
-    margin: 40px 0;
+    margin-top: 40px;
 }
 
 .pagination a {
@@ -108,6 +101,21 @@ h1 {
 .pagination a.active {
     color: white;
     font-weight: bold;
+}
+
+/* MOBIL */
+@media (max-width: 768px) {
+
+    .gallery {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .gallery img {
+        max-width: 90%;
+    }
+
 }
 </style>
 
@@ -123,88 +131,43 @@ h1 {
 
 <div class="gallery">
 
-<img src="10.png" onclick="openLightbox(0)">
-<img src="11.png" onclick="openLightbox(1)">
-<img src="12.png" onclick="openLightbox(2)">
+<img src="10.png" onclick="openImage(this)">
+<img src="11.png" onclick="openImage(this)">
+<img src="12.png" onclick="openImage(this)">
 
+</div>
+
+<div class="overlay" id="overlay" onclick="closeImage()">
+<img id="bigImage">
 </div>
 
 <div class="pagination">
-<a href="galerie.html">1</a>
-<a href="galerie2.html">2</a>
-<a href="galerie3.html">3</a>
-<a href="#" class="active">4</a>
-<a href="galerie5.html">5</a>
-<a href="galerie6.html">6</a>
-<a href="galerie7.html">7</a>
-<a href="galerie8.html">8</a>
-<a href="galerie9.html">9</a>
-</div>
 
-<div id="lightbox">
-<span id="prev" class="arrow" onclick="changeImage(-1)">❮</span>
-
-<img id="lightbox-img">
-
-<span id="next" class="arrow" onclick="changeImage(1)">❯</span>
+<a href="galerie.html">1</a> <a href="galerie2.html">2</a> <a href="galerie3.html">3</a> <a href="#" class="active">4</a> <a href="galerie5.html">5</a> <a href="galerie6.html">6</a> <a href="galerie7.html">7</a> <a href="galerie8.html">8</a> <a href="galerie9.html">9</a>
 
 </div>
 
 <script>
 
-let images = [
-"10.png",
-"11.png",
-"12.png"
-];
+function openImage(img) {
 
-let currentIndex = 0;
+    var overlay =
+    document.getElementById("overlay");
 
-function openLightbox(index) {
-currentIndex = index;
-document.getElementById("lightbox").style.display = "flex";
-document.getElementById("lightbox-img").src = images[currentIndex];
+    var bigImage =
+    document.getElementById("bigImage");
+
+    bigImage.src = img.src;
+
+    overlay.style.display = "flex";
+
 }
 
-function changeImage(direction) {
-currentIndex += direction;
+function closeImage() {
 
-if (currentIndex < 0) {
-currentIndex = images.length - 1;
+    document.getElementById("overlay").style.display = "none";
+
 }
-
-if (currentIndex >= images.length) {
-currentIndex = 0;
-}
-
-document.getElementById("lightbox-img").src = images[currentIndex];
-}
-
-function closeLightbox() {
-document.getElementById("lightbox").style.display = "none";
-}
-
-document.getElementById("lightbox").addEventListener("click", function(e) {
-if (e.target === this) {
-closeLightbox();
-}
-});
-
-document.addEventListener("keydown", function(e) {
-
-if (e.key === "Escape") {
-closeLightbox();
-}
-
-if (e.key === "ArrowRight") {
-changeImage(1);
-}
-
-if (e.key === "ArrowLeft") {
-changeImage(-1);
-}
-
-});
 
 </script>
 
