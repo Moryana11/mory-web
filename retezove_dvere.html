@@ -5,16 +5,34 @@
 <meta charset="UTF-8">
 <title>Zamčené dveře</title>
 
+<!-- Fantasy písmo -->
+
+<link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+
 <style>
+
 body {
+    margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #111;
+    background-color: #000;
     color: white;
     text-align: center;
-    margin: 0;
 }
 
-/* Jednotný rámeček pro všechny dveře a knihy */
+/* Fantasy nadpis */
+h2 {
+    font-family: 'MedievalSharp', cursive;
+    color: #d4af37;
+    margin-top: 30px;
+}
+
+/* Text */
+p {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* Jednotný rámeček jako jinde */
 .frame {
     width: 320px;
     max-width: 90%;
@@ -35,25 +53,18 @@ body {
     cursor: pointer;
 }
 
-h2 {
-    margin-top: 30px;
-    color: #d4af37;
-}
-
-p {
-    color: #ccc;
-}
 </style>
 
 </head>
 
 <body>
 
-<h2>Dveře jsou zapečetěné</h2>
-<p>Někdo zadal špatné heslo.</p>
+<h2>Špatné heslo, příteli.</h2>
+
+<p>Dveře zůstávají zamčené.</p>
 
 <a href="index.html">
-    <img src="retezove_dvere.png" class="frame" alt="Zamčené dveře s řetězem">
+    <img src="retezove_dvere.png" alt="Zamčené dveře" class="frame">
 </a>
 
 <p>Klikni na dveře a zkus to znovu.</p>
