@@ -17,17 +17,8 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/* Nadpis */
-h1 {
-    font-family: 'MedievalSharp', cursive;
-    color: #d4af37;
-    font-size: 36px;
-    margin-top: 20px;
-}
-
-/* Navigace */
 nav {
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 nav a {
@@ -37,27 +28,30 @@ nav a {
     font-size: 18px;
 }
 
-nav a:hover {
-    color: #f1d27a;
+h1 {
+    font-family: 'MedievalSharp', cursive;
+    color: #d4af37;
+    font-size: 36px;
+    margin-top: 10px;
 }
 
-/* Postavy */
-.character {
-    margin: 40px auto;
+.characters {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+    flex-wrap: wrap;
 }
 
 .character img {
     width: 250px;
     border-radius: 10px;
-
     border: 2px solid #d4af37;
-
     box-shadow:
         0 0 8px rgba(212,175,55,0.6),
         0 0 18px rgba(212,175,55,0.4);
 }
 
-/* Stránkování */
 .pagination {
     margin: 40px 0;
 }
@@ -67,11 +61,6 @@ nav a:hover {
     color: #d4af37;
     text-decoration: none;
     margin: 0 10px;
-    font-size: 18px;
-}
-
-.pagination a:hover {
-    color: #f1d27a;
 }
 
 </style>
@@ -80,33 +69,37 @@ nav a:hover {
 
 <body>
 
-<h1>Postavy</h1>
-
 <nav>
     <a href="hlavni.html">Domů</a>
 </nav>
 
+<h1>Postavy</h1>
+
+<div class="characters">
+
 <div class="character">
-    <a href="hugh.html">
-        <img src="hugh.png" alt="Hugh">
-    </a>
+<a href="hugh.html">
+<img src="hugh.png" alt="Hugh">
+</a>
 </div>
 
 <div class="character">
-    <a href="thomas.html">
-        <img src="thomas.png" alt="Thomas">
-    </a>
+<a href="thomas.html">
+<img src="thomas.png" alt="Thomas">
+</a>
 </div>
 
 <div class="character">
-    <a href="william.html">
-        <img src="william.png" alt="William">
-    </a>
+<a href="william.html">
+<img src="william.png" alt="William">
+</a>
+</div>
+
 </div>
 
 <div class="pagination">
-    <a href="postavy.html">← Zpět</a>
-    <a href="postavy3.html">Další →</a>
+<a href="postavy.html">← Zpět</a>
+<a href="postavy3.html">Další →</a>
 </div>
 
 </body>
