@@ -17,8 +17,17 @@ body {
     font-family: Arial, sans-serif;
 }
 
-nav {
+/* Nadpis */
+h1 {
+    font-family: 'MedievalSharp', cursive;
+    color: #d4af37;
+    font-size: 36px;
     margin-top: 20px;
+}
+
+/* Navigace */
+nav {
+    margin-top: 10px;
 }
 
 nav a {
@@ -28,12 +37,11 @@ nav a {
     font-size: 18px;
 }
 
-h1 {
-    font-family: 'MedievalSharp', cursive;
-    color: #d4af37;
-    font-size: 36px;
+nav a:hover {
+    color: #f1d27a;
 }
 
+/* Postavy */
 .character {
     margin: 40px auto;
 }
@@ -41,6 +49,7 @@ h1 {
 .character img {
     width: 250px;
     border-radius: 10px;
+
     border: 2px solid #d4af37;
 
     box-shadow:
@@ -48,6 +57,7 @@ h1 {
         0 0 18px rgba(212,175,55,0.4);
 }
 
+/* Stránkování */
 .pagination {
     margin: 40px 0;
 }
@@ -57,6 +67,11 @@ h1 {
     color: #d4af37;
     text-decoration: none;
     margin: 0 10px;
+    font-size: 18px;
+}
+
+.pagination a:hover {
+    color: #f1d27a;
 }
 
 </style>
@@ -65,11 +80,11 @@ h1 {
 
 <body>
 
+<h1>Postavy</h1>
+
 <nav>
     <a href="hlavni.html">Domů</a>
 </nav>
-
-<h1>Postavy</h1>
 
 <div class="character">
     <a href="hugh.html">
