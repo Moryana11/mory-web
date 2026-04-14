@@ -3,21 +3,21 @@
 <html lang="cs">
 <head>
 <meta charset="UTF-8">
-<title>O mně</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>O mě</title>
 
 <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
 
 <style>
-
 body {
+    background-color: black;
     margin: 0;
-    background-color: #000;
-    color: white;
     text-align: center;
     font-family: Arial, sans-serif;
 }
 
-/* Navigace */
+/* DOMŮ */
 nav {
     margin-top: 20px;
 }
@@ -29,51 +29,63 @@ nav a {
     font-size: 18px;
 }
 
-nav a:hover {
-    color: #f1d27a;
-}
-
-/* Nadpis */
+/* NADPIS */
 h1 {
     font-family: 'MedievalSharp', cursive;
     color: #d4af37;
-    margin-top: 20px;
-    font-size: 32px;
+    font-size: 42px;
+    margin-top: 10px;
 }
 
-/* Kulatý obrázek bez bílého okraje */
-.frame {
-    width: 240px;
-    height: 240px;
+/* OBRÁZEK */
+.profile-img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+
+    margin-top: 30px;
 
     border-radius: 50%;
 
-    border: 2px solid #c9a646;
-
-    padding: 0;
-
-    object-fit: cover;
-
-    background-color: black;
+    border: 2px solid #d4af37;
 
     box-shadow:
-        0 0 8px rgba(201, 166, 70, 0.5);
-
-    display: block;
-    margin: 30px auto;
+        0 0 0 2px #d4af37,
+        0 0 12px rgba(212,175,55,0.6);
 }
 
-/* Text */
-.about-text {
+/* TEXT */
+p {
     color: white;
     font-size: 18px;
+
+    max-width: 750px;
+
+    margin: 30px auto;
+
     line-height: 1.7;
 
-    max-width: 800px;
-    margin: 30px auto 40px auto;
-    padding: 0 20px;
+    padding: 0 15px;
+
+    text-align: center;
 }
 
+/* MOBIL */
+@media (max-width: 768px) {
+
+    h1 {
+        font-size: 36px;
+    }
+
+    .profile-img {
+        max-width: 200px;
+    }
+
+    p {
+        font-size: 19px;
+    }
+
+}
 </style>
 
 </head>
@@ -81,19 +93,22 @@ h1 {
 <body>
 
 <nav>
-    <a href="hlavni.html">Domů</a>
+<a href="hlavni.html">Domů</a>
 </nav>
 
-<h1>O mně</h1>
+<h1>O mě</h1>
 
-<img src="ja.png" alt="Autorka" class="frame">
+<img src="ja.png" alt="Já" class="profile-img">
 
-<div class="about-text">
+<p>
 Psaní příběhů je pro mě něco, co mě opravdu baví a naplňuje.
 Je to svět, do kterého se mohu ponořit, když si potřebuji odpočinout
 nebo si srovnat myšlenky a emoce.
 
-</div>
+Lásku k fantasy a středověku ve mně už od dětství probudili moji rodiče,
+kteří mě v této zálibě vždy podporovali a vedli mě k představivosti a čtení.
+Právě díky nim jsem si k těmto světům vytvořila silné pouto, které mě provází dodnes.
+</p>
 
 </body>
 </html>
