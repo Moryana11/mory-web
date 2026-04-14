@@ -48,6 +48,7 @@ h1 {
     cursor: pointer;
 }
 
+/* Lightbox */
 #lightbox {
     display: none;
     position: fixed;
@@ -58,6 +59,7 @@ h1 {
     background-color: rgba(0,0,0,0.9);
     justify-content: center;
     align-items: center;
+    z-index: 999;
 }
 
 #lightbox img {
@@ -66,6 +68,31 @@ h1 {
     border: 2px solid #d4af37;
 }
 
+/* Šipky */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 50px;
+    color: #d4af37;
+    cursor: pointer;
+    user-select: none;
+    padding: 20px;
+}
+
+.arrow:hover {
+    color: white;
+}
+
+#prev {
+    left: 20px;
+}
+
+#next {
+    right: 20px;
+}
+
+/* Číslování */
 .pagination {
     margin: 40px 0;
 }
@@ -95,9 +122,9 @@ h1 {
 
 <div class="gallery">
 
-<img src="obrazek4.png" onclick="openLightbox(this)">
-<img src="obrazek5.png" onclick="openLightbox(this)">
-<img src="obrazek6.png" onclick="openLightbox(this)">
+<img src="obrazek4.png" onclick="openLightbox(0)">
+<img src="obrazek5.png" onclick="openLightbox(1)">
+<img src="obrazek6.png" onclick="openLightbox(2)">
 
 </div>
 
@@ -113,19 +140,71 @@ h1 {
 <a href="galerie9.html">9</a>
 </div>
 
-<div id="lightbox" onclick="closeLightbox()">
+<div id="lightbox">
+<span id="prev" class="arrow" onclick="changeImage(-1)">❮</span>
+
 <img id="lightbox-img">
+
+<span id="next" class="arrow" onclick="changeImage(1)">❯</span>
+
 </div>
 
 <script>
-function openLightbox(img) {
+
+let images = [
+"obrazek4.png",
+"obrazek5.png",
+"obrazek6.png"
+];
+
+let currentIndex = 0;
+
+function openLightbox(index) {
+currentIndex = index;
 document.getElementById("lightbox").style.display = "flex";
-document.getElementById("lightbox-img").src = img.src;
+document.getElementById("lightbox-img").src = images[currentIndex];
+}
+
+function changeImage(direction) {
+currentIndex += direction;
+
+if (currentIndex < 0) {
+currentIndex = images.length - 1;
+}
+
+if (currentIndex >= images.length) {
+currentIndex = 0;
+}
+
+document.getElementById("lightbox-img").src = images[currentIndex];
 }
 
 function closeLightbox() {
 document.getElementById("lightbox").style.display = "none";
 }
+
+document.getElementById("lightbox").addEventListener("click", function(e) {
+if (e.target === this) {
+closeLightbox();
+}
+});
+
+document.addEventListener("keydown", function(e) {
+
+if (e.key === "Escape") {
+closeLightbox();
+}
+
+if (e.key === "ArrowRight") {
+changeImage(1);
+}
+
+if (e.key === "ArrowLeft") {
+changeImage(-1);
+}
+
+});
+
 </script>
 
 </body>
