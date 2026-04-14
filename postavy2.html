@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<title>Postavy</title>
+
+<link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+
+<style>
+
+body {
+    margin: 0;
+    background-color: #000;
+    color: white;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    font-family: 'MedievalSharp', cursive;
+    color: #d4af37;
+    margin-top: 30px;
+}
+
+nav a {
+    font-family: 'MedievalSharp', cursive;
+    color: #d4af37;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav a:hover {
+    color: #f1d27a;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.frame {
+    width: 220px;
+    height: auto;
+
+    border-radius: 12px;
+    border: 1px solid #c9a646;
+
+    padding: 10px;
+    background-color: black;
+
+    box-shadow:
+        0 0 6px rgba(201, 166, 70, 0.4);
+
+    cursor: pointer;
+}
+
+.character-name {
+    font-family: 'MedievalSharp', cursive;
+    color: #d4af37;
+    margin-top: 10px;
+}
+
+.pagination {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.pagination a {
+    font-family: 'MedievalSharp', cursive;
+    color: #d4af37;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 18px;
+}
+
+.pagination a:hover {
+    color: #f1d27a;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Postavy</h1>
+
+<nav>
+    <a href="hlavni.html">Domů</a>
+</nav>
+
+<div class="container">
+
+<!-- Hugh -->
+
+<div>
+    <a href="hugh.html">
+        <img src="hugh.png" alt="Hugh" class="frame">
+    </a>
+    <div class="character-name">Hugh</div>
+</div>
+
+<!-- Thomas -->
+
+<div>
+    <a href="thomas.html">
+        <img src="thomas.png" alt="Thomas" class="frame">
+    </a>
+    <div class="character-name">Thomas</div>
+</div>
+
+<!-- William -->
+
+<div>
+    <a href="william.html">
+        <img src="william.png" alt="William" class="frame">
+    </a>
+    <div class="character-name">William</div>
+</div>
+
+</div>
+
+<div class="pagination">
+
+<a href="postavy.html">1</a> <strong>2</strong> <a href="postavy3.html">3</a> <a href="postavy4.html">4</a>
+
+</div>
+
+</body>
+</html>
