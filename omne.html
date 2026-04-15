@@ -3,112 +3,110 @@
 <html lang="cs">
 <head>
 <meta charset="UTF-8">
+
+<!-- Optimalizace pro mobil -->
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>O mně</title>
 
-<link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
-
 <style>
+
 body {
-    background-color: black;
     margin: 0;
+    background-color: black;
+    font-family: Georgia, "Times New Roman", serif;
+    color: #d4af37;
     text-align: center;
-    font-family: Arial, sans-serif;
 }
 
-/* DOMŮ */
-nav {
-    margin-top: 20px;
+/* MENU */
+
+.menu {
+    padding: 25px 10px;
+    font-size: 26px;
 }
 
-nav a {
-    font-family: 'MedievalSharp', cursive;
+.menu a {
     color: #d4af37;
     text-decoration: none;
-    font-size: 18px;
+    margin: 0 30px;
+    display: inline-block;
+    transition: 0.3s;
 }
 
-/* NADPIS */
-h1 {
-    font-family: 'MedievalSharp', cursive;
-    color: #d4af37;
-    font-size: 42px;
-    margin-top: 10px;
+.menu a:hover {
+    text-shadow: 0 0 10px #d4af37;
 }
 
-/* OBRÁZEK */
-.profile-img {
-    width: 100%;
-    max-width: 250px;
-    height: auto;
+/* OBSAH */
 
-    margin-top: 30px;
-
-    border-radius: 50%;
-
-    border: 2px solid #d4af37;
-
-    box-shadow:
-        0 0 0 2px #d4af37,
-        0 0 12px rgba(212,175,55,0.6);
-}
-
-/* TEXT */
-p {
-    color: white;
-    font-size: 18px;
-
-    max-width: 750px;
-
-    margin: 30px auto;
-
+.content {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 0 20px;
     line-height: 1.7;
+    font-size: 20px;
+}
 
-    padding: 0 15px;
-
-    text-align: center;
+h1 {
+    font-size: 40px;
+    margin-bottom: 30px;
 }
 
 /* MOBIL */
+
 @media (max-width: 768px) {
 
+    .menu {
+        font-size: 20px;
+    }
+
+    .menu a {
+        margin: 8px 12px;
+    }
+
     h1 {
-        font-size: 36px;
+        font-size: 30px;
     }
 
-    .profile-img {
-        max-width: 200px;
-    }
-
-    p {
-        font-size: 19px;
+    .content {
+        font-size: 18px;
     }
 
 }
+
 </style>
 
 </head>
 
 <body>
 
-<nav>
-<a href="hlavni.html">Domů</a>
+<nav class="menu">
+    <a href="omne.html">O mně</a>
+    <a href="knihy.html">Knihy</a>
+    <a href="hudba.html">Hudba</a>
+    <a href="vzkazy.html">Vzkazy</a>
 </nav>
 
-<h1>O mně</h1>
+<div class="content">
 
-<img src="ja.png" alt="Já" class="profile-img">
+<h1>O mně</h1>
 
 <p>
 Psaní příběhů je pro mě něco, co mě opravdu baví a naplňuje.
 Je to svět, do kterého se mohu ponořit, když si potřebuji odpočinout
 nebo si srovnat myšlenky a emoce.
-
-K lásce k fantasy a středověku mě přivedli moji rodiče, 
-kteří mě v této zálibě vždy podporovali a vedli mě k představivosti a čtení.
-Právě díky nim jsem si k těmto světům vytvořila silné pouto, které mě provází dodnes.
 </p>
+
+<p>
+K lásce k fantasy a středověku mně přivedli moji rodiče,
+kteří mě v této zálibě vždy podporovali.
+Díky nim jsem si vytvořila silný vztah k příběhům, dobrodružství a světům,
+kde je možné téměř cokoli.
+</p>
+
+</div>
 
 </body>
 </html>
