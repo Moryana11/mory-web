@@ -3,95 +3,229 @@
 <html lang="cs">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Hrad Kamenný strážce</title>
 
 <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
 
 <style>
+
 body {
-    background-color: black;
     margin: 0;
+    background-color: black;
+    color: white;
     text-align: center;
     font-family: Arial, sans-serif;
 }
 
-nav {
-    margin-top: 20px;
+/* ZPĚT */
+
+.back-link {
+    margin-top: 25px;
 }
 
-nav a {
+.back-link a {
     font-family: 'MedievalSharp', cursive;
     color: #d4af37;
     text-decoration: none;
     font-size: 18px;
 }
 
+/* NADPIS */
+
 h1 {
     font-family: 'MedievalSharp', cursive;
     color: #d4af37;
     font-size: 42px;
-    margin-top: 20px;
+    margin-top: 15px;
 }
 
-img {
-    width: 400px;
-    margin-top: 30px;
+/* OBRÁZEK */
+
+.location-image {
+
+    width: 100%;
+    max-width: 900px;
+
     border-radius: 12px;
+
     border: 2px solid #d4af37;
-    box-shadow: 0 0 10px rgba(212,175,55,0.6);
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 0 2px #d4af37,
+        0 0 12px rgba(212,175,55,0.6);
+
+    margin-top: 25px;
+
 }
 
-p {
-    color: white;
-    font-size: 18px;
-    max-width: 850px;
-    margin: 20px auto;
+/* TEXT */
+
+.text-box {
+
+    max-width: 900px;
+
+    margin: 30px auto;
+
+    padding: 0 20px;
+
+    text-align: left;
+
     line-height: 1.7;
-    text-align: justify;
+
+    font-size: 18px;
+
 }
+
+/* ZVĚTŠENÝ OBRÁZEK */
+
+.overlay {
+
+    display: none;
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0,0,0,0.95);
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 999;
+
+}
+
+.overlay img {
+
+    max-width: 95%;
+    max-height: 95%;
+
+}
+
+/* MOBIL */
+
+@media (max-width: 768px) {
+
+    h1 {
+        font-size: 34px;
+    }
+
+    .text-box {
+        font-size: 17px;
+    }
+
+}
+
 </style>
 
 </head>
 
 <body>
 
-<nav>
-<a href="lokace.html">← Zpět na lokace</a>
-</nav>
+<div class="back-link">
+<a href="lokace.html">← Zpět na Lokace</a>
+</div>
 
 <h1>Hrad Kamenný strážce</h1>
 
-<img src="kamenny_strazce.png" alt="Hrad Kamenný strážce">
+<img
+src="kamenny_strazce.png"
+class="location-image"
+onclick="openImage(this)"
+alt="Hrad Kamenný strážce"
+
+>
+
+<div class="text-box">
+
 
 <p>
+
 Hrad <strong>Kamenný strážce</strong> je mohutná pevnost nacházející se úplně na jihu země 
-<strong>Stonegard</strong>, na kontinentu <strong>Solisium</strong>. Tyčí se na okraji vysokých skal, 
+Stonegard, na kontinentu Solisium. Tyčí se na okraji vysokých skal, 
 které po staletí odolávají větru, písku i bouřím. Je považován za jednu z nejnedobytnějších pevností 
 celé země a symbol neochvějné síly Stonegardu.
+
 </p>
 
 <p>
+
 Ze severu, východu i západu je hrad obklopen nehostinnou krajinou — rozlehlou pouští a ostrými skalisky, 
 která tvoří přirozenou obranu proti nepřátelům. Jen málo cest vede k jeho branám a každá z nich je pečlivě střežena.
 </p>
 
 <p>
+
 Na jižní straně se pod vysokým skalním převisem rozprostírá moře. Vlny narážejí do kamenných útesů hluboko 
 pod hradbami a jejich dunění je slyšet i v nejvyšších věžích. Tento jedinečný přírodní štít činí z 
 Kamenného strážce pevnost, kterou je téměř nemožné oblehnout.
+
 </p>
 
 <p>
+
 Uvnitř hradu se nacházejí rozsáhlá nádvoří, zbrojnice, výcviková pole i sály určené pro porady velitelů 
 a vládců. Odtud jsou řízeny vojenské operace a obrana celé země Stonegard. 
 <strong>V hradě Kamenný strážce sídlí stonegardské síly odporu</strong>, které odtud plánují obranné strategie, 
 koordinují své jednotky a připravují se na střet s nepřáteli země.
+
 </p>
 
 <p>
+
 Kamenný strážce není jen pevností. Je to symbol vytrvalosti, odvahy a odhodlání bránit Stonegard za každou cenu — 
 poslední bastion naděje na samém okraji země.
+
 </p>
+
+
+</div>
+
+<div
+class="overlay"
+id="overlay"
+onclick="closeImage()"
+>
+
+<img id="bigImage">
+
+</div>
+
+<script>
+
+function openImage(img) {
+
+    var overlay =
+    document.getElementById("overlay");
+
+    var bigImage =
+    document.getElementById("bigImage");
+
+    bigImage.src =
+    img.src;
+
+    overlay.style.display =
+    "flex";
+
+}
+
+function closeImage() {
+
+    document.getElementById("overlay")
+    .style.display =
+    "none";
+
+}
+
+</script>
 
 </body>
 </html>
