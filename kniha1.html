@@ -3,125 +3,118 @@
 <html lang="cs">
 <head>
 <meta charset="UTF-8">
-
-<!-- Optimalizace pro mobil -->
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Oheň a voda</title>
+
+<link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
 
 <style>
 
 body {
     margin: 0;
     background-color: black;
-    font-family: Georgia, "Times New Roman", serif;
-    color: #d4af37;
     text-align: center;
+    font-family: Arial, sans-serif;
+    color: white;
 }
 
-/* HORNÍ MENU */
+/* ZPĚT NA KNIHY */
 
-.menu {
-    padding: 25px 10px;
-    font-size: 26px;
-}
-
-.menu a {
-    color: #d4af37;
-    text-decoration: none;
-    margin: 0 30px;
-    display: inline-block;
-    transition: 0.3s;
-}
-
-.menu a:hover {
-    text-shadow: 0 0 10px #d4af37;
-}
-
-/* TLAČÍTKO ZPĚT */
-
-.back-button {
+.back-link {
     margin-top: 20px;
-    font-size: 20px;
 }
 
-.back-button a {
+.back-link a {
+    font-family: 'MedievalSharp', cursive;
     color: #d4af37;
     text-decoration: none;
-    transition: 0.3s;
+    font-size: 18px;
 }
 
-.back-button a:hover {
-    text-shadow: 0 0 10px #d4af37;
-}
+/* NADPIS */
 
-/* NÁZEV KNIHY */
-
-.book-title {
-    margin-top: 25px;
+h1 {
+    font-family: 'MedievalSharp', cursive;
+    color: #d4af37;
     font-size: 42px;
+    margin-top: 10px;
 }
 
 /* MENU KNIHY */
 
 .book-menu {
-    margin-top: 35px;
-    font-size: 28px;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 40px;
+
+    margin-top: 25px;
+
+    flex-wrap: wrap;
+
 }
 
 .book-menu a {
+
+    font-family: 'MedievalSharp', cursive;
+
     color: #d4af37;
+
     text-decoration: none;
-    margin: 0 25px;
-    display: inline-block;
-    transition: 0.3s;
+
+    font-size: 22px;
+
 }
 
 .book-menu a:hover {
-    text-shadow: 0 0 15px #d4af37;
+    text-shadow: 0 0 10px #d4af37;
 }
 
 /* MAPA */
 
 .map-container {
     margin-top: 40px;
-    margin-bottom: 40px;
 }
 
 .map-container img {
-    max-width: 90%;
+
+    width: 100%;
+
+    max-width: 900px;
+
     height: auto;
+
     border-radius: 14px;
+
     border: 2px solid #d4af37;
+
+    box-shadow:
+        0 0 0 2px #d4af37,
+        0 0 14px rgba(212,175,55,0.6);
+
 }
 
 /* MOBIL */
 
 @media (max-width: 768px) {
 
-    .menu {
-        font-size: 20px;
-    }
-
-    .menu a {
-        margin: 8px 12px;
-    }
-
-    .back-button {
-        font-size: 18px;
-    }
-
-    .book-title {
-        font-size: 30px;
+    h1 {
+        font-size: 34px;
     }
 
     .book-menu {
-        font-size: 22px;
+        gap: 20px;
     }
 
     .book-menu a {
-        margin: 8px 12px;
+        font-size: 20px;
+    }
+
+    .map-container img {
+        max-width: 95%;
     }
 
 }
@@ -132,44 +125,28 @@ body {
 
 <body>
 
-<!-- HLAVNÍ MENU -->
-
-<nav class="menu">
-    <a href="omne.html">O mně</a>
-    <a href="knihy.html">Knihy</a>
-    <a href="hudba.html">Hudba</a>
-    <a href="vzkazy.html">Vzkazy</a>
-</nav>
-
-<!-- ZPĚT NA PŘEHLED KNIH -->
-
-<div class="back-button">
-    <a href="knihy.html">← Zpět na přehled knih</a>
+<div class="back-link">
+<a href="knihy.html">← Zpět na přehled knih</a>
 </div>
 
-<!-- NÁZEV KNIHY -->
-
-<h1 class="book-title">
-    Oheň a voda
-</h1>
-
-<!-- MENU KNIHY -->
+<h1>Oheň a voda</h1>
 
 <div class="book-menu">
 
-```
 <a href="kapitoly.html">Kapitoly</a>
+
 <a href="postavy.html">Postavy</a>
+
 <a href="lokace.html">Lokace</a>
+
 <a href="galerie.html">Galerie</a>
-```
 
 </div>
 
-<!-- MAPA -->
-
 <div class="map-container">
-    <img src="mapa2.png" alt="Mapa světa">
+
+<img src="mapa.png" alt="Mapa světa">
+
 </div>
 
 </body>
