@@ -1,1 +1,254 @@
+<!DOCTYPE html>
 
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Vzkazy</title>
+
+<link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+
+<style>
+
+body {
+    margin: 0;
+    background-color: black;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+.back-link {
+    margin-top: 25px;
+}
+
+.back-link a {
+    font-family: 'MedievalSharp', cursive;
+    color: #d4af37;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+h1 {
+    font-family: 'MedievalSharp', cursive;
+    color: #d4af37;
+    font-size: 42px;
+    margin-top: 20px;
+}
+
+.image-box {
+    margin-top: 25px;
+}
+
+.image-box img {
+    width: 100%;
+    max-width: 260px;
+    border-radius: 12px;
+    border: 2px solid #d4af37;
+    box-shadow:
+        0 0 0 2px #d4af37,
+        0 0 12px rgba(212,175,55,0.6);
+}
+
+.form-box {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #d4af37;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+}
+
+textarea {
+    height: 120px;
+}
+
+button {
+    margin-top: 10px;
+    padding: 12px 25px;
+    font-family: 'MedievalSharp', cursive;
+    font-size: 18px;
+    background-color: black;
+    color: #d4af37;
+    border: 2px solid #d4af37;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #d4af37;
+    color: black;
+}
+
+.messages {
+    max-width: 600px;
+    margin: 30px auto;
+    text-align: left;
+}
+
+.message {
+    border: 1px solid #d4af37;
+    border-radius: 10px;
+    padding: 12px;
+    margin-bottom: 15px;
+}
+
+.name {
+    font-weight: bold;
+    color: #d4af37;
+}
+
+.time {
+    font-size: 14px;
+    color: #bbbbbb;
+    margin-bottom: 8px;
+}
+
+.delete-btn {
+    margin-top: 10px;
+    padding: 6px 12px;
+    font-size: 14px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="back-link">
+<a href="hlavni.html">← Zpět na hlavní stranu</a>
+</div>
+
+<h1>Vzkazy</h1>
+
+<div class="image-box">
+<img src="vzkazy.png" alt="Vzkazy">
+</div>
+
+<div class="form-box">
+
+<input type="text" id="name" placeholder="Jméno nebo přezdívka">
+
+<textarea id="text" placeholder="Napiš svůj vzkaz..."></textarea>
+
+<button onclick="addMessage()">
+Odeslat
+</button>
+
+</div>
+
+<div class="messages" id="messages"></div>
+
+<script>
+
+function getCurrentDateTime() {
+
+    var now = new Date();
+
+    var date =
+        now.getDate().toString().padStart(2, '0') + "." +
+        (now.getMonth() + 1).toString().padStart(2, '0') + "." +
+        now.getFullYear();
+
+    var time =
+        now.getHours().toString().padStart(2, '0') + ":" +
+        now.getMinutes().toString().padStart(2, '0');
+
+    return date + " " + time;
+
+}
+
+function loadMessages() {
+
+    var saved =
+    localStorage.getItem("messages");
+
+    if (saved) {
+
+        document.getElementById("messages")
+        .innerHTML = saved;
+
+    }
+
+}
+
+function addMessage() {
+
+    var name =
+    document.getElementById("name").value;
+
+    var text =
+    document.getElementById("text").value;
+
+    if (name === "" || text === "") {
+
+        alert("Prosím vyplň jméno i vzkaz.");
+
+        return;
+
+    }
+
+    var datetime =
+    getCurrentDateTime();
+
+    var message =
+    "<div class='message'>" +
+    "<div class='name'>" +
+    name +
+    "</div>" +
+    "<div class='time'>" +
+    datetime +
+    "</div>" +
+    "<div>" +
+    text +
+    "</div>" +
+    "<button class='delete-btn' onclick='deleteMessage(this)'>" +
+    "Smazat" +
+    "</button>" +
+    "</div>";
+
+    var messagesDiv =
+    document.getElementById("messages");
+
+    messagesDiv.innerHTML += message;
+
+    localStorage.setItem(
+        "messages",
+        messagesDiv.innerHTML
+    );
+
+    document.getElementById("name").value = "";
+    document.getElementById("text").value = "";
+
+}
+
+function deleteMessage(button) {
+
+    var message =
+    button.parentElement;
+
+    message.remove();
+
+    localStorage.setItem(
+        "messages",
+        document.getElementById("messages").innerHTML
+    );
+
+}
+
+loadMessages();
+
+</script>
+
+</body>
+</html>
