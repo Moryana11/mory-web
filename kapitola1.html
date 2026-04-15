@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Kapitola I. Ruiny Turaynu</title>
+<title>Kapitola I. – Ruiny Turaynu</title>
 
 <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
 
@@ -18,7 +18,7 @@ body {
     color: white;
 }
 
-/* NAVIGACE */
+/* NAVIGACE NAHOŘE */
 
 nav {
     text-align: center;
@@ -42,7 +42,7 @@ h1 {
     margin-top: 15px;
 }
 
-/* TEXT */
+/* TEXT KAPITOLY */
 
 .chapter-text {
 
@@ -59,6 +59,46 @@ h1 {
     text-align: left;
 
     white-space: pre-wrap;
+
+}
+
+/* NAVIGACE DOLE */
+
+.chapter-navigation {
+
+    display: flex;
+
+    justify-content: center;
+
+    margin: 50px 0 40px 0;
+
+}
+
+.chapter-navigation a {
+
+    font-family: 'MedievalSharp', cursive;
+
+    color: #d4af37;
+
+    text-decoration: none;
+
+    font-size: 18px;
+
+    padding: 10px 18px;
+
+    border: 2px solid #d4af37;
+
+    border-radius: 8px;
+
+    transition: 0.2s;
+
+}
+
+.chapter-navigation a:hover {
+
+    background-color: #d4af37;
+
+    color: black;
 
 }
 
@@ -88,7 +128,7 @@ h1 {
 <a href="kapitoly.html">Zpět na kapitoly</a>
 </nav>
 
-<h1>Kapitola I. Ruiny Turaynu</h1>
+<h1>Kapitola I. – Ruiny Turaynu</h1>
 
 <div class="chapter-text">
 
@@ -161,8 +201,24 @@ Rowena pomalu vstala a přikývla. „Společně,“ odpověděla prostě.
 Aaliyah se usmála, tentokrát bez posměšku. Jen spokojeně. „Dobře,“ řekla. „Tak jdeme hledat problémy jinde.“
 A tak začala jejich cesta – v troskách zničeného chrámu, mezi šepoty mrtvých a plameny.
 
+</div>
+
+<div class="chapter-navigation">
+
+<a href="kapitola2.html">Další kapitola →</a>
 
 </div>
+
+<script>
+
+/* Uložení poslední přečtené kapitoly */
+
+localStorage.setItem(
+    "posledniKapitola",
+    window.location.href
+);
+
+</script>
 
 </body>
 </html>
