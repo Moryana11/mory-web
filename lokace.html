@@ -43,6 +43,15 @@ body {
     font-size: 20px;
 }
 
+.back-button a {
+    color: #d4af37;
+    text-decoration: none;
+}
+
+.back-button a:hover {
+    text-shadow: 0 0 10px #d4af37;
+}
+
 /* NÁZEV */
 
 .book-title {
@@ -63,6 +72,10 @@ body {
     margin: 0 25px;
 }
 
+.book-menu a:hover {
+    text-shadow: 0 0 15px #d4af37;
+}
+
 .active {
     text-decoration: underline;
 }
@@ -71,10 +84,10 @@ body {
 
 .locations-container {
     margin-top: 50px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 40px;
+    padding: 0 20px;
 }
 
 /* JEDNA LOKACE */
@@ -85,7 +98,8 @@ body {
 }
 
 .location img {
-    width: 240px;
+    width: 100%;
+    max-width: 260px;
     border-radius: 14px;
     border: 2px solid #d4af37;
     transition: 0.3s;
@@ -101,9 +115,19 @@ body {
     font-size: 20px;
 }
 
+/* TABLET */
+
+@media (max-width: 900px) {
+
+    .locations-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
 /* MOBIL */
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
 
     .menu {
         font-size: 20px;
@@ -121,8 +145,8 @@ body {
         font-size: 22px;
     }
 
-    .location img {
-        width: 170px;
+    .locations-container {
+        grid-template-columns: 1fr;
     }
 
 }
@@ -175,16 +199,6 @@ body {
 <a href="lokace_vez_cisteho_svetla.html" class="location">
     <img src="vez_cisteho_svetla.png" alt="Věž čistého světla">
     <div class="location-title">Věž čistého světla</div>
-</a>
-
-<a href="lokace_vienta.html" class="location">
-    <img src="vienta.png" alt="Vienta">
-    <div class="location-title">Vienta</div>
-</a>
-
-<a href="lokace_kamenny_strazce.html" class="location">
-    <img src="kamenny_strazce.png" alt="Kamenný strážce">
-    <div class="location-title">Kamenný strážce</div>
 </a>
 ```
 
