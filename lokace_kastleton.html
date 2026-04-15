@@ -3,69 +3,151 @@
 <html lang="cs">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Kastleton</title>
 
 <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
 
 <style>
+
 body {
-    background-color: black;
     margin: 0;
+    background-color: black;
+    color: white;
     text-align: center;
     font-family: Arial, sans-serif;
 }
 
-nav {
-    margin-top: 20px;
+/* ZPĚT */
+
+.back-link {
+    margin-top: 25px;
 }
 
-nav a {
+.back-link a {
     font-family: 'MedievalSharp', cursive;
     color: #d4af37;
     text-decoration: none;
     font-size: 18px;
 }
 
+/* NADPIS */
+
 h1 {
     font-family: 'MedievalSharp', cursive;
     color: #d4af37;
     font-size: 42px;
-    margin-top: 20px;
+    margin-top: 15px;
 }
 
-img {
-    width: 400px;
-    margin-top: 30px;
+/* OBRÁZEK */
+
+.location-image {
+
+    width: 100%;
+    max-width: 900px;
+
     border-radius: 12px;
+
     border: 2px solid #d4af37;
-    box-shadow: 0 0 10px rgba(212,175,55,0.6);
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 0 2px #d4af37,
+        0 0 12px rgba(212,175,55,0.6);
+
+    margin-top: 25px;
+
 }
 
-p {
-    color: white;
-    font-size: 18px;
-    max-width: 850px;
-    margin: 20px auto;
+/* TEXT */
+
+.text-box {
+
+    max-width: 900px;
+
+    margin: 30px auto;
+
+    padding: 0 20px;
+
+    text-align: left;
+
     line-height: 1.7;
-    text-align: justify;
+
+    font-size: 18px;
+
 }
+
+/* ZVĚTŠENÝ OBRÁZEK */
+
+.overlay {
+
+    display: none;
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0,0,0,0.95);
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 999;
+
+}
+
+.overlay img {
+
+    max-width: 95%;
+    max-height: 95%;
+
+}
+
+/* MOBIL */
+
+@media (max-width: 768px) {
+
+    h1 {
+        font-size: 34px;
+    }
+
+    .text-box {
+        font-size: 17px;
+    }
+
+}
+
 </style>
 
 </head>
 
 <body>
 
-<nav>
-<a href="lokace.html">← Zpět na lokace</a>
-</nav>
+<div class="back-link">
+<a href="lokace.html">← Zpět na Lokace</a>
+</div>
 
 <h1>Kastleton</h1>
 
-<img src="kastleton.png" alt="Kastleton">
+<img
+src="kastleton.png"
+class="location-image"
+onclick="openImage(this)"
+alt="Kastleton"
 
-<p>
-<strong>Kastleton</strong> je rušné přístavní město ležící na západní straně země <strong>Laslan</strong>, 
-přímo na pobřeží u moře, na kontinentu <strong>Solisium</strong>.
+>
+
+<div class="text-box">
+
+<strong>Kastleton</strong> je rušné přístavní město ležící na západní straně země Laslan, 
+přímo na pobřeží u moře, na kontinentu Solisium.
 </p>
 
 <p>
@@ -98,6 +180,46 @@ Kastleton je město kontrastů — bohatství i bídy, odvahy i strachu, radosti
 Je to místo, kde se křižují osudy, rodí spojenectví a kde každý příchozí může změnit svůj život… 
 nebo ho navždy ztratit.
 </p>
+
+</div>
+
+<div
+class="overlay"
+id="overlay"
+onclick="closeImage()"
+>
+
+<img id="bigImage">
+
+</div>
+
+<script>
+
+function openImage(img) {
+
+    var overlay =
+    document.getElementById("overlay");
+
+    var bigImage =
+    document.getElementById("bigImage");
+
+    bigImage.src =
+    img.src;
+
+    overlay.style.display =
+    "flex";
+
+}
+
+function closeImage() {
+
+    document.getElementById("overlay")
+    .style.display =
+    "none";
+
+}
+
+</script>
 
 </body>
 </html>
