@@ -1,1 +1,126 @@
+<!DOCTYPE html>
 
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+
+<!-- Optimalizace pro mobil -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Knihy</title>
+
+<style>
+
+body {
+    margin: 0;
+    background-color: black;
+    font-family: Georgia, "Times New Roman", serif;
+    color: #d4af37;
+    text-align: center;
+}
+
+/* HORNÍ MENU */
+
+.menu {
+    padding: 25px 10px;
+    font-size: 26px;
+}
+
+.menu a {
+    color: #d4af37;
+    text-decoration: none;
+    margin: 0 30px;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    text-shadow: 0 0 10px #d4af37;
+}
+
+/* KONTEJNER KNIH */
+
+.books-container {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+/* JEDNA KNIHA */
+
+.book {
+    text-decoration: none;
+    color: #d4af37;
+    text-align: center;
+}
+
+.book img {
+    width: 240px;
+    border-radius: 14px;
+    border: 2px solid #d4af37;
+    transition: 0.3s;
+}
+
+.book img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #d4af37;
+}
+
+.book-title {
+    margin-top: 14px;
+    font-size: 22px;
+}
+
+/* MOBIL */
+
+@media (max-width: 768px) {
+
+    .menu {
+        font-size: 20px;
+    }
+
+    .menu a {
+        margin: 8px 12px;
+    }
+
+    .book img {
+        width: 170px;
+    }
+
+    .book-title {
+        font-size: 20px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav class="menu">
+    <a href="omne.html">O mně</a>
+    <a href="knihy.html">Knihy</a>
+    <a href="hudba.html">Hudba</a>
+    <a href="vzkazy.html">Vzkazy</a>
+</nav>
+
+<div class="books-container">
+
+```
+<!-- OBAL KNIHY -->
+
+<a href="kniha1.html" class="book">
+    <img src="ohenavoda.png" alt="Oheň a voda">
+    <div class="book-title">Oheň a voda</div>
+</a>
+```
+
+</div>
+
+</body>
+</html>
