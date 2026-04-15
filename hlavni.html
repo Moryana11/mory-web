@@ -3,35 +3,36 @@
 <html lang="cs">
 <head>
 <meta charset="UTF-8">
-
-<!-- Optimalizace pro mobil -->
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Hlavní stránka</title>
+
+<link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
 
 <style>
 
 body {
     margin: 0;
     background-color: black;
-    font-family: Georgia, "Times New Roman", serif;
     text-align: center;
+    font-family: Arial, sans-serif;
 }
 
 /* MENU */
 
 .menu {
-    padding: 25px 10px;
-    font-size: 26px;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 25px;
+    flex-wrap: wrap;
 }
 
 .menu a {
+    font-family: 'MedievalSharp', cursive;
     color: #d4af37;
     text-decoration: none;
-    margin: 0 30px;
-    display: inline-block;
-    transition: 0.3s;
+    font-size: 26px;
 }
 
 .menu a:hover {
@@ -40,13 +41,24 @@ body {
 
 /* OBRÁZEK */
 
-.image-container {
-    margin-top: 40px;
+.main-image {
+    margin-top: 60px;
 }
 
-.image-container img {
-    max-width: 90%;
+.main-image img {
+
+    width: 100%;
+    max-width: 420px;
     height: auto;
+
+    border-radius: 16px;
+
+    border: 2px solid #d4af37;
+
+    box-shadow:
+        0 0 0 2px #d4af37,
+        0 0 14px rgba(212,175,55,0.6);
+
 }
 
 /* MOBIL */
@@ -54,11 +66,15 @@ body {
 @media (max-width: 768px) {
 
     .menu {
-        font-size: 20px;
+        gap: 25px;
     }
 
     .menu a {
-        margin: 8px 12px;
+        font-size: 22px;
+    }
+
+    .main-image img {
+        max-width: 90%;
     }
 
 }
@@ -69,15 +85,22 @@ body {
 
 <body>
 
-<nav class="menu">
-    <a href="omne.html">O mně</a>
-    <a href="knihy.html">Knihy</a>
-    <a href="hudba.html">Hudba</a>
-    <a href="vzkazy.html">Vzkazy</a>
-</nav>
+<div class="menu">
 
-<div class="image-container">
-    <img src="knihyhlavni.png" alt="Hlavní obrázek">
+<a href="omne.html">O mně</a>
+
+<a href="knihy.html">Knihy</a>
+
+<a href="hudba.html">Hudba</a>
+
+<a href="vzkazy.html">Vzkazy</a>
+
+</div>
+
+<div class="main-image">
+
+<img src="knihyhlavni.png" alt="Knihy">
+
 </div>
 
 </body>
