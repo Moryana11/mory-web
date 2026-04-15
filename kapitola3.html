@@ -18,7 +18,7 @@ body {
     color: white;
 }
 
-/* NAVIGACE */
+/* NAVIGACE NAHOŘE */
 
 nav {
     text-align: center;
@@ -42,7 +42,7 @@ h1 {
     margin-top: 15px;
 }
 
-/* TEXT KAPITOLY */
+/* TEXT */
 
 .chapter-text {
 
@@ -62,6 +62,48 @@ h1 {
 
 }
 
+/* NAVIGACE DOLE */
+
+.chapter-navigation {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 40px;
+
+    margin: 50px 0 40px 0;
+
+}
+
+.chapter-navigation a {
+
+    font-family: 'MedievalSharp', cursive;
+
+    color: #d4af37;
+
+    text-decoration: none;
+
+    font-size: 18px;
+
+    padding: 10px 18px;
+
+    border: 2px solid #d4af37;
+
+    border-radius: 8px;
+
+    transition: 0.2s;
+
+}
+
+.chapter-navigation a:hover {
+
+    background-color: #d4af37;
+
+    color: black;
+
+}
+
 /* MOBIL */
 
 @media (max-width: 768px) {
@@ -74,6 +116,11 @@ h1 {
         font-size: 20px;
         line-height: 2.0;
         padding: 0 16px;
+    }
+
+    .chapter-navigation {
+        flex-direction: column;
+        gap: 15px;
     }
 
 }
@@ -92,7 +139,6 @@ h1 {
 
 <div class="chapter-text">
 
-Flashback z pohledu Aaliyah
 Zlaté světlo zapadajícího slunce dopadalo na ležení, kde se v prachu a unavených pohledech pomalu rozplývala euforie z další vítězné výpravy. Aaliyah seděla na kameni s nohama zkříženýma, hlavu položenou v dlaních. Její šaty byly ohořelé od magie, ruce unavené a srdce jí bilo rychleji než mělo.
 Za zády zaslechla hlas, který znala až příliš dobře. 
 „Zase jsi přepálila, Červená. Tak to dopadá, když chceš spasit celý svět sama.“
@@ -138,12 +184,32 @@ Dva roky Aaliyah sbírala kousky svého srdce a dávala je dohromady. Ve dne jed
 První muž byl jako magnet, který přitahoval všechny kolem sebe. Dominantní. Pevný ve svém postoji. Ovládal ji pohledem, který spaloval víc než žár pouště. Jeho doteky měly moc rozdmýchat v jejím těle oheň, který hořel tak žhavě, že zapomínala na vše kolem sebe. Byly to chvíle, kdy se zdálo, že ji celý svět patří, kdy byla jeho posedlostí, jeho vlastní hrou.
 Ale to všechno byla jen iluze, která zmizela, když se rozednilo. Jeho vášeň byla pouze prchavým plamenem, který spaloval vše, co se mu postavilo do cesty, zanechávající za sebou pouze popel.
 Aaliyah si často připadala jako hračka, kterou zahodil, jakmile ho přestala bavit. Jeho slova byla ostrá jako břitva, často bezohledná a krutá. Byl to muž, který si hrál s emocemi, jako by byly předměty k manipulaci a nikdo, ani ona, nebyl víc než pouhý nástroj jeho momentální potřeby.
-Druhý muž v jejím životě byl pravým opakem bouře. Moc toho nenamluvil – někdy mlčel celé hodiny, jen ji sledoval tím pohledem, ve kterém nebyla jen vášeň, ale něco mnohem nebezpečnějšího. 
+
+Druhý muž v jejím životě byl pravým opakem bouře. Byl tichý jako soumrak, který se plíží krajinou. Moc toho nenamluvil – někdy mlčel celé hodiny, jen ji sledoval tím pohledem, ve kterém nebyla jen vášeň, ale něco mnohem nebezpečnějšího. 
 Přestože byl zdrženlivý, každé jeho gesto křičelo něhou – podal jí vodu, než si o ni stihla říct. Věnoval jí deku, i když mu také musela být zima. Netlačil, když neměla sílu mluvit. 
 A právě v té jeho zdrženlivosti, v jeho jemném dotyku bez nároku, v jeho tichu, které nebylo prázdné, ale plné smyslu, Aaliyah poprvé poznala, co znamená být chtěná – ne pro tělo, ale pro duši.
 
 
 </div>
+
+<div class="chapter-navigation">
+
+<a href="kapitola2.html">← Předchozí kapitola</a>
+
+<a href="kapitola4.html">Další kapitola →</a>
+
+</div>
+
+<script>
+
+/* Uložení poslední přečtené kapitoly */
+
+localStorage.setItem(
+    "posledniKapitola",
+    window.location.href
+);
+
+</script>
 
 </body>
 </html>
