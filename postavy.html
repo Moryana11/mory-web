@@ -3,129 +3,183 @@
 <html lang="cs">
 <head>
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Postavy</title>
-
-<link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+<title>Postavy – Oheň a voda</title>
 
 <style>
+
 body {
-    background-color: black;
     margin: 0;
+    background-color: black;
+    font-family: Georgia, "Times New Roman", serif;
+    color: #d4af37;
     text-align: center;
-    font-family: Arial, sans-serif;
 }
 
-nav {
+/* HORNÍ MENU */
+
+.menu {
+    padding: 25px 10px;
+    font-size: 26px;
+}
+
+.menu a {
+    color: #d4af37;
+    text-decoration: none;
+    margin: 0 30px;
+    display: inline-block;
+}
+
+.menu a:hover {
+    text-shadow: 0 0 10px #d4af37;
+}
+
+/* ZPĚT */
+
+.back-button {
     margin-top: 20px;
+    font-size: 20px;
 }
 
-nav a {
-    font-family: 'MedievalSharp', cursive;
+.back-button a {
     color: #d4af37;
     text-decoration: none;
-    font-size: 18px;
 }
 
-h1 {
-    font-family: 'MedievalSharp', cursive;
-    color: #d4af37;
+.back-button a:hover {
+    text-shadow: 0 0 10px #d4af37;
+}
+
+/* NÁZEV */
+
+.book-title {
+    margin-top: 25px;
     font-size: 42px;
-    margin-top: 10px;
 }
 
-.container {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    margin-top: 40px;
-    flex-wrap: wrap;
+/* MENU KNIHY */
+
+.book-menu {
+    margin-top: 35px;
+    font-size: 28px;
 }
 
-.container img {
-    width: 100%;
-    max-width: 220px;
-    height: auto;
-
-    border-radius: 12px;
-    border: 2px solid #d4af37;
-
-    box-shadow:
-        0 0 0 2px #d4af37,
-        0 0 12px rgba(212,175,55,0.6);
-}
-
-.caption {
-    font-family: 'MedievalSharp', cursive;
-    color: #d4af37;
-    margin-top: 10px;
-    font-size: 18px;
-}
-
-.pagination {
-    margin-top: 40px;
-}
-
-.pagination a {
-    font-family: 'MedievalSharp', cursive;
+.book-menu a {
     color: #d4af37;
     text-decoration: none;
-    margin: 0 8px;
+    margin: 0 25px;
+    display: inline-block;
 }
 
-.pagination a.active {
-    color: white;
-    font-weight: bold;
+.book-menu a:hover {
+    text-shadow: 0 0 15px #d4af37;
 }
+
+.active {
+    text-decoration: underline;
+}
+
+/* STRÁNKY POSTAV */
+
+.pages-container {
+    margin-top: 50px;
+    font-size: 24px;
+}
+
+.page-link {
+    display: block;
+    margin: 14px 0;
+    color: #d4af37;
+    text-decoration: none;
+}
+
+.page-link:hover {
+    text-shadow: 0 0 10px #d4af37;
+}
+
+/* MOBIL */
 
 @media (max-width: 768px) {
 
-    .container {
-        flex-direction: column;
-        align-items: center;
-        gap: 30px;
+    .menu {
+        font-size: 20px;
     }
 
-    .container img {
-        max-width: 260px;
+    .menu a {
+        margin: 8px 12px;
+    }
+
+    .book-title {
+        font-size: 30px;
+    }
+
+    .book-menu {
+        font-size: 22px;
+    }
+
+    .book-menu a {
+        margin: 8px 12px;
+    }
+
+    .pages-container {
+        font-size: 20px;
     }
 
 }
+
 </style>
 
 </head>
 
 <body>
 
-<nav>
-<a href="hlavni.html">Domů</a>
+<nav class="menu">
+    <a href="omne.html">O mně</a>
+    <a href="knihy.html">Knihy</a>
+    <a href="hudba.html">Hudba</a>
+    <a href="vzkazy.html">Vzkazy</a>
 </nav>
 
-<h1>Postavy</h1>
+<div class="back-button">
+    <a href="kniha1.html">← Zpět na Oheň a voda</a>
+</div>
 
-<div class="container">
+<h1 class="book-title">
+    Oheň a voda
+</h1>
 
-<a href="rowena.html">
-<img src="rowena.png">
-<div class="caption">Rowena</div>
-</a>
+<div class="book-menu">
 
-<a href="aaliyah.html">
-<img src="aaliyah.png">
-<div class="caption">Aaliyah</div>
-</a>
-
-<a href="james.html">
-<img src="james.png">
-<div class="caption">James</div>
-</a>
+```
+<a href="kapitoly.html">Kapitoly</a>
+<a href="postavy.html" class="active">Postavy</a>
+<a href="lokace.html">Lokace</a>
+<a href="galerie.html">Galerie</a>
+```
 
 </div>
 
-<div class="pagination">
+<div class="pages-container">
 
-<a href="#" class="active">1</a> <a href="postavy2.html">2</a> <a href="postavy3.html">3</a> <a href="postavy4.html">4</a>
+```
+<a href="postavy1.html" class="page-link">
+    Strana 1
+</a>
+
+<a href="postavy2.html" class="page-link">
+    Strana 2
+</a>
+
+<a href="postavy3.html" class="page-link">
+    Strana 3
+</a>
+
+<a href="postavy4.html" class="page-link">
+    Strana 4
+</a>
+```
 
 </div>
 
