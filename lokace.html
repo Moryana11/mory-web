@@ -3,131 +3,191 @@
 <html lang="cs">
 <head>
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Lokace</title>
-
-<link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+<title>Lokace – Oheň a voda</title>
 
 <style>
+
 body {
-    background-color: black;
     margin: 0;
+    background-color: black;
+    font-family: Georgia, "Times New Roman", serif;
+    color: #d4af37;
     text-align: center;
-    font-family: Arial, sans-serif;
 }
 
-nav {
-    margin-top: 20px;
+/* HORNÍ MENU */
+
+.menu {
+    padding: 25px 10px;
+    font-size: 26px;
 }
 
-nav a {
-    font-family: 'MedievalSharp', cursive;
+.menu a {
     color: #d4af37;
     text-decoration: none;
-    font-size: 18px;
+    margin: 0 30px;
+    display: inline-block;
 }
 
-/* NADPIS */
-h1 {
-    font-family: 'MedievalSharp', cursive;
-    color: #d4af37;
+.menu a:hover {
+    text-shadow: 0 0 10px #d4af37;
+}
+
+/* ZPĚT */
+
+.back-button {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+/* NÁZEV */
+
+.book-title {
+    margin-top: 25px;
     font-size: 42px;
-    margin-top: 10px;
 }
 
-/* KONTEJNER */
-.container {
+/* MENU KNIHY */
+
+.book-menu {
+    margin-top: 35px;
+    font-size: 28px;
+}
+
+.book-menu a {
+    color: #d4af37;
+    text-decoration: none;
+    margin: 0 25px;
+}
+
+.active {
+    text-decoration: underline;
+}
+
+/* KONTEJNER LOKACÍ */
+
+.locations-container {
+    margin-top: 50px;
     display: flex;
     justify-content: center;
-    gap: 40px;
-    margin-top: 40px;
     flex-wrap: wrap;
+    gap: 40px;
 }
 
-.container a {
+/* JEDNA LOKACE */
+
+.location {
     text-decoration: none;
+    color: #d4af37;
 }
 
-/* OBRÁZKY */
-.container img {
-    width: 100%;
-    max-width: 250px;
-    height: auto;
-    border-radius: 12px;
+.location img {
+    width: 240px;
+    border-radius: 14px;
     border: 2px solid #d4af37;
-    box-shadow: 0 0 10px rgba(212,175,55,0.6);
+    transition: 0.3s;
 }
 
-/* NÁZEV POD OBRÁZKEM */
-.caption {
-    font-family: 'MedievalSharp', cursive;
-    color: #d4af37;
-    margin-top: 10px;
-    font-size: 18px;
+.location img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #d4af37;
 }
 
-/* ČÍSLOVÁNÍ */
-.pagination {
-    margin-top: 40px;
-}
-
-.pagination a {
-    font-family: 'MedievalSharp', cursive;
-    color: #d4af37;
-    text-decoration: none;
-    margin: 0 8px;
-}
-
-.pagination a.active {
-    color: white;
-    font-weight: bold;
+.location-title {
+    margin-top: 12px;
+    font-size: 20px;
 }
 
 /* MOBIL */
+
 @media (max-width: 768px) {
 
-    .container {
-        flex-direction: column;
-        align-items: center;
-        gap: 30px;
+    .menu {
+        font-size: 20px;
+    }
+
+    .menu a {
+        margin: 8px 12px;
+    }
+
+    .book-title {
+        font-size: 30px;
+    }
+
+    .book-menu {
+        font-size: 22px;
+    }
+
+    .location img {
+        width: 170px;
     }
 
 }
+
 </style>
 
 </head>
 
 <body>
 
-<nav>
-<a href="hlavni.html">Domů</a>
+<nav class="menu">
+    <a href="omne.html">O mně</a>
+    <a href="knihy.html">Knihy</a>
+    <a href="hudba.html">Hudba</a>
+    <a href="vzkazy.html">Vzkazy</a>
 </nav>
 
-<h1>Lokace</h1>
+<div class="back-button">
+    <a href="kniha1.html">← Zpět na Oheň a voda</a>
+</div>
 
-<div class="container">
+<h1 class="book-title">
+    Oheň a voda
+</h1>
 
-<a href="lokace_kastleton.html">
-    <img src="kastleton.png" alt="Kastleton">
-    <div class="caption">Kastleton</div>
-</a>
+<div class="book-menu">
 
-<a href="lokace_vienta.html">
-    <img src="vienta.png" alt="Vienta">
-    <div class="caption">Vienta</div>
-</a>
-
-<a href="lokace_kamenny_strazce.html">
-    <img src="kamenny_strazce.png" alt="Hrad Kamenný strážce">
-    <div class="caption">Hrad Kamenný strážce</div>
-</a>
+```
+<a href="kapitoly.html">Kapitoly</a>
+<a href="postavy.html">Postavy</a>
+<a href="lokace.html" class="active">Lokace</a>
+<a href="galerie.html">Galerie</a>
+```
 
 </div>
 
-<div class="pagination">
-<a href="#" class="active">1</a>
-<a href="lokace2.html">2</a>
+<div class="locations-container">
+
+```
+<a href="lokace_kastleton.html" class="location">
+    <img src="kastleton.png" alt="Kastleton">
+    <div class="location-title">Kastleton</div>
+</a>
+
+<a href="lokace_turayne.html" class="location">
+    <img src="turayne.png" alt="Ruiny Turaynu">
+    <div class="location-title">Ruiny Turaynu</div>
+</a>
+
+<a href="lokace_vez_cisteho_svetla.html" class="location">
+    <img src="vez_cisteho_svetla.png" alt="Věž čistého světla">
+    <div class="location-title">Věž čistého světla</div>
+</a>
+
+<a href="lokace_vienta.html" class="location">
+    <img src="vienta.png" alt="Vienta">
+    <div class="location-title">Vienta</div>
+</a>
+
+<a href="lokace_kamenny_strazce.html" class="location">
+    <img src="kamenny_strazce.png" alt="Kamenný strážce">
+    <div class="location-title">Kamenný strážce</div>
+</a>
+```
+
 </div>
 
 </body>
