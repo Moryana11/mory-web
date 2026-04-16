@@ -1,15 +1,41 @@
 <!DOCTYPE html>
 
-<html lang="cs">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>About me</title>
+<title>About Me</title>
 
 <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
 
 <style>
+
+/* LANGUAGE SWITCH */
+
+.language-switch {
+
+position: fixed;
+
+top: 15px;
+
+right: 20px;
+
+font-size: 22px;
+
+z-index: 1000;
+
+}
+
+.language-switch a {
+
+text-decoration: none;
+
+margin-left: 8px;
+
+}
+
+/* BODY */
 
 body {
     margin: 0;
@@ -19,7 +45,7 @@ body {
     color: white;
 }
 
-/* ZPĚT */
+/* BACK LINK */
 
 .back-link {
     margin-top: 25px;
@@ -32,16 +58,16 @@ body {
     font-size: 18px;
 }
 
-/* NADPIS */
+/* TITLE */
 
 h1 {
     font-family: 'MedievalSharp', cursive;
     color: #d4af37;
     font-size: 42px;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
-/* OBRÁZEK */
+/* IMAGE */
 
 .profile-image {
     margin-top: 30px;
@@ -50,38 +76,35 @@ h1 {
 .profile-image img {
 
     width: 100%;
-    max-width: 280px;
-    height: auto;
+    max-width: 300px;
 
-    border-radius: 14px;
+    border-radius: 12px;
 
     border: 2px solid #d4af37;
 
     box-shadow:
         0 0 0 2px #d4af37,
-        0 0 14px rgba(212,175,55,0.6);
+        0 0 12px rgba(212,175,55,0.6);
 
 }
 
 /* TEXT */
 
-.content {
+.text-box {
 
-    max-width: 800px;
+    max-width: 700px;
 
-    margin: 35px auto;
+    margin: 30px auto;
 
     padding: 0 20px;
 
-    font-size: 18px;
-
     line-height: 1.7;
 
-    color: #d4af37;
+    font-size: 18px;
 
 }
 
-/* MOBIL */
+/* MOBILE */
 
 @media (max-width: 768px) {
 
@@ -89,12 +112,8 @@ h1 {
         font-size: 34px;
     }
 
-    .content {
-        font-size: 17px;
-    }
-
     .profile-image img {
-        max-width: 85%;
+        max-width: 90%;
     }
 
 }
@@ -105,27 +124,39 @@ h1 {
 
 <body>
 
-<div class="back-link">
-<a href="hlavni_en.html">← Back to Home page</a>
+<div class="language-switch">
+
+<a href="omne.html">🇨🇿</a>
+
+<a href="aboutme.html">🇬🇧</a>
+
 </div>
 
-<h1>About me</h1>
+<div class="back-link">
+<a href="hlavni_en.html">← Back to main page</a>
+</div>
+
+<h1>About Me</h1>
 
 <div class="profile-image">
 
-<img src="ja.png" alt="Já">
+<img src="ja.png" alt="Author">
 
 </div>
 
-<div class="content">
+<div class="text-box">
 
 <p>
 Writing stories is something that truly brings me joy and fulfillment.
-It is a world I can immerse myself in when I need to rest or sort out my thoughts and emotions.
+It is a world I can dive into whenever I need to relax or organize my
+thoughts and emotions.
 </p>
 
 <p>
-My love for fantasy and the Middle Ages was taught to me by my parents, who always supported me in this hobby. Thanks to them, I developed a strong relationship with stories, adventures and worlds where almost anything is possible.
+My love for fantasy and the medieval world was inspired by my parents,
+who always supported this passion. Thanks to them, I developed a strong
+connection to stories, adventures, and worlds where almost anything is
+possible.
 </p>
 
 </div>
