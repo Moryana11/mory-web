@@ -5,11 +5,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Dveře zůstávají zamčené</title>
+<title>Zamčené dveře</title>
 
 <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
 
 <style>
+
 body {
     background-color: black;
     margin: 0;
@@ -17,53 +18,101 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/* OBRÁZEK */
+/* PŘEPÍNAČ */
+
+.language-switch {
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    font-size: 22px;
+}
+
+.language-switch a {
+    text-decoration: none;
+    margin-left: 8px;
+}
+
+/* DVEŘE */
+
 img {
+    margin-top: 40px;
     width: 100%;
     max-width: 350px;
-    height: auto;
-    margin-top: 40px;
     border-radius: 12px;
     border: 2px solid #d4af37;
-    box-shadow: 0 0 10px rgba(212,175,55,0.6);
-    cursor: pointer;
+    box-shadow:
+        0 0 0 2px #d4af37,
+        0 0 12px rgba(212,175,55,0.6);
 }
 
 /* TEXT */
+
 p {
-    color: #d4af37;
+    margin-top: 25px;
     font-family: 'MedievalSharp', cursive;
-    font-size: 20px;
-    margin-top: 20px;
+    color: #d4af37;
+    font-size: 22px;
 }
 
-/* MOBIL */
-@media (max-width: 768px) {
-
-    img {
-        max-width: 280px;
-    }
-
-    p {
-        font-size: 22px;
-        padding: 0 15px;
-    }
-
-}
 </style>
 
 </head>
 
 <body>
 
-<a href="index.html">
-    <img src="retezove_dvere.png" alt="Dveře s řetězem">
-</a>
+<div class="language-switch">
 
-<p>
-Dveře zůstávají zamčené.  
-Klikni na dveře a zkus to znovu.
-</p>
+<a href="#" onclick="setLang('cz')">🇨🇿</a> <a href="#" onclick="setLang('en')">🇬🇧</a>
+
+</div>
+
+<img src="dvere_retez.png">
+
+<p id="text"></p>
+
+<script>
+
+var lang =
+localStorage.getItem("lang") || "cz";
+
+applyLanguage();
+
+function setLang(l) {
+
+localStorage.setItem("lang", l);
+
+lang = l;
+
+applyLanguage();
+
+}
+
+function applyLanguage() {
+
+var text =
+document.getElementById("text");
+
+if (lang === "en") {
+
+document.title =
+"Locked Door";
+
+text.innerHTML =
+"The door remains locked.<br>Click the door and try again.";
+
+} else {
+
+document.title =
+"Zamčené dveře";
+
+text.innerHTML =
+"Dveře zůstávají zamčené.<br>Klikni na dveře a zkus to znovu.";
+
+}
+
+}
+
+</script>
 
 </body>
 </html>
