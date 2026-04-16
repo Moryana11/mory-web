@@ -10,6 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
 
 <style>
+
 body {
     background-color: black;
     margin: 0;
@@ -20,25 +21,15 @@ body {
 /* LANGUAGE SWITCH */
 
 .language-switch {
-
-position: fixed;
-
-top: 15px;
-
-right: 20px;
-
-font-size: 22px;
-
-z-index: 1000;
-
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    font-size: 22px;
 }
 
 .language-switch a {
-
-text-decoration: none;
-
-margin-left: 8px;
-
+    text-decoration: none;
+    margin-left: 8px;
 }
 
 /* CONTAINER */
@@ -52,15 +43,11 @@ margin-left: 8px;
 #dvere {
     width: 100%;
     max-width: 350px;
-    height: auto;
-
     border-radius: 12px;
     border: 2px solid #d4af37;
-
     box-shadow:
         0 0 0 2px #d4af37,
         0 0 12px rgba(212,175,55,0.6);
-
     cursor: pointer;
 }
 
@@ -69,7 +56,6 @@ margin-left: 8px;
 label {
     display: block;
     margin-top: 25px;
-
     font-family: 'MedievalSharp', cursive;
     color: #d4af37;
     font-size: 22px;
@@ -82,7 +68,6 @@ input {
     padding: 10px;
     width: 250px;
     max-width: 80%;
-
     font-size: 16px;
 }
 
@@ -91,28 +76,10 @@ input {
 button {
     margin-top: 15px;
     padding: 10px 20px;
-
     font-size: 16px;
     cursor: pointer;
 }
 
-/* MOBILE */
-
-@media (max-width: 768px) {
-
-    #dvere {
-        max-width: 280px;
-    }
-
-    label {
-        font-size: 24px;
-    }
-
-    input {
-        width: 80%;
-    }
-
-}
 </style>
 
 </head>
@@ -121,9 +88,7 @@ button {
 
 <div class="language-switch">
 
-<a href="index.html">🇨🇿</a>
-
-<a href="index_en.html">🇬🇧</a>
+<a href="#" onclick="setLang('cz')">🇨🇿</a> <a href="#" onclick="setLang('en')">🇬🇧</a>
 
 </div>
 
@@ -133,11 +98,13 @@ button {
 src="dvere_zavrene.png"
 alt="Closed door">
 
-<label>Enter password</label>
+<label id="labelText">
+Enter password
+</label>
 
 <input type="password"
- id="heslo"
- placeholder="Enter password">
+id="heslo"
+placeholder="Enter password">
 
 <br>
 
@@ -149,33 +116,58 @@ Enter
 
 <script>
 
+var lang =
+localStorage.getItem("lang") || "en";
+
+function setLang(l) {
+
+localStorage.setItem("lang", l);
+
+lang = l;
+
+location.reload();
+
+}
+
 function zkontrolujHeslo() {
 
-    var heslo =
-    document.getElementById("heslo").value;
+var heslo =
+document.getElementById("heslo").value;
 
-    if (heslo === "library") {
+if (heslo === "library") {
 
-        document.getElementById("dvere").src =
-        "dvere_otevrene.png";
+document.getElementById("dvere").src =
+"dvere_otevrene.png";
 
-        document.querySelector("label").innerText =
-        "The door is opening. Click on it.";
+document.getElementById("labelText")
+.innerText =
+"The door is opening. Click on it.";
 
-        document.getElementById("dvere").onclick =
-        function() {
-            window.location.href =
-            "hlavni_en.html";
-        };
+document.getElementById("dvere").onclick =
+function() {
 
-    }
+if (lang === "en") {
 
-    else {
+window.location.href =
+"hlavni_en.html";
 
-        window.location.href =
-        "retezove_dvere.html";
+} else {
 
-    }
+window.location.href =
+"hlavni.html";
+
+}
+
+};
+
+}
+
+else {
+
+window.location.href =
+"retezove_dvere_en.html";
+
+}
 
 }
 
