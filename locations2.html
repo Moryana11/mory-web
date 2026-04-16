@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Locations</title>
+
+<link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+
+<style>
+
+/* LANGUAGE SWITCH */
+
+.language-switch {
+
+position: fixed;
+
+top: 15px;
+
+right: 20px;
+
+font-size: 22px;
+
+z-index: 1000;
+
+}
+
+.language-switch a {
+
+text-decoration: none;
+
+margin-left: 8px;
+
+}
+
+/* BODY */
+
+body {
+    margin: 0;
+    background-color: black;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+/* BACK */
+
+.back-link {
+    margin-top: 25px;
+}
+
+.back-link a {
+    font-family: 'MedievalSharp', cursive;
+    color: #d4af37;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* TITLE */
+
+h1 {
+    font-family: 'MedievalSharp', cursive;
+    color: #d4af37;
+    font-size: 42px;
+    margin-top: 10px;
+}
+
+/* LOCATIONS */
+
+.locations {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 30px;
+
+    margin-top: 40px;
+
+    flex-wrap: wrap;
+
+}
+
+.locations img {
+
+    width: 100%;
+
+    max-width: 260px;
+
+    border-radius: 12px;
+
+    border: 2px solid #d4af37;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 0 2px #d4af37,
+        0 0 12px rgba(212,175,55,0.6);
+
+}
+
+/* NAME */
+
+.location-name {
+
+    font-family: 'MedievalSharp', cursive;
+
+    color: #d4af37;
+
+    margin-top: 10px;
+
+    font-size: 20px;
+
+}
+
+/* ARROWS */
+
+.pagination {
+
+    margin-top: 40px;
+
+}
+
+.pagination a {
+
+    font-family: 'MedievalSharp', cursive;
+
+    color: #d4af37;
+
+    text-decoration: none;
+
+    font-size: 28px;
+
+    margin: 0 20px;
+
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    h1 {
+        font-size: 34px;
+    }
+
+    .locations {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .locations img {
+        max-width: 90%;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="language-switch">
+
+<a href="lokace2.html">🇨🇿</a>
+
+<a href="locations2.html">🇬🇧</a>
+
+</div>
+
+<div class="back-link">
+<a href="hlavni_en.html">← Back to main page</a>
+</div>
+
+<h1>Locations</h1>
+
+<div class="locations">
+
+<div>
+<a href="location_turayne.html">
+<img src="turayne.png" alt="Ruins of Turayne">
+</a>
+<div class="location-name">
+Ruins of Turayne
+</div>
+</div>
+
+<div>
+<a href="location_tower_of_pure_light.html">
+<img src="vez_cisteho_svetla.png" alt="Purelight tower">
+</a>
+<div class="location-name">
+Purelight tower
+</div>
+</div>
+
+</div>
+
+<div class="pagination">
+
+<a href="locations.html">←</a>
+
+</div>
+
+</body>
+</html>
