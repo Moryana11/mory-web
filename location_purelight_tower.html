@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Tower of Pure Light</title>
+
+<link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+
+<style>
+
+/* LANGUAGE SWITCH */
+
+.language-switch {
+
+position: fixed;
+
+top: 15px;
+
+right: 20px;
+
+font-size: 22px;
+
+z-index: 1000;
+
+}
+
+.language-switch a {
+
+text-decoration: none;
+
+margin-left: 8px;
+
+}
+
+/* BODY */
+
+body {
+    margin: 0;
+    background-color: black;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+/* BACK */
+
+.back-link {
+    margin-top: 25px;
+}
+
+.back-link a {
+    font-family: 'MedievalSharp', cursive;
+    color: #d4af37;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* TITLE */
+
+h1 {
+    font-family: 'MedievalSharp', cursive;
+    color: #d4af37;
+    font-size: 42px;
+    margin-top: 10px;
+}
+
+/* IMAGE */
+
+.location-image {
+    margin-top: 30px;
+}
+
+.location-image img {
+
+    width: 100%;
+    max-width: 420px;
+
+    border-radius: 12px;
+
+    border: 2px solid #d4af37;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 0 2px #d4af37,
+        0 0 14px rgba(212,175,55,0.6);
+
+}
+
+/* TEXT */
+
+.location-text {
+
+    max-width: 900px;
+
+    margin: 40px auto;
+
+    padding: 0 20px;
+
+    text-align: left;
+
+    line-height: 1.6;
+
+    font-size: 18px;
+
+}
+
+/* OVERLAY */
+
+.overlay {
+
+    display: none;
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    background-color: rgba(0,0,0,0.9);
+
+    justify-content: center;
+
+    align-items: center;
+
+    z-index: 999;
+
+}
+
+.overlay img {
+
+    max-width: 95%;
+
+    max-height: 95%;
+
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    h1 {
+        font-size: 34px;
+    }
+
+    .location-text {
+        font-size: 17px;
+    }
+
+    .location-image img {
+        max-width: 90%;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="language-switch">
+
+<a href="lokace_vez_cisteho_svetla.html">🇨🇿</a>
+
+<a href="location_purelight_tower.html">🇬🇧</a>
+
+</div>
+
+<div class="back-link">
+<a href="locations2.html">← Back to Locations</a>
+</div>
+
+<h1>Tower of Pure Light</h1>
+
+<div class="location-image">
+
+<img src="vez_cisteho_svetla.png"
+  onclick="openImage(this)"
+  alt="Tower of Pure Light">
+
+</div>
+
+<div class="overlay"
+     id="overlay"
+     onclick="closeImage()">
+
+<img id="bigImage">
+
+</div>
+
+<div class="location-text">
+
+<p>
+The Purelight tower stands to the east, just a short distance from the ruins of the city of Turayne in the land of Laslan, on the continent of Solisium. 
+It rises on a gentle hill surrounded by a peaceful landscape, like a beacon of hope in a land marked by ancient tragedy.
+
+This tall, slender tower of white stone is regarded as the center of all healer mages in the entire land of Laslan. 
+For generations, people gifted with healing magic have come here to learn how to master their abilities and serve others. 
+Healers are trained here from a young age under the guidance of experienced masters who pass their knowledge on to future generations.
+
+Inside the tower are healing halls, study rooms filled with ancient scrolls, and quiet chambers intended for meditation and focus. 
+At its heart burns the Eternal Flame of Pure Light — a symbol of life, healing, and hope. It is said that its radiance has never faded, even in the darkest of times.
+
+Despite the proximity of the cursed Ruins of Turayne, the Purelight tower remains a place of peace and safety. 
+The healers who dwell within watch over the balance between life and death and stand ready to help anyone who crosses its threshold.
+</p>
+
+</div>
+
+<script>
+
+function openImage(img) {
+
+var overlay =
+document.getElementById("overlay");
+
+var bigImage =
+document.getElementById("bigImage");
+
+bigImage.src =
+img.src;
+
+overlay.style.display =
+"flex";
+
+}
+
+function closeImage() {
+
+document.getElementById("overlay")
+.style.display =
+"none";
+
+}
+
+</script>
+
+</body>
+</html>
