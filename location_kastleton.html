@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kastleton</title>
+
+<link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+
+<style>
+
+/* LANGUAGE SWITCH */
+
+.language-switch {
+
+position: fixed;
+
+top: 15px;
+
+right: 20px;
+
+font-size: 22px;
+
+z-index: 1000;
+
+}
+
+.language-switch a {
+
+text-decoration: none;
+
+margin-left: 8px;
+
+}
+
+/* BODY */
+
+body {
+    margin: 0;
+    background-color: black;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+/* BACK */
+
+.back-link {
+    margin-top: 25px;
+}
+
+.back-link a {
+    font-family: 'MedievalSharp', cursive;
+    color: #d4af37;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* TITLE */
+
+h1 {
+    font-family: 'MedievalSharp', cursive;
+    color: #d4af37;
+    font-size: 42px;
+    margin-top: 10px;
+}
+
+/* IMAGE */
+
+.location-image {
+    margin-top: 30px;
+}
+
+.location-image img {
+
+    width: 100%;
+    max-width: 420px;
+
+    border-radius: 12px;
+
+    border: 2px solid #d4af37;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 0 2px #d4af37,
+        0 0 14px rgba(212,175,55,0.6);
+
+}
+
+/* TEXT */
+
+.location-text {
+
+    max-width: 900px;
+
+    margin: 40px auto;
+
+    padding: 0 20px;
+
+    text-align: left;
+
+    line-height: 1.6;
+
+    font-size: 18px;
+
+}
+
+/* OVERLAY */
+
+.overlay {
+
+    display: none;
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    background-color: rgba(0,0,0,0.9);
+
+    justify-content: center;
+
+    align-items: center;
+
+    z-index: 999;
+
+}
+
+.overlay img {
+
+    max-width: 95%;
+
+    max-height: 95%;
+
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    h1 {
+        font-size: 34px;
+    }
+
+    .location-text {
+        font-size: 17px;
+    }
+
+    .location-image img {
+        max-width: 90%;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="language-switch">
+
+<a href="lokace_kastleton.html">🇨🇿</a>
+
+<a href="location_kastleton.html">🇬🇧</a>
+
+</div>
+
+<div class="back-link">
+<a href="locations.html">← Back to Locations</a>
+</div>
+
+<h1>Kastleton</h1>
+
+<div class="location-image">
+
+<img src="kastleton.png"
+  onclick="openImage(this)"
+  alt="Kastleton">
+
+</div>
+
+<div class="overlay"
+     id="overlay"
+     onclick="closeImage()">
+
+<img id="bigImage">
+
+</div>
+
+<div class="location-text">
+
+<p>
+Kastleton is a bustling port city located on the western side of the land of Laslan, directly on the seashore, on the continent of Solisium.
+From early morning until deep into the night, Kastleton is filled with the noise of arriving ships, the shouts of sailors, and the scent of spices, fish, and distant lands. Merchants from all over the world gather in its harbor — from wealthy traders carrying silk and precious stones to weary travelers seeking new opportunities or refuge.
+
+Narrow stone streets are lined with markets, lively taverns, and noisy inns where dozens of languages and stories mingle. By day, Kastleton is a city of trade and agreements; by night, a city of secrets, whispers, and shadows. Despite its lively and chaotic appearance, it has a firm order and a sense of pride that its inhabitants carefully guard.
+
+Over the city watches Lord Hobs Kastler, the ruler of Kastleton, known for his firm hand and sense of discipline. Under his leadership, the city has become one of the most important trade hubs in the land of Laslan and a safe harbor for those seeking protection and new beginnings.
+
+However, Kastleton holds a significance that goes far beyond trade. The Headquarters of the Allied Resistance Forces of Laslan is based in the city, from where defensive strategies and secret operations against the enemies of the entire continent of Solisium are directed. Thanks to this, Kastleton is not only the heart of commerce but also one of the key pillars of hope and resistance in times of uncertainty.
+
+Kastleton is a city of contrasts — wealth and poverty, courage and fear, joy and danger. It is a place where destinies cross, alliances are forged, and where every newcomer can change their life… or lose it forever.
+</p>
+
+</div>
+
+<script>
+
+function openImage(img) {
+
+var overlay =
+document.getElementById("overlay");
+
+var bigImage =
+document.getElementById("bigImage");
+
+bigImage.src =
+img.src;
+
+overlay.style.display =
+"flex";
+
+}
+
+function closeImage() {
+
+document.getElementById("overlay")
+.style.display =
+"none";
+
+}
+
+</script>
+
+</body>
+</html>
