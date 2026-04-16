@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Library Entrance</title>
+
+<link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+
+<style>
+body {
+    background-color: black;
+    margin: 0;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+/* LANGUAGE SWITCH */
+
+.language-switch {
+
+position: fixed;
+
+top: 15px;
+
+right: 20px;
+
+font-size: 22px;
+
+z-index: 1000;
+
+}
+
+.language-switch a {
+
+text-decoration: none;
+
+margin-left: 8px;
+
+}
+
+/* CONTAINER */
+
+.container {
+    margin-top: 40px;
+}
+
+/* DOOR */
+
+#dvere {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+
+    border-radius: 12px;
+    border: 2px solid #d4af37;
+
+    box-shadow:
+        0 0 0 2px #d4af37,
+        0 0 12px rgba(212,175,55,0.6);
+
+    cursor: pointer;
+}
+
+/* TEXT */
+
+label {
+    display: block;
+    margin-top: 25px;
+
+    font-family: 'MedievalSharp', cursive;
+    color: #d4af37;
+    font-size: 22px;
+}
+
+/* INPUT */
+
+input {
+    margin-top: 15px;
+    padding: 10px;
+    width: 250px;
+    max-width: 80%;
+
+    font-size: 16px;
+}
+
+/* BUTTON */
+
+button {
+    margin-top: 15px;
+    padding: 10px 20px;
+
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    #dvere {
+        max-width: 280px;
+    }
+
+    label {
+        font-size: 24px;
+    }
+
+    input {
+        width: 80%;
+    }
+
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="language-switch">
+
+<a href="index.html">🇨🇿</a>
+
+<a href="index_en.html">🇬🇧</a>
+
+</div>
+
+<div class="container">
+
+<img id="dvere"
+src="dvere_zavrene.png"
+alt="Closed door">
+
+<label>Enter password</label>
+
+<input type="password"
+ id="heslo"
+ placeholder="Enter password">
+
+<br>
+
+<button onclick="zkontrolujHeslo()">
+Enter
+</button>
+
+</div>
+
+<script>
+
+function zkontrolujHeslo() {
+
+    var heslo =
+    document.getElementById("heslo").value;
+
+    if (heslo === "knihovna") {
+
+        document.getElementById("dvere").src =
+        "dvere_otevrene.png";
+
+        document.querySelector("label").innerText =
+        "The door is opening. Click on it.";
+
+        document.getElementById("dvere").onclick =
+        function() {
+            window.location.href =
+            "hlavni_en.html";
+        };
+
+    }
+
+    else {
+
+        window.location.href =
+        "retezove_dvere.html";
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
