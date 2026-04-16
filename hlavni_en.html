@@ -1,1 +1,138 @@
+<!DOCTYPE html>
 
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Home page</title>
+
+<link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+
+<style>
+/* PŘEPÍNAČ JAZYKA */
+
+.language-switch {
+
+position: fixed;
+
+top: 15px;
+
+right: 20px;
+
+font-size: 22px;
+
+z-index: 1000;
+
+}
+
+.language-switch a {
+
+text-decoration: none;
+
+margin-left: 8px;
+
+}
+    
+body {
+    margin: 0;
+    background-color: black;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+/* MENU */
+
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+.menu a {
+    font-family: 'MedievalSharp', cursive;
+    color: #d4af37;
+    text-decoration: none;
+    font-size: 26px;
+}
+
+.menu a:hover {
+    text-shadow: 0 0 10px #d4af37;
+}
+
+/* OBRÁZEK */
+
+.main-image {
+    margin-top: 60px;
+}
+
+.main-image img {
+
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+
+    border-radius: 16px;
+
+    border: 2px solid #d4af37;
+
+    box-shadow:
+        0 0 0 2px #d4af37,
+        0 0 14px rgba(212,175,55,0.6);
+
+}
+
+/* MOBIL */
+
+@media (max-width: 768px) {
+
+    .menu {
+        gap: 25px;
+    }
+
+    .menu a {
+        font-size: 22px;
+    }
+
+    .main-image img {
+        max-width: 90%;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="language-switch">
+
+<a href="hlavni.html">🇨🇿</a>
+
+<a href="hlavni_en.html">🇬🇧</a>
+
+</div>
+
+<div class="menu">
+
+<a href="aboutme.html">About me</a>
+
+<a href="books.html">Books</a>
+
+<a href="music.html">Music</a>
+
+<a href="messages.html">Messages</a>
+
+</div>
+
+<div class="main-image">
+
+<img src="knihyhlavni.png" alt="Knihy">
+
+</div>
+
+</body>
+</html>
