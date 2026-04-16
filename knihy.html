@@ -5,11 +5,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Oheň a voda</title>
+<title>Knihy</title>
 
 <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
 
 <style>
+
 /* PŘEPÍNAČ JAZYKA */
 
 .language-switch {
@@ -33,6 +34,9 @@ text-decoration: none;
 margin-left: 8px;
 
 }
+
+/* BODY */
+
 body {
     margin: 0;
     background-color: black;
@@ -54,28 +58,38 @@ body {
     font-size: 18px;
 }
 
-/* NÁZEV */
+/* NADPIS */
 
 h1 {
     font-family: 'MedievalSharp', cursive;
     color: #d4af37;
     font-size: 42px;
-    margin-top: 25px;
+    margin-top: 10px;
 }
 
-/* OBÁLKA */
+/* GALERIE KNIH */
 
-.book-cover {
-    margin-top: 30px;
+.books {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 30px;
+
+    margin-top: 40px;
+
+    flex-wrap: wrap;
+
 }
 
-.book-cover img {
+.books img {
 
     width: 100%;
-    max-width: 420px;
-    height: auto;
 
-    border-radius: 14px;
+    max-width: 260px;
+
+    border-radius: 12px;
 
     border: 2px solid #d4af37;
 
@@ -83,7 +97,21 @@ h1 {
 
     box-shadow:
         0 0 0 2px #d4af37,
-        0 0 14px rgba(212,175,55,0.6);
+        0 0 12px rgba(212,175,55,0.6);
+
+}
+
+/* NÁZEV */
+
+.book-name {
+
+    font-family: 'MedievalSharp', cursive;
+
+    color: #d4af37;
+
+    margin-top: 10px;
+
+    font-size: 20px;
 
 }
 
@@ -95,7 +123,12 @@ h1 {
         font-size: 34px;
     }
 
-    .book-cover img {
+    .books {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .books img {
         max-width: 90%;
     }
 
@@ -107,17 +140,30 @@ h1 {
 
 <body>
 
-<div class="back-link">
-<a href="hlavni.html">← Zpět na hlavní stranu</a>
+<div class="language-switch">
+
+<a href="knihy.html">🇨🇿</a>
+
+<a href="books.html">🇬🇧</a>
+
 </div>
 
-<h1>Oheň a voda</h1>
+<div class="back-link">
+<a href="hlavni.html">← Zpět na hlavní stránku</a>
+</div>
 
-<div class="book-cover">
+<h1>Knihy</h1>
 
+<div class="books">
+
+<div>
 <a href="kniha1.html">
 <img src="ohenavoda.png" alt="Oheň a voda">
 </a>
+<div class="book-name">
+Oheň a voda
+</div>
+</div>
 
 </div>
 
