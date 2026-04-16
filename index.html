@@ -10,6 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
 
 <style>
+
 body {
     background-color: black;
     margin: 0;
@@ -17,89 +18,94 @@ body {
     font-family: Arial, sans-serif;
 }
 
+/* PŘEPÍNAČ JAZYKA */
+
+.language-switch {
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    font-size: 22px;
+    z-index: 1000;
+}
+
+.language-switch a {
+    text-decoration: none;
+    margin-left: 8px;
+}
+
 /* KONTEJNER */
+
 .container {
     margin-top: 40px;
 }
 
 /* DVEŘE */
+
 #dvere {
     width: 100%;
     max-width: 350px;
-    height: auto;
-
     border-radius: 12px;
     border: 2px solid #d4af37;
-
     box-shadow:
         0 0 0 2px #d4af37,
         0 0 12px rgba(212,175,55,0.6);
-
     cursor: pointer;
 }
 
 /* TEXT */
+
 label {
     display: block;
     margin-top: 25px;
-
     font-family: 'MedievalSharp', cursive;
     color: #d4af37;
     font-size: 22px;
 }
 
 /* INPUT */
+
 input {
     margin-top: 15px;
     padding: 10px;
     width: 250px;
     max-width: 80%;
-
     font-size: 16px;
 }
 
 /* TLAČÍTKO */
+
 button {
     margin-top: 15px;
     padding: 10px 20px;
-
     font-size: 16px;
     cursor: pointer;
 }
 
-/* MOBIL */
-@media (max-width: 768px) {
-
-    #dvere {
-        max-width: 280px;
-    }
-
-    label {
-        font-size: 24px;
-    }
-
-    input {
-        width: 80%;
-    }
-
-}
 </style>
 
 </head>
 
 <body>
 
+<div class="language-switch">
+
+<a href="#" onclick="setLang('cz')">🇨🇿</a> <a href="#" onclick="setLang('en')">🇬🇧</a>
+
+</div>
+
 <div class="container">
 
 <img id="dvere"
-  src="dvere_zavrene.png"
-  alt="Zavřené dveře">
+src="dvere_zavrene.png"
+alt="Zavřené dveře">
 
-<label>Zadej heslo</label>
+<label id="labelText">
+Zadej heslo
+</label>
 
 <input type="password"
-    id="heslo"
-    placeholder="Zadej heslo">
+id="heslo"
+placeholder="Zadej heslo">
 
 <br>
 
@@ -110,35 +116,104 @@ Vstoupit
 </div>
 
 <script>
-function zkontrolujHeslo() {
 
-    var heslo =
-    document.getElementById("heslo").value;
+/* výchozí jazyk */
 
-    if (heslo === "knihovna") {
+var lang =
+localStorage.getItem("lang") || "cz";
 
-        document.getElementById("dvere").src =
-        "dvere_otevrene.png";
+applyLanguage();
 
-        document.querySelector("label").innerText =
-        "Dveře se otevírají. Klikni na ně.";
+function setLang(l) {
 
-        document.getElementById("dvere").onclick =
-        function() {
-            window.location.href =
-            "hlavni.html";
-        };
+localStorage.setItem("lang", l);
 
-    }
+lang = l;
 
-    else {
-
-        window.location.href =
-        "retezove_dvere.html";
-
-    }
+applyLanguage();
 
 }
+
+function applyLanguage() {
+
+if (lang === "en") {
+
+document.getElementById("labelText")
+.innerText = "Enter password";
+
+document.querySelector("input")
+.placeholder = "Enter password";
+
+document.querySelector("button")
+.innerText = "Enter";
+
+} else {
+
+document.getElementById("labelText")
+.innerText = "Zadej heslo";
+
+document.querySelector("input")
+.placeholder = "Zadej heslo";
+
+document.querySelector("button")
+.innerText = "Vstoupit";
+
+}
+
+}
+
+function zkontrolujHeslo() {
+
+var heslo =
+document.getElementById("heslo").value;
+
+if (heslo === "knihovna") {
+
+document.getElementById("dvere").src =
+"dvere_otevrene.png";
+
+if (lang === "en") {
+
+document.getElementById("labelText")
+.innerText =
+"The door is opening. Click on it.";
+
+} else {
+
+document.getElementById("labelText")
+.innerText =
+"Dveře se otevírají. Klikni na ně.";
+
+}
+
+document.getElementById("dvere").onclick =
+function() {
+
+if (lang === "en") {
+
+window.location.href =
+"hlavni_en.html";
+
+} else {
+
+window.location.href =
+"hlavni.html";
+
+}
+
+};
+
+}
+
+else {
+
+window.location.href =
+"retezove_dvere.html";
+
+}
+
+}
+
 </script>
 
 </body>
