@@ -67,29 +67,18 @@ h1 {
     margin-top: 10px;
 }
 
-/* GALERIE KNIH */
+/* OBRÁZEK KNIHY */
 
-.books {
-
-    display: flex;
-
-    justify-content: center;
-
-    gap: 30px;
-
+.book-image {
     margin-top: 40px;
-
-    flex-wrap: wrap;
-
 }
 
-.books img {
+.book-image img {
 
     width: 100%;
+    max-width: 340px;
 
-    max-width: 260px;
-
-    border-radius: 12px;
+    border-radius: 16px;
 
     border: 2px solid #d4af37;
 
@@ -97,21 +86,7 @@ h1 {
 
     box-shadow:
         0 0 0 2px #d4af37,
-        0 0 12px rgba(212,175,55,0.6);
-
-}
-
-/* NÁZEV */
-
-.book-name {
-
-    font-family: 'MedievalSharp', cursive;
-
-    color: #d4af37;
-
-    margin-top: 10px;
-
-    font-size: 20px;
+        0 0 14px rgba(212,175,55,0.6);
 
 }
 
@@ -123,12 +98,7 @@ h1 {
         font-size: 34px;
     }
 
-    .books {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .books img {
+    .book-image img {
         max-width: 90%;
     }
 
@@ -154,16 +124,13 @@ h1 {
 
 <h1>Knihy</h1>
 
-<div class="books">
+<div class="book-image">
 
-<div>
 <a href="kniha1.html">
+
 <img src="ohenavoda.png" alt="Oheň a voda">
+
 </a>
-<div class="book-name">
-Oheň a voda
-</div>
-</div>
 
 </div>
 
