@@ -11,6 +11,32 @@
 
 <style>
 
+/* PŘEPÍNAČ JAZYKA */
+
+.language-switch {
+
+position: fixed;
+
+top: 15px;
+
+right: 20px;
+
+font-size: 22px;
+
+z-index: 1000;
+
+}
+
+.language-switch a {
+
+text-decoration: none;
+
+margin-left: 8px;
+
+}
+
+/* BODY */
+
 body {
     margin: 0;
     background-color: black;
@@ -18,6 +44,8 @@ body {
     font-family: Arial, sans-serif;
     color: white;
 }
+
+/* ZPĚT */
 
 .back-link {
     margin-top: 25px;
@@ -30,38 +58,67 @@ body {
     font-size: 18px;
 }
 
+/* NADPIS */
+
 h1 {
     font-family: 'MedievalSharp', cursive;
     color: #d4af37;
     font-size: 42px;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
-.image-box {
-    margin-top: 25px;
+/* OBRÁZEK */
+
+.music-image {
+    margin-top: 30px;
 }
 
-.image-box img {
+.music-image img {
+
     width: 100%;
     max-width: 260px;
+
     border-radius: 12px;
+
     border: 2px solid #d4af37;
+
+    box-shadow:
+        0 0 0 2px #d4af37,
+        0 0 12px rgba(212,175,55,0.6);
+
 }
+
+/* PÍSEŇ */
 
 .song {
     margin-top: 35px;
 }
 
 .song-title {
+
     font-family: 'MedievalSharp', cursive;
+
     color: #d4af37;
+
     font-size: 22px;
+
     margin-bottom: 10px;
+
 }
 
 audio {
-    width: 90%;
-    max-width: 500px;
+    width: 300px;
+    max-width: 90%;
+}
+
+/* MOBIL */
+
+@media (max-width: 768px) {
+
+    h1 {
+        font-size: 34px;
+    }
+
 }
 
 </style>
@@ -70,48 +127,74 @@ audio {
 
 <body>
 
+<div class="language-switch">
+
+<a href="hudba.html">🇨🇿</a>
+
+<a href="music.html">🇬🇧</a>
+
+</div>
+
 <div class="back-link">
-<a href="hlavni.html">← Zpět na hlavní stranu</a>
+<a href="hlavni.html">← Zpět na hlavní stránku</a>
 </div>
 
 <h1>Hudba</h1>
 
-<div class="image-box">
-<img src="harfa.png" alt="Hudba">
+<div class="music-image">
+
+<img src="harfa.png" alt="Harfa">
+
 </div>
 
 <div class="song">
-<div class="song-title">Welcome to Kastleton</div>
+
+<div class="song-title">
+Welcome to Kastleton
+</div>
 
 <audio controls>
 <source src="kastleton_converted.mp3" type="audio/mpeg">
+Tvůj prohlížeč nepodporuje přehrávání audia.
 </audio>
 
 </div>
 
 <div class="song">
-<div class="song-title">From the Ashes of Loyalty</div>
+
+<div class="song-title">
+From the Ashes of Loyalty
+</div>
 
 <audio controls>
 <source src="ashes_of_loyalty_converted.mp3" type="audio/mpeg">
+Tvůj prohlížeč nepodporuje přehrávání audia.
 </audio>
 
 </div>
 
 <div class="song">
-<div class="song-title">Song of Vienta</div>
+
+<div class="song-title">
+Song of Vienta
+</div>
 
 <audio controls>
-<source src="song_of_vienta_converted.mp3" type="audio/mpeg">
+<source src="vienta_song_converted.mp3" type="audio/mpeg">
+Tvůj prohlížeč nepodporuje přehrávání audia.
 </audio>
 
 </div>
 
 <div class="song">
-<div class="song-title">Under the Banner of New Oaths</div>
+
+<div class="song-title">
+Under the Banner of New Oaths
+</div>
 
 <audio controls>
-<source src="under_new_oaths_converted.mp3" type="audio/mpeg">
+<source src="new_oaths_converted.mp3" type="audio/mpeg">
+Tvůj prohlížeč nepodporuje přehrávání audia.
 </audio>
 
 </div>
