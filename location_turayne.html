@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Turayne Ruins</title>
+
+<link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+
+<style>
+
+/* LANGUAGE SWITCH */
+
+.language-switch {
+
+position: fixed;
+
+top: 15px;
+
+right: 20px;
+
+font-size: 22px;
+
+z-index: 1000;
+
+}
+
+.language-switch a {
+
+text-decoration: none;
+
+margin-left: 8px;
+
+}
+
+/* BODY */
+
+body {
+    margin: 0;
+    background-color: black;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+/* BACK */
+
+.back-link {
+    margin-top: 25px;
+}
+
+.back-link a {
+    font-family: 'MedievalSharp', cursive;
+    color: #d4af37;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* TITLE */
+
+h1 {
+    font-family: 'MedievalSharp', cursive;
+    color: #d4af37;
+    font-size: 42px;
+    margin-top: 10px;
+}
+
+/* IMAGE */
+
+.location-image {
+    margin-top: 30px;
+}
+
+.location-image img {
+
+    width: 100%;
+    max-width: 420px;
+
+    border-radius: 12px;
+
+    border: 2px solid #d4af37;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 0 2px #d4af37,
+        0 0 14px rgba(212,175,55,0.6);
+
+}
+
+/* TEXT */
+
+.location-text {
+
+    max-width: 900px;
+
+    margin: 40px auto;
+
+    padding: 0 20px;
+
+    text-align: left;
+
+    line-height: 1.6;
+
+    font-size: 18px;
+
+}
+
+/* OVERLAY */
+
+.overlay {
+
+    display: none;
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    background-color: rgba(0,0,0,0.9);
+
+    justify-content: center;
+
+    align-items: center;
+
+    z-index: 999;
+
+}
+
+.overlay img {
+
+    max-width: 95%;
+
+    max-height: 95%;
+
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    h1 {
+        font-size: 34px;
+    }
+
+    .location-text {
+        font-size: 17px;
+    }
+
+    .location-image img {
+        max-width: 90%;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="language-switch">
+
+<a href="lokace_turayne.html">🇨🇿</a>
+
+<a href="location_turayne.html">🇬🇧</a>
+
+</div>
+
+<div class="back-link">
+<a href="locations2.html">← Back to Locations</a>
+</div>
+
+<h1>Turayne Ruins</h1>
+
+<div class="location-image">
+
+<img src="turayne.png"
+  onclick="openImage(this)"
+  alt="Turayne Ruins">
+
+</div>
+
+<div class="overlay"
+     id="overlay"
+     onclick="closeImage()">
+
+<img id="bigImage">
+
+</div>
+
+<div class="location-text">
+
+<p>
+Insert your English description of the Turayne Ruins here.
+You can paste the translated text whenever you are ready.
+</p>
+
+</div>
+
+<script>
+
+function openImage(img) {
+
+var overlay =
+document.getElementById("overlay");
+
+var bigImage =
+document.getElementById("bigImage");
+
+bigImage.src =
+img.src;
+
+overlay.style.display =
+"flex";
+
+}
+
+function closeImage() {
+
+document.getElementById("overlay")
+.style.display =
+"none";
+
+}
+
+</script>
+
+</body>
+</html>
