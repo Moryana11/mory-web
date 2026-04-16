@@ -1,15 +1,41 @@
 <!DOCTYPE html>
 
-<html lang="cs">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Vzkazy</title>
+<title>Messages</title>
 
 <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
 
 <style>
+
+/* LANGUAGE SWITCH */
+
+.language-switch {
+
+position: fixed;
+
+top: 15px;
+
+right: 20px;
+
+font-size: 22px;
+
+z-index: 1000;
+
+}
+
+.language-switch a {
+
+text-decoration: none;
+
+margin-left: 8px;
+
+}
+
+/* BODY */
 
 body {
     margin: 0;
@@ -18,6 +44,8 @@ body {
     font-family: Arial, sans-serif;
     color: white;
 }
+
+/* BACK LINK */
 
 .back-link {
     margin-top: 25px;
@@ -30,93 +58,128 @@ body {
     font-size: 18px;
 }
 
+/* TITLE */
+
 h1 {
     font-family: 'MedievalSharp', cursive;
     color: #d4af37;
     font-size: 42px;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
-.image-box {
+/* IMAGE */
+
+.message-image {
     margin-top: 25px;
 }
 
-.image-box img {
+.message-image img {
+
     width: 100%;
     max-width: 260px;
+
     border-radius: 12px;
+
     border: 2px solid #d4af37;
+
     box-shadow:
         0 0 0 2px #d4af37,
         0 0 12px rgba(212,175,55,0.6);
+
 }
 
-.form-box {
-    max-width: 600px;
-    margin: 40px auto;
-    padding: 0 20px;
+/* FORM */
+
+form {
+
+    margin-top: 30px;
+
 }
 
 input, textarea {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    border-radius: 8px;
-    border: 1px solid #d4af37;
-    background-color: black;
-    color: white;
-    font-size: 16px;
-}
 
-textarea {
-    height: 120px;
+    width: 300px;
+
+    max-width: 90%;
+
+    padding: 10px;
+
+    margin: 8px;
+
+    border-radius: 6px;
+
+    border: none;
+
 }
 
 button {
+
     margin-top: 10px;
-    padding: 12px 25px;
+
+    padding: 10px 20px;
+
     font-family: 'MedievalSharp', cursive;
-    font-size: 18px;
-    background-color: black;
-    color: #d4af37;
-    border: 2px solid #d4af37;
-    border-radius: 10px;
+
+    background-color: #d4af37;
+
+    color: black;
+
+    border: none;
+
+    border-radius: 6px;
+
     cursor: pointer;
+
 }
 
 button:hover {
-    background-color: #d4af37;
-    color: black;
+
+    opacity: 0.8;
+
 }
 
-.messages {
-    max-width: 600px;
-    margin: 30px auto;
-    text-align: left;
-}
+/* MESSAGES */
 
 .message {
+
     border: 1px solid #d4af37;
-    border-radius: 10px;
+
+    border-radius: 8px;
+
     padding: 12px;
-    margin-bottom: 15px;
+
+    margin: 15px auto;
+
+    max-width: 500px;
+
 }
 
-.name {
+.message-name {
+
     font-weight: bold;
+
     color: #d4af37;
+
 }
 
-.time {
+.message-date {
+
     font-size: 14px;
-    color: #bbbbbb;
-    margin-bottom: 8px;
+
+    color: #ccc;
+
+    margin-bottom: 6px;
+
 }
 
-.delete-btn {
-    margin-top: 10px;
-    padding: 6px 12px;
-    font-size: 14px;
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    h1 {
+        font-size: 34px;
+    }
+
 }
 
 </style>
@@ -125,124 +188,157 @@ button:hover {
 
 <body>
 
+<div class="language-switch">
+
+<a href="vzkazy.html">🇨🇿</a>
+
+<a href="messages.html">🇬🇧</a>
+
+</div>
+
 <div class="back-link">
-<a href="hlavni_en.html">← Back to Home page</a>
+<a href="hlavni_en.html">← Back to main page</a>
 </div>
 
 <h1>Messages</h1>
 
-<div class="image-box">
-<img src="vzkazy.png" alt="Vzkazy">
+<div class="message-image">
+
+<img src="vzkazy.png" alt="Messages">
+
 </div>
 
-<div class="form-box">
+<form id="messageForm">
 
-<input type="text" id="name" placeholder="Jméno nebo přezdívka">
+<input
+type="text"
+id="name"
+placeholder="Your name or nickname"
+required
 
-<textarea id="text" placeholder="Napiš svůj vzkaz..."></textarea>
+>
 
-<button onclick="addMessage()">
-Odeslat
+<br>
+
+<textarea
+id="text"
+rows="4"
+placeholder="Write your message..."
+required
+></textarea>
+
+<br>
+
+<button type="submit">
+Send message
 </button>
 
-</div>
+</form>
 
-<div class="messages" id="messages"></div>
+<div id="messages"></div>
 
 <script>
 
-function getCurrentDateTime() {
+var form =
+document.getElementById("messageForm");
 
-    var now = new Date();
-
-    var date =
-        now.getDate().toString().padStart(2, '0') + "." +
-        (now.getMonth() + 1).toString().padStart(2, '0') + "." +
-        now.getFullYear();
-
-    var time =
-        now.getHours().toString().padStart(2, '0') + ":" +
-        now.getMinutes().toString().padStart(2, '0');
-
-    return date + " " + time;
-
-}
+var messagesDiv =
+document.getElementById("messages");
 
 function loadMessages() {
 
-    var saved =
-    localStorage.getItem("messages");
+messagesDiv.innerHTML = "";
 
-    if (saved) {
+var messages =
+JSON.parse(
+localStorage.getItem("messages")
+) || [];
 
-        document.getElementById("messages")
-        .innerHTML = saved;
+messages.forEach(function(msg, index) {
 
-    }
+var div =
+document.createElement("div");
 
-}
+div.className = "message";
 
-function addMessage() {
+div.innerHTML =
 
-    var name =
-    document.getElementById("name").value;
+"<div class='message-name'>" +
+msg.name +
+"</div>" +
 
-    var text =
-    document.getElementById("text").value;
+"<div class='message-date'>" +
+msg.date +
+"</div>" +
 
-    if (name === "" || text === "") {
+"<div>" +
+msg.text +
+"</div>" +
 
-        alert("Prosím vyplň jméno i vzkaz.");
+"<br>" +
 
-        return;
+"<button onclick='deleteMessage(" +
+index +
+")'>Delete</button>";
 
-    }
+messagesDiv.appendChild(div);
 
-    var datetime =
-    getCurrentDateTime();
-
-    var message =
-    "<div class='message'>" +
-    "<div class='name'>" +
-    name +
-    "</div>" +
-    "<div class='time'>" +
-    datetime +
-    "</div>" +
-    "<div>" +
-    text +
-    "</div>" +
-    "<button class='delete-btn' onclick='deleteMessage(this)'>" +
-    "Smazat" +
-    "</button>" +
-    "</div>";
-
-    var messagesDiv =
-    document.getElementById("messages");
-
-    messagesDiv.innerHTML += message;
-
-    localStorage.setItem(
-        "messages",
-        messagesDiv.innerHTML
-    );
-
-    document.getElementById("name").value = "";
-    document.getElementById("text").value = "";
+});
 
 }
 
-function deleteMessage(button) {
+form.addEventListener("submit", function(e) {
 
-    var message =
-    button.parentElement;
+e.preventDefault();
 
-    message.remove();
+var name =
+document.getElementById("name").value;
 
-    localStorage.setItem(
-        "messages",
-        document.getElementById("messages").innerHTML
-    );
+var text =
+document.getElementById("text").value;
+
+var date =
+new Date().toLocaleString();
+
+var messages =
+JSON.parse(
+localStorage.getItem("messages")
+) || [];
+
+messages.push({
+
+name: name,
+text: text,
+date: date
+
+});
+
+localStorage.setItem(
+"messages",
+JSON.stringify(messages)
+);
+
+form.reset();
+
+loadMessages();
+
+});
+
+function deleteMessage(index) {
+
+var messages =
+JSON.parse(
+localStorage.getItem("messages")
+) || [];
+
+messages.splice(index, 1);
+
+localStorage.setItem(
+"messages",
+JSON.stringify(messages)
+);
+
+loadMessages();
 
 }
 
