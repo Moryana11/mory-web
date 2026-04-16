@@ -11,6 +11,32 @@
 
 <style>
 
+/* PŘEPÍNAČ JAZYKA */
+
+.language-switch {
+
+position: fixed;
+
+top: 15px;
+
+right: 20px;
+
+font-size: 22px;
+
+z-index: 1000;
+
+}
+
+.language-switch a {
+
+text-decoration: none;
+
+margin-left: 8px;
+
+}
+
+/* BODY */
+
 body {
     margin: 0;
     background-color: black;
@@ -38,7 +64,7 @@ h1 {
     font-family: 'MedievalSharp', cursive;
     color: #d4af37;
     font-size: 42px;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 /* OBRÁZEK */
@@ -50,34 +76,31 @@ h1 {
 .profile-image img {
 
     width: 100%;
-    max-width: 280px;
-    height: auto;
+    max-width: 300px;
 
-    border-radius: 14px;
+    border-radius: 12px;
 
     border: 2px solid #d4af37;
 
     box-shadow:
         0 0 0 2px #d4af37,
-        0 0 14px rgba(212,175,55,0.6);
+        0 0 12px rgba(212,175,55,0.6);
 
 }
 
 /* TEXT */
 
-.content {
+.text-box {
 
-    max-width: 800px;
+    max-width: 700px;
 
-    margin: 35px auto;
+    margin: 30px auto;
 
     padding: 0 20px;
 
-    font-size: 18px;
-
     line-height: 1.7;
 
-    color: #d4af37;
+    font-size: 18px;
 
 }
 
@@ -89,12 +112,8 @@ h1 {
         font-size: 34px;
     }
 
-    .content {
-        font-size: 17px;
-    }
-
     .profile-image img {
-        max-width: 85%;
+        max-width: 90%;
     }
 
 }
@@ -105,26 +124,39 @@ h1 {
 
 <body>
 
+<div class="language-switch">
+
+<a href="omne.html">🇨🇿</a>
+
+<a href="aboutme.html">🇬🇧</a>
+
+</div>
+
 <div class="back-link">
-<a href="hlavni.html">← Zpět na hlavní stranu</a>
+<a href="hlavni.html">← Zpět na hlavní stránku</a>
 </div>
 
 <h1>O mně</h1>
 
 <div class="profile-image">
 
-<img src="ja.png" alt="Já">
+<img src="ja.png" alt="Autor">
 
 </div>
 
-<div class="content">
+<div class="text-box">
 
 <p>
-Psaní příběhů je pro mě něco, co mě opravdu baví a naplňuje. Je to svět, do kterého se mohu ponořit, když si potřebuji odpočinout nebo si srovnat myšlenky a emoce.
+Psaní příběhů je pro mě něco, co mě opravdu baví a naplňuje.
+Je to svět, do kterého se mohu ponořit, když si potřebuji odpočinout
+nebo si srovnat myšlenky a emoce.
 </p>
 
 <p>
-K lásce k fantasy a středověku mně přivedli moji rodiče, kteří mě v této zálibě vždy podporovali. Díky nim jsem si vytvořila silný vztah k příběhům, dobrodružství a světům, kde je možné téměř cokoli.
+K lásce k fantasy a středověku mě přivedli moji rodiče,
+kteří mě v této zálibě vždy podporovali.
+Díky nim jsem si vytvořila silný vztah k příběhům,
+dobrodružství a světům, kde je možné téměř cokoli.
 </p>
 
 </div>
