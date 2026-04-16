@@ -35,6 +35,8 @@ margin-left: 8px;
 
 }
 
+/* BODY */
+
 body {
     margin: 0;
     background-color: black;
@@ -43,10 +45,10 @@ body {
     color: white;
 }
 
-/* ZPĚT NA KNIHY */
+/* ZPĚT */
 
 .back-link {
-    margin-top: 20px;
+    margin-top: 25px;
 }
 
 .back-link a {
@@ -65,7 +67,28 @@ h1 {
     margin-top: 10px;
 }
 
-/* MENU KNIHY */
+/* OBRÁZEK */
+
+.book-image {
+    margin-top: 30px;
+}
+
+.book-image img {
+
+    width: 100%;
+    max-width: 320px;
+
+    border-radius: 12px;
+
+    border: 2px solid #d4af37;
+
+    box-shadow:
+        0 0 0 2px #d4af37,
+        0 0 14px rgba(212,175,55,0.6);
+
+}
+
+/* MENU */
 
 .book-menu {
 
@@ -75,7 +98,7 @@ h1 {
 
     gap: 40px;
 
-    margin-top: 25px;
+    margin-top: 35px;
 
     flex-wrap: wrap;
 
@@ -94,30 +117,8 @@ h1 {
 }
 
 .book-menu a:hover {
+
     text-shadow: 0 0 10px #d4af37;
-}
-
-/* MAPA */
-
-.map-container {
-    margin-top: 40px;
-}
-
-.map-container img {
-
-    width: 100%;
-
-    max-width: 900px;
-
-    height: auto;
-
-    border-radius: 14px;
-
-    border: 2px solid #d4af37;
-
-    box-shadow:
-        0 0 0 2px #d4af37,
-        0 0 14px rgba(212,175,55,0.6);
 
 }
 
@@ -130,15 +131,7 @@ h1 {
     }
 
     .book-menu {
-        gap: 20px;
-    }
-
-    .book-menu a {
-        font-size: 20px;
-    }
-
-    .map-container img {
-        max-width: 95%;
+        gap: 25px;
     }
 
 }
@@ -149,11 +142,25 @@ h1 {
 
 <body>
 
+<div class="language-switch">
+
+<a href="kniha1.html">🇨🇿</a>
+
+<a href="book1.html">🇬🇧</a>
+
+</div>
+
 <div class="back-link">
 <a href="knihy.html">← Zpět na přehled knih</a>
 </div>
 
 <h1>Oheň a voda</h1>
+
+<div class="book-image">
+
+<img src="ohenavoda.png" alt="Oheň a voda">
+
+</div>
 
 <div class="book-menu">
 
@@ -164,12 +171,6 @@ h1 {
 <a href="lokace.html">Lokace</a>
 
 <a href="galerie.html">Galerie</a>
-
-</div>
-
-<div class="map-container">
-
-<img src="mapa2.png" alt="Mapa světa">
 
 </div>
 
