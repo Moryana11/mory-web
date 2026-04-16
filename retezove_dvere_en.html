@@ -10,6 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
 
 <style>
+
 body {
     background-color: black;
     margin: 0;
@@ -20,43 +21,25 @@ body {
 /* LANGUAGE SWITCH */
 
 .language-switch {
-
-position: fixed;
-
-top: 15px;
-
-right: 20px;
-
-font-size: 22px;
-
-z-index: 1000;
-
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    font-size: 22px;
 }
 
 .language-switch a {
-
-text-decoration: none;
-
-margin-left: 8px;
-
-}
-
-/* CONTAINER */
-
-.container {
-    margin-top: 40px;
+    text-decoration: none;
+    margin-left: 8px;
 }
 
 /* DOOR */
 
 img {
+    margin-top: 40px;
     width: 100%;
     max-width: 350px;
-    height: auto;
-
     border-radius: 12px;
     border: 2px solid #d4af37;
-
     box-shadow:
         0 0 0 2px #d4af37,
         0 0 12px rgba(212,175,55,0.6);
@@ -66,45 +49,11 @@ img {
 
 p {
     margin-top: 25px;
-
     font-family: 'MedievalSharp', cursive;
     color: #d4af37;
-
     font-size: 22px;
 }
 
-/* BACK LINK */
-
-.back-link {
-
-    margin-top: 20px;
-
-}
-
-.back-link a {
-
-    font-family: 'MedievalSharp', cursive;
-    color: #d4af37;
-
-    text-decoration: none;
-
-    font-size: 18px;
-
-}
-
-/* MOBILE */
-
-@media (max-width: 768px) {
-
-    img {
-        max-width: 280px;
-    }
-
-    p {
-        font-size: 24px;
-    }
-
-}
 </style>
 
 </head>
@@ -113,30 +62,57 @@ p {
 
 <div class="language-switch">
 
-<a href="retezove_dvere.html">🇨🇿</a>
-
-<a href="retezove_dvere_en.html">🇬🇧</a>
+<a href="#" onclick="setLang('cz')">🇨🇿</a> <a href="#" onclick="setLang('en')">🇬🇧</a>
 
 </div>
 
-<div class="container">
+<img src="dvere_retez.png">
 
-<img src="dvere_retez.png" alt="Locked door with chain">
+<p id="text"></p>
 
-<p>
-The door remains locked.<br>
-Click the door and try again.
-</p>
+<script>
 
-<div class="back-link">
+var lang =
+localStorage.getItem("lang") || "en";
 
-<a href="index_en.html">
-← Back to entrance
-</a>
+applyLanguage();
 
-</div>
+function setLang(l) {
 
-</div>
+localStorage.setItem("lang", l);
+
+lang = l;
+
+applyLanguage();
+
+}
+
+function applyLanguage() {
+
+var text =
+document.getElementById("text");
+
+if (lang === "en") {
+
+document.title =
+"Locked Door";
+
+text.innerHTML =
+"The door remains locked.<br>Click the door and try again.";
+
+} else {
+
+document.title =
+"Zamčené dveře";
+
+text.innerHTML =
+"Dveře zůstávají zamčené.<br>Klikni na dveře a zkus to znovu.";
+
+}
+
+}
+
+</script>
 
 </body>
 </html>
