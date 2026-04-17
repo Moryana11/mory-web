@@ -169,11 +169,11 @@ font-size: 40px;
 
 <div class="overlay" id="overlay">
 
-<div class="arrow arrow-left" onclick="prevImage()">←</div>
+<div class="arrow arrow-left" id="leftArrow" onclick="prevImage()">←</div>
 
 <img id="bigImage">
 
-<div class="arrow arrow-right" onclick="nextImage()">→</div>
+<div class="arrow arrow-right" id="rightArrow" onclick="nextImage()">→</div>
 
 </div>
 
@@ -193,10 +193,34 @@ var images = [
 
 var currentIndex = 0;
 
-/* odkazy */
-
 var nextPage = "galerie2.html";
 var prevPage = null;
+
+function updateArrows() {
+
+var leftArrow =
+document.getElementById("leftArrow");
+
+var rightArrow =
+document.getElementById("rightArrow");
+
+/* LEVÁ ŠIPKA */
+
+if (currentIndex === 0 && prevPage === null) {
+
+leftArrow.style.display = "none";
+
+} else {
+
+leftArrow.style.display = "block";
+
+}
+
+/* PRAVÁ ŠIPKA */
+
+rightArrow.style.display = "block";
+
+}
 
 function openImage(index) {
 
@@ -208,6 +232,8 @@ images[currentIndex];
 document.getElementById("overlay").style.display =
 "flex";
 
+updateArrows();
+
 }
 
 function nextImage() {
@@ -216,8 +242,6 @@ currentIndex++;
 
 if (currentIndex >= images.length) {
 
-if (nextPage) {
-
 window.location.href =
 nextPage + "?img=0";
 
@@ -225,12 +249,10 @@ return;
 
 }
 
-currentIndex = images.length - 1;
-
-}
-
 document.getElementById("bigImage").src =
 images[currentIndex];
+
+updateArrows();
 
 }
 
@@ -245,20 +267,18 @@ if (prevPage) {
 window.location.href =
 prevPage + "?img=2";
 
-return;
-
 }
 
-currentIndex = 0;
+return;
 
 }
 
 document.getElementById("bigImage").src =
 images[currentIndex];
 
-}
+updateArrows();
 
-/* otevření obrázku po přechodu */
+}
 
 window.onload = function() {
 
@@ -276,8 +296,6 @@ openImage(parseInt(imgIndex));
 
 };
 
-/* zavření kliknutím mimo */
-
 document.getElementById("overlay")
 .addEventListener("click", function(e) {
 
@@ -289,8 +307,6 @@ document.getElementById("overlay").style.display =
 }
 
 });
-
-/* klávesnice */
 
 document.addEventListener("keydown", function(e) {
 
