@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Characters</title>
+
+<link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+
+<style>
+
+/* LANGUAGE SWITCH */
+
+.language-switch {
+
+position: fixed;
+
+top: 15px;
+
+right: 20px;
+
+font-size: 22px;
+
+z-index: 1000;
+
+}
+
+.language-switch a {
+
+text-decoration: none;
+
+margin-left: 8px;
+
+}
+
+body {
+    margin: 0;
+    background-color: black;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+/* BACK */
+
+.back-link {
+    margin-top: 20px;
+}
+
+.back-link a {
+    font-family: 'MedievalSharp', cursive;
+    color: #d4af37;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* TITLE */
+
+h1 {
+    font-family: 'MedievalSharp', cursive;
+    color: #d4af37;
+    font-size: 42px;
+    margin-top: 10px;
+}
+
+/* CHARACTERS CONTAINER */
+
+.characters {
+
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+
+}
+
+/* CHARACTER BLOCK */
+
+.character {
+
+    text-align: center;
+
+}
+
+/* IMAGE */
+
+.character img {
+
+    width: 100%;
+    max-width: 260px;
+    height: auto;
+
+    border-radius: 12px;
+
+    border: 2px solid #d4af37;
+
+    box-shadow:
+        0 0 0 2px #d4af37,
+        0 0 12px rgba(212,175,55,0.6);
+
+}
+
+/* NAME */
+
+.character-name {
+
+    font-family: 'MedievalSharp', cursive;
+
+    color: #d4af37;
+
+    font-size: 22px;
+
+    margin-top: 12px;
+
+}
+
+/* ARROWS */
+
+.pagination {
+
+    margin-top: 40px;
+
+}
+
+.pagination a {
+
+    font-family: 'MedievalSharp', cursive;
+
+    color: #d4af37;
+
+    text-decoration: none;
+
+    font-size: 26px;
+
+    margin: 0 20px;
+
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    h1 {
+        font-size: 34px;
+    }
+
+    .characters {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .character img {
+        max-width: 90%;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="language-switch">
+
+<a href="postavy2.html">🇨🇿</a>
+
+<a href="postavy2_en.html">🇬🇧</a>
+
+</div>
+
+<div class="back-link">
+<a href="book1.html">← Back to Fire and Water</a>
+</div>
+
+<h1>Characters</h1>
+
+<div class="characters">
+
+<div class="character">
+
+<a href="hugh_en.html">
+<img src="hugh.png" alt="Hugh">
+</a>
+
+<div class="character-name">
+Hugh
+</div>
+
+</div>
+
+<div class="character">
+
+<a href="thomas_en.html">
+<img src="thomas.png" alt="Thomas">
+</a>
+
+<div class="character-name">
+Thomas
+</div>
+
+</div>
+
+<div class="character">
+
+<a href="william_en.html">
+<img src="william.png" alt="William">
+</a>
+
+<div class="character-name">
+William
+</div>
+
+</div>
+
+</div>
+
+<div class="pagination">
+
+<a href="postavy_en.html">←</a>
+
+<a href="postavy3_en.html">→</a>
+
+</div>
+
+</body>
+</html>
