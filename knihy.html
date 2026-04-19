@@ -67,15 +67,36 @@ h1 {
     margin-top: 10px;
 }
 
-/* OBRÁZEK KNIHY */
+/* KONTEJNER KNIH */
 
-.book-image {
+.books-container {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 60px;
+
     margin-top: 40px;
+
+    flex-wrap: wrap;
+
 }
 
-.book-image img {
+/* BLOK KNIHY */
+
+.book {
+
+    text-align: center;
+
+}
+
+/* OBRÁZEK */
+
+.book img {
 
     width: 100%;
+
     max-width: 340px;
 
     border-radius: 16px;
@@ -90,11 +111,11 @@ h1 {
 
 }
 
-/* TEXT POD OBRÁZKEM */
+/* TEXT POD OBRÁZKY */
 
 .image-hint {
 
-    margin-top: 18px;
+    margin-top: 30px;
 
     font-family: 'MedievalSharp', cursive;
 
@@ -114,7 +135,7 @@ h1 {
         font-size: 34px;
     }
 
-    .book-image img {
+    .book img {
         max-width: 90%;
     }
 
@@ -145,7 +166,11 @@ h1 {
 
 <h1>Knihy</h1>
 
-<div class="book-image">
+<div class="books-container">
+
+<!-- OHEŇ A VODA -->
+
+<div class="book">
 
 <a href="kniha1.html">
 
@@ -153,10 +178,24 @@ h1 {
 
 </a>
 
-<div class="image-hint">
-Klikni na obal knihy a vstup do příběhu.
 </div>
 
+<!-- LABYRINT -->
+
+<div class="book">
+
+<a href="labyrint.html">
+
+<img src="labyrinth.png" alt="Labyrint">
+
+</a>
+
+</div>
+
+</div>
+
+<div class="image-hint">
+Klikni na obal knihy a vstup do příběhu.
 </div>
 
 </body>
