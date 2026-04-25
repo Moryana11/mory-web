@@ -61,14 +61,34 @@ label {
     font-size: 22px;
 }
 
+/* PASSWORD WRAPPER */
+
+.password-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
 /* INPUT */
 
-input {
+.password-wrapper input {
     margin-top: 15px;
     padding: 10px;
+    padding-right: 40px;
     width: 250px;
     max-width: 80%;
     font-size: 16px;
+}
+
+/* EYE ICON */
+
+.toggle-password {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+    user-select: none;
 }
 
 /* BUTTON */
@@ -102,9 +122,17 @@ alt="Closed door">
 Enter password
 </label>
 
+<div class="password-wrapper">
+
 <input type="password"
 id="heslo"
 placeholder="Enter password">
+
+<span class="toggle-password"
+onclick="togglePassword()">
+👁️ </span>
+
+</div>
 
 <br>
 
@@ -126,6 +154,21 @@ localStorage.setItem("lang", l);
 lang = l;
 
 location.reload();
+
+}
+
+/* SHOW / HIDE PASSWORD */
+
+function togglePassword() {
+
+var input =
+document.getElementById("heslo");
+
+if (input.type === "password") {
+    input.type = "text";
+} else {
+    input.type = "password";
+}
 
 }
 
