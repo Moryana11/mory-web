@@ -177,7 +177,7 @@ function zkontrolujHeslo() {
 var heslo =
 document.getElementById("heslo").value;
 
-if (heslo === "library") {
+if (heslo.trim().toLowerCase() === "library")
 
 document.getElementById("dvere").src =
 "dvere_otevrene.png";
