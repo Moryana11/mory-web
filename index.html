@@ -62,14 +62,30 @@ label {
     font-size: 22px;
 }
 
-/* INPUT */
+/* INPUT + IKONA */
 
-input {
+.password-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.password-wrapper input {
     margin-top: 15px;
     padding: 10px;
+    padding-right: 40px;
     width: 250px;
     max-width: 80%;
     font-size: 16px;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+    user-select: none;
 }
 
 /* TLAČÍTKO */
@@ -103,9 +119,17 @@ alt="Zavřené dveře">
 Zadej heslo
 </label>
 
+<div class="password-wrapper">
+
 <input type="password"
 id="heslo"
 placeholder="Zadej heslo">
+
+<span class="toggle-password"
+onclick="togglePassword()">
+👁️ </span>
+
+</div>
 
 <br>
 
@@ -158,6 +182,21 @@ document.querySelector("input")
 document.querySelector("button")
 .innerText = "Vstoupit";
 
+}
+
+}
+
+/* ZOBRAZENÍ / SKRYTÍ HESLA */
+
+function togglePassword() {
+
+var input =
+document.getElementById("heslo");
+
+if (input.type === "password") {
+    input.type = "text";
+} else {
+    input.type = "password";
 }
 
 }
