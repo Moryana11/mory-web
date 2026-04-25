@@ -206,7 +206,7 @@ function zkontrolujHeslo() {
 var heslo =
 document.getElementById("heslo").value;
 
-if (heslo === "knihovna") {
+if (heslo.trim().toLowerCase() === "knihovna")
 
 document.getElementById("dvere").src =
 "dvere_otevrene.png";
