@@ -35,7 +35,7 @@ body {
     z-index: 0;
 }
 
-/* PŘEPÍNAČ JAZYKA */
+/* LANGUAGE SWITCH */
 
 .language-switch {
 
@@ -61,7 +61,7 @@ body {
 
 }
 
-/* OBSAH NAD EFEKTEM */
+/* CONTENT ABOVE EFFECT */
 
 .back-link,
 h1,
@@ -71,7 +71,7 @@ h1,
     z-index: 2;
 }
 
-/* ZPĚT */
+/* BACK */
 
 .back-link {
     margin-top: 25px;
@@ -93,7 +93,7 @@ h1,
 
 }
 
-/* NADPIS */
+/* TITLE */
 
 h1 {
     font-family: 'MedievalSharp', cursive;
@@ -102,7 +102,7 @@ h1 {
     margin-top: 18px;
 }
 
-/* ČÍSLA KAPITOL */
+/* CHAPTER NUMBERS */
 
 .chapter-list {
 
@@ -149,7 +149,7 @@ h1 {
 
 }
 
-/* POSLEDNÍ KAPITOLA */
+/* LAST CHAPTER */
 
 .last-read {
 
@@ -171,7 +171,7 @@ h1 {
 
 }
 
-/* MOBIL */
+/* MOBILE */
 
 @media (max-width: 768px) {
 
@@ -196,17 +196,27 @@ h1 {
 
 <canvas id="magicDust"></canvas>
 
-<!-- ZPĚT -->
+<!-- LANGUAGE SWITCH -->
+
+<div class="language-switch">
+
+<a href="kapitoly.html">🇨🇿</a>
+
+<a href="chapters.html">🇬🇧</a>
+
+</div>
+
+<!-- BACK -->
 
 <div class="back-link">
 <a href="kniha1.html">← Zpět na knihu</a>
 </div>
 
-<!-- NADPIS -->
+<!-- TITLE -->
 
 <h1>Kapitoly</h1>
 
-<!-- KAPITOLY -->
+<!-- CHAPTERS -->
 
 <div class="chapter-list">
 
@@ -223,14 +233,14 @@ h1 {
 
 </div>
 
-<!-- POSLEDNÍ KAPITOLA -->
+<!-- LAST CHAPTER -->
 
 <div class="last-read" id="lastRead">
 </div>
 
 <script>
 
-/* ZOBRAZIT POSLEDNÍ PŘEČTENOU */
+/* SHOW LAST READ CHAPTER */
 
 var last = localStorage.getItem("lastChapter");
 
@@ -361,6 +371,14 @@ window.addEventListener("resize", () => {
 });
 
 </script>
+
+<!-- LANGUAGE SWITCH -->
+
+<script src="language-switch.js"></script>
+
+<!-- PROTECTION -->
+
+<script src="ochrana.js"></script>
 
 </body>
 </html>
