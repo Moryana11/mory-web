@@ -11,29 +11,7 @@
 
 <style>
 
-/* LANGUAGE SWITCH */
-
-.language-switch {
-
-position: fixed;
-
-top: 15px;
-
-right: 20px;
-
-font-size: 22px;
-
-z-index: 1000;
-
-}
-
-.language-switch a {
-
-text-decoration: none;
-
-margin-left: 8px;
-
-}
+/* BODY */
 
 body {
     margin: 0;
@@ -41,6 +19,57 @@ body {
     text-align: center;
     font-family: Arial, sans-serif;
     color: white;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* MAGIC DUST */
+
+#magicDust{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* LANGUAGE SWITCH */
+
+.language-switch {
+
+    position: fixed;
+
+    top: 15px;
+
+    right: 20px;
+
+    z-index: 1000;
+
+    display: flex;
+
+    gap: 10px;
+
+}
+
+.language-switch a {
+
+    text-decoration: none;
+
+    font-size: 22px;
+
+}
+
+/* CONTENT ABOVE EFFECT */
+
+.language-switch,
+.back-link,
+h1,
+.characters,
+.pagination {
+    position: relative;
+    z-index: 2;
 }
 
 /* BACK */
@@ -53,7 +82,16 @@ body {
     font-family: 'MedievalSharp', cursive;
     color: #d4af37;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.back-link a:hover {
+
+    text-shadow:
+        0 0 10px #d4af37,
+        0 0 20px rgba(212,175,55,0.8);
+
 }
 
 /* TITLE */
@@ -61,8 +99,8 @@ body {
 h1 {
     font-family: 'MedievalSharp', cursive;
     color: #d4af37;
-    font-size: 42px;
-    margin-top: 10px;
+    font-size: 46px;
+    margin-top: 12px;
 }
 
 /* CHARACTERS CONTAINER */
@@ -71,8 +109,8 @@ h1 {
 
     display: flex;
     justify-content: center;
-    gap: 40px;
-    margin-top: 50px;
+    gap: 45px;
+    margin-top: 55px;
     flex-wrap: wrap;
 
 }
@@ -93,13 +131,25 @@ h1 {
     max-width: 260px;
     height: auto;
 
-    border-radius: 12px;
+    border-radius: 14px;
 
     border: 2px solid #d4af37;
+
+    transition: 0.35s;
 
     box-shadow:
         0 0 0 2px #d4af37,
         0 0 12px rgba(212,175,55,0.6);
+
+}
+
+.character img:hover {
+
+    transform: scale(1.03);
+
+    box-shadow:
+        0 0 0 2px #d4af37,
+        0 0 24px rgba(212,175,55,0.9);
 
 }
 
@@ -111,9 +161,9 @@ h1 {
 
     color: #d4af37;
 
-    font-size: 22px;
+    font-size: 24px;
 
-    margin-top: 12px;
+    margin-top: 14px;
 
 }
 
@@ -121,7 +171,7 @@ h1 {
 
 .pagination {
 
-    margin-top: 40px;
+    margin-top: 45px;
 
 }
 
@@ -133,9 +183,19 @@ h1 {
 
     text-decoration: none;
 
-    font-size: 26px;
+    font-size: 34px;
 
     margin: 0 20px;
+
+    transition: 0.3s;
+
+}
+
+.pagination a:hover {
+
+    text-shadow:
+        0 0 10px #d4af37,
+        0 0 20px rgba(212,175,55,0.8);
 
 }
 
@@ -144,7 +204,7 @@ h1 {
 @media (max-width: 768px) {
 
     h1 {
-        font-size: 34px;
+        font-size: 36px;
     }
 
     .characters {
@@ -164,6 +224,12 @@ h1 {
 
 <body>
 
+<!-- MAGIC DUST -->
+
+<canvas id="magicDust"></canvas>
+
+<!-- LANGUAGE SWITCH -->
+
 <div class="language-switch">
 
 <a href="postavy4.html">🇨🇿</a>
@@ -172,11 +238,17 @@ h1 {
 
 </div>
 
+<!-- BACK -->
+
 <div class="back-link">
 <a href="book1.html">← Back to Fire and Water</a>
 </div>
 
+<!-- TITLE -->
+
 <h1>Characters</h1>
+
+<!-- CHARACTERS -->
 
 <div class="characters">
 
@@ -218,6 +290,8 @@ Sienna Parsons
 
 </div>
 
+<!-- ARROWS -->
+
 <div class="pagination">
 
 <a href="postavy3_en.html">←</a>
@@ -225,6 +299,124 @@ Sienna Parsons
 <a href="#">→</a>
 
 </div>
+
+<!-- MAGIC DUST SCRIPT -->
+
+<script>
+
+const canvas = document.getElementById("magicDust");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const particles = [];
+
+class Particle {
+
+    constructor(){
+        this.reset();
+    }
+
+    reset(){
+
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+
+        this.size = Math.random() * 2 + 1;
+
+        this.speedX = (Math.random() - 0.5) * 0.25;
+        this.speedY = (Math.random() - 0.5) * 0.25;
+
+        this.opacity = Math.random() * 0.5 + 0.2;
+
+        this.glow = Math.random() * 18 + 8;
+    }
+
+    update(){
+
+        this.x += this.speedX;
+        this.y += this.speedY;
+
+        if(
+            this.x < -50 ||
+            this.x > canvas.width + 50 ||
+            this.y < -50 ||
+            this.y > canvas.height + 50
+        ){
+            this.reset();
+        }
+    }
+
+    draw(){
+
+        const gradient = ctx.createRadialGradient(
+            this.x,
+            this.y,
+            0,
+            this.x,
+            this.y,
+            this.glow
+        );
+
+        gradient.addColorStop(
+            0,
+            `rgba(255,215,120,${this.opacity})`
+        );
+
+        gradient.addColorStop(
+            1,
+            "rgba(255,215,120,0)"
+        );
+
+        ctx.beginPath();
+
+        ctx.fillStyle = gradient;
+
+        ctx.arc(
+            this.x,
+            this.y,
+            this.glow,
+            0,
+            Math.PI * 2
+        );
+
+        ctx.fill();
+    }
+
+}
+
+for(let i = 0; i < 80; i++){
+    particles.push(new Particle());
+}
+
+function animate(){
+
+    ctx.clearRect(
+        0,
+        0,
+        canvas.width,
+        canvas.height
+    );
+
+    particles.forEach(particle => {
+        particle.update();
+        particle.draw();
+    });
+
+    requestAnimationFrame(animate);
+}
+
+animate();
+
+window.addEventListener("resize", () => {
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+});
+
+</script>
 
 </body>
 </html>
