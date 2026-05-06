@@ -11,6 +11,8 @@
 
 <style>
 
+/* BODY */
+
 body {
     margin: 0;
     background-color: black;
@@ -35,13 +37,38 @@ body {
 
 /* CONTENT ABOVE EFFECT */
 
+.language-switch,
 .back-link,
 h1,
-.location-image,
+.location-image-wrapper,
 .text-box,
 .overlay {
     position: relative;
     z-index: 2;
+}
+
+/* PŘEPÍNAČ JAZYKA */
+
+.language-switch {
+
+    position: fixed;
+
+    top: 15px;
+
+    right: 20px;
+
+    font-size: 22px;
+
+    z-index: 1000;
+
+}
+
+.language-switch a {
+
+    text-decoration: none;
+
+    margin-left: 8px;
+
 }
 
 /* ZPĚT */
@@ -71,7 +98,7 @@ h1,
 h1 {
     font-family: 'MedievalSharp', cursive;
     color: #d4af37;
-    font-size: 46px;
+    font-size: 48px;
     margin-top: 15px;
 
     text-shadow:
@@ -80,12 +107,18 @@ h1 {
 
 /* OBRÁZEK */
 
+.location-image-wrapper {
+
+    margin-top: 35px;
+
+}
+
 .location-image {
 
     width: 100%;
-    max-width: 900px;
+    max-width: 920px;
 
-    border-radius: 14px;
+    border-radius: 16px;
 
     border: 2px solid #d4af37;
 
@@ -95,9 +128,7 @@ h1 {
 
     box-shadow:
         0 0 0 2px #d4af37,
-        0 0 14px rgba(212,175,55,0.6);
-
-    margin-top: 30px;
+        0 0 16px rgba(212,175,55,0.6);
 
 }
 
@@ -107,7 +138,7 @@ h1 {
 
     box-shadow:
         0 0 0 2px #d4af37,
-        0 0 28px rgba(212,175,55,0.9);
+        0 0 32px rgba(212,175,55,0.9);
 
 }
 
@@ -115,21 +146,30 @@ h1 {
 
 .text-box {
 
-    max-width: 900px;
+    max-width: 950px;
 
-    margin: 35px auto;
+    margin: 45px auto;
 
-    padding: 0 20px;
+    padding: 0 24px;
 
     text-align: left;
 
-    line-height: 1.8;
+    line-height: 1.95;
 
-    font-size: 18px;
+    font-size: 19px;
+
+    text-shadow:
+        0 0 8px rgba(255,255,255,0.05);
 
 }
 
-/* ZVĚTŠENÝ OBRÁZEK */
+.text-box p {
+
+    margin-bottom: 28px;
+
+}
+
+/* OVERLAY */
 
 .overlay {
 
@@ -148,7 +188,7 @@ h1 {
     justify-content: center;
     align-items: center;
 
-    z-index: 999;
+    z-index: 9999;
 
 }
 
@@ -157,7 +197,12 @@ h1 {
     max-width: 95%;
     max-height: 95%;
 
-    border-radius: 12px;
+    border-radius: 14px;
+
+    border: 2px solid #d4af37;
+
+    box-shadow:
+        0 0 35px rgba(212,175,55,0.6);
 
 }
 
@@ -170,7 +215,8 @@ h1 {
     }
 
     .text-box {
-        font-size: 17px;
+        font-size: 18px;
+        line-height: 1.85;
     }
 
     .location-image {
@@ -189,6 +235,16 @@ h1 {
 
 <canvas id="magicDust"></canvas>
 
+<!-- PŘEPÍNAČ JAZYKA -->
+
+<div class="language-switch">
+
+<a href="lokace_vienta.html">🇨🇿</a>
+
+<a href="location_vienta.html">🇬🇧</a>
+
+</div>
+
 <!-- ZPĚT -->
 
 <div class="back-link">
@@ -201,6 +257,8 @@ h1 {
 
 <!-- OBRÁZEK -->
 
+<div class="location-image-wrapper">
+
 <img
 src="vienta.png"
 class="location-image"
@@ -208,47 +266,51 @@ onclick="openImage(this)"
 alt="Vienta"
 >
 
+</div>
+
 <!-- TEXT -->
 
 <div class="text-box">
 
 <p>
 
-<strong>Vienta</strong> je exotické město ležící na jihozápadě země Stonegrad, 
-na kontinentu Solisium. Na své západní straně je omýváno mořem, 
-zatímco na východě se rozprostírá nekonečná poušť <strong>Monolitní pustina</strong>, 
-kraj spalujícího slunce, písku a starobylých tajemství.
-
-Díky své poloze je Vienta místem, 
-kde se střetává síla oceánu s neúprosnou mocí pouště.
+<strong>Vienta</strong> je exotické město ležící na jihozápadě země Stonegrad na kontinentu Solisium. Na západní straně jej omývá moře, zatímco na východě se rozprostírá nekonečná poušť známá jako <strong>Monolitní pustina</strong> — kraj spalujícího slunce, písku a pradávných tajemství.
 
 </p>
 
 <p>
 
-Město je proslulé svými ohnivými mágy, kteří zde žijí po generace. Děti s nadáním pro magii 
-jsou vychovávány a cvičeny již od útlého věku, aby dokázaly ovládnout ničivou i tvořivou sílu ohně. 
-
-Oheň je zde nejen zbraní, ale i symbolem víry, cti a životní energie. V ulicích Vienty je běžné 
-spatřit plameny tančící v rukou učedníků i zkušených mistrů.
+Díky své poloze je Vienta místem, kde se střetává síla oceánu s neúprosnou mocí pouště. Horký vítr zde nese vůni soli, rozpáleného kamene a ohně, který je neoddělitelnou součástí života místních obyvatel.
 
 </p>
 
 <p>
 
-Dominantou města je majestátní chrám <strong>Svatyně Rudého dechu</strong>, 
-největší svatyně nejen ve Vientě, ale v celém Stonegradu. Je považována za posvátné centrum 
-ohnivé magie a duchovní srdce země.
-
-Do jejích zdobených síní přicházejí poutníci, mágové i vládci, 
-aby zde hledali sílu, požehnání nebo odpovědi na otázky, které nelze nalézt nikde jinde.
+Město je proslulé svými ohnivými mágy, kteří zde žijí již po generace. Děti s nadáním pro magii jsou vychovávány a cvičeny od útlého věku, aby dokázaly ovládnout ničivou i tvořivou sílu ohně. Oheň zde není pouze zbraní, ale také symbolem víry, cti a životní energie.
 
 </p>
 
 <p>
 
-Vienta je město žáru, víry a disciplíny. Město, kde se zrodila moc ohně a kde každý plamen 
-může být světlem naděje… nebo začátkem zkázy.
+V ulicích Vienty je běžné spatřit plameny tančící v rukou učedníků i zkušených mistrů. Ohnivá magie prostupuje každodenním životem města — od slavnostních obřadů až po vojenský výcvik.
+
+</p>
+
+<p>
+
+Dominantou města je majestátní chrám známý jako <strong>Svatyně Rudého dechu</strong>, největší svatyně nejen ve Vientě, ale v celém Stonegradu. Je považována za posvátné centrum ohnivé magie a duchovní srdce země.
+
+</p>
+
+<p>
+
+Do jejích bohatě zdobených síní přicházejí poutníci, mágové i vládci, aby zde hledali sílu, požehnání nebo odpovědi na otázky, které nelze nalézt nikde jinde.
+
+</p>
+
+<p>
+
+Vienta je město žáru, víry a disciplíny. Město, kde se zrodila moc ohně a kde každý plamen může být světlem naděje… nebo začátkem zkázy.
 
 </p>
 
@@ -413,6 +475,8 @@ window.addEventListener("resize", () => {
 });
 
 </script>
+
+<!-- PROTECTION -->
 
 <script src="ochrana.js"></script>
 
