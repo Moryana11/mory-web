@@ -35,7 +35,7 @@ body {
     z-index: 0;
 }
 
-/* PŘEPÍNAČ JAZYKA */
+/* LANGUAGE SWITCH */
 
 .language-switch {
     position: fixed;
@@ -52,7 +52,7 @@ body {
     font-size: 22px;
 }
 
-/* OBSAH NAD EFEKTEM */
+/* CONTENT ABOVE EFFECT */
 
 .back-link,
 h1,
@@ -62,7 +62,7 @@ h1,
     z-index: 2;
 }
 
-/* ZPĚT */
+/* BACK */
 
 .back-link {
     margin-top: 25px;
@@ -82,7 +82,7 @@ h1,
         0 0 20px rgba(212,175,55,0.8);
 }
 
-/* NADPIS */
+/* TITLE */
 
 h1 {
     font-family: 'MedievalSharp', cursive;
@@ -91,7 +91,7 @@ h1 {
     margin-top: 15px;
 }
 
-/* KONTEJNER KNIH */
+/* BOOKS CONTAINER */
 
 .books-container {
     display: flex;
@@ -101,13 +101,13 @@ h1 {
     flex-wrap: wrap;
 }
 
-/* BLOK KNIHY */
+/* BOOK BLOCK */
 
 .book {
     text-align: center;
 }
 
-/* OBRÁZEK */
+/* IMAGE */
 
 .book img {
     width: 100%;
@@ -133,7 +133,7 @@ h1 {
 
 }
 
-/* TEXT POD OBRÁZKY */
+/* TEXT UNDER IMAGES */
 
 .image-hint {
     margin-top: 35px;
@@ -143,7 +143,7 @@ h1 {
     opacity: 0.9;
 }
 
-/* MOBIL */
+/* MOBILE */
 
 @media (max-width: 768px) {
 
@@ -172,28 +172,28 @@ h1 {
 
 <canvas id="magicDust"></canvas>
 
-<!-- JAZYKY -->
+<!-- LANGUAGE SWITCH -->
 
 <div class="language-switch">
 <a href="knihy.html">🇨🇿</a>
 <a href="books.html">🇬🇧</a>
 </div>
 
-<!-- ZPĚT -->
+<!-- BACK -->
 
 <div class="back-link">
 <a href="hlavni.html">← Zpět na hlavní stránku</a>
 </div>
 
-<!-- NADPIS -->
+<!-- TITLE -->
 
 <h1>Knihy</h1>
 
-<!-- KNIHY -->
+<!-- BOOKS -->
 
 <div class="books-container">
 
-<!-- OHEŇ A VODA -->
+<!-- FIRE AND WATER -->
 
 <div class="book">
 <a href="kniha1.html">
@@ -209,7 +209,7 @@ h1 {
 </a>
 </div>
 
-<!-- STRÁŽCE UPÍRKY -->
+<!-- GUARDIAN OF THE VAMPIRE -->
 
 <div class="book">
 <a href="strazce_upirky.html">
@@ -342,6 +342,14 @@ window.addEventListener("resize", () => {
 });
 
 </script>
+
+<!-- LANGUAGE SWITCH -->
+
+<script src="language-switch.js"></script>
+
+<!-- PROTECTION -->
+
+<script src="ochrana.js"></script>
 
 </body>
 </html>
