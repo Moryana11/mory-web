@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 
-<html lang="cs">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Location</title>
+<title>Locations</title>
 
 <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
 
@@ -112,21 +112,37 @@ h1 {
 
     justify-content: center;
 
-    gap: 35px;
+    gap: 40px;
 
-    margin-top: 45px;
+    margin-top: 50px;
 
     flex-wrap: wrap;
 
 }
 
+/* LOCATION CARD */
+
+.location-card {
+
+    transition: 0.35s;
+
+}
+
+.location-card:hover {
+
+    transform: translateY(-6px);
+
+}
+
+/* IMAGE */
+
 .locations img {
 
     width: 100%;
 
-    max-width: 260px;
+    max-width: 270px;
 
-    border-radius: 14px;
+    border-radius: 16px;
 
     border: 2px solid #d4af37;
 
@@ -136,7 +152,7 @@ h1 {
 
     box-shadow:
         0 0 0 2px #d4af37,
-        0 0 12px rgba(212,175,55,0.6);
+        0 0 14px rgba(212,175,55,0.6);
 
 }
 
@@ -146,7 +162,7 @@ h1 {
 
     box-shadow:
         0 0 0 2px #d4af37,
-        0 0 26px rgba(212,175,55,0.9);
+        0 0 30px rgba(212,175,55,0.9);
 
 }
 
@@ -158,20 +174,20 @@ h1 {
 
     color: #d4af37;
 
-    margin-top: 14px;
+    margin-top: 16px;
 
-    font-size: 22px;
+    font-size: 24px;
 
     text-shadow:
         0 0 10px rgba(212,175,55,0.25);
 
 }
 
-/* ARROWS */
+/* PAGINATION */
 
 .pagination {
 
-    margin-top: 45px;
+    margin-top: 55px;
 
 }
 
@@ -183,7 +199,7 @@ h1 {
 
     text-decoration: none;
 
-    font-size: 30px;
+    font-size: 34px;
 
     margin: 0 20px;
 
@@ -210,10 +226,15 @@ h1 {
     .locations {
         flex-direction: column;
         align-items: center;
+        gap: 45px;
     }
 
     .locations img {
         max-width: 90%;
+    }
+
+    .location-name {
+        font-size: 22px;
     }
 
 }
@@ -246,37 +267,52 @@ h1 {
 
 <!-- TITLE -->
 
-<h1>Location</h1>
+<h1>Locations</h1>
 
 <!-- LOCATIONS -->
 
 <div class="locations">
 
-<div>
+<!-- KASTLETON -->
+
+<div class="location-card">
+
 <a href="location_kastleton.html">
 <img src="kastleton.png" alt="Kastleton">
 </a>
+
 <div class="location-name">
 Kastleton
 </div>
+
 </div>
 
-<div>
+<!-- VIENTA -->
+
+<div class="location-card">
+
 <a href="location_vienta.html">
 <img src="vienta.png" alt="Vienta">
 </a>
+
 <div class="location-name">
 Vienta
 </div>
+
 </div>
 
-<div>
+<!-- STONEGARD -->
+
+<div class="location-card">
+
 <a href="location_stonegard_castle.html">
-<img src="kamenny_strazce.png" alt="Stonegard castle">
+<img src="kamenny_strazce.png" alt="Stonegard Castle">
 </a>
+
 <div class="location-name">
 Stonegard Castle
 </div>
+
 </div>
 
 </div>
