@@ -35,6 +35,23 @@ body {
     z-index: 0;
 }
 
+/* LANGUAGE SWITCH */
+
+.language-switch {
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    z-index: 1000;
+
+    display: flex;
+    gap: 10px;
+}
+
+.language-switch a {
+    text-decoration: none;
+    font-size: 22px;
+}
+
 /* CONTENT ABOVE EFFECT */
 
 nav,
@@ -159,6 +176,16 @@ h1 {
 <!-- MAGIC DUST -->
 
 <canvas id="magicDust"></canvas>
+
+<!-- LANGUAGE SWITCH -->
+
+<div class="language-switch">
+
+<a href="james.html">🇨🇿</a>
+
+<a href="james_en.html">🇬🇧</a>
+
+</div>
 
 <!-- NAVIGATION -->
 
@@ -303,6 +330,10 @@ window.addEventListener("resize", () => {
 });
 
 </script>
+
+<!-- LANGUAGE SWITCH -->
+
+<script src="language-switch.js"></script>
 
 <!-- PROTECTION -->
 
