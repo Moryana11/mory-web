@@ -1,1 +1,177 @@
+<!DOCTYPE html>
 
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chapters</title>
+
+<link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+
+<style>
+
+/* LANGUAGE SWITCH */
+
+.language-switch {
+
+position: fixed;
+
+top: 15px;
+
+right: 20px;
+
+font-size: 22px;
+
+z-index: 1000;
+
+}
+
+.language-switch a {
+
+text-decoration: none;
+
+margin-left: 8px;
+
+}
+
+body {
+    margin: 0;
+    background-color: black;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+/* BACK */
+
+.back-link {
+    margin-top: 25px;
+}
+
+.back-link a {
+    font-family: 'MedievalSharp', cursive;
+    color: #d4af37;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* TITLE */
+
+h1 {
+    font-family: 'MedievalSharp', cursive;
+    color: #d4af37;
+    font-size: 42px;
+    margin-top: 15px;
+}
+
+/* CHAPTER NUMBERS */
+
+.chapter-list {
+
+    margin-top: 40px;
+
+}
+
+.chapter-list a {
+
+    font-family: 'MedievalSharp', cursive;
+
+    color: #d4af37;
+
+    text-decoration: none;
+
+    font-size: 28px;
+
+    margin: 0 12px;
+
+    padding: 10px 16px;
+
+    border: 2px solid #d4af37;
+
+    border-radius: 8px;
+
+    display: inline-block;
+
+}
+
+.chapter-list a:hover {
+
+    background-color: #d4af37;
+
+    color: black;
+
+}
+
+/* LAST CHAPTER */
+
+.last-read {
+
+    margin-top: 30px;
+
+    font-family: 'MedievalSharp', cursive;
+
+    color: #d4af37;
+
+    font-size: 18px;
+
+}
+
+.last-read a {
+
+    color: white;
+
+    text-decoration: underline;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="back-link">
+<a href="book1.html">← Back to book</a>
+</div>
+
+<h1>Chapters</h1>
+
+<div class="chapter-list">
+
+<a href="chapter1.html">1</a>
+<a href="chapter2.html">2</a>
+<a href="chapter3.html">3</a>
+<a href="chapter4.html">4</a>
+<a href="chapter5.html">5</a>
+<a href="chapter6.html">6</a>
+<a href="chapter7.html">7</a>
+<a href="chapter8.html">8</a>
+
+</div>
+
+<div class="last-read" id="lastRead">
+</div>
+
+<script>
+
+/* SHOW LAST READ CHAPTER */
+
+var last = localStorage.getItem("lastChapter");
+
+if (last) {
+
+document.getElementById("lastRead").innerHTML =
+"Last read chapter: " +
+"<a href='" + last + "'>Continue reading</a>";
+
+}
+
+</script>
+
+<!-- PROTECTION -->
+
+<script src="ochrana.js"></script>
+
+</body>
+</html>
