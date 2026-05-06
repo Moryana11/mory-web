@@ -14,134 +14,231 @@
 /* BODY */
 
 body {
+
     margin: 0;
+
     background-color: black;
+
     text-align: center;
+
     font-family: Arial, sans-serif;
+
     color: white;
+
     overflow-x: hidden;
+
     position: relative;
+
 }
 
 /* MAGIC DUST */
 
-#magicDust{
+#magicDust {
+
     position: fixed;
+
     top: 0;
     left: 0;
+
     width: 100%;
     height: 100%;
+
     pointer-events: none;
+
     z-index: 0;
+
 }
 
-/* PŘEPÍNAČ JAZYKA */
+/* CONTENT ABOVE EFFECT */
+
+.language-switch,
+.back-link,
+h1,
+.about-container {
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+/* LANGUAGE SWITCH */
 
 .language-switch {
+
     position: fixed;
+
     top: 15px;
+
     right: 20px;
+
     z-index: 1000;
 
     display: flex;
+
     gap: 10px;
+
 }
 
 .language-switch a {
+
     text-decoration: none;
+
     font-size: 22px;
+
 }
 
-/* OBSAH NAD EFEKTEM */
-
-.back-link,
-h1,
-.profile-image,
-.text-box {
-    position: relative;
-    z-index: 2;
-}
-
-/* ZPĚT */
+/* BACK */
 
 .back-link {
+
     margin-top: 25px;
+
 }
 
 .back-link a {
+
     font-family: 'MedievalSharp', cursive;
+
     color: #d4af37;
+
     text-decoration: none;
+
     font-size: 20px;
+
     transition: 0.3s;
+
 }
 
 .back-link a:hover {
+
     text-shadow:
         0 0 10px #d4af37,
         0 0 20px rgba(212,175,55,0.8);
+
 }
 
-/* NADPIS */
+/* TITLE */
 
 h1 {
+
     font-family: 'MedievalSharp', cursive;
+
     color: #d4af37;
-    font-size: 46px;
+
+    font-size: 48px;
+
     margin-top: 15px;
+
+    text-shadow:
+        0 0 12px rgba(212,175,55,0.35);
+
 }
 
-/* OBRÁZEK */
+/* MAIN CONTAINER */
+
+.about-container {
+
+    max-width: 850px;
+
+    margin: 40px auto 60px auto;
+
+    padding: 0 20px;
+
+}
+
+/* PROFILE IMAGE */
 
 .profile-image {
-    margin-top: 30px;
+
+    margin-bottom: 40px;
+
 }
 
 .profile-image img {
 
     width: 100%;
-    max-width: 300px;
 
-    border-radius: 12px;
+    max-width: 320px;
+
+    border-radius: 16px;
 
     border: 2px solid #d4af37;
 
+    transition: 0.35s;
+
     box-shadow:
         0 0 0 2px #d4af37,
-        0 0 12px rgba(212,175,55,0.6);
+        0 0 18px rgba(212,175,55,0.6);
 
 }
 
-/* TEXT */
+.profile-image img:hover {
+
+    transform: scale(1.02);
+
+    box-shadow:
+        0 0 0 2px #d4af37,
+        0 0 30px rgba(212,175,55,0.9);
+
+}
+
+/* TEXT BOX */
 
 .text-box {
 
-    max-width: 700px;
+    background:
+        rgba(15,15,15,0.88);
 
-    margin: 30px auto;
+    border: 1px solid rgba(212,175,55,0.4);
 
-    padding: 0 20px;
+    border-radius: 18px;
 
-    line-height: 1.8;
+    padding: 35px 30px;
+
+    line-height: 1.9;
 
     font-size: 18px;
 
+    box-shadow:
+        0 0 22px rgba(212,175,55,0.08);
+
 }
 
-/* MOBIL */
+.text-box p {
+
+    margin-bottom: 24px;
+
+}
+
+.text-box p:last-child {
+
+    margin-bottom: 0;
+
+}
+
+/* MOBILE */
 
 @media (max-width: 768px) {
 
     h1 {
-        font-size: 36px;
+
+        font-size: 38px;
+
     }
 
     .profile-image img {
-        max-width: 90%;
+
+        max-width: 85%;
+
     }
 
     .text-box {
+
         font-size: 17px;
+
+        padding: 28px 22px;
+
     }
 
 }
@@ -156,7 +253,7 @@ h1 {
 
 <canvas id="magicDust"></canvas>
 
-<!-- JAZYKY -->
+<!-- LANGUAGE SWITCH -->
 
 <div class="language-switch">
 
@@ -166,17 +263,23 @@ h1 {
 
 </div>
 
-<!-- ZPĚT -->
+<!-- BACK -->
 
 <div class="back-link">
+
 <a href="hlavni.html">← Zpět na hlavní stránku</a>
+
 </div>
 
-<!-- NADPIS -->
+<!-- TITLE -->
 
 <h1>O mně</h1>
 
-<!-- OBRÁZEK -->
+<!-- ABOUT CONTAINER -->
+
+<div class="about-container">
+
+<!-- IMAGE -->
 
 <div class="profile-image">
 
@@ -189,17 +292,32 @@ h1 {
 <div class="text-box">
 
 <p>
+
 Psaní příběhů je pro mě něco, co mě opravdu baví a naplňuje.
-Je to svět, do kterého se mohu ponořit, když si potřebuji odpočinout
-nebo si srovnat myšlenky a emoce.
+Je to svět, do kterého se mohu ponořit, když si potřebuji odpočinout,
+uniknout od reality nebo si srovnat vlastní myšlenky a emoce.
+
 </p>
 
 <p>
+
 K lásce k fantasy a středověku mě přivedli moji rodiče,
 kteří mě v této zálibě vždy podporovali.
 Díky nim jsem si vytvořila silný vztah k příběhům,
 dobrodružství a světům, kde je možné téměř cokoli.
+
 </p>
+
+<p>
+
+Miluji vytváření vlastních světů, postav a příběhů,
+které mají atmosféru, emoce a vlastní historii.
+Každá kniha pro mě není jen obyčejný příběh,
+ale místo, do kterého se mohu znovu vracet.
+
+</p>
+
+</div>
 
 </div>
 
@@ -218,7 +336,9 @@ const particles = [];
 class Particle {
 
     constructor(){
+
         this.reset();
+
     }
 
     reset(){
@@ -234,6 +354,7 @@ class Particle {
         this.opacity = Math.random() * 0.5 + 0.2;
 
         this.glow = Math.random() * 18 + 8;
+
     }
 
     update(){
@@ -247,8 +368,11 @@ class Particle {
             this.y < -50 ||
             this.y > canvas.height + 50
         ){
+
             this.reset();
+
         }
+
     }
 
     draw(){
@@ -285,12 +409,15 @@ class Particle {
         );
 
         ctx.fill();
+
     }
 
 }
 
 for(let i = 0; i < 80; i++){
+
     particles.push(new Particle());
+
 }
 
 function animate(){
@@ -303,11 +430,14 @@ function animate(){
     );
 
     particles.forEach(particle => {
+
         particle.update();
         particle.draw();
+
     });
 
     requestAnimationFrame(animate);
+
 }
 
 animate();
@@ -320,6 +450,10 @@ window.addEventListener("resize", () => {
 });
 
 </script>
+
+<!-- PROTECTION -->
+
+<script src="ochrana.js"></script>
 
 </body>
 </html>
