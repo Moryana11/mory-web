@@ -11,52 +11,107 @@
 
 <style>
 
+/* BODY */
+
 body {
-    background-color: black;
+
     margin: 0;
+
+    background-color: black;
+
+    color: white;
+
     text-align: center;
+
     font-family: Arial, sans-serif;
+
     overflow-x: hidden;
+
     position: relative;
+
 }
 
 /* MAGIC DUST */
 
-#magicDust{
+#magicDust {
+
     position: fixed;
+
     top: 0;
     left: 0;
+
     width: 100%;
     height: 100%;
+
     pointer-events: none;
+
     z-index: 0;
+
 }
 
 /* CONTENT ABOVE EFFECT */
 
-nav,
+.language-switch,
+.back-link,
 h1,
-.character-img,
-.description {
+.character-container,
+.overlay {
+
     position: relative;
+
     z-index: 2;
+
 }
 
-/* NAVIGACE */
+/* LANGUAGE SWITCH */
 
-nav {
-    margin-top: 25px;
+.language-switch {
+
+    position: fixed;
+
+    top: 15px;
+
+    right: 20px;
+
+    display: flex;
+
+    gap: 10px;
+
+    z-index: 1000;
+
 }
 
-nav a {
-    font-family: 'MedievalSharp', cursive;
-    color: #d4af37;
+.language-switch a {
+
     text-decoration: none;
-    font-size: 20px;
-    transition: 0.3s;
+
+    font-size: 22px;
+
 }
 
-nav a:hover {
+/* BACK */
+
+.back-link {
+
+    margin-top: 25px;
+
+}
+
+.back-link a {
+
+    font-family: 'MedievalSharp', cursive;
+
+    color: #d4af37;
+
+    text-decoration: none;
+
+    font-size: 20px;
+
+    transition: 0.3s;
+
+}
+
+.back-link a:hover {
 
     text-shadow:
         0 0 10px #d4af37,
@@ -64,83 +119,151 @@ nav a:hover {
 
 }
 
-/* NADPIS */
+/* TITLE */
 
 h1 {
+
     font-family: 'MedievalSharp', cursive;
+
     color: #d4af37;
-    font-size: 46px;
+
+    font-size: 48px;
+
     margin-top: 15px;
 
     text-shadow:
         0 0 12px rgba(212,175,55,0.35);
+
 }
 
-/* OBRÁZEK */
+/* CHARACTER CONTAINER */
 
-.character-img {
+.character-container {
+
+    max-width: 950px;
+
+    margin: 40px auto 60px auto;
+
+    padding: 0 20px;
+
+}
+
+/* IMAGE */
+
+.character-image img {
 
     width: 100%;
-    max-width: 350px;
-    height: auto;
 
-    margin-top: 35px;
+    max-width: 380px;
 
-    border-radius: 14px;
+    border-radius: 16px;
+
     border: 2px solid #d4af37;
+
+    cursor: pointer;
 
     transition: 0.35s;
 
     box-shadow:
         0 0 0 2px #d4af37,
-        0 0 14px rgba(212,175,55,0.6);
+        0 0 18px rgba(212,175,55,0.6);
 
 }
 
-.character-img:hover {
+.character-image img:hover {
 
-    transform: scale(1.01);
+    transform: scale(1.02);
 
     box-shadow:
         0 0 0 2px #d4af37,
-        0 0 28px rgba(212,175,55,0.9);
+        0 0 30px rgba(212,175,55,0.9);
 
 }
 
-/* TEXT */
+/* DESCRIPTION */
 
 .description {
 
-    color: white;
+    margin-top: 40px;
 
-    font-size: 18px;
-    line-height: 1.8;
+    text-align: left;
 
-    max-width: 820px;
+    line-height: 1.9;
 
-    margin: 35px auto;
+    font-size: 19px;
 
-    padding: 0 20px;
-
-    text-align: center;
+    text-shadow:
+        0 0 8px rgba(255,255,255,0.05);
 
 }
 
-/* MOBIL */
+.description p {
+
+    margin-bottom: 28px;
+
+}
+
+/* OVERLAY */
+
+.overlay {
+
+    display: none;
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0,0,0,0.94);
+
+    justify-content: center;
+
+    align-items: center;
+
+    z-index: 9999;
+
+}
+
+.overlay img {
+
+    max-width: 95%;
+
+    max-height: 95%;
+
+    border-radius: 14px;
+
+    border: 2px solid #d4af37;
+
+    box-shadow:
+        0 0 35px rgba(212,175,55,0.6);
+
+}
+
+/* MOBILE */
 
 @media (max-width: 768px) {
 
     h1 {
-        font-size: 36px;
-    }
 
-    .character-img {
-        max-width: 280px;
+        font-size: 38px;
+
     }
 
     .description {
+
         font-size: 18px;
-        line-height: 1.9;
+
+        line-height: 1.8;
+
+    }
+
+    .character-image img {
+
+        max-width: 92%;
+
     }
 
 }
@@ -155,27 +278,52 @@ h1 {
 
 <canvas id="magicDust"></canvas>
 
-<!-- NAVIGACE -->
+<!-- LANGUAGE SWITCH -->
 
-<nav>
+<div class="language-switch">
+
+<a href="postava_morrkalil.html">🇨🇿</a>
+
+<a href="character_morrkalil.html">🇬🇧</a>
+
+</div>
+
+<!-- BACK -->
+
+<div class="back-link">
+
 <a href="postavy3.html">← Zpět na postavy</a>
-</nav>
 
-<!-- NADPIS -->
+</div>
+
+<!-- TITLE -->
 
 <h1>Morr’kalil</h1>
 
-<!-- OBRÁZEK -->
+<!-- CHARACTER -->
 
-<img src="morrkalil.png" alt="Morr’kalil" class="character-img">
+<div class="character-container">
 
-<!-- TEXT -->
+<div class="character-image">
+
+<img
+src="morrkalil.png"
+alt="Morr’kalil"
+onclick="openImage(this)"
+>
+
+</div>
+
+<!-- DESCRIPTION -->
 
 <div class="description">
 
 <p>
 
-<strong>Morr’kalil</strong> je temný Bůh krve, utrpení a smrti, přebývající v Temnotě.
+<strong>Morr’kalil</strong> je temný Bůh krve, utrpení a smrti, přebývající v samotné Temnotě.
+
+Jeho jméno je vyslovováno pouze šeptem a i ti nejodvážnější mágové se vyhýbají starým textům,
+které o něm hovoří.
 
 </p>
 
@@ -183,25 +331,92 @@ h1 {
 
 Je posedlý utrpením a touží přetvořit svět v nekonečný chrám bolesti.
 
-Jeho stoupenci mu slouží ve fanatické víře, že skrze bolest přijde očista.
+Věří, že skrze utrpení lze zlomit slabost smrtelníků a vytvořit novou existenci podřízenou pouze temnotě a strachu.
+
+Jeho stoupenci mu slouží s fanatickou oddaností a obětují vlastní těla i duše v naději,
+že skrze bolest naleznou očistu a vyšší smysl.
 
 </p>
 
 <p>
 
-Vládne prastaré temné magii, která mu umožňuje vysávat životní sílu z živých bytostí, ovládat krev a duše a vyvolávat nemrtvé.
+Morr’kalil vládne prastaré temné magii, která dalece přesahuje chápání běžných mágů.
 
-Dokáže šířit nákazu temnoty, měnit lidi v znetvořené služebníky a otevírat trhliny mezi světem živých a říší smrti.
+Dokáže vysávat životní sílu z živých bytostí, ovládat krev i duše a probouzet mrtvé,
+aby sloužili jeho vůli.
+
+Šíří nákazu temnoty, která pomalu deformuje tělo i mysl,
+a mění lidi v znetvořené služebníky bez vlastní vůle.
+
+Říká se také, že umí otevírat trhliny mezi světem živých a říší smrti,
+skrze které do světa pronikají bytosti zrozené z čisté temnoty.
 
 </p>
 
 <p>
 
-Jeho přítomnost láme vůli a probouzí strach i šílenství v srdcích smrtelníků.
+Jeho přítomnost sama o sobě láme vůli smrtelníků.
+
+Tam, kde se objeví, se šíří chlad, šílenství a nevysvětlitelný strach.
+
+Lidé ztrácejí naději, slyší hlasy ve své mysli a propadají zoufalství ještě dříve,
+než spatří jeho skutečnou podobu.
+
+</p>
+
+<p>
+
+Pro mnohé je Morr’kalil pouze legendou.
+
+Pro jiné je blížící se zkázou světa.
 
 </p>
 
 </div>
+
+</div>
+
+<!-- OVERLAY -->
+
+<div
+class="overlay"
+id="overlay"
+onclick="closeImage()"
+>
+
+<img id="bigImage">
+
+</div>
+
+<!-- IMAGE SCRIPT -->
+
+<script>
+
+function openImage(img) {
+
+    var overlay =
+    document.getElementById("overlay");
+
+    var bigImage =
+    document.getElementById("bigImage");
+
+    bigImage.src =
+    img.src;
+
+    overlay.style.display =
+    "flex";
+
+}
+
+function closeImage() {
+
+    document.getElementById("overlay")
+    .style.display =
+    "none";
+
+}
+
+</script>
 
 <!-- MAGIC DUST SCRIPT -->
 
@@ -234,6 +449,7 @@ class Particle {
         this.opacity = Math.random() * 0.5 + 0.2;
 
         this.glow = Math.random() * 18 + 8;
+
     }
 
     update(){
@@ -247,8 +463,11 @@ class Particle {
             this.y < -50 ||
             this.y > canvas.height + 50
         ){
+
             this.reset();
+
         }
+
     }
 
     draw(){
@@ -285,12 +504,15 @@ class Particle {
         );
 
         ctx.fill();
+
     }
 
 }
 
 for(let i = 0; i < 80; i++){
+
     particles.push(new Particle());
+
 }
 
 function animate(){
@@ -303,11 +525,14 @@ function animate(){
     );
 
     particles.forEach(particle => {
+
         particle.update();
         particle.draw();
+
     });
 
     requestAnimationFrame(animate);
+
 }
 
 animate();
@@ -320,6 +545,8 @@ window.addEventListener("resize", () => {
 });
 
 </script>
+
+<!-- PROTECTION -->
 
 <script src="ochrana.js"></script>
 
