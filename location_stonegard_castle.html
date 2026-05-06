@@ -11,30 +11,6 @@
 
 <style>
 
-/* LANGUAGE SWITCH */
-
-.language-switch {
-
-position: fixed;
-
-top: 15px;
-
-right: 20px;
-
-font-size: 22px;
-
-z-index: 1000;
-
-}
-
-.language-switch a {
-
-text-decoration: none;
-
-margin-left: 8px;
-
-}
-
 /* BODY */
 
 body {
@@ -43,6 +19,56 @@ body {
     text-align: center;
     font-family: Arial, sans-serif;
     color: white;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* MAGIC DUST */
+
+#magicDust{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* CONTENT ABOVE EFFECT */
+
+.language-switch,
+.back-link,
+h1,
+.location-image,
+.location-text,
+.overlay {
+    position: relative;
+    z-index: 2;
+}
+
+/* LANGUAGE SWITCH */
+
+.language-switch {
+
+    position: fixed;
+
+    top: 15px;
+
+    right: 20px;
+
+    font-size: 22px;
+
+    z-index: 1000;
+
+}
+
+.language-switch a {
+
+    text-decoration: none;
+
+    margin-left: 8px;
+
 }
 
 /* BACK */
@@ -55,7 +81,16 @@ body {
     font-family: 'MedievalSharp', cursive;
     color: #d4af37;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.back-link a:hover {
+
+    text-shadow:
+        0 0 10px #d4af37,
+        0 0 20px rgba(212,175,55,0.8);
+
 }
 
 /* TITLE */
@@ -63,14 +98,17 @@ body {
 h1 {
     font-family: 'MedievalSharp', cursive;
     color: #d4af37;
-    font-size: 42px;
-    margin-top: 10px;
+    font-size: 46px;
+    margin-top: 15px;
+
+    text-shadow:
+        0 0 12px rgba(212,175,55,0.35);
 }
 
 /* IMAGE */
 
 .location-image {
-    margin-top: 30px;
+    margin-top: 35px;
 }
 
 .location-image img {
@@ -78,15 +116,27 @@ h1 {
     width: 100%;
     max-width: 420px;
 
-    border-radius: 12px;
+    border-radius: 14px;
 
     border: 2px solid #d4af37;
 
     cursor: pointer;
 
+    transition: 0.35s;
+
     box-shadow:
         0 0 0 2px #d4af37,
         0 0 14px rgba(212,175,55,0.6);
+
+}
+
+.location-image img:hover {
+
+    transform: scale(1.02);
+
+    box-shadow:
+        0 0 0 2px #d4af37,
+        0 0 28px rgba(212,175,55,0.9);
 
 }
 
@@ -96,15 +146,18 @@ h1 {
 
     max-width: 900px;
 
-    margin: 40px auto;
+    margin: 45px auto;
 
-    padding: 0 20px;
+    padding: 0 24px;
 
     text-align: left;
 
-    line-height: 1.6;
+    line-height: 1.9;
 
-    font-size: 18px;
+    font-size: 19px;
+
+    text-shadow:
+        0 0 8px rgba(255,255,255,0.05);
 
 }
 
@@ -124,13 +177,13 @@ h1 {
 
     height: 100%;
 
-    background-color: rgba(0,0,0,0.9);
+    background-color: rgba(0,0,0,0.92);
 
     justify-content: center;
 
     align-items: center;
 
-    z-index: 999;
+    z-index: 9999;
 
 }
 
@@ -140,6 +193,13 @@ h1 {
 
     max-height: 95%;
 
+    border-radius: 12px;
+
+    border: 2px solid #d4af37;
+
+    box-shadow:
+        0 0 30px rgba(212,175,55,0.6);
+
 }
 
 /* MOBILE */
@@ -147,11 +207,12 @@ h1 {
 @media (max-width: 768px) {
 
     h1 {
-        font-size: 34px;
+        font-size: 36px;
     }
 
     .location-text {
-        font-size: 17px;
+        font-size: 18px;
+        line-height: 1.8;
     }
 
     .location-image img {
@@ -164,10 +225,13 @@ h1 {
 
 </head>
 
-<script src="ochrana.js"></script>
+<body>
 
-</body>
-</html>
+<!-- MAGIC DUST -->
+
+<canvas id="magicDust"></canvas>
+
+<!-- LANGUAGE SWITCH -->
 
 <div class="language-switch">
 
@@ -177,11 +241,17 @@ h1 {
 
 </div>
 
+<!-- BACK -->
+
 <div class="back-link">
 <a href="locations.html">← Back to Locations</a>
 </div>
 
+<!-- TITLE -->
+
 <h1>Stonegard Castle</h1>
+
+<!-- IMAGE -->
 
 <div class="location-image">
 
@@ -191,6 +261,8 @@ h1 {
 
 </div>
 
+<!-- OVERLAY -->
+
 <div class="overlay"
      id="overlay"
      onclick="closeImage()">
@@ -199,21 +271,41 @@ h1 {
 
 </div>
 
+<!-- TEXT -->
+
 <div class="location-text">
 
 <p>
-<strong>Stonegard castle</strong> is a massive fortress located at the very south of the land of Stonegard, on the continent of Solisium. It rises on the edge of towering cliffs that have withstood wind, sand, and storms for centuries. It is considered one of the most impregnable strongholds in the entire land and a symbol of Stonegard’s unshakable strength.
+<strong>Stonegard castle</strong> is a massive fortress located at the very south of the land of Stonegard, on the continent of Solisium.
 
-From the north, east, and west, the castle is surrounded by a harsh and unforgiving landscape — vast desert lands and jagged rock formations that form a natural defense against enemies. Only a few roads lead to its gates, and each of them is carefully guarded.
+It rises on the edge of towering cliffs that have withstood wind, sand, and storms for centuries.
 
-On the southern side, beneath a high rocky overhang, the sea stretches out below. Waves crash against the stone cliffs deep beneath the walls, and their thunder can be heard even in the highest towers. This unique natural shield makes Stonegard Castle a fortress that is nearly impossible to besiege.
+It is considered one of the most impregnable strongholds in the entire land and a symbol of Stonegard’s unshakable strength.
 
-Inside the castle lie vast courtyards, armories, training grounds, and halls used for councils of commanders and rulers. From here, military operations and the defense of the entire land of Stonegard are directed. <strong>Stonegard’s resistance forces</strong> are stationed within the castle, planning defensive strategies, coordinating their units, and preparing for clashes with the enemies of the realm.
+From the north, east, and west, the castle is surrounded by a harsh and unforgiving landscape — vast desert lands and jagged rock formations that form a natural defense against enemies.
 
-Stonegard Castle is not merely a fortress. It is a symbol of endurance, courage, and the unwavering determination to defend Stonegard at any cost — the last bastion of hope at the very edge of the land.
+Only a few roads lead to its gates, and each of them is carefully guarded.
+
+On the southern side, beneath a high rocky overhang, the sea stretches out below.
+
+Waves crash against the stone cliffs deep beneath the walls, and their thunder can be heard even in the highest towers.
+
+This unique natural shield makes Stonegard Castle a fortress that is nearly impossible to besiege.
+
+Inside the castle lie vast courtyards, armories, training grounds, and halls used for councils of commanders and rulers.
+
+From here, military operations and the defense of the entire land of Stonegard are directed.
+
+<strong>Stonegard’s resistance forces</strong> are stationed within the castle, planning defensive strategies, coordinating their units, and preparing for clashes with the enemies of the realm.
+
+Stonegard Castle is not merely a fortress.
+
+It is a symbol of endurance, courage, and the unwavering determination to defend Stonegard at any cost — the last bastion of hope at the very edge of the land.
 </p>
 
 </div>
+
+<!-- IMAGE SCRIPT -->
 
 <script>
 
@@ -242,6 +334,128 @@ document.getElementById("overlay")
 }
 
 </script>
+
+<!-- MAGIC DUST SCRIPT -->
+
+<script>
+
+const canvas = document.getElementById("magicDust");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const particles = [];
+
+class Particle {
+
+    constructor(){
+        this.reset();
+    }
+
+    reset(){
+
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+
+        this.size = Math.random() * 2 + 1;
+
+        this.speedX = (Math.random() - 0.5) * 0.25;
+        this.speedY = (Math.random() - 0.5) * 0.25;
+
+        this.opacity = Math.random() * 0.5 + 0.2;
+
+        this.glow = Math.random() * 18 + 8;
+    }
+
+    update(){
+
+        this.x += this.speedX;
+        this.y += this.speedY;
+
+        if(
+            this.x < -50 ||
+            this.x > canvas.width + 50 ||
+            this.y < -50 ||
+            this.y > canvas.height + 50
+        ){
+            this.reset();
+        }
+    }
+
+    draw(){
+
+        const gradient = ctx.createRadialGradient(
+            this.x,
+            this.y,
+            0,
+            this.x,
+            this.y,
+            this.glow
+        );
+
+        gradient.addColorStop(
+            0,
+            `rgba(255,215,120,${this.opacity})`
+        );
+
+        gradient.addColorStop(
+            1,
+            "rgba(255,215,120,0)"
+        );
+
+        ctx.beginPath();
+
+        ctx.fillStyle = gradient;
+
+        ctx.arc(
+            this.x,
+            this.y,
+            this.glow,
+            0,
+            Math.PI * 2
+        );
+
+        ctx.fill();
+    }
+
+}
+
+for(let i = 0; i < 80; i++){
+    particles.push(new Particle());
+}
+
+function animate(){
+
+    ctx.clearRect(
+        0,
+        0,
+        canvas.width,
+        canvas.height
+    );
+
+    particles.forEach(particle => {
+        particle.update();
+        particle.draw();
+    });
+
+    requestAnimationFrame(animate);
+}
+
+animate();
+
+window.addEventListener("resize", () => {
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+});
+
+</script>
+
+<!-- PROTECTION -->
+
+<script src="ochrana.js"></script>
 
 </body>
 </html>
