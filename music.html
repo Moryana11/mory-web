@@ -14,25 +14,52 @@
 /* BODY */
 
 body {
+
     margin: 0;
+
     background-color: black;
+
     text-align: center;
+
     font-family: Arial, sans-serif;
+
     color: white;
+
     overflow-x: hidden;
+
     position: relative;
+
 }
 
 /* MAGIC DUST */
 
-#magicDust{
+#magicDust {
+
     position: fixed;
+
     top: 0;
     left: 0;
+
     width: 100%;
     height: 100%;
+
     pointer-events: none;
+
     z-index: 0;
+
+}
+
+/* CONTENT ABOVE EFFECT */
+
+.language-switch,
+.back-link,
+h1,
+.music-container {
+
+    position: relative;
+
+    z-index: 2;
+
 }
 
 /* LANGUAGE SWITCH */
@@ -61,29 +88,26 @@ body {
 
 }
 
-/* CONTENT ABOVE EFFECT */
-
-.language-switch,
-.back-link,
-h1,
-.music-image,
-.song {
-    position: relative;
-    z-index: 2;
-}
-
-/* BACK LINK */
+/* BACK */
 
 .back-link {
+
     margin-top: 25px;
+
 }
 
 .back-link a {
+
     font-family: 'MedievalSharp', cursive;
+
     color: #d4af37;
+
     text-decoration: none;
+
     font-size: 20px;
+
     transition: 0.3s;
+
 }
 
 .back-link a:hover {
@@ -97,24 +121,47 @@ h1,
 /* TITLE */
 
 h1 {
+
     font-family: 'MedievalSharp', cursive;
+
     color: #d4af37;
-    font-size: 46px;
-    margin-top: 12px;
+
+    font-size: 48px;
+
+    margin-top: 15px;
+
+    text-shadow:
+        0 0 12px rgba(212,175,55,0.35);
+
+}
+
+/* MAIN CONTAINER */
+
+.music-container {
+
+    max-width: 950px;
+
+    margin: 40px auto 60px auto;
+
+    padding: 0 20px;
+
 }
 
 /* IMAGE */
 
 .music-image {
-    margin-top: 35px;
+
+    margin-bottom: 45px;
+
 }
 
 .music-image img {
 
     width: 100%;
-    max-width: 260px;
 
-    border-radius: 14px;
+    max-width: 300px;
+
+    border-radius: 16px;
 
     border: 2px solid #d4af37;
 
@@ -122,7 +169,7 @@ h1 {
 
     box-shadow:
         0 0 0 2px #d4af37,
-        0 0 12px rgba(212,175,55,0.6);
+        0 0 18px rgba(212,175,55,0.6);
 
 }
 
@@ -132,15 +179,31 @@ h1 {
 
     box-shadow:
         0 0 0 2px #d4af37,
-        0 0 24px rgba(212,175,55,0.9);
+        0 0 30px rgba(212,175,55,0.9);
 
 }
 
-/* PLAYER */
+/* SONG CARD */
 
 .song {
-    margin-top: 40px;
+
+    background:
+        rgba(15,15,15,0.88);
+
+    border: 1px solid rgba(212,175,55,0.4);
+
+    border-radius: 18px;
+
+    padding: 28px 20px;
+
+    margin-bottom: 35px;
+
+    box-shadow:
+        0 0 22px rgba(212,175,55,0.08);
+
 }
+
+/* SONG TITLE */
 
 .song-title {
 
@@ -148,19 +211,26 @@ h1 {
 
     color: #d4af37;
 
-    font-size: 24px;
+    font-size: 28px;
 
-    margin-bottom: 14px;
+    margin-bottom: 18px;
 
     text-shadow:
-        0 0 8px rgba(212,175,55,0.4);
+        0 0 10px rgba(212,175,55,0.35);
 
 }
 
+/* AUDIO PLAYER */
+
 audio {
-    width: 340px;
-    max-width: 90%;
-    filter: drop-shadow(0 0 8px rgba(212,175,55,0.3));
+
+    width: 100%;
+
+    max-width: 420px;
+
+    filter:
+        drop-shadow(0 0 10px rgba(212,175,55,0.25));
+
 }
 
 /* MOBILE */
@@ -168,11 +238,21 @@ audio {
 @media (max-width: 768px) {
 
     h1 {
-        font-size: 36px;
+
+        font-size: 38px;
+
     }
 
     .song-title {
-        font-size: 22px;
+
+        font-size: 24px;
+
+    }
+
+    .music-image img {
+
+        max-width: 85%;
+
     }
 
 }
@@ -200,12 +280,18 @@ audio {
 <!-- BACK -->
 
 <div class="back-link">
+
 <a href="book1.html">← Back to Fire and Water</a>
+
 </div>
 
 <!-- TITLE -->
 
 <h1>Music</h1>
+
+<!-- MUSIC CONTAINER -->
+
+<div class="music-container">
 
 <!-- IMAGE -->
 
@@ -220,12 +306,17 @@ audio {
 <div class="song">
 
 <div class="song-title">
+
 Welcome to Kastleton
+
 </div>
 
 <audio controls>
+
 <source src="kastleton_converted.mp3" type="audio/mpeg">
+
 Your browser does not support audio playback.
+
 </audio>
 
 </div>
@@ -235,12 +326,17 @@ Your browser does not support audio playback.
 <div class="song">
 
 <div class="song-title">
+
 From the Ashes of Loyalty
+
 </div>
 
 <audio controls>
+
 <source src="ashes_of_loyalty_converted.mp3" type="audio/mpeg">
+
 Your browser does not support audio playback.
+
 </audio>
 
 </div>
@@ -250,12 +346,17 @@ Your browser does not support audio playback.
 <div class="song">
 
 <div class="song-title">
+
 Song of Vienta
+
 </div>
 
 <audio controls>
+
 <source src="vienta_song_converted.mp3" type="audio/mpeg">
+
 Your browser does not support audio playback.
+
 </audio>
 
 </div>
@@ -265,13 +366,20 @@ Your browser does not support audio playback.
 <div class="song">
 
 <div class="song-title">
+
 Under the Banner of New Oaths
+
 </div>
 
 <audio controls>
+
 <source src="new_oaths_converted.mp3" type="audio/mpeg">
+
 Your browser does not support audio playback.
+
 </audio>
+
+</div>
 
 </div>
 
@@ -290,7 +398,9 @@ const particles = [];
 class Particle {
 
     constructor(){
+
         this.reset();
+
     }
 
     reset(){
@@ -306,6 +416,7 @@ class Particle {
         this.opacity = Math.random() * 0.5 + 0.2;
 
         this.glow = Math.random() * 18 + 8;
+
     }
 
     update(){
@@ -319,8 +430,11 @@ class Particle {
             this.y < -50 ||
             this.y > canvas.height + 50
         ){
+
             this.reset();
+
         }
+
     }
 
     draw(){
@@ -357,12 +471,15 @@ class Particle {
         );
 
         ctx.fill();
+
     }
 
 }
 
 for(let i = 0; i < 80; i++){
+
     particles.push(new Particle());
+
 }
 
 function animate(){
@@ -375,11 +492,14 @@ function animate(){
     );
 
     particles.forEach(particle => {
+
         particle.update();
         particle.draw();
+
     });
 
     requestAnimationFrame(animate);
+
 }
 
 animate();
@@ -392,6 +512,10 @@ window.addEventListener("resize", () => {
 });
 
 </script>
+
+<!-- PROTECTION -->
+
+<script src="ochrana.js"></script>
 
 </body>
 </html>
