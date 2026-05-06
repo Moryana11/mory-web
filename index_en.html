@@ -108,7 +108,8 @@ button {
 
 <div class="language-switch">
 
-<a href="#" onclick="setLang('cz')">🇨🇿</a> <a href="#" onclick="setLang('en')">🇬🇧</a>
+<a href="#" onclick="setLang('cz')">🇨🇿</a>
+<a href="#" onclick="setLang('en')">🇬🇧</a>
 
 </div>
 
@@ -130,7 +131,8 @@ placeholder="Enter password">
 
 <span class="toggle-password"
 onclick="togglePassword()">
-👁️ </span>
+👁️
+</span>
 
 </div>
 
@@ -172,12 +174,14 @@ if (input.type === "password") {
 
 }
 
+/* PASSWORD CHECK */
+
 function zkontrolujHeslo() {
 
 var heslo =
 document.getElementById("heslo").value;
 
-if (heslo.trim().toLowerCase() === "library")
+if (heslo.trim().toLowerCase() === "library") {
 
 document.getElementById("dvere").src =
 "dvere_otevrene.png";
@@ -214,7 +218,25 @@ window.location.href =
 
 }
 
+/* ENTER KEY */
+
+document
+.getElementById("heslo")
+.addEventListener("keypress",
+function(event) {
+
+if (event.key === "Enter") {
+    zkontrolujHeslo();
+}
+
+});
+
 </script>
 
+<!-- PROTECTION -->
+
+<script src="ochrana.js"></script>
+
 </body>
+
 </html>
