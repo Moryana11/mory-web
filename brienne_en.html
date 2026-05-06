@@ -35,6 +35,23 @@ body {
     z-index: 0;
 }
 
+/* LANGUAGE SWITCH */
+
+.language-switch {
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    z-index: 1000;
+
+    display: flex;
+    gap: 10px;
+}
+
+.language-switch a {
+    text-decoration: none;
+    font-size: 22px;
+}
+
 /* CONTENT ABOVE EFFECT */
 
 nav,
@@ -160,6 +177,16 @@ h1 {
 
 <canvas id="magicDust"></canvas>
 
+<!-- LANGUAGE SWITCH -->
+
+<div class="language-switch">
+
+<a href="brienne.html">🇨🇿</a>
+
+<a href="brienne_en.html">🇬🇧</a>
+
+</div>
+
 <!-- NAVIGATION -->
 
 <nav>
@@ -178,7 +205,7 @@ h1 {
 
 <div class="description">
 
-<strong>Brienne</strong> is a shadow being who takes on the form of a young and fragile healer from the Purelight tower.
+<strong>Brienne</strong> is a shadow being who takes on the form of a young and fragile healer from the Purelight Tower.
 
 She is cruel, manipulative, and vengeful, wielding shadow magic, shapeshifting magic, and psychic control.
 
@@ -301,6 +328,10 @@ window.addEventListener("resize", () => {
 });
 
 </script>
+
+<!-- LANGUAGE SWITCH SCRIPT -->
+
+<script src="language-switch.js"></script>
 
 <!-- PROTECTION -->
 
