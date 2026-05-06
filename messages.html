@@ -11,30 +11,6 @@
 
 <style>
 
-/* LANGUAGE SWITCH */
-
-.language-switch {
-
-position: fixed;
-
-top: 15px;
-
-right: 20px;
-
-font-size: 22px;
-
-z-index: 1000;
-
-}
-
-.language-switch a {
-
-text-decoration: none;
-
-margin-left: 8px;
-
-}
-
 /* BODY */
 
 body {
@@ -43,6 +19,48 @@ body {
     text-align: center;
     font-family: Arial, sans-serif;
     color: white;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* MAGIC DUST */
+
+#magicDust{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* LANGUAGE SWITCH */
+
+.language-switch {
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    z-index: 1000;
+
+    display: flex;
+    gap: 10px;
+}
+
+.language-switch a {
+    text-decoration: none;
+    font-size: 22px;
+}
+
+/* CONTENT ABOVE EFFECT */
+
+.back-link,
+h1,
+.message-image,
+form,
+#messages {
+    position: relative;
+    z-index: 2;
 }
 
 /* BACK LINK */
@@ -55,7 +73,14 @@ body {
     font-family: 'MedievalSharp', cursive;
     color: #d4af37;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.back-link a:hover {
+    text-shadow:
+        0 0 10px #d4af37,
+        0 0 20px rgba(212,175,55,0.8);
 }
 
 /* TITLE */
@@ -63,8 +88,8 @@ body {
 h1 {
     font-family: 'MedievalSharp', cursive;
     color: #d4af37;
-    font-size: 42px;
-    margin-top: 10px;
+    font-size: 46px;
+    margin-top: 15px;
 }
 
 /* IMAGE */
@@ -92,33 +117,54 @@ h1 {
 
 form {
 
-    margin-top: 30px;
+    margin-top: 35px;
 
 }
 
-input, textarea {
+input,
+textarea {
 
-    width: 300px;
+    width: 320px;
 
     max-width: 90%;
 
-    padding: 10px;
+    padding: 12px;
 
     margin: 8px;
 
-    border-radius: 6px;
+    border-radius: 8px;
 
-    border: none;
+    border: 1px solid #d4af37;
+
+    background: rgba(20,20,20,0.95);
+
+    color: white;
+
+    font-size: 15px;
+
+    outline: none;
 
 }
 
+input:focus,
+textarea:focus {
+
+    box-shadow:
+        0 0 10px rgba(212,175,55,0.7);
+
+}
+
+/* BUTTON */
+
 button {
 
-    margin-top: 10px;
+    margin-top: 12px;
 
-    padding: 10px 20px;
+    padding: 12px 24px;
 
     font-family: 'MedievalSharp', cursive;
+
+    font-size: 18px;
 
     background-color: #d4af37;
 
@@ -126,15 +172,20 @@ button {
 
     border: none;
 
-    border-radius: 6px;
+    border-radius: 8px;
 
     cursor: pointer;
+
+    transition: 0.3s;
 
 }
 
 button:hover {
 
-    opacity: 0.8;
+    transform: scale(1.03);
+
+    box-shadow:
+        0 0 15px rgba(212,175,55,0.8);
 
 }
 
@@ -144,13 +195,18 @@ button:hover {
 
     border: 1px solid #d4af37;
 
-    border-radius: 8px;
+    border-radius: 10px;
 
-    padding: 12px;
+    padding: 14px;
 
-    margin: 15px auto;
+    margin: 18px auto;
 
-    max-width: 500px;
+    max-width: 520px;
+
+    background: rgba(15,15,15,0.9);
+
+    box-shadow:
+        0 0 12px rgba(212,175,55,0.15);
 
 }
 
@@ -160,6 +216,10 @@ button:hover {
 
     color: #d4af37;
 
+    margin-bottom: 5px;
+
+    font-size: 18px;
+
 }
 
 .message-date {
@@ -168,7 +228,7 @@ button:hover {
 
     color: #ccc;
 
-    margin-bottom: 6px;
+    margin-bottom: 10px;
 
 }
 
@@ -177,7 +237,7 @@ button:hover {
 @media (max-width: 768px) {
 
     h1 {
-        font-size: 34px;
+        font-size: 36px;
     }
 
 }
@@ -188,6 +248,12 @@ button:hover {
 
 <body>
 
+<!-- MAGIC DUST -->
+
+<canvas id="magicDust"></canvas>
+
+<!-- LANGUAGE SWITCH -->
+
 <div class="language-switch">
 
 <a href="vzkazy.html">🇨🇿</a>
@@ -196,11 +262,17 @@ button:hover {
 
 </div>
 
+<!-- BACK LINK -->
+
 <div class="back-link">
 <a href="hlavni_en.html">← Back to main page</a>
 </div>
 
+<!-- TITLE -->
+
 <h1>Messages</h1>
+
+<!-- IMAGE -->
 
 <div class="message-image">
 
@@ -208,15 +280,15 @@ button:hover {
 
 </div>
 
+<!-- FORM -->
+
 <form id="messageForm">
 
 <input
 type="text"
 id="name"
 placeholder="Your name or nickname"
-required
-
->
+required>
 
 <br>
 
@@ -224,8 +296,7 @@ required
 id="text"
 rows="4"
 placeholder="Write your message..."
-required
-></textarea>
+required></textarea>
 
 <br>
 
@@ -235,7 +306,11 @@ Send message
 
 </form>
 
+<!-- MESSAGES -->
+
 <div id="messages"></div>
+
+<!-- MESSAGE SCRIPT -->
 
 <script>
 
@@ -343,6 +418,124 @@ loadMessages();
 }
 
 loadMessages();
+
+</script>
+
+<!-- MAGIC DUST SCRIPT -->
+
+<script>
+
+const canvas = document.getElementById("magicDust");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const particles = [];
+
+class Particle {
+
+    constructor(){
+        this.reset();
+    }
+
+    reset(){
+
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+
+        this.size = Math.random() * 2 + 1;
+
+        this.speedX = (Math.random() - 0.5) * 0.25;
+        this.speedY = (Math.random() - 0.5) * 0.25;
+
+        this.opacity = Math.random() * 0.5 + 0.2;
+
+        this.glow = Math.random() * 18 + 8;
+    }
+
+    update(){
+
+        this.x += this.speedX;
+        this.y += this.speedY;
+
+        if(
+            this.x < -50 ||
+            this.x > canvas.width + 50 ||
+            this.y < -50 ||
+            this.y > canvas.height + 50
+        ){
+            this.reset();
+        }
+    }
+
+    draw(){
+
+        const gradient = ctx.createRadialGradient(
+            this.x,
+            this.y,
+            0,
+            this.x,
+            this.y,
+            this.glow
+        );
+
+        gradient.addColorStop(
+            0,
+            `rgba(255,215,120,${this.opacity})`
+        );
+
+        gradient.addColorStop(
+            1,
+            "rgba(255,215,120,0)"
+        );
+
+        ctx.beginPath();
+
+        ctx.fillStyle = gradient;
+
+        ctx.arc(
+            this.x,
+            this.y,
+            this.glow,
+            0,
+            Math.PI * 2
+        );
+
+        ctx.fill();
+    }
+
+}
+
+for(let i = 0; i < 80; i++){
+    particles.push(new Particle());
+}
+
+function animate(){
+
+    ctx.clearRect(
+        0,
+        0,
+        canvas.width,
+        canvas.height
+    );
+
+    particles.forEach(particle => {
+        particle.update();
+        particle.draw();
+    });
+
+    requestAnimationFrame(animate);
+}
+
+animate();
+
+window.addEventListener("resize", () => {
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+});
 
 </script>
 
