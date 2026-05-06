@@ -11,21 +11,6 @@
 
 <style>
 
-/* PŘEPÍNAČ JAZYKA */
-
-.language-switch {
-    position: fixed;
-    top: 15px;
-    right: 20px;
-    font-size: 22px;
-    z-index: 1000;
-}
-
-.language-switch a {
-    text-decoration: none;
-    margin-left: 8px;
-}
-
 /* BODY */
 
 body {
@@ -49,9 +34,25 @@ body {
     z-index: 0;
 }
 
+/* PŘEPÍNAČ JAZYKA */
+
+.language-switch {
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    z-index: 1000;
+
+    display: flex;
+    gap: 10px;
+}
+
+.language-switch a {
+    text-decoration: none;
+    font-size: 22px;
+}
+
 /* OBSAH NAD EFEKTEM */
 
-.language-switch,
 .menu,
 .main-image {
     position: relative;
@@ -63,8 +64,8 @@ body {
 .menu {
     display: flex;
     justify-content: center;
-    gap: 50px;
-    margin-top: 25px;
+    gap: 60px;
+    margin-top: 30px;
     flex-wrap: wrap;
 }
 
@@ -72,7 +73,7 @@ body {
     font-family: 'MedievalSharp', cursive;
     color: #d4af37;
     text-decoration: none;
-    font-size: 26px;
+    font-size: 32px;
     transition: 0.3s;
 }
 
@@ -110,10 +111,11 @@ body {
 
     .menu {
         gap: 25px;
+        margin-top: 25px;
     }
 
     .menu a {
-        font-size: 22px;
+        font-size: 25px;
     }
 
     .main-image img {
