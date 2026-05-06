@@ -17,6 +17,31 @@ body {
     color: white;
     text-align: center;
     font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* MAGIC DUST */
+
+#magicDust{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* CONTENT ABOVE EFFECT */
+
+.back-link,
+h1,
+.location-image,
+.text-box,
+.overlay {
+    position: relative;
+    z-index: 2;
 }
 
 /* ZPĚT */
@@ -29,7 +54,16 @@ body {
     font-family: 'MedievalSharp', cursive;
     color: #d4af37;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.back-link a:hover {
+
+    text-shadow:
+        0 0 10px #d4af37,
+        0 0 20px rgba(212,175,55,0.8);
+
 }
 
 /* NADPIS */
@@ -37,8 +71,11 @@ body {
 h1 {
     font-family: 'MedievalSharp', cursive;
     color: #d4af37;
-    font-size: 42px;
+    font-size: 46px;
     margin-top: 15px;
+
+    text-shadow:
+        0 0 12px rgba(212,175,55,0.35);
 }
 
 /* OBRÁZEK */
@@ -48,17 +85,29 @@ h1 {
     width: 100%;
     max-width: 900px;
 
-    border-radius: 12px;
+    border-radius: 14px;
 
     border: 2px solid #d4af37;
 
     cursor: pointer;
 
+    transition: 0.35s;
+
     box-shadow:
         0 0 0 2px #d4af37,
-        0 0 12px rgba(212,175,55,0.6);
+        0 0 14px rgba(212,175,55,0.6);
 
-    margin-top: 25px;
+    margin-top: 30px;
+
+}
+
+.location-image:hover {
+
+    transform: scale(1.01);
+
+    box-shadow:
+        0 0 0 2px #d4af37,
+        0 0 28px rgba(212,175,55,0.9);
 
 }
 
@@ -68,13 +117,13 @@ h1 {
 
     max-width: 900px;
 
-    margin: 30px auto;
+    margin: 35px auto;
 
     padding: 0 20px;
 
     text-align: left;
 
-    line-height: 1.7;
+    line-height: 1.8;
 
     font-size: 18px;
 
@@ -108,6 +157,8 @@ h1 {
     max-width: 95%;
     max-height: 95%;
 
+    border-radius: 12px;
+
 }
 
 /* MOBIL */
@@ -115,11 +166,15 @@ h1 {
 @media (max-width: 768px) {
 
     h1 {
-        font-size: 34px;
+        font-size: 36px;
     }
 
     .text-box {
         font-size: 17px;
+    }
+
+    .location-image {
+        max-width: 92%;
     }
 
 }
@@ -128,55 +183,78 @@ h1 {
 
 </head>
 
-<script src="ochrana.js"></script>
+<body>
 
-</body>
-</html>
+<!-- MAGIC DUST -->
+
+<canvas id="magicDust"></canvas>
+
+<!-- ZPĚT -->
 
 <div class="back-link">
 <a href="lokace.html">← Zpět na Lokace</a>
 </div>
 
+<!-- NADPIS -->
+
 <h1>Vienta</h1>
+
+<!-- OBRÁZEK -->
 
 <img
 src="vienta.png"
 class="location-image"
 onclick="openImage(this)"
 alt="Vienta"
-
 >
+
+<!-- TEXT -->
 
 <div class="text-box">
 
 <p>
+
 <strong>Vienta</strong> je exotické město ležící na jihozápadě země Stonegrad, 
 na kontinentu Solisium. Na své západní straně je omýváno mořem, 
 zatímco na východě se rozprostírá nekonečná poušť <strong>Monolitní pustina</strong>, 
-kraj spalujícího slunce, písku a starobylých tajemství. Díky své poloze je Vienta místem, 
+kraj spalujícího slunce, písku a starobylých tajemství.
+
+Díky své poloze je Vienta místem, 
 kde se střetává síla oceánu s neúprosnou mocí pouště.
+
 </p>
 
 <p>
+
 Město je proslulé svými ohnivými mágy, kteří zde žijí po generace. Děti s nadáním pro magii 
 jsou vychovávány a cvičeny již od útlého věku, aby dokázaly ovládnout ničivou i tvořivou sílu ohně. 
+
 Oheň je zde nejen zbraní, ale i symbolem víry, cti a životní energie. V ulicích Vienty je běžné 
 spatřit plameny tančící v rukou učedníků i zkušených mistrů.
+
 </p>
 
 <p>
+
 Dominantou města je majestátní chrám <strong>Svatyně Rudého dechu</strong>, 
 největší svatyně nejen ve Vientě, ale v celém Stonegradu. Je považována za posvátné centrum 
-ohnivé magie a duchovní srdce země. Do jejích zdobených síní přicházejí poutníci, mágové i vládci, 
+ohnivé magie a duchovní srdce země.
+
+Do jejích zdobených síní přicházejí poutníci, mágové i vládci, 
 aby zde hledali sílu, požehnání nebo odpovědi na otázky, které nelze nalézt nikde jinde.
+
 </p>
 
 <p>
+
 Vienta je město žáru, víry a disciplíny. Město, kde se zrodila moc ohně a kde každý plamen 
 může být světlem naděje… nebo začátkem zkázy.
+
 </p>
 
 </div>
+
+<!-- OVERLAY -->
 
 <div
 class="overlay"
@@ -187,6 +265,8 @@ onclick="closeImage()"
 <img id="bigImage">
 
 </div>
+
+<!-- IMAGE SCRIPT -->
 
 <script>
 
@@ -215,6 +295,126 @@ function closeImage() {
 }
 
 </script>
+
+<!-- MAGIC DUST SCRIPT -->
+
+<script>
+
+const canvas = document.getElementById("magicDust");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const particles = [];
+
+class Particle {
+
+    constructor(){
+        this.reset();
+    }
+
+    reset(){
+
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+
+        this.size = Math.random() * 2 + 1;
+
+        this.speedX = (Math.random() - 0.5) * 0.25;
+        this.speedY = (Math.random() - 0.5) * 0.25;
+
+        this.opacity = Math.random() * 0.5 + 0.2;
+
+        this.glow = Math.random() * 18 + 8;
+    }
+
+    update(){
+
+        this.x += this.speedX;
+        this.y += this.speedY;
+
+        if(
+            this.x < -50 ||
+            this.x > canvas.width + 50 ||
+            this.y < -50 ||
+            this.y > canvas.height + 50
+        ){
+            this.reset();
+        }
+    }
+
+    draw(){
+
+        const gradient = ctx.createRadialGradient(
+            this.x,
+            this.y,
+            0,
+            this.x,
+            this.y,
+            this.glow
+        );
+
+        gradient.addColorStop(
+            0,
+            `rgba(255,215,120,${this.opacity})`
+        );
+
+        gradient.addColorStop(
+            1,
+            "rgba(255,215,120,0)"
+        );
+
+        ctx.beginPath();
+
+        ctx.fillStyle = gradient;
+
+        ctx.arc(
+            this.x,
+            this.y,
+            this.glow,
+            0,
+            Math.PI * 2
+        );
+
+        ctx.fill();
+    }
+
+}
+
+for(let i = 0; i < 80; i++){
+    particles.push(new Particle());
+}
+
+function animate(){
+
+    ctx.clearRect(
+        0,
+        0,
+        canvas.width,
+        canvas.height
+    );
+
+    particles.forEach(particle => {
+        particle.update();
+        particle.draw();
+    });
+
+    requestAnimationFrame(animate);
+}
+
+animate();
+
+window.addEventListener("resize", () => {
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+});
+
+</script>
+
+<script src="ochrana.js"></script>
 
 </body>
 </html>
