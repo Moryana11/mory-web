@@ -11,52 +11,107 @@
 
 <style>
 
+/* BODY */
+
 body {
-    background-color: black;
+
     margin: 0;
+
+    background-color: black;
+
+    color: white;
+
     text-align: center;
+
     font-family: Arial, sans-serif;
+
     overflow-x: hidden;
+
     position: relative;
+
 }
 
 /* MAGIC DUST */
 
-#magicDust{
+#magicDust {
+
     position: fixed;
+
     top: 0;
     left: 0;
+
     width: 100%;
     height: 100%;
+
     pointer-events: none;
+
     z-index: 0;
+
 }
 
 /* CONTENT ABOVE EFFECT */
 
-nav,
+.language-switch,
+.back-link,
 h1,
-.character-img,
-.description {
+.character-container,
+.overlay {
+
     position: relative;
+
     z-index: 2;
+
 }
 
-/* NAVIGATION */
+/* LANGUAGE SWITCH */
 
-nav {
-    margin-top: 25px;
+.language-switch {
+
+    position: fixed;
+
+    top: 15px;
+
+    right: 20px;
+
+    display: flex;
+
+    gap: 10px;
+
+    z-index: 1000;
+
 }
 
-nav a {
-    font-family: 'MedievalSharp', cursive;
-    color: #d4af37;
+.language-switch a {
+
     text-decoration: none;
-    font-size: 20px;
-    transition: 0.3s;
+
+    font-size: 22px;
+
 }
 
-nav a:hover {
+/* BACK */
+
+.back-link {
+
+    margin-top: 25px;
+
+}
+
+.back-link a {
+
+    font-family: 'MedievalSharp', cursive;
+
+    color: #d4af37;
+
+    text-decoration: none;
+
+    font-size: 20px;
+
+    transition: 0.3s;
+
+}
+
+.back-link a:hover {
 
     text-shadow:
         0 0 10px #d4af37,
@@ -67,62 +122,123 @@ nav a:hover {
 /* TITLE */
 
 h1 {
+
     font-family: 'MedievalSharp', cursive;
+
     color: #d4af37;
-    font-size: 46px;
+
+    font-size: 48px;
+
     margin-top: 15px;
 
     text-shadow:
         0 0 12px rgba(212,175,55,0.35);
+
+}
+
+/* CHARACTER CONTAINER */
+
+.character-container {
+
+    max-width: 950px;
+
+    margin: 40px auto 60px auto;
+
+    padding: 0 20px;
+
 }
 
 /* IMAGE */
 
-.character-img {
+.character-image img {
 
     width: 100%;
-    max-width: 350px;
-    height: auto;
 
-    margin-top: 35px;
+    max-width: 380px;
 
-    border-radius: 14px;
+    border-radius: 16px;
+
     border: 2px solid #d4af37;
+
+    cursor: pointer;
 
     transition: 0.35s;
 
     box-shadow:
         0 0 0 2px #d4af37,
-        0 0 14px rgba(212,175,55,0.6);
+        0 0 18px rgba(212,175,55,0.6);
 
 }
 
-.character-img:hover {
+.character-image img:hover {
 
-    transform: scale(1.01);
+    transform: scale(1.02);
 
     box-shadow:
         0 0 0 2px #d4af37,
-        0 0 28px rgba(212,175,55,0.9);
+        0 0 30px rgba(212,175,55,0.9);
 
 }
 
-/* TEXT */
+/* DESCRIPTION */
 
 .description {
 
-    color: white;
+    margin-top: 40px;
 
-    font-size: 18px;
-    line-height: 1.8;
+    text-align: left;
 
-    max-width: 820px;
+    line-height: 1.9;
 
-    margin: 35px auto;
+    font-size: 19px;
 
-    padding: 0 20px;
+    text-shadow:
+        0 0 8px rgba(255,255,255,0.05);
 
-    text-align: center;
+}
+
+.description p {
+
+    margin-bottom: 28px;
+
+}
+
+/* OVERLAY */
+
+.overlay {
+
+    display: none;
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0,0,0,0.94);
+
+    justify-content: center;
+
+    align-items: center;
+
+    z-index: 9999;
+
+}
+
+.overlay img {
+
+    max-width: 95%;
+
+    max-height: 95%;
+
+    border-radius: 14px;
+
+    border: 2px solid #d4af37;
+
+    box-shadow:
+        0 0 35px rgba(212,175,55,0.6);
 
 }
 
@@ -131,16 +247,23 @@ h1 {
 @media (max-width: 768px) {
 
     h1 {
-        font-size: 36px;
-    }
 
-    .character-img {
-        max-width: 280px;
+        font-size: 38px;
+
     }
 
     .description {
+
         font-size: 18px;
-        line-height: 1.9;
+
+        line-height: 1.8;
+
+    }
+
+    .character-image img {
+
+        max-width: 92%;
+
     }
 
 }
@@ -155,53 +278,139 @@ h1 {
 
 <canvas id="magicDust"></canvas>
 
-<!-- NAVIGATION -->
+<!-- LANGUAGE SWITCH -->
 
-<nav>
+<div class="language-switch">
+
+<a href="postava_morrkalil.html">🇨🇿</a>
+
+<a href="character_morrkalil.html">🇬🇧</a>
+
+</div>
+
+<!-- BACK -->
+
+<div class="back-link">
+
 <a href="postavy3_en.html">← Back to characters</a>
-</nav>
+
+</div>
 
 <!-- TITLE -->
 
 <h1>Morr’kalil</h1>
 
-<!-- IMAGE -->
+<!-- CHARACTER -->
 
-<img src="morrkalil.png" alt="Morr’kalil" class="character-img">
+<div class="character-container">
 
-<!-- TEXT -->
+<div class="character-image">
+
+<img
+src="morrkalil.png"
+alt="Morr’kalil"
+onclick="openImage(this)"
+>
+
+</div>
+
+<!-- DESCRIPTION -->
 
 <div class="description">
 
 <p>
 
-<strong>Morr’kalil</strong> is a dark God of blood, suffering, and death, dwelling within the Darkness.
+<strong>Morr’kalil</strong> is the dark God of blood, suffering, and death, dwelling within the very heart of the Darkness.
+
+His name is spoken only in whispers, and even the bravest mages avoid the ancient texts that describe his existence.
 
 </p>
 
 <p>
 
-He is obsessed with suffering and desires to reshape the world into an endless temple of pain.
+He is obsessed with suffering and seeks to reshape the world into an endless temple of pain.
 
-His followers serve him in fanatical faith, believing that through pain comes purification.
+Morr’kalil believes that only through agony can weakness be destroyed and a new existence forged beneath the rule of darkness and fear.
 
-</p>
-
-<p>
-
-He wields ancient dark magic that allows him to drain life force from living beings, control blood and souls, and raise the dead.
-
-He can spread a plague of darkness, transform people into twisted servants, and open rifts between the world of the living and the realm of death.
+His followers serve him with fanatical devotion, sacrificing their bodies and souls in the belief that pain leads to purification and transcendence.
 
 </p>
 
 <p>
 
-His presence breaks the will and awakens fear and madness in the hearts of mortals.
+Morr’kalil commands ancient dark magic far beyond the understanding of ordinary mages.
+
+He can drain the life force from living beings, control blood and souls, and raise the dead to serve his will.
+
+He spreads a plague of darkness that slowly corrupts both body and mind, transforming people into twisted servants stripped of their humanity.
+
+Legends also claim that he can tear open rifts between the world of the living and the realm of death, allowing creatures born of pure darkness to enter the world.
+
+</p>
+
+<p>
+
+His mere presence is enough to break the will of mortals.
+
+Wherever he appears, cold, madness, and overwhelming fear follow.
+
+People lose hope, hear whispers within their minds, and fall into despair long before they witness his true form.
+
+</p>
+
+<p>
+
+To many, Morr’kalil is nothing more than a forgotten legend.
+
+To others, he is the coming end of the world.
 
 </p>
 
 </div>
+
+</div>
+
+<!-- OVERLAY -->
+
+<div
+class="overlay"
+id="overlay"
+onclick="closeImage()"
+>
+
+<img id="bigImage">
+
+</div>
+
+<!-- IMAGE SCRIPT -->
+
+<script>
+
+function openImage(img) {
+
+    var overlay =
+    document.getElementById("overlay");
+
+    var bigImage =
+    document.getElementById("bigImage");
+
+    bigImage.src =
+    img.src;
+
+    overlay.style.display =
+    "flex";
+
+}
+
+function closeImage() {
+
+    document.getElementById("overlay")
+    .style.display =
+    "none";
+
+}
+
+</script>
 
 <!-- MAGIC DUST SCRIPT -->
 
@@ -234,6 +443,7 @@ class Particle {
         this.opacity = Math.random() * 0.5 + 0.2;
 
         this.glow = Math.random() * 18 + 8;
+
     }
 
     update(){
@@ -247,8 +457,11 @@ class Particle {
             this.y < -50 ||
             this.y > canvas.height + 50
         ){
+
             this.reset();
+
         }
+
     }
 
     draw(){
@@ -285,12 +498,15 @@ class Particle {
         );
 
         ctx.fill();
+
     }
 
 }
 
 for(let i = 0; i < 80; i++){
+
     particles.push(new Particle());
+
 }
 
 function animate(){
@@ -303,11 +519,14 @@ function animate(){
     );
 
     particles.forEach(particle => {
+
         particle.update();
         particle.draw();
+
     });
 
     requestAnimationFrame(animate);
+
 }
 
 animate();
@@ -320,6 +539,8 @@ window.addEventListener("resize", () => {
 });
 
 </script>
+
+<!-- PROTECTION -->
 
 <script src="ochrana.js"></script>
 
