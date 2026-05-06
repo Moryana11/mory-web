@@ -37,13 +37,38 @@ body {
 
 /* CONTENT ABOVE EFFECT */
 
+.language-switch,
 .back-link,
 h1,
-.location-image,
+.location-image-wrapper,
 .text-box,
 .overlay {
     position: relative;
     z-index: 2;
+}
+
+/* PŘEPÍNAČ JAZYKA */
+
+.language-switch {
+
+    position: fixed;
+
+    top: 15px;
+
+    right: 20px;
+
+    font-size: 22px;
+
+    z-index: 1000;
+
+}
+
+.language-switch a {
+
+    text-decoration: none;
+
+    margin-left: 8px;
+
 }
 
 /* ZPĚT */
@@ -73,7 +98,7 @@ h1,
 h1 {
     font-family: 'MedievalSharp', cursive;
     color: #d4af37;
-    font-size: 46px;
+    font-size: 48px;
     margin-top: 15px;
 
     text-shadow:
@@ -82,12 +107,18 @@ h1 {
 
 /* OBRÁZEK */
 
+.location-image-wrapper {
+
+    margin-top: 35px;
+
+}
+
 .location-image {
 
     width: 100%;
-    max-width: 900px;
+    max-width: 920px;
 
-    border-radius: 14px;
+    border-radius: 16px;
 
     border: 2px solid #d4af37;
 
@@ -97,9 +128,7 @@ h1 {
 
     box-shadow:
         0 0 0 2px #d4af37,
-        0 0 14px rgba(212,175,55,0.6);
-
-    margin-top: 30px;
+        0 0 16px rgba(212,175,55,0.6);
 
 }
 
@@ -109,7 +138,7 @@ h1 {
 
     box-shadow:
         0 0 0 2px #d4af37,
-        0 0 28px rgba(212,175,55,0.9);
+        0 0 32px rgba(212,175,55,0.9);
 
 }
 
@@ -117,21 +146,30 @@ h1 {
 
 .text-box {
 
-    max-width: 900px;
+    max-width: 950px;
 
-    margin: 35px auto;
+    margin: 45px auto;
 
-    padding: 0 20px;
+    padding: 0 24px;
 
     text-align: left;
 
-    line-height: 1.8;
+    line-height: 1.95;
 
-    font-size: 18px;
+    font-size: 19px;
+
+    text-shadow:
+        0 0 8px rgba(255,255,255,0.05);
 
 }
 
-/* ZVĚTŠENÝ OBRÁZEK */
+.text-box p {
+
+    margin-bottom: 28px;
+
+}
+
+/* OVERLAY */
 
 .overlay {
 
@@ -150,7 +188,7 @@ h1 {
     justify-content: center;
     align-items: center;
 
-    z-index: 999;
+    z-index: 9999;
 
 }
 
@@ -159,7 +197,12 @@ h1 {
     max-width: 95%;
     max-height: 95%;
 
-    border-radius: 12px;
+    border-radius: 14px;
+
+    border: 2px solid #d4af37;
+
+    box-shadow:
+        0 0 35px rgba(212,175,55,0.6);
 
 }
 
@@ -172,7 +215,8 @@ h1 {
     }
 
     .text-box {
-        font-size: 17px;
+        font-size: 18px;
+        line-height: 1.85;
     }
 
     .location-image {
@@ -191,6 +235,16 @@ h1 {
 
 <canvas id="magicDust"></canvas>
 
+<!-- PŘEPÍNAČ JAZYKA -->
+
+<div class="language-switch">
+
+<a href="lokace_kamenny_strazce.html">🇨🇿</a>
+
+<a href="location_stonegard_castle.html">🇬🇧</a>
+
+</div>
+
 <!-- ZPĚT -->
 
 <div class="back-link">
@@ -203,6 +257,8 @@ h1 {
 
 <!-- OBRÁZEK -->
 
+<div class="location-image-wrapper">
+
 <img
 src="kamenny_strazce.png"
 class="location-image"
@@ -210,47 +266,45 @@ onclick="openImage(this)"
 alt="Hrad Kamenný strážce"
 >
 
+</div>
+
 <!-- TEXT -->
 
 <div class="text-box">
 
 <p>
 
-Hrad <strong>Kamenný strážce</strong> je mohutná pevnost nacházející se úplně na jihu země 
-Stonegard, na kontinentu Solisium. Tyčí se na okraji vysokých skal, 
-které po staletí odolávají větru, písku i bouřím. Je považován za jednu z nejnedobytnějších pevností 
-celé země a symbol neochvějné síly Stonegardu.
+Hrad <strong>Kamenný strážce</strong> je mohutná pevnost nacházející se na samotném jihu země Stonegard, na kontinentu Solisium. Tyčí se na okraji vysokých skal, které po staletí odolávají větru, písku i ničivým bouřím. Je považován za jednu z nejnedobytnějších pevností celé země a symbol neochvějné síly Stonegardu.
 
 </p>
 
 <p>
 
-Ze severu, východu i západu je hrad obklopen nehostinnou krajinou — rozlehlou pouští a ostrými skalisky, 
-která tvoří přirozenou obranu proti nepřátelům. Jen málo cest vede k jeho branám a každá z nich je pečlivě střežena.
+Ze severu, východu i západu je hrad obklopen nehostinnou krajinou — rozlehlou pouští a ostrými skalisky, která tvoří přirozenou obranu proti nepřátelům. Jen několik úzkých cest vede až k jeho branám a každá z nich je neustále pečlivě střežena vojáky Stonegardu.
 
 </p>
 
 <p>
 
-Na jižní straně se pod vysokým skalním převisem rozprostírá moře. Vlny narážejí do kamenných útesů hluboko 
-pod hradbami a jejich dunění je slyšet i v nejvyšších věžích. Tento jedinečný přírodní štít činí z 
-Kamenného strážce pevnost, kterou je téměř nemožné oblehnout.
+Na jižní straně se pod vysokým skalním převisem rozprostírá moře. Vlny narážejí do kamenných útesů hluboko pod hradbami a jejich dunění je slyšet i v nejvyšších věžích. Tento jedinečný přírodní štít činí z Kamenného strážce pevnost, kterou je téměř nemožné oblehnout.
 
 </p>
 
 <p>
 
-Uvnitř hradu se nacházejí rozsáhlá nádvoří, zbrojnice, výcviková pole i sály určené pro porady velitelů 
-a vládců. Odtud jsou řízeny vojenské operace a obrana celé země Stonegard. 
-<strong>V hradě Kamenný strážce sídlí stonegardské síly odporu</strong>, které odtud plánují obranné strategie, 
-koordinují své jednotky a připravují se na střet s nepřáteli země.
+Uvnitř hradu se nacházejí rozsáhlá nádvoří, zbrojnice, výcviková pole i sály určené pro porady velitelů a vládců. Odtud jsou řízeny vojenské operace a obrana celé země Stonegard.
 
 </p>
 
 <p>
 
-Kamenný strážce není jen pevností. Je to symbol vytrvalosti, odvahy a odhodlání bránit Stonegard za každou cenu — 
-poslední bastion naděje na samém okraji země.
+<strong>V hradě Kamenný strážce sídlí stonegardské síly odporu</strong>, které zde plánují obranné strategie, koordinují své jednotky a připravují se na střet s nepřáteli země. Hrad je zároveň útočištěm pro vojáky, uprchlíky i všechny, kteří jsou ochotni bojovat za budoucnost Stonegardu.
+
+</p>
+
+<p>
+
+Kamenný strážce není jen pevností. Je symbolem vytrvalosti, odvahy a odhodlání bránit Stonegard za každou cenu — posledním bastionem naděje na samém okraji země.
 
 </p>
 
@@ -415,6 +469,8 @@ window.addEventListener("resize", () => {
 });
 
 </script>
+
+<!-- PROTECTION -->
 
 <script src="ochrana.js"></script>
 
