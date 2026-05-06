@@ -14,102 +14,172 @@
 /* BODY */
 
 body {
+
     margin: 0;
+
     background-color: black;
+
     text-align: center;
+
     font-family: Arial, sans-serif;
+
     color: white;
+
     overflow-x: hidden;
+
     position: relative;
+
 }
 
 /* MAGIC DUST */
 
 #magicDust{
+
     position: fixed;
+
     top: 0;
     left: 0;
+
     width: 100%;
     height: 100%;
+
     pointer-events: none;
+
     z-index: 0;
+
+}
+
+/* CONTENT ABOVE EFFECT */
+
+.language-switch,
+.back-link,
+h1,
+.message-image,
+.message-container,
+#messages {
+
+    position: relative;
+
+    z-index: 2;
+
 }
 
 /* LANGUAGE SWITCH */
 
 .language-switch {
+
     position: fixed;
+
     top: 15px;
+
     right: 20px;
-    z-index: 1000;
 
     display: flex;
+
     gap: 10px;
+
+    z-index: 1000;
+
 }
 
 .language-switch a {
+
     text-decoration: none;
+
     font-size: 22px;
-}
 
-/* CONTENT ABOVE EFFECT */
-
-.back-link,
-h1,
-.message-image,
-form,
-#messages {
-    position: relative;
-    z-index: 2;
 }
 
 /* BACK LINK */
 
 .back-link {
+
     margin-top: 25px;
+
 }
 
 .back-link a {
+
     font-family: 'MedievalSharp', cursive;
+
     color: #d4af37;
+
     text-decoration: none;
+
     font-size: 20px;
+
     transition: 0.3s;
+
 }
 
 .back-link a:hover {
+
     text-shadow:
         0 0 10px #d4af37,
         0 0 20px rgba(212,175,55,0.8);
+
 }
 
 /* TITLE */
 
 h1 {
+
     font-family: 'MedievalSharp', cursive;
+
     color: #d4af37;
-    font-size: 46px;
+
+    font-size: 48px;
+
     margin-top: 15px;
+
+    text-shadow:
+        0 0 12px rgba(212,175,55,0.35);
+
 }
 
 /* IMAGE */
 
 .message-image {
-    margin-top: 25px;
+
+    margin-top: 30px;
+
 }
 
 .message-image img {
 
     width: 100%;
-    max-width: 260px;
 
-    border-radius: 12px;
+    max-width: 280px;
+
+    border-radius: 14px;
 
     border: 2px solid #d4af37;
 
     box-shadow:
         0 0 0 2px #d4af37,
-        0 0 12px rgba(212,175,55,0.6);
+        0 0 16px rgba(212,175,55,0.6);
+
+}
+
+/* FORM CONTAINER */
+
+.message-container {
+
+    max-width: 650px;
+
+    margin: 40px auto;
+
+    padding: 35px 25px;
+
+    border-radius: 18px;
+
+    background:
+        rgba(15,15,15,0.88);
+
+    border: 1px solid rgba(212,175,55,0.4);
+
+    box-shadow:
+        0 0 25px rgba(212,175,55,0.08);
 
 }
 
@@ -117,22 +187,28 @@ h1 {
 
 form {
 
-    margin-top: 35px;
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
 
 }
+
+/* INPUTS */
 
 input,
 textarea {
 
-    width: 320px;
+    width: 100%;
 
-    max-width: 90%;
+    max-width: 500px;
 
-    padding: 12px;
+    padding: 14px;
 
-    margin: 8px;
+    margin-bottom: 16px;
 
-    border-radius: 8px;
+    border-radius: 10px;
 
     border: 1px solid #d4af37;
 
@@ -140,9 +216,21 @@ textarea {
 
     color: white;
 
-    font-size: 15px;
+    font-size: 16px;
 
     outline: none;
+
+    transition: 0.3s;
+
+    box-sizing: border-box;
+
+}
+
+textarea {
+
+    resize: vertical;
+
+    min-height: 140px;
 
 }
 
@@ -150,7 +238,7 @@ input:focus,
 textarea:focus {
 
     box-shadow:
-        0 0 10px rgba(212,175,55,0.7);
+        0 0 14px rgba(212,175,55,0.7);
 
 }
 
@@ -158,13 +246,13 @@ textarea:focus {
 
 button {
 
-    margin-top: 12px;
+    margin-top: 5px;
 
-    padding: 12px 24px;
+    padding: 13px 28px;
 
     font-family: 'MedievalSharp', cursive;
 
-    font-size: 18px;
+    font-size: 19px;
 
     background-color: #d4af37;
 
@@ -172,7 +260,7 @@ button {
 
     border: none;
 
-    border-radius: 8px;
+    border-radius: 10px;
 
     cursor: pointer;
 
@@ -185,40 +273,50 @@ button:hover {
     transform: scale(1.03);
 
     box-shadow:
-        0 0 15px rgba(212,175,55,0.8);
+        0 0 18px rgba(212,175,55,0.8);
 
 }
 
 /* MESSAGES */
 
+#messages {
+
+    margin-top: 10px;
+
+    padding-bottom: 50px;
+
+}
+
 .message {
 
-    border: 1px solid #d4af37;
+    border: 1px solid rgba(212,175,55,0.55);
 
-    border-radius: 10px;
+    border-radius: 14px;
 
-    padding: 14px;
+    padding: 18px;
 
-    margin: 18px auto;
+    margin: 22px auto;
 
-    max-width: 520px;
+    max-width: 650px;
 
     background: rgba(15,15,15,0.9);
 
     box-shadow:
-        0 0 12px rgba(212,175,55,0.15);
+        0 0 16px rgba(212,175,55,0.12);
+
+    text-align: left;
 
 }
 
 .message-name {
 
-    font-weight: bold;
+    font-family: 'MedievalSharp', cursive;
 
     color: #d4af37;
 
-    margin-bottom: 5px;
+    margin-bottom: 6px;
 
-    font-size: 18px;
+    font-size: 22px;
 
 }
 
@@ -226,9 +324,31 @@ button:hover {
 
     font-size: 14px;
 
-    color: #ccc;
+    color: #bbbbbb;
 
-    margin-bottom: 10px;
+    margin-bottom: 14px;
+
+}
+
+.message-text {
+
+    line-height: 1.8;
+
+    font-size: 17px;
+
+    word-wrap: break-word;
+
+}
+
+/* DELETE BUTTON */
+
+.delete-btn {
+
+    margin-top: 18px;
+
+    padding: 9px 18px;
+
+    font-size: 15px;
 
 }
 
@@ -237,7 +357,23 @@ button:hover {
 @media (max-width: 768px) {
 
     h1 {
-        font-size: 36px;
+
+        font-size: 38px;
+
+    }
+
+    .message-container {
+
+        width: 88%;
+
+        padding: 28px 18px;
+
+    }
+
+    .message {
+
+        width: 88%;
+
     }
 
 }
@@ -262,10 +398,12 @@ button:hover {
 
 </div>
 
-<!-- BACK LINK -->
+<!-- BACK -->
 
 <div class="back-link">
+
 <a href="hlavni_en.html">← Back to main page</a>
+
 </div>
 
 <!-- TITLE -->
@@ -282,6 +420,8 @@ button:hover {
 
 <!-- FORM -->
 
+<div class="message-container">
+
 <form id="messageForm">
 
 <input
@@ -290,21 +430,20 @@ id="name"
 placeholder="Your name or nickname"
 required>
 
-<br>
-
 <textarea
 id="text"
-rows="4"
 placeholder="Write your message..."
 required></textarea>
 
-<br>
-
 <button type="submit">
-Send message
+
+Send Message
+
 </button>
 
 </form>
+
+</div>
 
 <!-- MESSAGES -->
 
@@ -322,98 +461,120 @@ document.getElementById("messages");
 
 function loadMessages() {
 
-messagesDiv.innerHTML = "";
+    messagesDiv.innerHTML = "";
 
-var messages =
-JSON.parse(
-localStorage.getItem("messages")
-) || [];
+    var messages =
+    JSON.parse(
+        localStorage.getItem("messages")
+    ) || [];
 
-messages.forEach(function(msg, index) {
+    messages.reverse();
 
-var div =
-document.createElement("div");
+    messages.forEach(function(msg, index) {
 
-div.className = "message";
+        var div =
+        document.createElement("div");
 
-div.innerHTML =
+        div.className = "message";
 
-"<div class='message-name'>" +
-msg.name +
-"</div>" +
+        div.innerHTML =
 
-"<div class='message-date'>" +
-msg.date +
-"</div>" +
+        "<div class='message-name'>" +
+        escapeHtml(msg.name) +
+        "</div>" +
 
-"<div>" +
-msg.text +
-"</div>" +
+        "<div class='message-date'>" +
+        msg.date +
+        "</div>" +
 
-"<br>" +
+        "<div class='message-text'>" +
+        escapeHtml(msg.text).replace(/\n/g, "<br>") +
+        "</div>" +
 
-"<button onclick='deleteMessage(" +
-index +
-")'>Delete</button>";
+        "<button class='delete-btn' onclick='deleteMessage(" +
+        (messages.length - 1 - index) +
+        ")'>Delete</button>";
 
-messagesDiv.appendChild(div);
+        messagesDiv.appendChild(div);
 
-});
+    });
 
 }
 
 form.addEventListener("submit", function(e) {
 
-e.preventDefault();
+    e.preventDefault();
 
-var name =
-document.getElementById("name").value;
+    var name =
+    document.getElementById("name").value.trim();
 
-var text =
-document.getElementById("text").value;
+    var text =
+    document.getElementById("text").value.trim();
 
-var date =
-new Date().toLocaleString();
+    if(name === "" || text === "") {
+        return;
+    }
 
-var messages =
-JSON.parse(
-localStorage.getItem("messages")
-) || [];
+    var date =
+    new Date().toLocaleString();
 
-messages.push({
+    var messages =
+    JSON.parse(
+        localStorage.getItem("messages")
+    ) || [];
 
-name: name,
-text: text,
-date: date
+    messages.push({
 
-});
+        name: name,
+        text: text,
+        date: date
 
-localStorage.setItem(
-"messages",
-JSON.stringify(messages)
-);
+    });
 
-form.reset();
+    localStorage.setItem(
+        "messages",
+        JSON.stringify(messages)
+    );
 
-loadMessages();
+    form.reset();
+
+    loadMessages();
 
 });
 
 function deleteMessage(index) {
 
-var messages =
-JSON.parse(
-localStorage.getItem("messages")
-) || [];
+    var confirmDelete =
+    confirm("Do you really want to delete this message?");
 
-messages.splice(index, 1);
+    if(!confirmDelete){
+        return;
+    }
 
-localStorage.setItem(
-"messages",
-JSON.stringify(messages)
-);
+    var messages =
+    JSON.parse(
+        localStorage.getItem("messages")
+    ) || [];
 
-loadMessages();
+    messages.splice(index, 1);
+
+    localStorage.setItem(
+        "messages",
+        JSON.stringify(messages)
+    );
+
+    loadMessages();
+
+}
+
+function escapeHtml(text) {
+
+    var div =
+    document.createElement("div");
+
+    div.innerText = text;
+
+    return div.innerHTML;
 
 }
 
@@ -508,7 +669,9 @@ class Particle {
 }
 
 for(let i = 0; i < 80; i++){
+
     particles.push(new Particle());
+
 }
 
 function animate(){
@@ -521,11 +684,14 @@ function animate(){
     );
 
     particles.forEach(particle => {
+
         particle.update();
         particle.draw();
+
     });
 
     requestAnimationFrame(animate);
+
 }
 
 animate();
@@ -538,6 +704,10 @@ window.addEventListener("resize", () => {
 });
 
 </script>
+
+<!-- PROTECTION -->
+
+<script src="ochrana.js"></script>
 
 </body>
 </html>
