@@ -43,6 +43,8 @@ img {
     box-shadow:
         0 0 0 2px #d4af37,
         0 0 12px rgba(212,175,55,0.6);
+
+    cursor: pointer;
 }
 
 /* TEXT */
@@ -62,11 +64,14 @@ p {
 
 <div class="language-switch">
 
-<a href="#" onclick="setLang('cz')">🇨🇿</a> <a href="#" onclick="setLang('en')">🇬🇧</a>
+<a href="#" onclick="setLang('cz')">🇨🇿</a>
+<a href="#" onclick="setLang('en')">🇬🇧</a>
 
 </div>
 
-<img src="retezove_dvere.png">
+<img id="dvere"
+src="retezove_dvere.png"
+onclick="vratSe()">
 
 <p id="text"></p>
 
@@ -86,6 +91,8 @@ lang = l;
 applyLanguage();
 
 }
+
+/* TEXT */
 
 function applyLanguage() {
 
@@ -112,7 +119,21 @@ text.innerHTML =
 
 }
 
+/* RETURN TO PASSWORD PAGE */
+
+function vratSe() {
+
+window.location.href =
+"index_en.html";
+
+}
+
 </script>
 
+<!-- PROTECTION -->
+
+<script src="ochrana.js"></script>
+
 </body>
+
 </html>
