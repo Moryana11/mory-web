@@ -37,13 +37,38 @@ body {
 
 /* CONTENT ABOVE EFFECT */
 
+.language-switch,
 .back-link,
 h1,
-.location-image,
+.location-image-wrapper,
 .text-box,
 .overlay {
     position: relative;
     z-index: 2;
+}
+
+/* PŘEPÍNAČ JAZYKA */
+
+.language-switch {
+
+    position: fixed;
+
+    top: 15px;
+
+    right: 20px;
+
+    font-size: 22px;
+
+    z-index: 1000;
+
+}
+
+.language-switch a {
+
+    text-decoration: none;
+
+    margin-left: 8px;
+
 }
 
 /* ZPĚT */
@@ -73,7 +98,7 @@ h1,
 h1 {
     font-family: 'MedievalSharp', cursive;
     color: #d4af37;
-    font-size: 46px;
+    font-size: 48px;
     margin-top: 15px;
 
     text-shadow:
@@ -82,12 +107,18 @@ h1 {
 
 /* OBRÁZEK */
 
+.location-image-wrapper {
+
+    margin-top: 35px;
+
+}
+
 .location-image {
 
     width: 100%;
-    max-width: 900px;
+    max-width: 920px;
 
-    border-radius: 14px;
+    border-radius: 16px;
 
     border: 2px solid #d4af37;
 
@@ -97,9 +128,7 @@ h1 {
 
     box-shadow:
         0 0 0 2px #d4af37,
-        0 0 14px rgba(212,175,55,0.6);
-
-    margin-top: 30px;
+        0 0 16px rgba(212,175,55,0.6);
 
 }
 
@@ -109,7 +138,7 @@ h1 {
 
     box-shadow:
         0 0 0 2px #d4af37,
-        0 0 28px rgba(212,175,55,0.9);
+        0 0 32px rgba(212,175,55,0.9);
 
 }
 
@@ -117,21 +146,30 @@ h1 {
 
 .text-box {
 
-    max-width: 900px;
+    max-width: 950px;
 
-    margin: 35px auto;
+    margin: 45px auto;
 
-    padding: 0 20px;
+    padding: 0 24px;
 
     text-align: left;
 
-    line-height: 1.8;
+    line-height: 1.95;
 
-    font-size: 18px;
+    font-size: 19px;
+
+    text-shadow:
+        0 0 8px rgba(255,255,255,0.05);
 
 }
 
-/* ZVĚTŠENÝ OBRÁZEK */
+.text-box p {
+
+    margin-bottom: 28px;
+
+}
+
+/* OVERLAY */
 
 .overlay {
 
@@ -150,7 +188,7 @@ h1 {
     justify-content: center;
     align-items: center;
 
-    z-index: 999;
+    z-index: 9999;
 
 }
 
@@ -159,7 +197,12 @@ h1 {
     max-width: 95%;
     max-height: 95%;
 
-    border-radius: 12px;
+    border-radius: 14px;
+
+    border: 2px solid #d4af37;
+
+    box-shadow:
+        0 0 35px rgba(212,175,55,0.6);
 
 }
 
@@ -172,7 +215,8 @@ h1 {
     }
 
     .text-box {
-        font-size: 17px;
+        font-size: 18px;
+        line-height: 1.85;
     }
 
     .location-image {
@@ -191,6 +235,16 @@ h1 {
 
 <canvas id="magicDust"></canvas>
 
+<!-- PŘEPÍNAČ JAZYKA -->
+
+<div class="language-switch">
+
+<a href="lokace_kastleton.html">🇨🇿</a>
+
+<a href="location_kastleton.html">🇬🇧</a>
+
+</div>
+
 <!-- ZPĚT -->
 
 <div class="back-link">
@@ -203,6 +257,8 @@ h1 {
 
 <!-- OBRÁZEK -->
 
+<div class="location-image-wrapper">
+
 <img
 src="kastleton.png"
 class="location-image"
@@ -210,55 +266,45 @@ onclick="openImage(this)"
 alt="Kastleton"
 >
 
+</div>
+
 <!-- TEXT -->
 
 <div class="text-box">
 
 <p>
 
-<strong>Kastleton</strong> je rušné přístavní město ležící na západní straně země Laslan, 
-přímo na pobřeží u moře, na kontinentu Solisium.
+<strong>Kastleton</strong> je rušné přístavní město ležící na západním pobřeží země Laslan, na kontinentu Solisium. Od časného rána až do hluboké noci je město naplněno hlukem připlouvajících lodí, křikem námořníků a vůní koření, ryb a dalekých krajů.
 
 </p>
 
 <p>
 
-Od časného rána až do hluboké noci je Kastleton naplněn hlukem připlouvajících lodí, 
-křikem námořníků a vůní koření, ryb a dalekých krajů. Do jeho přístavu se sjíždějí obchodníci z celého světa — 
-od bohatých kupců s hedvábím a drahými kameny až po unavené poutníky hledající nové příležitosti nebo útočiště.
+Do jeho přístavu se sjíždějí obchodníci z celého světa — od bohatých kupců převážejících hedvábí a drahé kameny až po unavené poutníky hledající nové příležitosti, ochranu nebo nový začátek. Kastleton je místem, kde se neustále setkávají různé kultury, jazyky i osudy.
 
 </p>
 
 <p>
 
-Úzké kamenné uličky jsou plné tržišť, veselých hospod a hlučných krčem, kde se mísí desítky jazyků a příběhů. 
-Ve dne je Kastleton městem obchodu a smluv, v noci městem tajemství, šepotu a stínů. 
-Přestože působí živě a chaoticky, má svůj pevný řád a hrdost, kterou si jeho obyvatelé pečlivě střeží.
+Úzké kamenné uličky jsou plné tržišť, hlučných hospod a přeplněných krčem, v nichž se mísí desítky příběhů a tajemství. Ve dne je Kastleton městem obchodu a smluv, zatímco v noci se proměňuje v město šepotu, stínů a nebezpečných dohod. Přestože působí živě a chaoticky, vládne zde pevný řád a hrdost, kterou si obyvatelé města pečlivě střeží.
 
 </p>
 
 <p>
 
-Nad městem bdí <strong>Lord Hobs Kastler</strong>, vládce Kastletonu, známý svou pevnou rukou a smyslem pro pořádek. 
-Pod jeho vedením se město stalo jedním z nejdůležitějších obchodních uzlů v zemi Laslan a bezpečným přístavem 
-pro ty, kdo hledají ochranu i nové začátky.
+Nad městem bdí <strong>Lord Hobs Kastler</strong>, vládce Kastletonu známý svou pevnou rukou a neústupným smyslem pro pořádek. Pod jeho vedením se město stalo jedním z nejdůležitějších obchodních uzlů v celé zemi Laslan a bezpečným přístavem pro ty, kteří hledají útočiště před válkou a chaosem.
 
 </p>
 
 <p>
 
-Kastleton má však i význam, který dalece přesahuje obchod. Ve městě sídlí 
-<strong>Velitelství spojeneckých sil odporu Laslan</strong>, odkud jsou řízeny obranné strategie a tajné operace 
-proti nepřátelům celého kontinentu Solisium. Díky tomu je Kastleton nejen srdcem obchodu, 
-ale také jedním z klíčových pilířů naděje a odporu v době nejistoty.
+Kastleton má však význam, který dalece přesahuje samotný obchod. Ve městě sídlí <strong>Velitelství spojeneckých sil odporu Laslan</strong>, odkud jsou řízeny obranné strategie a tajné operace proti nepřátelům celého kontinentu Solisium. Díky tomu je Kastleton nejen srdcem obchodu, ale také jedním z nejdůležitějších pilířů naděje a odporu v časech nejistoty.
 
 </p>
 
 <p>
 
-Kastleton je město kontrastů — bohatství i bídy, odvahy i strachu, radosti i nebezpečí. 
-Je to místo, kde se křižují osudy, rodí spojenectví a kde každý příchozí může změnit svůj život… 
-nebo ho navždy ztratit.
+Kastleton je město kontrastů — bohatství i bídy, odvahy i strachu, radosti i nebezpečí. Místo, kde se křižují osudy, rodí spojenectví a kde každý příchozí může změnit svůj život… nebo jej navždy ztratit.
 
 </p>
 
@@ -423,6 +469,8 @@ window.addEventListener("resize", () => {
 });
 
 </script>
+
+<!-- PROTECTION -->
 
 <script src="ochrana.js"></script>
 
