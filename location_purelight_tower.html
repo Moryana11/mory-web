@@ -1,3 +1,252 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Purelight Tower</title>
+
+<link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+
+<style>
+
+/* BODY */
+
+body {
+    margin: 0;
+    background-color: black;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    color: white;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* MAGIC DUST */
+
+#magicDust{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* CONTENT ABOVE EFFECT */
+
+.language-switch,
+.back-link,
+h1,
+.location-image,
+.location-text,
+.overlay {
+    position: relative;
+    z-index: 2;
+}
+
+/* LANGUAGE SWITCH */
+
+.language-switch {
+
+    position: fixed;
+
+    top: 15px;
+
+    right: 20px;
+
+    font-size: 22px;
+
+    z-index: 1000;
+
+}
+
+.language-switch a {
+
+    text-decoration: none;
+
+    margin-left: 8px;
+
+}
+
+/* BACK */
+
+.back-link {
+    margin-top: 25px;
+}
+
+.back-link a {
+    font-family: 'MedievalSharp', cursive;
+    color: #d4af37;
+    text-decoration: none;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.back-link a:hover {
+
+    text-shadow:
+        0 0 10px #d4af37,
+        0 0 20px rgba(212,175,55,0.8);
+
+}
+
+/* TITLE */
+
+h1 {
+    font-family: 'MedievalSharp', cursive;
+    color: #d4af37;
+    font-size: 46px;
+    margin-top: 15px;
+
+    text-shadow:
+        0 0 12px rgba(212,175,55,0.35);
+}
+
+/* IMAGE */
+
+.location-image {
+    margin-top: 35px;
+}
+
+.location-image img {
+
+    width: 100%;
+    max-width: 420px;
+
+    border-radius: 14px;
+
+    border: 2px solid #d4af37;
+
+    cursor: pointer;
+
+    transition: 0.35s;
+
+    box-shadow:
+        0 0 0 2px #d4af37,
+        0 0 14px rgba(212,175,55,0.6);
+
+}
+
+.location-image img:hover {
+
+    transform: scale(1.02);
+
+    box-shadow:
+        0 0 0 2px #d4af37,
+        0 0 28px rgba(212,175,55,0.9);
+
+}
+
+/* TEXT */
+
+.location-text {
+
+    max-width: 900px;
+
+    margin: 45px auto;
+
+    padding: 0 24px;
+
+    text-align: left;
+
+    line-height: 1.9;
+
+    font-size: 19px;
+
+    text-shadow:
+        0 0 8px rgba(255,255,255,0.05);
+
+}
+
+/* OVERLAY */
+
+.overlay {
+
+    display: none;
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    background-color: rgba(0,0,0,0.92);
+
+    justify-content: center;
+
+    align-items: center;
+
+    z-index: 9999;
+
+}
+
+.overlay img {
+
+    max-width: 95%;
+
+    max-height: 95%;
+
+    border-radius: 12px;
+
+    border: 2px solid #d4af37;
+
+    box-shadow:
+        0 0 30px rgba(212,175,55,0.6);
+
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    h1 {
+        font-size: 36px;
+    }
+
+    .location-text {
+        font-size: 18px;
+        line-height: 1.8;
+    }
+
+    .location-image img {
+        max-width: 90%;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- MAGIC DUST -->
+
+<canvas id="magicDust"></canvas>
+
+<!-- LANGUAGE SWITCH -->
+
+<div class="language-switch">
+
+<a href="lokace_vez_cisteho_svetla.html">🇨🇿</a>
+
+<a href="location_purelight_tower.html">🇬🇧</a>
+
+</div>
+
+<!-- BACK -->
+
+<div class="back-link">
+<a href="locations2.html">← Back to locations</a>
+</div>
+
 <!-- TITLE -->
 
 <h1>Purelight Tower</h1>
@@ -12,24 +261,191 @@
 
 </div>
 
+<!-- OVERLAY -->
+
+<div class="overlay"
+     id="overlay"
+     onclick="closeImage()">
+
+<img id="bigImage">
+
+</div>
+
 <!-- TEXT -->
 
 <div class="location-text">
 
 <p>
-<strong>Purelight Tower</strong> stands to the east, not far from the ruins of the ancient city of Turayne in the land of Laslan, on the continent of Solisium.
+<strong>Purelight Tower</strong> stands east of the ruined city of Turayne in the land of Laslan, on the continent of Solisium.
 
-The tower rises atop a gentle hill surrounded by peaceful fields and quiet forests, shining like a beacon of hope in a land scarred by tragedy and darkness.
+The tower rises upon a peaceful hill surrounded by forests and quiet plains, shining like a beacon of hope in a land scarred by ancient tragedy and forgotten darkness.
 
-Built from smooth white stone, the tower is known throughout Laslan as the center of healing magic and the sanctuary of healer mages. For generations, gifted individuals have traveled here to study the arts of restoration, purification, and spiritual balance.
+Built from smooth white stone touched by golden light, Purelight Tower is known throughout Laslan as the sacred center of healing magic and spiritual balance. For generations, healers from distant villages, noble families, and hidden sanctuaries have traveled here to study the art of restoring life and easing suffering.
 
-Young healers are trained under the guidance of experienced masters who dedicate their lives to preserving knowledge and protecting the fragile balance between life and death. Within the tower are vast healing halls, libraries filled with ancient scrolls, meditation chambers, and sacred sanctuaries where wounded souls and bodies may recover in peace.
+Young apprentices begin their training within the tower under the guidance of experienced healer mages who dedicate their lives to knowledge, compassion, and discipline. Its halls are filled with ancient manuscripts, healing chambers, quiet libraries, and sacred meditation rooms where silence itself feels calming.
 
-At the heart of the tower burns the <strong>Eternal Flame of Pure Light</strong>, a sacred fire said to symbolize hope, life, and purity. Legends claim the flame has never extinguished, not even during the darkest eras of war and despair.
+At the center of the tower burns the legendary <strong>Eternal Flame of Pure Light</strong>, a sacred fire believed to embody hope, life, purity, and protection. According to ancient legends, the flame has never extinguished — not even during wars, plagues, or the darkest eras of Solisium's history.
 
-Despite standing close to the cursed Ruins of Turayne, Purelight Tower remains untouched by corruption. Many believe powerful protective magic surrounds the sanctuary, shielding it from the darkness spreading across the land.
+Despite standing close to the cursed Ruins of Turayne, the tower remains untouched by corruption. Many believe powerful protective magic surrounds the entire sanctuary, shielding it from darkness lurking beyond its borders.
 
-The healers who dwell within rarely involve themselves in politics or war, yet they are respected throughout Solisium for their wisdom, compassion, and unwavering devotion to preserving life.
+The healers of Purelight Tower serve not only Laslan, but all people in need. Travelers, soldiers, nobles, and the wounded alike seek refuge within its walls, knowing they will be treated without judgment or fear.
+
+Purelight Tower is more than a sanctuary of healing — it is a symbol of hope, compassion, and humanity's determination to preserve light even in a world consumed by shadows.
 </p>
 
 </div>
+
+<!-- IMAGE SCRIPT -->
+
+<script>
+
+function openImage(img) {
+
+var overlay =
+document.getElementById("overlay");
+
+var bigImage =
+document.getElementById("bigImage");
+
+bigImage.src =
+img.src;
+
+overlay.style.display =
+"flex";
+
+}
+
+function closeImage() {
+
+document.getElementById("overlay")
+.style.display =
+"none";
+
+}
+
+</script>
+
+<!-- MAGIC DUST SCRIPT -->
+
+<script>
+
+const canvas = document.getElementById("magicDust");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const particles = [];
+
+class Particle {
+
+    constructor(){
+        this.reset();
+    }
+
+    reset(){
+
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+
+        this.size = Math.random() * 2 + 1;
+
+        this.speedX = (Math.random() - 0.5) * 0.25;
+        this.speedY = (Math.random() - 0.5) * 0.25;
+
+        this.opacity = Math.random() * 0.5 + 0.2;
+
+        this.glow = Math.random() * 18 + 8;
+    }
+
+    update(){
+
+        this.x += this.speedX;
+        this.y += this.speedY;
+
+        if(
+            this.x < -50 ||
+            this.x > canvas.width + 50 ||
+            this.y < -50 ||
+            this.y > canvas.height + 50
+        ){
+            this.reset();
+        }
+    }
+
+    draw(){
+
+        const gradient = ctx.createRadialGradient(
+            this.x,
+            this.y,
+            0,
+            this.x,
+            this.y,
+            this.glow
+        );
+
+        gradient.addColorStop(
+            0,
+            `rgba(255,215,120,${this.opacity})`
+        );
+
+        gradient.addColorStop(
+            1,
+            "rgba(255,215,120,0)"
+        );
+
+        ctx.beginPath();
+
+        ctx.fillStyle = gradient;
+
+        ctx.arc(
+            this.x,
+            this.y,
+            this.glow,
+            0,
+            Math.PI * 2
+        );
+
+        ctx.fill();
+    }
+
+}
+
+for(let i = 0; i < 80; i++){
+    particles.push(new Particle());
+}
+
+function animate(){
+
+    ctx.clearRect(
+        0,
+        0,
+        canvas.width,
+        canvas.height
+    );
+
+    particles.forEach(particle => {
+        particle.update();
+        particle.draw();
+    });
+
+    requestAnimationFrame(animate);
+}
+
+animate();
+
+window.addEventListener("resize", () => {
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+});
+
+</script>
+
+<!-- PROTECTION -->
+
+<script src="ochrana.js"></script>
+
+</body>
+</html>
