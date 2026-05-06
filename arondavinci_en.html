@@ -35,6 +35,30 @@ body {
     z-index: 0;
 }
 
+/* LANGUAGE SWITCH */
+
+.language-switch {
+
+    position: fixed;
+
+    top: 15px;
+
+    right: 20px;
+
+    font-size: 22px;
+
+    z-index: 1000;
+
+}
+
+.language-switch a {
+
+    text-decoration: none;
+
+    margin-left: 8px;
+
+}
+
 /* CONTENT ABOVE EFFECT */
 
 nav,
@@ -159,6 +183,16 @@ h1 {
 <!-- MAGIC DUST -->
 
 <canvas id="magicDust"></canvas>
+
+<!-- LANGUAGE SWITCH -->
+
+<div class="language-switch">
+
+<a href="arondavinci.html">🇨🇿</a>
+
+<a href="arondavinci_en.html">🇬🇧</a>
+
+</div>
 
 <!-- NAVIGATION -->
 
@@ -305,6 +339,10 @@ window.addEventListener("resize", () => {
 });
 
 </script>
+
+<!-- LANGUAGE SWITCH SCRIPT -->
+
+<script src="language-switch.js"></script>
 
 <!-- PROTECTION -->
 
