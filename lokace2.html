@@ -112,21 +112,37 @@ h1 {
 
     justify-content: center;
 
-    gap: 35px;
+    gap: 40px;
 
-    margin-top: 45px;
+    margin-top: 50px;
 
     flex-wrap: wrap;
 
 }
 
+/* KARTA */
+
+.location-card {
+
+    transition: 0.35s;
+
+}
+
+.location-card:hover {
+
+    transform: translateY(-6px);
+
+}
+
+/* OBRÁZEK */
+
 .locations img {
 
     width: 100%;
 
-    max-width: 260px;
+    max-width: 270px;
 
-    border-radius: 14px;
+    border-radius: 16px;
 
     border: 2px solid #d4af37;
 
@@ -136,7 +152,7 @@ h1 {
 
     box-shadow:
         0 0 0 2px #d4af37,
-        0 0 12px rgba(212,175,55,0.6);
+        0 0 14px rgba(212,175,55,0.6);
 
 }
 
@@ -146,7 +162,7 @@ h1 {
 
     box-shadow:
         0 0 0 2px #d4af37,
-        0 0 26px rgba(212,175,55,0.9);
+        0 0 30px rgba(212,175,55,0.9);
 
 }
 
@@ -158,9 +174,9 @@ h1 {
 
     color: #d4af37;
 
-    margin-top: 14px;
+    margin-top: 16px;
 
-    font-size: 22px;
+    font-size: 24px;
 
     text-shadow:
         0 0 10px rgba(212,175,55,0.25);
@@ -171,7 +187,7 @@ h1 {
 
 .pagination {
 
-    margin-top: 45px;
+    margin-top: 55px;
 
 }
 
@@ -183,7 +199,7 @@ h1 {
 
     text-decoration: none;
 
-    font-size: 30px;
+    font-size: 34px;
 
     margin: 0 20px;
 
@@ -210,10 +226,15 @@ h1 {
     .locations {
         flex-direction: column;
         align-items: center;
+        gap: 45px;
     }
 
     .locations img {
         max-width: 90%;
+    }
+
+    .location-name {
+        font-size: 22px;
     }
 
 }
@@ -252,22 +273,32 @@ h1 {
 
 <div class="locations">
 
-<div>
+<!-- TURAYN -->
+
+<div class="location-card">
+
 <a href="lokace_turayne.html">
 <img src="turayne.png" alt="Ruiny Turaynu">
 </a>
+
 <div class="location-name">
 Ruiny Turaynu
 </div>
+
 </div>
 
-<div>
+<!-- VĚŽ ČISTÉHO SVĚTLA -->
+
+<div class="location-card">
+
 <a href="lokace_vez_cisteho_svetla.html">
 <img src="vez_cisteho_svetla.png" alt="Věž čistého světla">
 </a>
+
 <div class="location-name">
 Věž čistého světla
 </div>
+
 </div>
 
 </div>
@@ -397,6 +428,10 @@ window.addEventListener("resize", () => {
 });
 
 </script>
+
+<!-- PROTECTION -->
+
+<script src="ochrana.js"></script>
 
 </body>
 </html>
