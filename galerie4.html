@@ -11,36 +11,6 @@
 
 <style>
 
-/* LANGUAGE SWITCH */
-
-.language-switch {
-
-position: fixed;
-
-top: 15px;
-
-right: 25px;
-
-z-index: 99999;
-
-display: flex;
-
-gap: 12px;
-
-align-items: center;
-
-}
-
-.language-switch a {
-
-text-decoration: none;
-
-color: white;
-
-font-size: 22px;
-
-}
-
 /* BODY */
 
 body {
@@ -91,6 +61,65 @@ h1,
 position: relative;
 
 z-index: 2;
+
+}
+
+/* LANGUAGE SWITCH */
+
+.language-switch {
+
+position: fixed;
+
+top: 15px;
+
+right: 15px;
+
+z-index: 999999;
+
+display: flex;
+
+align-items: center;
+
+gap: 18px;
+
+}
+
+.language-switch a {
+
+font-family: 'MedievalSharp', cursive;
+
+text-decoration: none;
+
+color: #d4af37;
+
+font-size: 24px;
+
+line-height: 1;
+
+display: block;
+
+transition: 0.3s;
+
+}
+
+/* ACTIVE LANGUAGE */
+
+.language-switch a.active-lang {
+
+color: white;
+
+text-shadow:
+0 0 10px rgba(255,255,255,0.7);
+
+}
+
+/* HOVER */
+
+.language-switch a:hover {
+
+text-shadow:
+0 0 10px #d4af37,
+0 0 20px rgba(212,175,55,0.8);
 
 }
 
@@ -344,6 +373,22 @@ font-size: 36px;
 
 }
 
+.language-switch {
+
+top: 12px;
+
+right: 12px;
+
+gap: 14px;
+
+}
+
+.language-switch a {
+
+font-size: 20px;
+
+}
+
 }
 
 </style>
@@ -360,8 +405,13 @@ font-size: 36px;
 
 <div class="language-switch">
 
-<a href="galerie4.html">CZ</a>
-<a href="gallery4_en.html">GB</a>
+<a href="galerie4.html" class="active-lang">
+CZ
+</a>
+
+<a href="gallery4_en.html">
+GB
+</a>
 
 </div>
 
