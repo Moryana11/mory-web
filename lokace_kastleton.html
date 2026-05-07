@@ -37,6 +37,7 @@ body {
 
 /* CONTENT ABOVE EFFECT */
 
+.language-switch,
 .back-link,
 h1,
 .location-image,
@@ -46,7 +47,7 @@ h1,
     z-index: 2;
 }
 
-/* PŘEPÍNAČ JAZYKA */
+/* LANGUAGE SWITCH */
 
 .language-switch {
 
@@ -54,23 +55,52 @@ h1,
 
     top: 15px;
 
-    right: 20px;
+    right: 15px;
 
-    font-size: 22px;
+    z-index: 999999;
 
-    z-index: 1000;
+    display: flex;
+
+    gap: 12px;
+
+    align-items: center;
 
 }
 
 .language-switch a {
 
+    font-family: 'MedievalSharp', cursive;
+
     text-decoration: none;
 
-    margin-left: 8px;
+    color: #d4af37;
+
+    font-size: 22px;
+
+    transition: 0.3s;
+
+    display: inline-block;
 
 }
 
-/* ZPĚT */
+.language-switch a:hover {
+
+    text-shadow:
+        0 0 10px #d4af37,
+        0 0 20px rgba(212,175,55,0.8);
+
+}
+
+.language-switch a.active-lang {
+
+    color: white;
+
+    text-shadow:
+        0 0 10px rgba(255,255,255,0.7);
+
+}
+
+/* BACK */
 
 .back-link {
     margin-top: 25px;
@@ -92,7 +122,7 @@ h1,
 
 }
 
-/* NADPIS */
+/* TITLE */
 
 h1 {
     font-family: 'MedievalSharp', cursive;
@@ -104,7 +134,7 @@ h1 {
         0 0 12px rgba(212,175,55,0.35);
 }
 
-/* OBRÁZEK */
+/* IMAGE */
 
 .location-image {
     margin-top: 35px;
@@ -138,7 +168,7 @@ h1 {
         0 0 28px rgba(212,175,55,0.9);
 
 }
-    
+
 /* TEXT */
 
 .text-box {
@@ -203,7 +233,7 @@ h1 {
 
 }
 
-/* MOBIL */
+/* MOBILE */
 
 @media (max-width: 768px) {
 
@@ -220,6 +250,20 @@ h1 {
         max-width: 90%;
     }
 
+    .language-switch {
+
+        top: 12px;
+
+        right: 12px;
+
+    }
+
+    .language-switch a {
+
+        font-size: 20px;
+
+    }
+
 }
 
 </style>
@@ -232,17 +276,31 @@ h1 {
 
 <canvas id="magicDust"></canvas>
 
-<!-- ZPĚT -->
+<!-- LANGUAGE SWITCH -->
+
+<div class="language-switch">
+
+<a href="lokace_kastleton.html" class="active-lang">
+CZ
+</a>
+
+<a href="location_kastleton.html">
+GB
+</a>
+
+</div>
+
+<!-- BACK -->
 
 <div class="back-link">
 <a href="lokace.html">← Zpět na Lokace</a>
 </div>
 
-<!-- NADPIS -->
+<!-- TITLE -->
 
 <h1>Kastleton</h1>
 
-<!-- OBRÁZEK -->
+<!-- IMAGE -->
 
 <div class="location-image">
 
@@ -267,9 +325,15 @@ alt="Kastleton"
 <p>
 
 Do jeho přístavu se sjíždějí obchodníci z celého světa — od bohatých kupců převážejících hedvábí a drahé kameny až po unavené poutníky hledající nové příležitosti, ochranu nebo nový začátek. Kastleton je místem, kde se neustále setkávají různé kultury, jazyky i osudy.
+
 Úzké kamenné uličky jsou plné tržišť, hlučných hospod a přeplněných krčem, v nichž se mísí desítky příběhů a tajemství. Ve dne je Kastleton městem obchodu a smluv, zatímco v noci se proměňuje v město šepotu, stínů a nebezpečných dohod. Přestože působí živě a chaoticky, vládne zde pevný řád a hrdost, kterou si obyvatelé města pečlivě střeží.
+
 Nad městem bdí <strong>Lord Hobs Kastler</strong>, vládce Kastletonu známý svou pevnou rukou a neústupným smyslem pro pořádek. Pod jeho vedením se město stalo jedním z nejdůležitějších obchodních uzlů v celé zemi Laslan a bezpečným přístavem pro ty, kteří hledají útočiště před válkou a chaosem.
-Kastleton má však význam, který dalece přesahuje samotný obchod. Ve městě sídlí <strong>Velitelství spojeneckých sil odporu Laslan</strong>, odkud jsou řízeny obranné strategie a tajné operace proti nepřátelům celého kontinentu Solisium. Díky tomu je Kastleton nejen srdcem obchodu, ale také jedním z nejdůležitějších pilířů naděje a odporu v časech nejistoty.
+
+Kastleton má však význam, který dalece přesahuje samotný obchod. Ve městě sídlí <strong>Velitelství spojeneckých sil odporu Laslan</strong>, odkud jsou řízeny obranné strategie a tajné operace proti nepřátelům celého kontinentu Solisium.
+
+Díky tomu je Kastleton nejen srdcem obchodu, ale také jedním z nejdůležitějších pilířů naděje a odporu v časech nejistoty.
+
 Kastleton je město kontrastů — bohatství i bídy, odvahy i strachu, radosti i nebezpečí. Místo, kde se křižují osudy, rodí spojenectví a kde každý příchozí může změnit svůj život… nebo jej navždy ztratit.
 
 </p>
