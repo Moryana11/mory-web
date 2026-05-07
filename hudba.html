@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="cz">
+<html lang="cs">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -82,9 +82,32 @@ h1,
 
 .language-switch a {
 
+    font-family: 'MedievalSharp', cursive;
+
     text-decoration: none;
 
-    font-size: 22px;
+    color: #d4af37;
+
+    font-size: 20px;
+
+    transition: 0.3s;
+
+}
+
+.language-switch a:hover {
+
+    text-shadow:
+        0 0 10px #d4af37,
+        0 0 20px rgba(212,175,55,0.8);
+
+}
+
+.language-switch .active-lang {
+
+    color: white;
+
+    text-shadow:
+        0 0 10px rgba(255,255,255,0.7);
 
 }
 
@@ -271,9 +294,13 @@ audio {
 
 <div class="language-switch">
 
-<a href="hudba.html">🇨🇿</a>
+<a href="hudba.html" class="active-lang">
+CZ
+</a>
 
-<a href="music.html">🇬🇧</a>
+<a href="music.html">
+GB
+</a>
 
 </div>
 
