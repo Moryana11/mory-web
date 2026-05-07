@@ -14,25 +14,41 @@
 /* BODY */
 
 body {
-    background-color: black;
-    margin: 0;
-    text-align: center;
-    font-family: Arial, sans-serif;
-    overflow: hidden;
-    position: relative;
-    color: white;
+
+background-color: black;
+
+margin: 0;
+
+text-align: center;
+
+font-family: Arial, sans-serif;
+
+overflow: hidden;
+
+position: relative;
+
+color: white;
+
 }
 
 /* MAGIC DUST */
 
 #magicDust{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 0;
+
+position: fixed;
+
+top: 0;
+
+left: 0;
+
+width: 100%;
+
+height: 100%;
+
+pointer-events: none;
+
+z-index: 0;
+
 }
 
 /* LANGUAGE SWITCH */
@@ -91,117 +107,128 @@ text-shadow:
 /* CONTENT ABOVE EFFECT */
 
 .container {
-    position: relative;
-    z-index: 2;
-}
 
-/* CONTAINER */
+position: relative;
 
-.container {
-    margin-top: 40px;
+z-index: 2;
+
+margin-top: 40px;
+
 }
 
 /* DOOR */
 
 #dvere {
-    width: 100%;
-    max-width: 350px;
 
-    border-radius: 12px;
+width: 100%;
 
-    border: 2px solid #d4af37;
+max-width: 350px;
 
-    box-shadow:
-        0 0 0 2px #d4af37,
-        0 0 12px rgba(212,175,55,0.6);
+border-radius: 12px;
 
-    cursor: pointer;
+border: 2px solid #d4af37;
 
-    transition: 0.35s;
+box-shadow:
+0 0 0 2px #d4af37,
+0 0 12px rgba(212,175,55,0.6);
+
+cursor: pointer;
+
+transition: 0.35s;
+
 }
 
 #dvere:hover {
 
-    transform: scale(1.02);
+transform: scale(1.02);
 
-    box-shadow:
-        0 0 0 2px #d4af37,
-        0 0 28px rgba(212,175,55,0.9);
+box-shadow:
+0 0 0 2px #d4af37,
+0 0 28px rgba(212,175,55,0.9);
 
 }
 
 /* TEXT */
 
 label {
-    display: block;
 
-    margin-top: 25px;
+display: block;
 
-    font-family: 'MedievalSharp', cursive;
+margin-top: 25px;
 
-    color: #d4af37;
+font-family: 'MedievalSharp', cursive;
 
-    font-size: 24px;
+color: #d4af37;
 
-    text-shadow:
-        0 0 10px rgba(212,175,55,0.4);
+font-size: 24px;
+
+text-shadow:
+0 0 10px rgba(212,175,55,0.4);
+
 }
 
 /* INPUT */
 
 .password-wrapper {
-    position: relative;
-    display: inline-block;
+
+position: relative;
+
+display: inline-block;
+
 }
 
 .password-wrapper input {
 
-    margin-top: 18px;
+margin-top: 18px;
 
-    padding: 12px;
-    padding-right: 45px;
+padding: 12px;
 
-    width: 260px;
-    max-width: 80%;
+padding-right: 45px;
 
-    font-size: 16px;
+width: 260px;
 
-    border-radius: 8px;
+max-width: 80%;
 
-    border: 2px solid #d4af37;
+font-size: 16px;
 
-    background-color: rgba(20,20,20,0.95);
+border-radius: 8px;
 
-    color: white;
+border: 2px solid #d4af37;
 
-    outline: none;
+background-color: rgba(20,20,20,0.95);
 
-    box-shadow:
-        0 0 12px rgba(212,175,55,0.15);
+color: white;
+
+outline: none;
+
+box-shadow:
+0 0 12px rgba(212,175,55,0.15);
 
 }
 
 .password-wrapper input::placeholder {
-    color: rgba(255,255,255,0.6);
+
+color: rgba(255,255,255,0.6);
+
 }
 
 /* EYE ICON */
 
 .toggle-password {
 
-    position: absolute;
+position: absolute;
 
-    right: 12px;
+right: 12px;
 
-    top: 50%;
+top: 50%;
 
-    transform: translateY(-50%);
+transform: translateY(-50%);
 
-    cursor: pointer;
+cursor: pointer;
 
-    font-size: 18px;
+font-size: 18px;
 
-    user-select: none;
+user-select: none;
 
 }
 
@@ -209,37 +236,37 @@ label {
 
 button {
 
-    margin-top: 18px;
+margin-top: 18px;
 
-    padding: 12px 24px;
+padding: 12px 24px;
 
-    font-size: 17px;
+font-size: 17px;
 
-    font-family: 'MedievalSharp', cursive;
+font-family: 'MedievalSharp', cursive;
 
-    color: black;
+color: black;
 
-    background-color: #d4af37;
+background-color: #d4af37;
 
-    border: none;
+border: none;
 
-    border-radius: 10px;
+border-radius: 10px;
 
-    cursor: pointer;
+cursor: pointer;
 
-    transition: 0.3s;
+transition: 0.3s;
 
-    box-shadow:
-        0 0 15px rgba(212,175,55,0.45);
+box-shadow:
+0 0 15px rgba(212,175,55,0.45);
 
 }
 
 button:hover {
 
-    transform: scale(1.05);
+transform: scale(1.05);
 
-    box-shadow:
-        0 0 25px rgba(212,175,55,0.8);
+box-shadow:
+0 0 25px rgba(212,175,55,0.8);
 
 }
 
@@ -247,17 +274,37 @@ button:hover {
 
 @media (max-width: 768px) {
 
-    .container {
-        margin-top: 25px;
-    }
+.container {
 
-    label {
-        font-size: 22px;
-    }
+margin-top: 25px;
 
-    #dvere {
-        max-width: 85%;
-    }
+}
+
+label {
+
+font-size: 22px;
+
+}
+
+#dvere {
+
+max-width: 85%;
+
+}
+
+.language-switch {
+
+right: 15px;
+
+top: 12px;
+
+}
+
+.language-switch a {
+
+font-size: 20px;
+
+}
 
 }
 
@@ -341,9 +388,35 @@ applyLanguage();
 
 }
 
-/* TRANSLATIONS */
+/* APPLY LANGUAGE */
 
 function applyLanguage() {
+
+/* ACTIVE BUTTON */
+
+document
+.getElementById("czButton")
+.classList.remove("active-lang");
+
+document
+.getElementById("enButton")
+.classList.remove("active-lang");
+
+if (lang === "en") {
+
+document
+.getElementById("enButton")
+.classList.add("active-lang");
+
+} else {
+
+document
+.getElementById("czButton")
+.classList.add("active-lang");
+
+}
+
+/* TRANSLATIONS */
 
 if (lang === "en") {
 
@@ -397,8 +470,6 @@ function zkontrolujHeslo() {
 var heslo =
 document.getElementById("heslo").value;
 
-/* PASSWORDS */
-
 var czHeslo = "knihovna";
 var enHeslo = "library";
 
@@ -406,8 +477,8 @@ var zadane =
 heslo.trim().toLowerCase();
 
 if (
-    (lang === "cz" && zadane === czHeslo) ||
-    (lang === "en" && zadane === enHeslo)
+(lang === "cz" && zadane === czHeslo) ||
+(lang === "en" && zadane === enHeslo)
 ) {
 
 document.getElementById("dvere").src =
@@ -472,7 +543,9 @@ document
 function(event) {
 
 if (event.key === "Enter") {
-    zkontrolujHeslo();
+
+zkontrolujHeslo();
+
 }
 
 });
@@ -483,123 +556,153 @@ if (event.key === "Enter") {
 
 <script>
 
-const canvas = document.getElementById("magicDust");
-const ctx = canvas.getContext("2d");
+const canvas =
+document.getElementById("magicDust");
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+const ctx =
+canvas.getContext("2d");
+
+canvas.width =
+window.innerWidth;
+
+canvas.height =
+window.innerHeight;
 
 const particles = [];
 
 class Particle {
 
-    constructor(){
-        this.reset();
-    }
+constructor(){
 
-    reset(){
+this.reset();
 
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
+}
 
-        this.size = Math.random() * 2 + 1;
+reset(){
 
-        this.speedX = (Math.random() - 0.5) * 0.25;
-        this.speedY = (Math.random() - 0.5) * 0.25;
+this.x =
+Math.random() * canvas.width;
 
-        this.opacity = Math.random() * 0.5 + 0.2;
+this.y =
+Math.random() * canvas.height;
 
-        this.glow = Math.random() * 18 + 8;
-    }
+this.size =
+Math.random() * 2 + 1;
 
-    update(){
+this.speedX =
+(Math.random() - 0.5) * 0.25;
 
-        this.x += this.speedX;
-        this.y += this.speedY;
+this.speedY =
+(Math.random() - 0.5) * 0.25;
 
-        if(
-            this.x < -50 ||
-            this.x > canvas.width + 50 ||
-            this.y < -50 ||
-            this.y > canvas.height + 50
-        ){
-            this.reset();
-        }
-    }
+this.opacity =
+Math.random() * 0.5 + 0.2;
 
-    draw(){
+this.glow =
+Math.random() * 18 + 8;
 
-        const gradient = ctx.createRadialGradient(
-            this.x,
-            this.y,
-            0,
-            this.x,
-            this.y,
-            this.glow
-        );
+}
 
-        gradient.addColorStop(
-            0,
-            `rgba(255,215,120,${this.opacity})`
-        );
+update(){
 
-        gradient.addColorStop(
-            1,
-            "rgba(255,215,120,0)"
-        );
+this.x += this.speedX;
 
-        ctx.beginPath();
+this.y += this.speedY;
 
-        ctx.fillStyle = gradient;
+if(
+this.x < -50 ||
+this.x > canvas.width + 50 ||
+this.y < -50 ||
+this.y > canvas.height + 50
+){
 
-        ctx.arc(
-            this.x,
-            this.y,
-            this.glow,
-            0,
-            Math.PI * 2
-        );
+this.reset();
 
-        ctx.fill();
-    }
+}
+
+}
+
+draw(){
+
+const gradient =
+ctx.createRadialGradient(
+this.x,
+this.y,
+0,
+this.x,
+this.y,
+this.glow
+);
+
+gradient.addColorStop(
+0,
+`rgba(255,215,120,${this.opacity})`
+);
+
+gradient.addColorStop(
+1,
+"rgba(255,215,120,0)"
+);
+
+ctx.beginPath();
+
+ctx.fillStyle =
+gradient;
+
+ctx.arc(
+this.x,
+this.y,
+this.glow,
+0,
+Math.PI * 2
+);
+
+ctx.fill();
+
+}
 
 }
 
 for(let i = 0; i < 80; i++){
-    particles.push(new Particle());
+
+particles.push(new Particle());
+
 }
 
 function animate(){
 
-    ctx.clearRect(
-        0,
-        0,
-        canvas.width,
-        canvas.height
-    );
+ctx.clearRect(
+0,
+0,
+canvas.width,
+canvas.height
+);
 
-    particles.forEach(particle => {
-        particle.update();
-        particle.draw();
-    });
+particles.forEach(particle => {
 
-    requestAnimationFrame(animate);
+particle.update();
+
+particle.draw();
+
+});
+
+requestAnimationFrame(animate);
+
 }
 
 animate();
 
 window.addEventListener("resize", () => {
 
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+canvas.width =
+window.innerWidth;
+
+canvas.height =
+window.innerHeight;
 
 });
 
 </script>
-
-<!-- LANGUAGE SWITCH SCRIPT -->
-
-<script src="language-switch.js"></script>
 
 <!-- PROTECTION -->
 
