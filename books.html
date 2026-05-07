@@ -14,134 +14,237 @@
 /* BODY */
 
 body {
-    margin: 0;
-    background-color: black;
-    text-align: center;
-    font-family: Arial, sans-serif;
-    color: white;
-    overflow-x: hidden;
-    position: relative;
+
+margin: 0;
+
+background-color: black;
+
+text-align: center;
+
+font-family: Arial, sans-serif;
+
+color: white;
+
+overflow-x: hidden;
+
+position: relative;
+
 }
 
 /* MAGIC DUST */
 
 #magicDust{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 0;
+
+position: fixed;
+
+top: 0;
+
+left: 0;
+
+width: 100%;
+
+height: 100%;
+
+pointer-events: none;
+
+z-index: 0;
+
+}
+
+/* CONTENT ABOVE EFFECT */
+
+.language-switch,
+.back-link,
+h1,
+.books-container,
+.image-hint {
+
+position: relative;
+
+z-index: 2;
+
 }
 
 /* LANGUAGE SWITCH */
 
 .language-switch {
-    position: fixed;
-    top: 15px;
-    right: 20px;
-    z-index: 1000;
 
-    display: flex;
-    gap: 10px;
+position: fixed;
+
+top: 15px;
+
+right: 15px;
+
+z-index: 999999;
+
+display: flex;
+
+align-items: center;
+
+gap: 18px;
+
 }
+
+/* LANGUAGE LINKS */
 
 .language-switch a {
-    text-decoration: none;
-    font-size: 22px;
+
+font-family: 'MedievalSharp', cursive;
+
+text-decoration: none;
+
+color: #d4af37;
+
+font-size: 24px;
+
+line-height: 1;
+
+display: block;
+
+transition: 0.3s;
+
 }
 
-/* CONTENT ABOVE EFFECT */
+/* ACTIVE LANGUAGE */
 
-.back-link,
-h1,
-.book-image,
-.image-hint {
-    position: relative;
-    z-index: 2;
+.language-switch a.active-lang {
+
+color: white;
+
+text-shadow:
+0 0 10px rgba(255,255,255,0.7);
+
 }
 
-/* BACK LINK */
+/* HOVER */
+
+.language-switch a:hover {
+
+text-shadow:
+0 0 10px #d4af37,
+0 0 20px rgba(212,175,55,0.8);
+
+}
+
+/* BACK */
 
 .back-link {
-    margin-top: 25px;
+
+margin-top: 25px;
+
 }
 
 .back-link a {
-    font-family: 'MedievalSharp', cursive;
-    color: #d4af37;
-    text-decoration: none;
-    font-size: 20px;
-    transition: 0.3s;
+
+font-family: 'MedievalSharp', cursive;
+
+color: #d4af37;
+
+text-decoration: none;
+
+font-size: 20px;
+
+transition: 0.3s;
+
 }
 
 .back-link a:hover {
-    text-shadow:
-        0 0 10px #d4af37,
-        0 0 20px rgba(212,175,55,0.8);
+
+text-shadow:
+0 0 10px #d4af37,
+0 0 20px rgba(212,175,55,0.8);
+
 }
 
 /* TITLE */
 
 h1 {
-    font-family: 'MedievalSharp', cursive;
-    color: #d4af37;
-    font-size: 46px;
-    margin-top: 15px;
 
-    text-shadow:
-        0 0 12px rgba(212,175,55,0.35);
-}
+font-family: 'MedievalSharp', cursive;
 
-/* BOOK IMAGE */
+color: #d4af37;
 
-.book-image {
-    margin-top: 40px;
-}
+font-size: 46px;
 
-.book-image img {
+margin-top: 15px;
 
-    width: 100%;
-    max-width: 340px;
-
-    border-radius: 16px;
-
-    border: 2px solid #d4af37;
-
-    cursor: pointer;
-
-    transition: 0.35s;
-
-    box-shadow:
-        0 0 0 2px #d4af37,
-        0 0 14px rgba(212,175,55,0.6);
+text-shadow:
+0 0 12px rgba(212,175,55,0.35);
 
 }
 
-.book-image img:hover {
+/* BOOKS CONTAINER */
 
-    transform: scale(1.03);
+.books-container {
 
-    box-shadow:
-        0 0 0 2px #d4af37,
-        0 0 25px rgba(212,175,55,0.9);
+display: flex;
+
+justify-content: center;
+
+gap: 60px;
+
+margin-top: 40px;
+
+flex-wrap: wrap;
 
 }
 
-/* TEXT UNDER IMAGE */
+/* BOOK BLOCK */
+
+.book {
+
+text-align: center;
+
+}
+
+/* IMAGE */
+
+.book img {
+
+width: 100%;
+
+max-width: 340px;
+
+border-radius: 16px;
+
+border: 2px solid #d4af37;
+
+cursor: pointer;
+
+transition: 0.35s;
+
+box-shadow:
+0 0 0 2px #d4af37,
+0 0 14px rgba(212,175,55,0.6);
+
+}
+
+.book img:hover {
+
+transform: scale(1.03);
+
+box-shadow:
+0 0 0 2px #d4af37,
+0 0 25px rgba(212,175,55,0.9);
+
+}
+
+/* TEXT UNDER IMAGES */
 
 .image-hint {
 
-    margin-top: 22px;
+margin-top: 35px;
 
-    font-family: 'MedievalSharp', cursive;
+font-family: 'MedievalSharp', cursive;
 
-    color: #d4af37;
+color: #d4af37;
 
-    font-size: 22px;
+font-size: 22px;
 
-    opacity: 0.9;
+opacity: 0.9;
+
+text-shadow:
+0 0 10px rgba(212,175,55,0.25);
 
 }
 
@@ -149,18 +252,41 @@ h1 {
 
 @media (max-width: 768px) {
 
-    h1 {
-        font-size: 36px;
-    }
+h1 {
 
-    .book-image img {
-        max-width: 90%;
-    }
+font-size: 36px;
 
-    .image-hint {
-        font-size: 18px;
-        padding: 0 10px;
-    }
+}
+
+.book img {
+
+max-width: 90%;
+
+}
+
+.image-hint {
+
+font-size: 18px;
+
+padding: 0 10px;
+
+}
+
+.language-switch {
+
+top: 12px;
+
+right: 12px;
+
+gap: 14px;
+
+}
+
+.language-switch a {
+
+font-size: 20px;
+
+}
 
 }
 
@@ -178,35 +304,80 @@ h1 {
 
 <div class="language-switch">
 
-<a href="knihy.html">🇨🇿</a>
+<a href="knihy.html">
+CZ
+</a>
 
-<a href="books.html">EN</a>
+<a href="books.html" class="active-lang">
+EN
+</a>
 
 </div>
 
-<!-- BACK LINK -->
+<!-- BACK -->
 
 <div class="back-link">
-<a href="hlavni_en.html">← Back to main page</a>
+
+<a href="main.html">
+← Back to main page
+</a>
+
 </div>
 
 <!-- TITLE -->
 
 <h1>Books</h1>
 
-<!-- BOOK IMAGE -->
+<!-- BOOKS -->
 
-<div class="book-image">
+<div class="books-container">
+
+<!-- FIRE AND WATER -->
+
+<div class="book">
 
 <a href="book1.html">
 
-<img src="fireandwater.png" alt="Fire and Water">
+<img src="fireandwater.png"
+alt="Fire and Water">
 
 </a>
 
-<div class="image-hint">
-Click on the book cover to enter the story.
 </div>
+
+<!-- LABYRINTH -->
+
+<div class="book">
+
+<a href="labyrinth.html">
+
+<img src="labyrinth.png"
+alt="Labyrinth">
+
+</a>
+
+</div>
+
+<!-- GUARDIAN OF THE VAMPIRE -->
+
+<div class="book">
+
+<a href="guardian_of_the_vampire.html">
+
+<img src="guardian_of_the_vampire.png"
+alt="Guardian of the Vampire">
+
+</a>
+
+</div>
+
+</div>
+
+<!-- TEXT -->
+
+<div class="image-hint">
+
+Click on a book cover and enter the story.
 
 </div>
 
@@ -214,123 +385,153 @@ Click on the book cover to enter the story.
 
 <script>
 
-const canvas = document.getElementById("magicDust");
-const ctx = canvas.getContext("2d");
+const canvas =
+document.getElementById("magicDust");
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+const ctx =
+canvas.getContext("2d");
+
+canvas.width =
+window.innerWidth;
+
+canvas.height =
+window.innerHeight;
 
 const particles = [];
 
 class Particle {
 
-    constructor(){
-        this.reset();
-    }
+constructor(){
 
-    reset(){
+this.reset();
 
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
+}
 
-        this.size = Math.random() * 2 + 1;
+reset(){
 
-        this.speedX = (Math.random() - 0.5) * 0.25;
-        this.speedY = (Math.random() - 0.5) * 0.25;
+this.x =
+Math.random() * canvas.width;
 
-        this.opacity = Math.random() * 0.5 + 0.2;
+this.y =
+Math.random() * canvas.height;
 
-        this.glow = Math.random() * 18 + 8;
-    }
+this.size =
+Math.random() * 2 + 1;
 
-    update(){
+this.speedX =
+(Math.random() - 0.5) * 0.25;
 
-        this.x += this.speedX;
-        this.y += this.speedY;
+this.speedY =
+(Math.random() - 0.5) * 0.25;
 
-        if(
-            this.x < -50 ||
-            this.x > canvas.width + 50 ||
-            this.y < -50 ||
-            this.y > canvas.height + 50
-        ){
-            this.reset();
-        }
-    }
+this.opacity =
+Math.random() * 0.5 + 0.2;
 
-    draw(){
+this.glow =
+Math.random() * 18 + 8;
 
-        const gradient = ctx.createRadialGradient(
-            this.x,
-            this.y,
-            0,
-            this.x,
-            this.y,
-            this.glow
-        );
+}
 
-        gradient.addColorStop(
-            0,
-            `rgba(255,215,120,${this.opacity})`
-        );
+update(){
 
-        gradient.addColorStop(
-            1,
-            "rgba(255,215,120,0)"
-        );
+this.x += this.speedX;
 
-        ctx.beginPath();
+this.y += this.speedY;
 
-        ctx.fillStyle = gradient;
+if(
+this.x < -50 ||
+this.x > canvas.width + 50 ||
+this.y < -50 ||
+this.y > canvas.height + 50
+){
 
-        ctx.arc(
-            this.x,
-            this.y,
-            this.glow,
-            0,
-            Math.PI * 2
-        );
+this.reset();
 
-        ctx.fill();
-    }
+}
+
+}
+
+draw(){
+
+const gradient =
+ctx.createRadialGradient(
+this.x,
+this.y,
+0,
+this.x,
+this.y,
+this.glow
+);
+
+gradient.addColorStop(
+0,
+`rgba(255,215,120,${this.opacity})`
+);
+
+gradient.addColorStop(
+1,
+"rgba(255,215,120,0)"
+);
+
+ctx.beginPath();
+
+ctx.fillStyle =
+gradient;
+
+ctx.arc(
+this.x,
+this.y,
+this.glow,
+0,
+Math.PI * 2
+);
+
+ctx.fill();
+
+}
 
 }
 
 for(let i = 0; i < 80; i++){
-    particles.push(new Particle());
+
+particles.push(new Particle());
+
 }
 
 function animate(){
 
-    ctx.clearRect(
-        0,
-        0,
-        canvas.width,
-        canvas.height
-    );
+ctx.clearRect(
+0,
+0,
+canvas.width,
+canvas.height
+);
 
-    particles.forEach(particle => {
-        particle.update();
-        particle.draw();
-    });
+particles.forEach(particle => {
 
-    requestAnimationFrame(animate);
+particle.update();
+
+particle.draw();
+
+});
+
+requestAnimationFrame(animate);
+
 }
 
 animate();
 
 window.addEventListener("resize", () => {
 
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+canvas.width =
+window.innerWidth;
+
+canvas.height =
+window.innerHeight;
 
 });
 
 </script>
-
-<!-- LANGUAGE SWITCH SCRIPT -->
-
-<script src="language-switch.js"></script>
 
 <!-- PROTECTION -->
 
