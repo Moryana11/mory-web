@@ -14,39 +14,59 @@
 /* BODY */
 
 body {
+
     margin: 0;
+
     background-color: black;
+
     color: white;
+
     text-align: center;
+
     font-family: Arial, sans-serif;
+
     overflow-x: hidden;
+
     position: relative;
+
 }
 
 /* MAGIC DUST */
 
-#magicDust{
+#magicDust {
+
     position: fixed;
+
     top: 0;
+
     left: 0;
+
     width: 100%;
+
     height: 100%;
+
     pointer-events: none;
+
     z-index: 0;
+
 }
 
 /* CONTENT ABOVE EFFECT */
 
+.language-switch,
 .back-link,
 h1,
 .location-image,
 .text-box,
 .overlay {
+
     position: relative;
+
     z-index: 2;
+
 }
 
-/* PŘEPÍNAČ JAZYKA */
+/* LANGUAGE SWITCH */
 
 .language-switch {
 
@@ -54,34 +74,79 @@ h1,
 
     top: 15px;
 
-    right: 20px;
+    right: 15px;
 
-    font-size: 22px;
+    z-index: 999999;
 
-    z-index: 1000;
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
 
 }
+
+/* LANGUAGE LINKS */
 
 .language-switch a {
 
+    font-family: 'MedievalSharp', cursive;
+
     text-decoration: none;
 
-    margin-left: 8px;
+    color: #d4af37;
+
+    font-size: 24px;
+
+    line-height: 1;
+
+    display: block;
+
+    transition: 0.3s;
 
 }
 
-/* ZPĚT */
+/* ACTIVE LANGUAGE */
+
+.language-switch a.active-lang {
+
+    color: white;
+
+    text-shadow:
+        0 0 10px rgba(255,255,255,0.7);
+
+}
+
+/* HOVER */
+
+.language-switch a:hover {
+
+    text-shadow:
+        0 0 10px #d4af37,
+        0 0 20px rgba(212,175,55,0.8);
+
+}
+
+/* BACK */
 
 .back-link {
+
     margin-top: 25px;
+
 }
 
 .back-link a {
+
     font-family: 'MedievalSharp', cursive;
+
     color: #d4af37;
+
     text-decoration: none;
+
     font-size: 20px;
+
     transition: 0.3s;
+
 }
 
 .back-link a:hover {
@@ -92,27 +157,35 @@ h1,
 
 }
 
-/* NADPIS */
+/* TITLE */
 
 h1 {
+
     font-family: 'MedievalSharp', cursive;
+
     color: #d4af37;
+
     font-size: 48px;
+
     margin-top: 15px;
 
     text-shadow:
         0 0 12px rgba(212,175,55,0.35);
+
 }
 
-/* OBRÁZEK */
+/* IMAGE */
 
 .location-image {
+
     margin-top: 35px;
+
 }
 
 .location-image img {
 
     width: 100%;
+
     max-width: 420px;
 
     border-radius: 14px;
@@ -175,14 +248,17 @@ h1 {
     position: fixed;
 
     top: 0;
+
     left: 0;
 
     width: 100%;
+
     height: 100%;
 
     background-color: rgba(0,0,0,0.95);
 
     justify-content: center;
+
     align-items: center;
 
     z-index: 9999;
@@ -192,6 +268,7 @@ h1 {
 .overlay img {
 
     max-width: 95%;
+
     max-height: 95%;
 
     border-radius: 14px;
@@ -203,21 +280,44 @@ h1 {
 
 }
 
-/* MOBIL */
+/* MOBILE */
 
 @media (max-width: 768px) {
 
     h1 {
+
         font-size: 36px;
+
     }
 
     .text-box {
+
         font-size: 18px;
+
         line-height: 1.85;
+
     }
 
     .location-image img {
+
         max-width: 90%;
+
+    }
+
+    .language-switch {
+
+        top: 12px;
+
+        right: 12px;
+
+        gap: 14px;
+
+    }
+
+    .language-switch a {
+
+        font-size: 20px;
+
     }
 
 }
@@ -232,17 +332,35 @@ h1 {
 
 <canvas id="magicDust"></canvas>
 
-<!-- ZPĚT -->
+<!-- LANGUAGE SWITCH -->
 
-<div class="back-link">
-<a href="lokace2.html">← Zpět na Lokace</a>
+<div class="language-switch">
+
+<a href="lokace_turayne.html" class="active-lang">
+CZ
+</a>
+
+<a href="location_turayne.html">
+GB
+</a>
+
 </div>
 
-<!-- NADPIS -->
+<!-- BACK -->
+
+<div class="back-link">
+
+<a href="lokace2.html">
+← Zpět na Lokace
+</a>
+
+</div>
+
+<!-- TITLE -->
 
 <h1>Ruiny Turaynu</h1>
 
-<!-- OBRÁZEK -->
+<!-- IMAGE -->
 
 <div class="location-image">
 
@@ -261,9 +379,13 @@ alt="Ruiny Turaynu"
 <p>
 
 <strong>Turayne</strong> bývalo kdysi prosperující město ležící podél <strong>Travnaté stezky</strong> — starobylé obchodní cesty vinoucí se mezi horami a hustými lesy. Po dlouhá léta představovalo nejdůležitější obchodní centrum této části země Laslan, ještě dávno předtím, než jeho význam převzal přístavní Kastleton.
+
 Branami Turaynu procházeli kupci, poutníci i poslové z dalekých krajů a město vzkvétalo díky obchodu, bohatství a ochraně mocných mágů. Kamenné ulice byly plné života, tržišť a hlasů lidí z různých koutů kontinentu Solisium.
+
 Po staletí byl Turayne chráněn rodem silných mágů, kteří zasvětili svůj život bezpečí města a udržování rovnováhy v okolním kraji. Obyvatelé žili v jistotě, že jejich ochránci dokážou odvrátit jakékoli nebezpečí, které by se mohlo přiblížit k jejich domovu.
+
 Vše se však změnilo v den pohřbu posledního hlavního mága. Právě tehdy zaútočili <strong>Stínomágové ze Sylveanského řádu</strong>. Vypukla válka — rychlá, krutá a nemilosrdná. Zbylí mágové města se statečně postavili útočníkům, ale jejich odpor byl marný.
+
 Turayne padlo a z kdysi slavného města zůstaly pouze trosky, rozpadlé věže a tiché ruiny zahalené stíny minulosti. Dodnes je toto místo považováno za jedno z nejtemnějších a nejtragičtějších míst celé země Laslan.
 
 </p>
@@ -433,10 +555,6 @@ window.addEventListener("resize", () => {
 <!-- PROTECTION -->
 
 <script src="ochrana.js"></script>
-
-<!-- LANGUAGE SWITCH -->
-
-<script src="language-switch.js"></script>
 
 </body>
 </html>
