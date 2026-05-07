@@ -15,19 +15,19 @@
 
 body {
 
-    margin: 0;
+margin: 0;
 
-    background-color: black;
+background-color: black;
 
-    text-align: center;
+text-align: center;
 
-    font-family: Arial, sans-serif;
+font-family: Arial, sans-serif;
 
-    color: white;
+color: white;
 
-    overflow-x: hidden;
+overflow-x: hidden;
 
-    position: relative;
+position: relative;
 
 }
 
@@ -35,17 +35,19 @@ body {
 
 #magicDust{
 
-    position: fixed;
+position: fixed;
 
-    top: 0;
-    left: 0;
+top: 0;
 
-    width: 100%;
-    height: 100%;
+left: 0;
 
-    pointer-events: none;
+width: 100%;
 
-    z-index: 0;
+height: 100%;
+
+pointer-events: none;
+
+z-index: 0;
 
 }
 
@@ -58,9 +60,9 @@ h1,
 .message-container,
 #messages {
 
-    position: relative;
+position: relative;
 
-    z-index: 2;
+z-index: 2;
 
 }
 
@@ -68,25 +70,52 @@ h1,
 
 .language-switch {
 
-    position: fixed;
+position: fixed;
 
-    top: 15px;
+top: 15px;
 
-    right: 20px;
+right: 25px;
 
-    display: flex;
+z-index: 99999;
 
-    gap: 10px;
+display: flex;
 
-    z-index: 1000;
+gap: 12px;
+
+align-items: center;
 
 }
 
 .language-switch a {
 
-    text-decoration: none;
+font-family: 'MedievalSharp', cursive;
 
-    font-size: 22px;
+text-decoration: none;
+
+color: #d4af37;
+
+font-size: 22px;
+
+transition: 0.3s;
+
+}
+
+.language-switch a:hover {
+
+text-shadow:
+0 0 10px #d4af37,
+0 0 20px rgba(212,175,55,0.8);
+
+}
+
+/* ACTIVE LANGUAGE */
+
+.language-switch a.active-lang {
+
+color: white;
+
+text-shadow:
+0 0 10px rgba(255,255,255,0.7);
 
 }
 
@@ -94,29 +123,29 @@ h1,
 
 .back-link {
 
-    margin-top: 25px;
+margin-top: 25px;
 
 }
 
 .back-link a {
 
-    font-family: 'MedievalSharp', cursive;
+font-family: 'MedievalSharp', cursive;
 
-    color: #d4af37;
+color: #d4af37;
 
-    text-decoration: none;
+text-decoration: none;
 
-    font-size: 20px;
+font-size: 20px;
 
-    transition: 0.3s;
+transition: 0.3s;
 
 }
 
 .back-link a:hover {
 
-    text-shadow:
-        0 0 10px #d4af37,
-        0 0 20px rgba(212,175,55,0.8);
+text-shadow:
+0 0 10px #d4af37,
+0 0 20px rgba(212,175,55,0.8);
 
 }
 
@@ -124,16 +153,16 @@ h1,
 
 h1 {
 
-    font-family: 'MedievalSharp', cursive;
+font-family: 'MedievalSharp', cursive;
 
-    color: #d4af37;
+color: #d4af37;
 
-    font-size: 48px;
+font-size: 48px;
 
-    margin-top: 15px;
+margin-top: 15px;
 
-    text-shadow:
-        0 0 12px rgba(212,175,55,0.35);
+text-shadow:
+0 0 12px rgba(212,175,55,0.35);
 
 }
 
@@ -141,23 +170,23 @@ h1 {
 
 .message-image {
 
-    margin-top: 30px;
+margin-top: 30px;
 
 }
 
 .message-image img {
 
-    width: 100%;
+width: 100%;
 
-    max-width: 280px;
+max-width: 280px;
 
-    border-radius: 14px;
+border-radius: 14px;
 
-    border: 2px solid #d4af37;
+border: 2px solid #d4af37;
 
-    box-shadow:
-        0 0 0 2px #d4af37,
-        0 0 16px rgba(212,175,55,0.6);
+box-shadow:
+0 0 0 2px #d4af37,
+0 0 16px rgba(212,175,55,0.6);
 
 }
 
@@ -165,21 +194,21 @@ h1 {
 
 .message-container {
 
-    max-width: 650px;
+max-width: 650px;
 
-    margin: 40px auto;
+margin: 40px auto;
 
-    padding: 35px 25px;
+padding: 35px 25px;
 
-    border-radius: 18px;
+border-radius: 18px;
 
-    background:
-        rgba(15,15,15,0.88);
+background:
+rgba(15,15,15,0.88);
 
-    border: 1px solid rgba(212,175,55,0.4);
+border: 1px solid rgba(212,175,55,0.4);
 
-    box-shadow:
-        0 0 25px rgba(212,175,55,0.08);
+box-shadow:
+0 0 25px rgba(212,175,55,0.08);
 
 }
 
@@ -187,11 +216,11 @@ h1 {
 
 form {
 
-    display: flex;
+display: flex;
 
-    flex-direction: column;
+flex-direction: column;
 
-    align-items: center;
+align-items: center;
 
 }
 
@@ -200,45 +229,45 @@ form {
 input,
 textarea {
 
-    width: 100%;
+width: 100%;
 
-    max-width: 500px;
+max-width: 500px;
 
-    padding: 14px;
+padding: 14px;
 
-    margin-bottom: 16px;
+margin-bottom: 16px;
 
-    border-radius: 10px;
+border-radius: 10px;
 
-    border: 1px solid #d4af37;
+border: 1px solid #d4af37;
 
-    background: rgba(20,20,20,0.95);
+background: rgba(20,20,20,0.95);
 
-    color: white;
+color: white;
 
-    font-size: 16px;
+font-size: 16px;
 
-    outline: none;
+outline: none;
 
-    transition: 0.3s;
+transition: 0.3s;
 
-    box-sizing: border-box;
+box-sizing: border-box;
 
 }
 
 textarea {
 
-    resize: vertical;
+resize: vertical;
 
-    min-height: 140px;
+min-height: 140px;
 
 }
 
 input:focus,
 textarea:focus {
 
-    box-shadow:
-        0 0 14px rgba(212,175,55,0.7);
+box-shadow:
+0 0 14px rgba(212,175,55,0.7);
 
 }
 
@@ -246,34 +275,34 @@ textarea:focus {
 
 button {
 
-    margin-top: 5px;
+margin-top: 5px;
 
-    padding: 13px 28px;
+padding: 13px 28px;
 
-    font-family: 'MedievalSharp', cursive;
+font-family: 'MedievalSharp', cursive;
 
-    font-size: 19px;
+font-size: 19px;
 
-    background-color: #d4af37;
+background-color: #d4af37;
 
-    color: black;
+color: black;
 
-    border: none;
+border: none;
 
-    border-radius: 10px;
+border-radius: 10px;
 
-    cursor: pointer;
+cursor: pointer;
 
-    transition: 0.3s;
+transition: 0.3s;
 
 }
 
 button:hover {
 
-    transform: scale(1.03);
+transform: scale(1.03);
 
-    box-shadow:
-        0 0 18px rgba(212,175,55,0.8);
+box-shadow:
+0 0 18px rgba(212,175,55,0.8);
 
 }
 
@@ -281,62 +310,62 @@ button:hover {
 
 #messages {
 
-    margin-top: 10px;
+margin-top: 10px;
 
-    padding-bottom: 50px;
+padding-bottom: 50px;
 
 }
 
 .message {
 
-    border: 1px solid rgba(212,175,55,0.55);
+border: 1px solid rgba(212,175,55,0.55);
 
-    border-radius: 14px;
+border-radius: 14px;
 
-    padding: 18px;
+padding: 18px;
 
-    margin: 22px auto;
+margin: 22px auto;
 
-    max-width: 650px;
+max-width: 650px;
 
-    background: rgba(15,15,15,0.9);
+background: rgba(15,15,15,0.9);
 
-    box-shadow:
-        0 0 16px rgba(212,175,55,0.12);
+box-shadow:
+0 0 16px rgba(212,175,55,0.12);
 
-    text-align: left;
+text-align: left;
 
 }
 
 .message-name {
 
-    font-family: 'MedievalSharp', cursive;
+font-family: 'MedievalSharp', cursive;
 
-    color: #d4af37;
+color: #d4af37;
 
-    margin-bottom: 6px;
+margin-bottom: 6px;
 
-    font-size: 22px;
+font-size: 22px;
 
 }
 
 .message-date {
 
-    font-size: 14px;
+font-size: 14px;
 
-    color: #bbbbbb;
+color: #bbbbbb;
 
-    margin-bottom: 14px;
+margin-bottom: 14px;
 
 }
 
 .message-text {
 
-    line-height: 1.8;
+line-height: 1.8;
 
-    font-size: 17px;
+font-size: 17px;
 
-    word-wrap: break-word;
+word-wrap: break-word;
 
 }
 
@@ -344,11 +373,11 @@ button:hover {
 
 .delete-btn {
 
-    margin-top: 18px;
+margin-top: 18px;
 
-    padding: 9px 18px;
+padding: 9px 18px;
 
-    font-size: 15px;
+font-size: 15px;
 
 }
 
@@ -356,25 +385,39 @@ button:hover {
 
 @media (max-width: 768px) {
 
-    h1 {
+h1 {
 
-        font-size: 38px;
+font-size: 38px;
 
-    }
+}
 
-    .message-container {
+.message-container {
 
-        width: 88%;
+width: 88%;
 
-        padding: 28px 18px;
+padding: 28px 18px;
 
-    }
+}
 
-    .message {
+.message {
 
-        width: 88%;
+width: 88%;
 
-    }
+}
+
+.language-switch {
+
+right: 15px;
+
+top: 12px;
+
+}
+
+.language-switch a {
+
+font-size: 20px;
+
+}
 
 }
 
@@ -392,9 +435,14 @@ button:hover {
 
 <div class="language-switch">
 
-<a href="vzkazy.html">🇨🇿</a>
+<a href="vzkazy.html">
+CZ
+</a>
 
-<a href="messages.html">🇬🇧</a>
+<a href="messages.html"
+class="active-lang">
+GB
+</a>
 
 </div>
 
@@ -402,7 +450,9 @@ button:hover {
 
 <div class="back-link">
 
-<a href="hlavni_en.html">← Back to main page</a>
+<a href="hlavni_en.html">
+← Back to main page
+</a>
 
 </div>
 
@@ -461,120 +511,120 @@ document.getElementById("messages");
 
 function loadMessages() {
 
-    messagesDiv.innerHTML = "";
+messagesDiv.innerHTML = "";
 
-    var messages =
-    JSON.parse(
-        localStorage.getItem("messages")
-    ) || [];
+var messages =
+JSON.parse(
+localStorage.getItem("messages")
+) || [];
 
-    messages.reverse();
+messages.reverse();
 
-    messages.forEach(function(msg, index) {
+messages.forEach(function(msg, index) {
 
-        var div =
-        document.createElement("div");
+var div =
+document.createElement("div");
 
-        div.className = "message";
+div.className = "message";
 
-        div.innerHTML =
+div.innerHTML =
 
-        "<div class='message-name'>" +
-        escapeHtml(msg.name) +
-        "</div>" +
+"<div class='message-name'>" +
+escapeHtml(msg.name) +
+"</div>" +
 
-        "<div class='message-date'>" +
-        msg.date +
-        "</div>" +
+"<div class='message-date'>" +
+msg.date +
+"</div>" +
 
-        "<div class='message-text'>" +
-        escapeHtml(msg.text).replace(/\n/g, "<br>") +
-        "</div>" +
+"<div class='message-text'>" +
+escapeHtml(msg.text).replace(/\n/g, "<br>") +
+"</div>" +
 
-        "<button class='delete-btn' onclick='deleteMessage(" +
-        (messages.length - 1 - index) +
-        ")'>Delete</button>";
+"<button class='delete-btn' onclick='deleteMessage(" +
+(messages.length - 1 - index) +
+")'>Delete</button>";
 
-        messagesDiv.appendChild(div);
+messagesDiv.appendChild(div);
 
-    });
+});
 
 }
 
 form.addEventListener("submit", function(e) {
 
-    e.preventDefault();
+e.preventDefault();
 
-    var name =
-    document.getElementById("name").value.trim();
+var name =
+document.getElementById("name").value.trim();
 
-    var text =
-    document.getElementById("text").value.trim();
+var text =
+document.getElementById("text").value.trim();
 
-    if(name === "" || text === "") {
-        return;
-    }
+if(name === "" || text === "") {
+return;
+}
 
-    var date =
-    new Date().toLocaleString();
+var date =
+new Date().toLocaleString();
 
-    var messages =
-    JSON.parse(
-        localStorage.getItem("messages")
-    ) || [];
+var messages =
+JSON.parse(
+localStorage.getItem("messages")
+) || [];
 
-    messages.push({
+messages.push({
 
-        name: name,
-        text: text,
-        date: date
+name: name,
+text: text,
+date: date
 
-    });
+});
 
-    localStorage.setItem(
-        "messages",
-        JSON.stringify(messages)
-    );
+localStorage.setItem(
+"messages",
+JSON.stringify(messages)
+);
 
-    form.reset();
+form.reset();
 
-    loadMessages();
+loadMessages();
 
 });
 
 function deleteMessage(index) {
 
-    var confirmDelete =
-    confirm("Do you really want to delete this message?");
+var confirmDelete =
+confirm("Do you really want to delete this message?");
 
-    if(!confirmDelete){
-        return;
-    }
+if(!confirmDelete){
+return;
+}
 
-    var messages =
-    JSON.parse(
-        localStorage.getItem("messages")
-    ) || [];
+var messages =
+JSON.parse(
+localStorage.getItem("messages")
+) || [];
 
-    messages.splice(index, 1);
+messages.splice(index, 1);
 
-    localStorage.setItem(
-        "messages",
-        JSON.stringify(messages)
-    );
+localStorage.setItem(
+"messages",
+JSON.stringify(messages)
+);
 
-    loadMessages();
+loadMessages();
 
 }
 
 function escapeHtml(text) {
 
-    var div =
-    document.createElement("div");
+var div =
+document.createElement("div");
 
-    div.innerText = text;
+div.innerText = text;
 
-    return div.innerHTML;
+return div.innerHTML;
 
 }
 
@@ -586,111 +636,137 @@ loadMessages();
 
 <script>
 
-const canvas = document.getElementById("magicDust");
-const ctx = canvas.getContext("2d");
+const canvas =
+document.getElementById("magicDust");
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+const ctx =
+canvas.getContext("2d");
+
+canvas.width =
+window.innerWidth;
+
+canvas.height =
+window.innerHeight;
 
 const particles = [];
 
 class Particle {
 
-    constructor(){
-        this.reset();
-    }
+constructor(){
 
-    reset(){
+this.reset();
 
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
+}
 
-        this.size = Math.random() * 2 + 1;
+reset(){
 
-        this.speedX = (Math.random() - 0.5) * 0.25;
-        this.speedY = (Math.random() - 0.5) * 0.25;
+this.x =
+Math.random() * canvas.width;
 
-        this.opacity = Math.random() * 0.5 + 0.2;
+this.y =
+Math.random() * canvas.height;
 
-        this.glow = Math.random() * 18 + 8;
-    }
+this.size =
+Math.random() * 2 + 1;
 
-    update(){
+this.speedX =
+(Math.random() - 0.5) * 0.25;
 
-        this.x += this.speedX;
-        this.y += this.speedY;
+this.speedY =
+(Math.random() - 0.5) * 0.25;
 
-        if(
-            this.x < -50 ||
-            this.x > canvas.width + 50 ||
-            this.y < -50 ||
-            this.y > canvas.height + 50
-        ){
-            this.reset();
-        }
-    }
+this.opacity =
+Math.random() * 0.5 + 0.2;
 
-    draw(){
+this.glow =
+Math.random() * 18 + 8;
 
-        const gradient = ctx.createRadialGradient(
-            this.x,
-            this.y,
-            0,
-            this.x,
-            this.y,
-            this.glow
-        );
+}
 
-        gradient.addColorStop(
-            0,
-            `rgba(255,215,120,${this.opacity})`
-        );
+update(){
 
-        gradient.addColorStop(
-            1,
-            "rgba(255,215,120,0)"
-        );
+this.x += this.speedX;
 
-        ctx.beginPath();
+this.y += this.speedY;
 
-        ctx.fillStyle = gradient;
+if(
+this.x < -50 ||
+this.x > canvas.width + 50 ||
+this.y < -50 ||
+this.y > canvas.height + 50
+){
 
-        ctx.arc(
-            this.x,
-            this.y,
-            this.glow,
-            0,
-            Math.PI * 2
-        );
+this.reset();
 
-        ctx.fill();
-    }
+}
+
+}
+
+draw(){
+
+const gradient =
+ctx.createRadialGradient(
+this.x,
+this.y,
+0,
+this.x,
+this.y,
+this.glow
+);
+
+gradient.addColorStop(
+0,
+`rgba(255,215,120,${this.opacity})`
+);
+
+gradient.addColorStop(
+1,
+"rgba(255,215,120,0)"
+);
+
+ctx.beginPath();
+
+ctx.fillStyle =
+gradient;
+
+ctx.arc(
+this.x,
+this.y,
+this.glow,
+0,
+Math.PI * 2
+);
+
+ctx.fill();
+
+}
 
 }
 
 for(let i = 0; i < 80; i++){
 
-    particles.push(new Particle());
+particles.push(new Particle());
 
 }
 
 function animate(){
 
-    ctx.clearRect(
-        0,
-        0,
-        canvas.width,
-        canvas.height
-    );
+ctx.clearRect(
+0,
+0,
+canvas.width,
+canvas.height
+);
 
-    particles.forEach(particle => {
+particles.forEach(particle => {
 
-        particle.update();
-        particle.draw();
+particle.update();
 
-    });
+particle.draw();
 
-    requestAnimationFrame(animate);
+});
+
+requestAnimationFrame(animate);
 
 }
 
@@ -698,8 +774,11 @@ animate();
 
 window.addEventListener("resize", () => {
 
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+canvas.width =
+window.innerWidth;
+
+canvas.height =
+window.innerHeight;
 
 });
 
@@ -708,10 +787,6 @@ window.addEventListener("resize", () => {
 <!-- PROTECTION -->
 
 <script src="ochrana.js"></script>
-
-<!-- LANGUAGE SWITCH -->
-
-<script src="language-switch.js"></script>
 
 </body>
 </html>
