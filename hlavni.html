@@ -14,113 +14,206 @@
 /* BODY */
 
 body {
-    margin: 0;
-    background-color: black;
-    text-align: center;
-    font-family: Arial, sans-serif;
-    overflow-x: hidden;
-    position: relative;
+
+margin: 0;
+
+background-color: black;
+
+text-align: center;
+
+font-family: Arial, sans-serif;
+
+overflow-x: hidden;
+
+position: relative;
+
 }
 
 /* MAGIC DUST */
 
 #magicDust{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 0;
+
+position: fixed;
+
+top: 0;
+
+left: 0;
+
+width: 100%;
+
+height: 100%;
+
+pointer-events: none;
+
+z-index: 0;
+
 }
 
-/* PŘEPÍNAČ JAZYKA */
+/* LANGUAGE SWITCH */
 
 .language-switch {
-    position: fixed;
-    top: 15px;
-    right: 20px;
-    z-index: 1000;
 
-    display: flex;
-    gap: 10px;
+position: fixed;
+
+top: 15px;
+
+right: 25px;
+
+z-index: 99999;
+
+display: flex;
+
+gap: 12px;
+
+align-items: center;
+
 }
 
 .language-switch a {
-    text-decoration: none;
-    font-size: 22px;
+
+font-family: 'MedievalSharp', cursive;
+
+text-decoration: none;
+
+color: #d4af37;
+
+font-size: 22px;
+
+transition: 0.3s;
+
 }
 
-/* OBSAH NAD EFEKTEM */
+.language-switch a:hover {
+
+text-shadow:
+0 0 10px #d4af37,
+0 0 20px rgba(212,175,55,0.8);
+
+}
+
+/* ACTIVE LANGUAGE */
+
+.language-switch a.active-lang {
+
+color: white;
+
+text-shadow:
+0 0 10px rgba(255,255,255,0.7);
+
+}
+
+/* CONTENT ABOVE EFFECT */
 
 .menu,
 .main-image {
-    position: relative;
-    z-index: 2;
+
+position: relative;
+
+z-index: 2;
+
 }
 
 /* MENU */
 
 .menu {
-    display: flex;
-    justify-content: center;
-    gap: 60px;
-    margin-top: 30px;
-    flex-wrap: wrap;
+
+display: flex;
+
+justify-content: center;
+
+gap: 60px;
+
+margin-top: 30px;
+
+flex-wrap: wrap;
+
 }
 
 .menu a {
-    font-family: 'MedievalSharp', cursive;
-    color: #d4af37;
-    text-decoration: none;
-    font-size: 32px;
-    transition: 0.3s;
+
+font-family: 'MedievalSharp', cursive;
+
+color: #d4af37;
+
+text-decoration: none;
+
+font-size: 32px;
+
+transition: 0.3s;
+
 }
 
 .menu a:hover {
-    text-shadow:
-        0 0 10px #d4af37,
-        0 0 20px rgba(212,175,55,0.8);
+
+text-shadow:
+0 0 10px #d4af37,
+0 0 20px rgba(212,175,55,0.8);
+
 }
 
-/* OBRÁZEK */
+/* IMAGE */
 
 .main-image {
-    margin-top: 60px;
+
+margin-top: 60px;
+
 }
 
 .main-image img {
 
-    width: 100%;
-    max-width: 420px;
-    height: auto;
+width: 100%;
 
-    border-radius: 16px;
+max-width: 420px;
 
-    border: 2px solid #d4af37;
+height: auto;
 
-    box-shadow:
-        0 0 0 2px #d4af37,
-        0 0 14px rgba(212,175,55,0.6);
+border-radius: 16px;
+
+border: 2px solid #d4af37;
+
+box-shadow:
+0 0 0 2px #d4af37,
+0 0 14px rgba(212,175,55,0.6);
 
 }
 
-/* MOBIL */
+/* MOBILE */
 
 @media (max-width: 768px) {
 
-    .menu {
-        gap: 25px;
-        margin-top: 25px;
-    }
+.menu {
 
-    .menu a {
-        font-size: 25px;
-    }
+gap: 25px;
 
-    .main-image img {
-        max-width: 90%;
-    }
+margin-top: 25px;
+
+}
+
+.menu a {
+
+font-size: 25px;
+
+}
+
+.main-image img {
+
+max-width: 90%;
+
+}
+
+.language-switch {
+
+right: 15px;
+
+top: 12px;
+
+}
+
+.language-switch a {
+
+font-size: 20px;
+
+}
 
 }
 
@@ -134,13 +227,18 @@ body {
 
 <canvas id="magicDust"></canvas>
 
-<!-- JAZYKY -->
+<!-- LANGUAGE SWITCH -->
 
 <div class="language-switch">
 
-<a href="hlavni.html">🇨🇿</a>
+<a href="hlavni.html"
+class="active-lang">
+CZ
+</a>
 
-<a href="hlavni_en.html">🇬🇧</a>
+<a href="hlavni_en.html">
+GB
+</a>
 
 </div>
 
@@ -156,7 +254,7 @@ body {
 
 </div>
 
-<!-- OBRÁZEK -->
+<!-- IMAGE -->
 
 <div class="main-image">
 
@@ -168,123 +266,153 @@ body {
 
 <script>
 
-const canvas = document.getElementById("magicDust");
-const ctx = canvas.getContext("2d");
+const canvas =
+document.getElementById("magicDust");
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+const ctx =
+canvas.getContext("2d");
+
+canvas.width =
+window.innerWidth;
+
+canvas.height =
+window.innerHeight;
 
 const particles = [];
 
 class Particle {
 
-    constructor(){
-        this.reset();
-    }
+constructor(){
 
-    reset(){
+this.reset();
 
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
+}
 
-        this.size = Math.random() * 2 + 1;
+reset(){
 
-        this.speedX = (Math.random() - 0.5) * 0.25;
-        this.speedY = (Math.random() - 0.5) * 0.25;
+this.x =
+Math.random() * canvas.width;
 
-        this.opacity = Math.random() * 0.5 + 0.2;
+this.y =
+Math.random() * canvas.height;
 
-        this.glow = Math.random() * 18 + 8;
-    }
+this.size =
+Math.random() * 2 + 1;
 
-    update(){
+this.speedX =
+(Math.random() - 0.5) * 0.25;
 
-        this.x += this.speedX;
-        this.y += this.speedY;
+this.speedY =
+(Math.random() - 0.5) * 0.25;
 
-        if(
-            this.x < -50 ||
-            this.x > canvas.width + 50 ||
-            this.y < -50 ||
-            this.y > canvas.height + 50
-        ){
-            this.reset();
-        }
-    }
+this.opacity =
+Math.random() * 0.5 + 0.2;
 
-    draw(){
+this.glow =
+Math.random() * 18 + 8;
 
-        const gradient = ctx.createRadialGradient(
-            this.x,
-            this.y,
-            0,
-            this.x,
-            this.y,
-            this.glow
-        );
+}
 
-        gradient.addColorStop(
-            0,
-            `rgba(255,215,120,${this.opacity})`
-        );
+update(){
 
-        gradient.addColorStop(
-            1,
-            "rgba(255,215,120,0)"
-        );
+this.x += this.speedX;
 
-        ctx.beginPath();
+this.y += this.speedY;
 
-        ctx.fillStyle = gradient;
+if(
+this.x < -50 ||
+this.x > canvas.width + 50 ||
+this.y < -50 ||
+this.y > canvas.height + 50
+){
 
-        ctx.arc(
-            this.x,
-            this.y,
-            this.glow,
-            0,
-            Math.PI * 2
-        );
+this.reset();
 
-        ctx.fill();
-    }
+}
+
+}
+
+draw(){
+
+const gradient =
+ctx.createRadialGradient(
+this.x,
+this.y,
+0,
+this.x,
+this.y,
+this.glow
+);
+
+gradient.addColorStop(
+0,
+`rgba(255,215,120,${this.opacity})`
+);
+
+gradient.addColorStop(
+1,
+"rgba(255,215,120,0)"
+);
+
+ctx.beginPath();
+
+ctx.fillStyle =
+gradient;
+
+ctx.arc(
+this.x,
+this.y,
+this.glow,
+0,
+Math.PI * 2
+);
+
+ctx.fill();
+
+}
 
 }
 
 for(let i = 0; i < 80; i++){
-    particles.push(new Particle());
+
+particles.push(new Particle());
+
 }
 
 function animate(){
 
-    ctx.clearRect(
-        0,
-        0,
-        canvas.width,
-        canvas.height
-    );
+ctx.clearRect(
+0,
+0,
+canvas.width,
+canvas.height
+);
 
-    particles.forEach(particle => {
-        particle.update();
-        particle.draw();
-    });
+particles.forEach(particle => {
 
-    requestAnimationFrame(animate);
+particle.update();
+
+particle.draw();
+
+});
+
+requestAnimationFrame(animate);
+
 }
 
 animate();
 
 window.addEventListener("resize", () => {
 
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+canvas.width =
+window.innerWidth;
+
+canvas.height =
+window.innerHeight;
 
 });
 
 </script>
-
-<!-- LANGUAGE SWITCH SCRIPT -->
-
-<script src="language-switch.js"></script>
 
 <!-- PROTECTION -->
 
