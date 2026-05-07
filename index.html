@@ -38,18 +38,54 @@ body {
 /* LANGUAGE SWITCH */
 
 .language-switch {
-    position: fixed;
-    top: 15px;
-    right: 20px;
-    font-size: 22px;
-    z-index: 1000;
 
-    display: flex;
-    gap: 10px;
+position: fixed;
+
+top: 15px;
+
+right: 25px;
+
+z-index: 99999;
+
+display: flex;
+
+gap: 12px;
+
+align-items: center;
+
 }
 
 .language-switch a {
-    text-decoration: none;
+
+font-family: 'MedievalSharp', cursive;
+
+text-decoration: none;
+
+color: #d4af37;
+
+font-size: 22px;
+
+transition: 0.3s;
+
+}
+
+.language-switch a:hover {
+
+text-shadow:
+0 0 10px #d4af37,
+0 0 20px rgba(212,175,55,0.8);
+
+}
+
+/* ACTIVE LANGUAGE */
+
+.language-switch a.active-lang {
+
+color: white;
+
+text-shadow:
+0 0 10px rgba(255,255,255,0.7);
+
 }
 
 /* CONTENT ABOVE EFFECT */
