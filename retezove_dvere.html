@@ -14,24 +14,39 @@
 /* BODY */
 
 body {
-    background-color: black;
-    margin: 0;
-    text-align: center;
-    font-family: Arial, sans-serif;
-    overflow: hidden;
-    position: relative;
+
+background-color: black;
+
+margin: 0;
+
+text-align: center;
+
+font-family: Arial, sans-serif;
+
+overflow: hidden;
+
+position: relative;
+
 }
 
 /* MAGIC DUST */
 
 #magicDust{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 0;
+
+position: fixed;
+
+top: 0;
+
+left: 0;
+
+width: 100%;
+
+height: 100%;
+
+pointer-events: none;
+
+z-index: 0;
+
 }
 
 /* CONTENT ABOVE EFFECT */
@@ -39,56 +54,101 @@ body {
 .language-switch,
 .door-container,
 p {
-    position: relative;
-    z-index: 2;
+
+position: relative;
+
+z-index: 2;
+
 }
 
 /* LANGUAGE SWITCH */
 
 .language-switch {
-    position: fixed;
-    top: 15px;
-    right: 20px;
-    font-size: 22px;
+
+position: fixed;
+
+top: 15px;
+
+right: 25px;
+
+z-index: 99999;
+
+display: flex;
+
+gap: 12px;
+
+align-items: center;
+
 }
 
 .language-switch a {
-    text-decoration: none;
-    margin-left: 8px;
+
+font-family: 'MedievalSharp', cursive;
+
+text-decoration: none;
+
+color: #d4af37;
+
+font-size: 22px;
+
+transition: 0.3s;
+
+}
+
+.language-switch a:hover {
+
+text-shadow:
+0 0 10px #d4af37,
+0 0 20px rgba(212,175,55,0.8);
+
+}
+
+/* ACTIVE LANGUAGE */
+
+.language-switch a.active-lang {
+
+color: white;
+
+text-shadow:
+0 0 10px rgba(255,255,255,0.7);
+
 }
 
 /* DOOR */
 
 .door-container {
-    margin-top: 40px;
+
+margin-top: 40px;
+
 }
 
 img {
 
-    width: 100%;
-    max-width: 350px;
+width: 100%;
 
-    border-radius: 12px;
+max-width: 350px;
 
-    border: 2px solid #d4af37;
+border-radius: 12px;
 
-    box-shadow:
-        0 0 0 2px #d4af37,
-        0 0 12px rgba(212,175,55,0.6);
+border: 2px solid #d4af37;
 
-    cursor: pointer;
+box-shadow:
+0 0 0 2px #d4af37,
+0 0 12px rgba(212,175,55,0.6);
 
-    transition: 0.35s;
+cursor: pointer;
+
+transition: 0.35s;
 
 }
 
 img:hover {
 
-    transform: scale(1.02);
+transform: scale(1.02);
 
-    box-shadow:
-        0 0 0 2px #d4af37,
-        0 0 24px rgba(212,175,55,0.9);
+box-shadow:
+0 0 0 2px #d4af37,
+0 0 24px rgba(212,175,55,0.9);
 
 }
 
@@ -96,18 +156,18 @@ img:hover {
 
 p {
 
-    margin-top: 25px;
+margin-top: 25px;
 
-    font-family: 'MedievalSharp', cursive;
+font-family: 'MedievalSharp', cursive;
 
-    color: #d4af37;
+color: #d4af37;
 
-    font-size: 24px;
+font-size: 24px;
 
-    text-shadow:
-        0 0 10px rgba(212,175,55,0.35);
+text-shadow:
+0 0 10px rgba(212,175,55,0.35);
 
-    line-height: 1.6;
+line-height: 1.6;
 
 }
 
@@ -115,14 +175,33 @@ p {
 
 @media (max-width: 768px) {
 
-    img {
-        max-width: 90%;
-    }
+img {
 
-    p {
-        font-size: 20px;
-        padding: 0 15px;
-    }
+max-width: 90%;
+
+}
+
+p {
+
+font-size: 20px;
+
+padding: 0 15px;
+
+}
+
+.language-switch {
+
+right: 15px;
+
+top: 12px;
+
+}
+
+.language-switch a {
+
+font-size: 20px;
+
+}
 
 }
 
@@ -140,8 +219,17 @@ p {
 
 <div class="language-switch">
 
-<a href="#" onclick="setLang('cz')">🇨🇿</a>
-<a href="#" onclick="setLang('en')">🇬🇧</a>
+<a href="#"
+onclick="setLang('cz')"
+id="czButton">
+CZ
+</a>
+
+<a href="#"
+onclick="setLang('en')"
+id="enButton">
+GB
+</a>
 
 </div>
 
@@ -163,6 +251,8 @@ alt="Locked Door">
 
 <script>
 
+/* LANGUAGE */
+
 var lang =
 localStorage.getItem("lang") || "cz";
 
@@ -178,9 +268,35 @@ applyLanguage();
 
 }
 
-/* TEXT */
+/* APPLY LANGUAGE */
 
 function applyLanguage() {
+
+/* ACTIVE BUTTON */
+
+document
+.getElementById("czButton")
+.classList.remove("active-lang");
+
+document
+.getElementById("enButton")
+.classList.remove("active-lang");
+
+if (lang === "en") {
+
+document
+.getElementById("enButton")
+.classList.add("active-lang");
+
+} else {
+
+document
+.getElementById("czButton")
+.classList.add("active-lang");
+
+}
+
+/* TEXT */
 
 var text =
 document.getElementById("text");
@@ -209,8 +325,17 @@ text.innerHTML =
 
 function vratSe() {
 
+if (lang === "en") {
+
+window.location.href =
+"index_en.html";
+
+} else {
+
 window.location.href =
 "index.html";
+
+}
 
 }
 
@@ -220,115 +345,149 @@ window.location.href =
 
 <script>
 
-const canvas = document.getElementById("magicDust");
-const ctx = canvas.getContext("2d");
+const canvas =
+document.getElementById("magicDust");
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+const ctx =
+canvas.getContext("2d");
+
+canvas.width =
+window.innerWidth;
+
+canvas.height =
+window.innerHeight;
 
 const particles = [];
 
 class Particle {
 
-    constructor(){
-        this.reset();
-    }
+constructor(){
 
-    reset(){
+this.reset();
 
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
+}
 
-        this.size = Math.random() * 2 + 1;
+reset(){
 
-        this.speedX = (Math.random() - 0.5) * 0.25;
-        this.speedY = (Math.random() - 0.5) * 0.25;
+this.x =
+Math.random() * canvas.width;
 
-        this.opacity = Math.random() * 0.5 + 0.2;
+this.y =
+Math.random() * canvas.height;
 
-        this.glow = Math.random() * 18 + 8;
-    }
+this.size =
+Math.random() * 2 + 1;
 
-    update(){
+this.speedX =
+(Math.random() - 0.5) * 0.25;
 
-        this.x += this.speedX;
-        this.y += this.speedY;
+this.speedY =
+(Math.random() - 0.5) * 0.25;
 
-        if(
-            this.x < -50 ||
-            this.x > canvas.width + 50 ||
-            this.y < -50 ||
-            this.y > canvas.height + 50
-        ){
-            this.reset();
-        }
-    }
+this.opacity =
+Math.random() * 0.5 + 0.2;
 
-    draw(){
+this.glow =
+Math.random() * 18 + 8;
 
-        const gradient = ctx.createRadialGradient(
-            this.x,
-            this.y,
-            0,
-            this.x,
-            this.y,
-            this.glow
-        );
+}
 
-        gradient.addColorStop(
-            0,
-            `rgba(255,215,120,${this.opacity})`
-        );
+update(){
 
-        gradient.addColorStop(
-            1,
-            "rgba(255,215,120,0)"
-        );
+this.x += this.speedX;
 
-        ctx.beginPath();
+this.y += this.speedY;
 
-        ctx.fillStyle = gradient;
+if(
+this.x < -50 ||
+this.x > canvas.width + 50 ||
+this.y < -50 ||
+this.y > canvas.height + 50
+){
 
-        ctx.arc(
-            this.x,
-            this.y,
-            this.glow,
-            0,
-            Math.PI * 2
-        );
+this.reset();
 
-        ctx.fill();
-    }
+}
+
+}
+
+draw(){
+
+const gradient =
+ctx.createRadialGradient(
+this.x,
+this.y,
+0,
+this.x,
+this.y,
+this.glow
+);
+
+gradient.addColorStop(
+0,
+`rgba(255,215,120,${this.opacity})`
+);
+
+gradient.addColorStop(
+1,
+"rgba(255,215,120,0)"
+);
+
+ctx.beginPath();
+
+ctx.fillStyle =
+gradient;
+
+ctx.arc(
+this.x,
+this.y,
+this.glow,
+0,
+Math.PI * 2
+);
+
+ctx.fill();
+
+}
 
 }
 
 for(let i = 0; i < 80; i++){
-    particles.push(new Particle());
+
+particles.push(new Particle());
+
 }
 
 function animate(){
 
-    ctx.clearRect(
-        0,
-        0,
-        canvas.width,
-        canvas.height
-    );
+ctx.clearRect(
+0,
+0,
+canvas.width,
+canvas.height
+);
 
-    particles.forEach(particle => {
-        particle.update();
-        particle.draw();
-    });
+particles.forEach(particle => {
 
-    requestAnimationFrame(animate);
+particle.update();
+
+particle.draw();
+
+});
+
+requestAnimationFrame(animate);
+
 }
 
 animate();
 
 window.addEventListener("resize", () => {
 
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+canvas.width =
+window.innerWidth;
+
+canvas.height =
+window.innerHeight;
 
 });
 
@@ -337,10 +496,6 @@ window.addEventListener("resize", () => {
 <!-- PROTECTION -->
 
 <script src="ochrana.js"></script>
-
-<!-- LANGUAGE SWITCH -->
-
-<script src="language-switch.js"></script>
 
 </body>
 </html>
