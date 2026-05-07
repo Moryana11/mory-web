@@ -79,9 +79,9 @@ h1,
 
     display: flex;
 
-    gap: 12px;
-
     align-items: center;
+
+    gap: 18px;
 
 }
 
@@ -95,21 +95,13 @@ h1,
 
     color: #d4af37;
 
-    font-size: 22px;
+    font-size: 24px;
+
+    line-height: 1;
+
+    display: block;
 
     transition: 0.3s;
-
-    display: inline-block;
-
-}
-
-/* HOVER */
-
-.language-switch a:hover {
-
-    text-shadow:
-        0 0 10px #d4af37,
-        0 0 20px rgba(212,175,55,0.8);
 
 }
 
@@ -121,6 +113,16 @@ h1,
 
     text-shadow:
         0 0 10px rgba(255,255,255,0.7);
+
+}
+
+/* HOVER */
+
+.language-switch a:hover {
+
+    text-shadow:
+        0 0 10px #d4af37,
+        0 0 20px rgba(212,175,55,0.8);
 
 }
 
@@ -320,6 +322,8 @@ h1 {
 
         right: 12px;
 
+        gap: 14px;
+
     }
 
     .language-switch a {
@@ -345,11 +349,11 @@ h1 {
 <div class="language-switch">
 
 <a href="lokace2.html" class="active-lang">
-🇨🇿
+CZ
 </a>
 
 <a href="locations2.html">
-🇬🇧
+GB
 </a>
 
 </div>
@@ -531,10 +535,6 @@ window.addEventListener("resize", () => {
 <!-- PROTECTION -->
 
 <script src="ochrana.js"></script>
-
-<!-- LANGUAGE SWITCH -->
-
-<script src="language-switch.js"></script>
 
 </body>
 </html>
