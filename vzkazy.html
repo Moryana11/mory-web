@@ -35,7 +35,7 @@ body {
     z-index: 0;
 }
 
-/* PŘEPÍNAČ JAZYKA */
+/* LANGUAGE SWITCH */
 
 .language-switch {
     position: fixed;
@@ -47,12 +47,18 @@ body {
     gap: 10px;
 }
 
+/* důležité — aby vlaječky byly nad efektem */
 .language-switch a {
+
+    position: relative;
+    z-index: 2;
+
     text-decoration: none;
     font-size: 22px;
+
 }
 
-/* OBSAH NAD EFEKTEM */
+/* CONTENT ABOVE EFFECT */
 
 .back-link,
 h1,
@@ -63,7 +69,7 @@ form,
     z-index: 2;
 }
 
-/* ZPĚT */
+/* BACK */
 
 .back-link {
     margin-top: 25px;
@@ -78,21 +84,26 @@ form,
 }
 
 .back-link a:hover {
+
     text-shadow:
         0 0 10px #d4af37,
         0 0 20px rgba(212,175,55,0.8);
+
 }
 
-/* NADPIS */
+/* TITLE */
 
 h1 {
     font-family: 'MedievalSharp', cursive;
     color: #d4af37;
     font-size: 46px;
     margin-top: 15px;
+
+    text-shadow:
+        0 0 12px rgba(212,175,55,0.35);
 }
 
-/* OBRÁZEK */
+/* IMAGE */
 
 .message-image {
     margin-top: 25px;
@@ -103,17 +114,17 @@ h1 {
     width: 100%;
     max-width: 260px;
 
-    border-radius: 12px;
+    border-radius: 14px;
 
     border: 2px solid #d4af37;
 
     box-shadow:
         0 0 0 2px #d4af37,
-        0 0 12px rgba(212,175,55,0.6);
+        0 0 14px rgba(212,175,55,0.6);
 
 }
 
-/* FORMULÁŘ */
+/* FORM */
 
 form {
 
@@ -189,7 +200,7 @@ button:hover {
 
 }
 
-/* VZKAZ */
+/* MESSAGE */
 
 .message {
 
@@ -232,7 +243,7 @@ button:hover {
 
 }
 
-/* MOBIL */
+/* MOBILE */
 
 @media (max-width: 768px) {
 
@@ -252,7 +263,9 @@ button:hover {
 
 <canvas id="magicDust"></canvas>
 
-<!-- JAZYKY -->
+<script src="ochrana.js"></script>
+
+<!-- LANGUAGE SWITCH -->
 
 <div class="language-switch">
 
@@ -262,17 +275,17 @@ button:hover {
 
 </div>
 
-<!-- ZPĚT -->
+<!-- BACK -->
 
 <div class="back-link">
 <a href="hlavni.html">← Zpět na hlavní stránku</a>
 </div>
 
-<!-- NADPIS -->
+<!-- TITLE -->
 
 <h1>Vzkazy</h1>
 
-<!-- OBRÁZEK -->
+<!-- IMAGE -->
 
 <div class="message-image">
 
@@ -306,11 +319,11 @@ Odeslat vzkaz
 
 </form>
 
-<!-- VZKAZY -->
+<!-- MESSAGES -->
 
 <div id="messages"></div>
 
-<!-- VZKAZY SCRIPT -->
+<!-- MESSAGE SCRIPT -->
 
 <script>
 
