@@ -63,6 +63,7 @@ body {
 
 /* OBSAH NAD EFEKTEM */
 
+.language-switch,
 .back-link,
 h1,
 .book-menu,
@@ -101,6 +102,9 @@ h1 {
     color: #d4af37;
     font-size: 46px;
     margin-top: 12px;
+
+    text-shadow:
+        0 0 12px rgba(212,175,55,0.35);
 }
 
 /* MENU */
@@ -244,6 +248,16 @@ h1 {
 <!-- MAGIC DUST -->
 
 <canvas id="magicDust"></canvas>
+
+<!-- PŘEPÍNAČ JAZYKA -->
+
+<div class="language-switch">
+
+<a href="postavy3.html">🇨🇿</a>
+
+<a href="postavy3_en.html">🇬🇧</a>
+
+</div>
 
 <!-- ZPĚT -->
 
@@ -430,6 +444,10 @@ window.addEventListener("resize", () => {
 });
 
 </script>
+
+<!-- PROTECTION -->
+
+<script src="ochrana.js"></script>
 
 </body>
 </html>
