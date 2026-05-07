@@ -14,39 +14,59 @@
 /* BODY */
 
 body {
+
     margin: 0;
+
     background-color: black;
+
     color: white;
+
     text-align: center;
+
     font-family: Arial, sans-serif;
+
     overflow-x: hidden;
+
     position: relative;
+
 }
 
 /* MAGIC DUST */
 
-#magicDust{
+#magicDust {
+
     position: fixed;
+
     top: 0;
+
     left: 0;
+
     width: 100%;
+
     height: 100%;
+
     pointer-events: none;
+
     z-index: 0;
+
 }
 
 /* CONTENT ABOVE EFFECT */
 
+.language-switch,
 .back-link,
 h1,
 .location-image,
 .text-box,
 .overlay {
+
     position: relative;
+
     z-index: 2;
+
 }
 
-/* PŘEPÍNAČ JAZYKA */
+/* LANGUAGE SWITCH */
 
 .language-switch {
 
@@ -54,34 +74,79 @@ h1,
 
     top: 15px;
 
-    right: 20px;
+    right: 15px;
 
-    font-size: 22px;
+    z-index: 999999;
 
-    z-index: 1000;
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
 
 }
+
+/* LANGUAGE LINKS */
 
 .language-switch a {
 
+    font-family: 'MedievalSharp', cursive;
+
     text-decoration: none;
 
-    margin-left: 8px;
+    color: #d4af37;
+
+    font-size: 24px;
+
+    line-height: 1;
+
+    display: block;
+
+    transition: 0.3s;
 
 }
 
-/* ZPĚT */
+/* ACTIVE LANGUAGE */
+
+.language-switch a.active-lang {
+
+    color: white;
+
+    text-shadow:
+        0 0 10px rgba(255,255,255,0.7);
+
+}
+
+/* HOVER */
+
+.language-switch a:hover {
+
+    text-shadow:
+        0 0 10px #d4af37,
+        0 0 20px rgba(212,175,55,0.8);
+
+}
+
+/* BACK */
 
 .back-link {
+
     margin-top: 25px;
+
 }
 
 .back-link a {
+
     font-family: 'MedievalSharp', cursive;
+
     color: #d4af37;
+
     text-decoration: none;
+
     font-size: 20px;
+
     transition: 0.3s;
+
 }
 
 .back-link a:hover {
@@ -92,27 +157,35 @@ h1,
 
 }
 
-/* NADPIS */
+/* TITLE */
 
 h1 {
+
     font-family: 'MedievalSharp', cursive;
+
     color: #d4af37;
+
     font-size: 48px;
+
     margin-top: 15px;
 
     text-shadow:
         0 0 12px rgba(212,175,55,0.35);
+
 }
 
-/* OBRÁZEK */
+/* IMAGE */
 
 .location-image {
+
     margin-top: 35px;
+
 }
 
 .location-image img {
 
     width: 100%;
+
     max-width: 420px;
 
     border-radius: 14px;
@@ -138,7 +211,7 @@ h1 {
         0 0 28px rgba(212,175,55,0.9);
 
 }
-    
+
 /* TEXT */
 
 .text-box {
@@ -175,14 +248,17 @@ h1 {
     position: fixed;
 
     top: 0;
+
     left: 0;
 
     width: 100%;
+
     height: 100%;
 
     background-color: rgba(0,0,0,0.95);
 
     justify-content: center;
+
     align-items: center;
 
     z-index: 9999;
@@ -192,6 +268,7 @@ h1 {
 .overlay img {
 
     max-width: 95%;
+
     max-height: 95%;
 
     border-radius: 14px;
@@ -203,21 +280,44 @@ h1 {
 
 }
 
-/* MOBIL */
+/* MOBILE */
 
 @media (max-width: 768px) {
 
     h1 {
+
         font-size: 36px;
+
     }
 
     .text-box {
+
         font-size: 18px;
+
         line-height: 1.85;
+
     }
 
     .location-image img {
+
         max-width: 90%;
+
+    }
+
+    .language-switch {
+
+        top: 12px;
+
+        right: 12px;
+
+        gap: 14px;
+
+    }
+
+    .language-switch a {
+
+        font-size: 20px;
+
     }
 
 }
@@ -232,17 +332,35 @@ h1 {
 
 <canvas id="magicDust"></canvas>
 
-<!-- ZPĚT -->
+<!-- LANGUAGE SWITCH -->
 
-<div class="back-link">
-<a href="lokace2.html">← Zpět na Lokace</a>
+<div class="language-switch">
+
+<a href="lokace_vez_cisteho_svetla.html" class="active-lang">
+CZ
+</a>
+
+<a href="location_tower_of_pure_light.html">
+GB
+</a>
+
 </div>
 
-<!-- NADPIS -->
+<!-- BACK -->
+
+<div class="back-link">
+
+<a href="lokace2.html">
+← Zpět na Lokace
+</a>
+
+</div>
+
+<!-- TITLE -->
 
 <h1>Věž čistého světla</h1>
 
-<!-- OBRÁZEK -->
+<!-- IMAGE -->
 
 <div class="location-image">
 
@@ -261,9 +379,13 @@ alt="Věž čistého světla"
 <p>
 
 <strong>Věž čistého světla</strong> se nachází východně od ruin města <strong>Turayne</strong> v zemi Laslan, na kontinentu Solisium. Tyčí se na mírném návrší obklopeném klidnou krajinou jako maják naděje v zemi poznamenané dávnou tragédií.
+
 Tato vysoká, štíhlá věž z bílého kamene je považována za centrum všech léčitelů a mágů léčivé magie v celé zemi Laslan. Již po generace sem přicházejí lidé nadaní schopností uzdravovat, aby zde studovali své umění a naučili se ovládat sílu života.
+
 Léčitelé jsou zde vychováváni od útlého věku pod vedením zkušených mistrů, kteří předávají své znalosti a tradice dalším generacím. Studium zde není zaměřeno pouze na magii samotnou, ale také na disciplínu, rovnováhu a pochopení hranice mezi životem a smrtí.
+
 Uvnitř věže se nacházejí rozsáhlé léčebné sály, studovny plné starých svitků a tiché komnaty určené k meditaci a soustředění. V samotném srdci věže hoří <strong>Věčný plamen čistého světla</strong> — symbol života, uzdravení a naděje. Říká se, že jeho záře nikdy nepohasla, ani během nejtemnějších období historie.
+
 Navzdory blízkosti prokletých Ruin Turaynu zůstává Věž čistého světla místem klidu, bezpečí a harmonie. Léčitelé, kteří zde žijí, bdí nad rovnováhou mezi životem a smrtí a jsou připraveni pomoci každému, kdo překročí její práh.
 
 </p>
@@ -433,10 +555,6 @@ window.addEventListener("resize", () => {
 <!-- PROTECTION -->
 
 <script src="ochrana.js"></script>
-
-<!-- LANGUAGE SWITCH -->
-
-<script src="language-switch.js"></script>
 
 </body>
 </html>
