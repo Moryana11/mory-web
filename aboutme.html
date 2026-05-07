@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>About me</title>
+<title>About Me</title>
 
 <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
 
@@ -15,19 +15,19 @@
 
 body {
 
-    margin: 0;
+margin: 0;
 
-    background-color: black;
+background-color: black;
 
-    text-align: center;
+text-align: center;
 
-    font-family: Arial, sans-serif;
+font-family: Arial, sans-serif;
 
-    color: white;
+color: white;
 
-    overflow-x: hidden;
+overflow-x: hidden;
 
-    position: relative;
+position: relative;
 
 }
 
@@ -35,17 +35,19 @@ body {
 
 #magicDust {
 
-    position: fixed;
+position: fixed;
 
-    top: 0;
-    left: 0;
+top: 0;
 
-    width: 100%;
-    height: 100%;
+left: 0;
 
-    pointer-events: none;
+width: 100%;
 
-    z-index: 0;
+height: 100%;
+
+pointer-events: none;
+
+z-index: 0;
 
 }
 
@@ -56,9 +58,9 @@ body {
 h1,
 .about-container {
 
-    position: relative;
+position: relative;
 
-    z-index: 2;
+z-index: 2;
 
 }
 
@@ -66,25 +68,58 @@ h1,
 
 .language-switch {
 
-    position: fixed;
+position: fixed;
 
-    top: 15px;
+top: 15px;
 
-    right: 20px;
+right: 15px;
 
-    z-index: 1000;
+z-index: 999999;
 
-    display: flex;
+display: flex;
 
-    gap: 10px;
+gap: 12px;
+
+align-items: center;
 
 }
 
+/* LANGUAGE LINKS */
+
 .language-switch a {
 
-    text-decoration: none;
+font-family: 'MedievalSharp', cursive;
 
-    font-size: 22px;
+text-decoration: none;
+
+color: #d4af37;
+
+font-size: 22px;
+
+transition: 0.3s;
+
+display: inline-block;
+
+}
+
+/* HOVER */
+
+.language-switch a:hover {
+
+text-shadow:
+0 0 10px #d4af37,
+0 0 20px rgba(212,175,55,0.8);
+
+}
+
+/* ACTIVE LANGUAGE */
+
+.language-switch a.active-lang {
+
+color: white;
+
+text-shadow:
+0 0 10px rgba(255,255,255,0.7);
 
 }
 
@@ -92,29 +127,29 @@ h1,
 
 .back-link {
 
-    margin-top: 25px;
+margin-top: 25px;
 
 }
 
 .back-link a {
 
-    font-family: 'MedievalSharp', cursive;
+font-family: 'MedievalSharp', cursive;
 
-    color: #d4af37;
+color: #d4af37;
 
-    text-decoration: none;
+text-decoration: none;
 
-    font-size: 20px;
+font-size: 20px;
 
-    transition: 0.3s;
+transition: 0.3s;
 
 }
 
 .back-link a:hover {
 
-    text-shadow:
-        0 0 10px #d4af37,
-        0 0 20px rgba(212,175,55,0.8);
+text-shadow:
+0 0 10px #d4af37,
+0 0 20px rgba(212,175,55,0.8);
 
 }
 
@@ -122,16 +157,16 @@ h1,
 
 h1 {
 
-    font-family: 'MedievalSharp', cursive;
+font-family: 'MedievalSharp', cursive;
 
-    color: #d4af37;
+color: #d4af37;
 
-    font-size: 48px;
+font-size: 48px;
 
-    margin-top: 15px;
+margin-top: 15px;
 
-    text-shadow:
-        0 0 12px rgba(212,175,55,0.35);
+text-shadow:
+0 0 12px rgba(212,175,55,0.35);
 
 }
 
@@ -139,11 +174,11 @@ h1 {
 
 .about-container {
 
-    max-width: 850px;
+max-width: 850px;
 
-    margin: 40px auto 60px auto;
+margin: 40px auto 60px auto;
 
-    padding: 0 20px;
+padding: 0 20px;
 
 }
 
@@ -151,35 +186,35 @@ h1 {
 
 .profile-image {
 
-    margin-bottom: 40px;
+margin-bottom: 40px;
 
 }
 
 .profile-image img {
 
-    width: 100%;
+width: 100%;
 
-    max-width: 320px;
+max-width: 320px;
 
-    border-radius: 16px;
+border-radius: 16px;
 
-    border: 2px solid #d4af37;
+border: 2px solid #d4af37;
 
-    transition: 0.35s;
+transition: 0.35s;
 
-    box-shadow:
-        0 0 0 2px #d4af37,
-        0 0 18px rgba(212,175,55,0.6);
+box-shadow:
+0 0 0 2px #d4af37,
+0 0 18px rgba(212,175,55,0.6);
 
 }
 
 .profile-image img:hover {
 
-    transform: scale(1.02);
+transform: scale(1.02);
 
-    box-shadow:
-        0 0 0 2px #d4af37,
-        0 0 30px rgba(212,175,55,0.9);
+box-shadow:
+0 0 0 2px #d4af37,
+0 0 30px rgba(212,175,55,0.9);
 
 }
 
@@ -187,33 +222,33 @@ h1 {
 
 .text-box {
 
-    background:
-        rgba(15,15,15,0.88);
+background:
+rgba(15,15,15,0.88);
 
-    border: 1px solid rgba(212,175,55,0.4);
+border: 1px solid rgba(212,175,55,0.4);
 
-    border-radius: 18px;
+border-radius: 18px;
 
-    padding: 35px 30px;
+padding: 35px 30px;
 
-    line-height: 1.9;
+line-height: 1.9;
 
-    font-size: 18px;
+font-size: 18px;
 
-    box-shadow:
-        0 0 22px rgba(212,175,55,0.08);
+box-shadow:
+0 0 22px rgba(212,175,55,0.08);
 
 }
 
 .text-box p {
 
-    margin-bottom: 24px;
+margin-bottom: 24px;
 
 }
 
 .text-box p:last-child {
 
-    margin-bottom: 0;
+margin-bottom: 0;
 
 }
 
@@ -221,25 +256,39 @@ h1 {
 
 @media (max-width: 768px) {
 
-    h1 {
+h1 {
 
-        font-size: 38px;
+font-size: 38px;
 
-    }
+}
 
-    .profile-image img {
+.profile-image img {
 
-        max-width: 85%;
+max-width: 85%;
 
-    }
+}
 
-    .text-box {
+.text-box {
 
-        font-size: 17px;
+font-size: 17px;
 
-        padding: 28px 22px;
+padding: 28px 22px;
 
-    }
+}
+
+.language-switch {
+
+right: 12px;
+
+top: 12px;
+
+}
+
+.language-switch a {
+
+font-size: 20px;
+
+}
 
 }
 
@@ -257,9 +306,13 @@ h1 {
 
 <div class="language-switch">
 
-<a href="omne.html">CZ</a>
+<a href="omne.html">
+CZ
+</a>
 
-<a href="aboutme.html">EN</a>
+<a href="aboutme.html" class="active-lang">
+EN
+</a>
 
 </div>
 
@@ -267,13 +320,15 @@ h1 {
 
 <div class="back-link">
 
-<a href="hlavni_en.html">← Back to main page</a>
+<a href="main.html">
+← Back to main page
+</a>
 
 </div>
 
 <!-- TITLE -->
 
-<h1>Aboout me</h1>
+<h1>About Me</h1>
 
 <!-- ABOUT CONTAINER -->
 
@@ -283,7 +338,7 @@ h1 {
 
 <div class="profile-image">
 
-<img src="ja.png" alt="Autor">
+<img src="ja.png" alt="Author">
 
 </div>
 
@@ -301,7 +356,6 @@ who always supported me in this passion.
 Because of them, I developed a deep connection to stories,
 adventures, and worlds where almost anything is possible.
 
-
 </p>
 
 </div>
@@ -312,118 +366,137 @@ adventures, and worlds where almost anything is possible.
 
 <script>
 
-const canvas = document.getElementById("magicDust");
-const ctx = canvas.getContext("2d");
+const canvas =
+document.getElementById("magicDust");
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+const ctx =
+canvas.getContext("2d");
+
+canvas.width =
+window.innerWidth;
+
+canvas.height =
+window.innerHeight;
 
 const particles = [];
 
 class Particle {
 
-    constructor(){
+constructor(){
 
-        this.reset();
+this.reset();
 
-    }
+}
 
-    reset(){
+reset(){
 
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
+this.x =
+Math.random() * canvas.width;
 
-        this.size = Math.random() * 2 + 1;
+this.y =
+Math.random() * canvas.height;
 
-        this.speedX = (Math.random() - 0.5) * 0.25;
-        this.speedY = (Math.random() - 0.5) * 0.25;
+this.size =
+Math.random() * 2 + 1;
 
-        this.opacity = Math.random() * 0.5 + 0.2;
+this.speedX =
+(Math.random() - 0.5) * 0.25;
 
-        this.glow = Math.random() * 18 + 8;
+this.speedY =
+(Math.random() - 0.5) * 0.25;
 
-    }
+this.opacity =
+Math.random() * 0.5 + 0.2;
 
-    update(){
+this.glow =
+Math.random() * 18 + 8;
 
-        this.x += this.speedX;
-        this.y += this.speedY;
+}
 
-        if(
-            this.x < -50 ||
-            this.x > canvas.width + 50 ||
-            this.y < -50 ||
-            this.y > canvas.height + 50
-        ){
+update(){
 
-            this.reset();
+this.x += this.speedX;
 
-        }
+this.y += this.speedY;
 
-    }
+if(
+this.x < -50 ||
+this.x > canvas.width + 50 ||
+this.y < -50 ||
+this.y > canvas.height + 50
+){
 
-    draw(){
+this.reset();
 
-        const gradient = ctx.createRadialGradient(
-            this.x,
-            this.y,
-            0,
-            this.x,
-            this.y,
-            this.glow
-        );
+}
 
-        gradient.addColorStop(
-            0,
-            `rgba(255,215,120,${this.opacity})`
-        );
+}
 
-        gradient.addColorStop(
-            1,
-            "rgba(255,215,120,0)"
-        );
+draw(){
 
-        ctx.beginPath();
+const gradient =
+ctx.createRadialGradient(
+this.x,
+this.y,
+0,
+this.x,
+this.y,
+this.glow
+);
 
-        ctx.fillStyle = gradient;
+gradient.addColorStop(
+0,
+`rgba(255,215,120,${this.opacity})`
+);
 
-        ctx.arc(
-            this.x,
-            this.y,
-            this.glow,
-            0,
-            Math.PI * 2
-        );
+gradient.addColorStop(
+1,
+"rgba(255,215,120,0)"
+);
 
-        ctx.fill();
+ctx.beginPath();
 
-    }
+ctx.fillStyle =
+gradient;
+
+ctx.arc(
+this.x,
+this.y,
+this.glow,
+0,
+Math.PI * 2
+);
+
+ctx.fill();
+
+}
 
 }
 
 for(let i = 0; i < 80; i++){
 
-    particles.push(new Particle());
+particles.push(new Particle());
 
 }
 
 function animate(){
 
-    ctx.clearRect(
-        0,
-        0,
-        canvas.width,
-        canvas.height
-    );
+ctx.clearRect(
+0,
+0,
+canvas.width,
+canvas.height
+);
 
-    particles.forEach(particle => {
+particles.forEach(particle => {
 
-        particle.update();
-        particle.draw();
+particle.update();
 
-    });
+particle.draw();
 
-    requestAnimationFrame(animate);
+});
+
+requestAnimationFrame(animate);
 
 }
 
@@ -431,8 +504,11 @@ animate();
 
 window.addEventListener("resize", () => {
 
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+canvas.width =
+window.innerWidth;
+
+canvas.height =
+window.innerHeight;
 
 });
 
