@@ -14,129 +14,332 @@
 /* LANGUAGE SWITCH */
 
 .language-switch {
+
 position: fixed;
+
 top: 15px;
-right: 20px;
-font-size: 22px;
-z-index: 1000;
+
+right: 25px;
+
+z-index: 99999;
+
+display: flex;
+
+gap: 12px;
+
+align-items: center;
+
 }
 
 .language-switch a {
+
 text-decoration: none;
-margin-left: 8px;
+
+color: white;
+
+font-size: 22px;
+
 }
+
+/* BODY */
 
 body {
+
 background-color: black;
+
 margin: 0;
+
 text-align: center;
+
 font-family: Arial, sans-serif;
+
+overflow-x: hidden;
+
+position: relative;
+
 }
 
+/* MAGIC DUST */
+
+#magicDust{
+
+position: fixed;
+
+top: 0;
+
+left: 0;
+
+width: 100%;
+
+height: 100%;
+
+pointer-events: none;
+
+z-index: 0;
+
+}
+
+/* CONTENT ABOVE EFFECT */
+
+.language-switch,
+nav,
+h1,
+.gallery,
+.pagination,
+.overlay {
+
+position: relative;
+
+z-index: 2;
+
+}
+
+/* NAV */
+
 nav {
+
 margin-top: 20px;
+
 }
 
 nav a {
+
 font-family: 'MedievalSharp', cursive;
+
 color: #d4af37;
+
 text-decoration: none;
-font-size: 18px;
+
+font-size: 20px;
+
+transition: 0.3s;
+
 }
+
+nav a:hover {
+
+text-shadow:
+0 0 10px #d4af37,
+0 0 20px rgba(212,175,55,0.8);
+
+}
+
+/* TITLE */
 
 h1 {
+
 font-family: 'MedievalSharp', cursive;
+
 color: #d4af37;
+
 font-size: 42px;
+
 margin-top: 10px;
+
+text-shadow:
+0 0 12px rgba(212,175,55,0.35);
+
 }
 
+/* GALLERY */
+
 .gallery {
+
 display: flex;
+
 justify-content: center;
+
 gap: 30px;
+
 margin-top: 40px;
+
 flex-wrap: wrap;
+
 }
 
 .gallery img {
+
 width: 100%;
+
 max-width: 300px;
+
 cursor: pointer;
 
 border-radius: 12px;
+
 border: 2px solid #d4af37;
+
+transition: 0.35s;
 
 box-shadow:
 0 0 0 2px #d4af37,
 0 0 12px rgba(212,175,55,0.6);
+
 }
 
+.gallery img:hover {
+
+transform: scale(1.02);
+
+box-shadow:
+0 0 0 2px #d4af37,
+0 0 24px rgba(212,175,55,0.9);
+
+}
+
+/* OVERLAY */
+
 .overlay {
+
 display: none;
+
 position: fixed;
+
 top: 0;
 left: 0;
+
 width: 100%;
 height: 100%;
+
 background-color: rgba(0,0,0,0.95);
+
 justify-content: center;
+
 align-items: center;
-z-index: 999;
+
+z-index: 9999;
+
 }
 
 .overlay img {
+
 max-width: 90%;
+
 max-height: 90%;
+
+border-radius: 12px;
+
+border: 2px solid #d4af37;
+
+box-shadow:
+0 0 30px rgba(212,175,55,0.6);
+
 }
 
+/* ARROWS */
+
 .arrow {
+
 position: absolute;
+
 top: 50%;
+
 transform: translateY(-50%);
+
 font-size: 50px;
+
 color: #d4af37;
+
 cursor: pointer;
+
 padding: 15px;
+
+user-select: none;
+
+transition: 0.3s;
+
+}
+
+.arrow:hover {
+
+text-shadow:
+0 0 10px #d4af37,
+0 0 20px rgba(212,175,55,0.8);
+
 }
 
 .arrow-left {
+
 left: 20px;
+
 }
 
 .arrow-right {
+
 right: 20px;
+
 }
 
+/* PAGINATION */
+
 .pagination {
+
 margin-top: 40px;
+
+margin-bottom: 50px;
+
 }
 
 .pagination a {
+
 font-family: 'MedievalSharp', cursive;
+
 color: #d4af37;
+
 text-decoration: none;
+
 margin: 0 8px;
+
+font-size: 22px;
+
+transition: 0.3s;
+
+}
+
+.pagination a:hover {
+
+text-shadow:
+0 0 10px #d4af37,
+0 0 20px rgba(212,175,55,0.8);
+
 }
 
 .pagination a.active {
+
 color: white;
+
 font-weight: bold;
+
 }
+
+/* MOBILE */
 
 @media (max-width: 768px) {
 
 .gallery {
+
 flex-direction: column;
+
 align-items: center;
+
 }
 
 .gallery img {
+
 max-width: 90%;
+
 }
 
 .arrow {
+
 font-size: 40px;
+
+}
+
+h1 {
+
+font-size: 36px;
+
 }
 
 }
@@ -147,17 +350,32 @@ font-size: 40px;
 
 <body>
 
+<!-- MAGIC DUST -->
+
+<canvas id="magicDust"></canvas>
+
+<!-- LANGUAGE SWITCH -->
+
 <div class="language-switch">
 
-<a href="galerie6.html">🇨🇿</a> <a href="gallery6_en.html">🇬🇧</a>
+<a href="galerie6.html">CZ</a>
+<a href="gallery6_en.html">GB</a>
 
 </div>
 
+<!-- NAV -->
+
 <nav>
-<a href="book1.html">← Back to Fire and water</a>
+
+<a href="book1.html">← Back to Fire and Water</a>
+
 </nav>
 
+<!-- TITLE -->
+
 <h1>Gallery</h1>
+
+<!-- GALLERY -->
 
 <div class="gallery">
 
@@ -167,21 +385,59 @@ font-size: 40px;
 
 </div>
 
+<!-- OVERLAY -->
+
 <div class="overlay" id="overlay">
 
-<div class="arrow arrow-left" onclick="prevImage()">←</div>
+<div
+class="arrow arrow-left"
+id="leftArrow"
+onclick="prevImage()"
+>
+
+←
+
+</div>
 
 <img id="bigImage">
 
-<div class="arrow arrow-right" onclick="nextImage()">→</div>
+<div
+class="arrow arrow-right"
+id="rightArrow"
+onclick="nextImage()"
+>
+
+→
 
 </div>
+
+</div>
+
+<!-- PAGINATION -->
 
 <div class="pagination">
 
-<a href="gallery_en.html">1</a> <a href="gallery2_en.html">2</a> <a href="gallery3_en.html">3</a> <a href="gallery4_en.html">4</a> <a href="gallery5_en.html">5</a> <a href="#" class="active">6</a> <a href="gallery7_en.html">7</a> <a href="gallery8_en.html">8</a> <a href="gallery9_en.html">9</a>
+<a href="gallery_en.html">1</a>
+
+<a href="gallery2_en.html">2</a>
+
+<a href="gallery3_en.html">3</a>
+
+<a href="gallery4_en.html">4</a>
+
+<a href="gallery5_en.html">5</a>
+
+<a href="#" class="active">6</a>
+
+<a href="gallery7_en.html">7</a>
+
+<a href="gallery8_en.html">8</a>
+
+<a href="gallery9_en.html">9</a>
 
 </div>
+
+<!-- GALLERY SCRIPT -->
 
 <script>
 
@@ -196,17 +452,77 @@ var currentIndex = 0;
 var nextPage = "gallery7_en.html";
 var prevPage = "gallery5_en.html";
 
+/* ELEMENTS */
+
+var overlay =
+document.getElementById("overlay");
+
+var bigImage =
+document.getElementById("bigImage");
+
+/* UPDATE ARROWS */
+
+function updateArrows() {
+
+var leftArrow =
+document.getElementById("leftArrow");
+
+var rightArrow =
+document.getElementById("rightArrow");
+
+/* LEFT */
+
+if (
+currentIndex === 0 &&
+prevPage === null
+) {
+
+leftArrow.style.display =
+"none";
+
+} else {
+
+leftArrow.style.display =
+"block";
+
+}
+
+/* RIGHT */
+
+if (
+currentIndex === images.length - 1 &&
+nextPage === null
+) {
+
+rightArrow.style.display =
+"none";
+
+} else {
+
+rightArrow.style.display =
+"block";
+
+}
+
+}
+
+/* OPEN IMAGE */
+
 function openImage(index) {
 
 currentIndex = index;
 
-document.getElementById("bigImage").src =
+bigImage.src =
 images[currentIndex];
 
-document.getElementById("overlay").style.display =
+overlay.style.display =
 "flex";
 
+updateArrows();
+
 }
+
+/* NEXT */
 
 function nextImage() {
 
@@ -214,17 +530,25 @@ currentIndex++;
 
 if (currentIndex >= images.length) {
 
+if (nextPage) {
+
 window.location.href =
-nextPage + "?img=0";
+nextPage + "?img=0&overlay=open";
+
+}
 
 return;
 
 }
 
-document.getElementById("bigImage").src =
+bigImage.src =
 images[currentIndex];
 
+updateArrows();
+
 }
+
+/* PREVIOUS */
 
 function prevImage() {
 
@@ -232,17 +556,25 @@ currentIndex--;
 
 if (currentIndex < 0) {
 
+if (prevPage) {
+
 window.location.href =
-prevPage + "?img=2";
+prevPage + "?img=2&overlay=open";
+
+}
 
 return;
 
 }
 
-document.getElementById("bigImage").src =
+bigImage.src =
 images[currentIndex];
 
+updateArrows();
+
 }
+
+/* AUTO OPEN */
 
 window.onload = function() {
 
@@ -252,7 +584,13 @@ new URLSearchParams(window.location.search);
 var imgIndex =
 params.get("img");
 
-if (imgIndex !== null) {
+var overlayState =
+params.get("overlay");
+
+if (
+imgIndex !== null &&
+overlayState === "open"
+) {
 
 openImage(parseInt(imgIndex));
 
@@ -260,27 +598,35 @@ openImage(parseInt(imgIndex));
 
 };
 
-document.getElementById("overlay")
-.addEventListener("click", function(e) {
+/* CLOSE OVERLAY */
+
+overlay.addEventListener("click", function(e) {
 
 if (e.target.id === "overlay") {
 
-document.getElementById("overlay").style.display =
+overlay.style.display =
 "none";
 
 }
 
 });
 
+/* KEYBOARD */
+
 document.addEventListener("keydown", function(e) {
 
-if (e.key === "ArrowRight") nextImage();
+if (overlay.style.display !== "flex")
+return;
 
-if (e.key === "ArrowLeft") prevImage();
+if (e.key === "ArrowRight")
+nextImage();
+
+if (e.key === "ArrowLeft")
+prevImage();
 
 if (e.key === "Escape") {
 
-document.getElementById("overlay").style.display =
+overlay.style.display =
 "none";
 
 }
@@ -288,6 +634,158 @@ document.getElementById("overlay").style.display =
 });
 
 </script>
+
+<!-- MAGIC DUST SCRIPT -->
+
+<script>
+
+const canvas =
+document.getElementById("magicDust");
+
+const ctx =
+canvas.getContext("2d");
+
+canvas.width =
+window.innerWidth;
+
+canvas.height =
+window.innerHeight;
+
+const particles = [];
+
+class Particle {
+
+constructor(){
+this.reset();
+}
+
+reset(){
+
+this.x =
+Math.random() * canvas.width;
+
+this.y =
+Math.random() * canvas.height;
+
+this.size =
+Math.random() * 2 + 1;
+
+this.speedX =
+(Math.random() - 0.5) * 0.25;
+
+this.speedY =
+(Math.random() - 0.5) * 0.25;
+
+this.opacity =
+Math.random() * 0.5 + 0.2;
+
+this.glow =
+Math.random() * 18 + 8;
+
+}
+
+update(){
+
+this.x += this.speedX;
+this.y += this.speedY;
+
+if(
+this.x < -50 ||
+this.x > canvas.width + 50 ||
+this.y < -50 ||
+this.y > canvas.height + 50
+){
+
+this.reset();
+
+}
+
+}
+
+draw(){
+
+const gradient =
+ctx.createRadialGradient(
+this.x,
+this.y,
+0,
+this.x,
+this.y,
+this.glow
+);
+
+gradient.addColorStop(
+0,
+`rgba(255,215,120,${this.opacity})`
+);
+
+gradient.addColorStop(
+1,
+"rgba(255,215,120,0)"
+);
+
+ctx.beginPath();
+
+ctx.fillStyle =
+gradient;
+
+ctx.arc(
+this.x,
+this.y,
+this.glow,
+0,
+Math.PI * 2
+);
+
+ctx.fill();
+
+}
+
+}
+
+for(let i = 0; i < 80; i++){
+
+particles.push(new Particle());
+
+}
+
+function animate(){
+
+ctx.clearRect(
+0,
+0,
+canvas.width,
+canvas.height
+);
+
+particles.forEach(particle => {
+
+particle.update();
+particle.draw();
+
+});
+
+requestAnimationFrame(animate);
+
+}
+
+animate();
+
+window.addEventListener("resize", () => {
+
+canvas.width =
+window.innerWidth;
+
+canvas.height =
+window.innerHeight;
+
+});
+
+</script>
+
+<!-- PROTECTION -->
+
+<script src="ochrana.js"></script>
 
 </body>
 </html>
