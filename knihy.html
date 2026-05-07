@@ -51,6 +51,20 @@ z-index: 0;
 
 }
 
+/* CONTENT ABOVE EFFECT */
+
+.language-switch,
+.back-link,
+h1,
+.books-container,
+.image-hint {
+
+position: relative;
+
+z-index: 2;
+
+}
+
 /* LANGUAGE SWITCH */
 
 .language-switch {
@@ -59,17 +73,19 @@ position: fixed;
 
 top: 15px;
 
-right: 25px;
+right: 15px;
 
-z-index: 99999;
+z-index: 999999;
 
 display: flex;
 
-gap: 12px;
-
 align-items: center;
 
+gap: 18px;
+
 }
+
+/* LANGUAGE LINKS */
 
 .language-switch a {
 
@@ -79,17 +95,13 @@ text-decoration: none;
 
 color: #d4af37;
 
-font-size: 22px;
+font-size: 24px;
+
+line-height: 1;
+
+display: block;
 
 transition: 0.3s;
-
-}
-
-.language-switch a:hover {
-
-text-shadow:
-0 0 10px #d4af37,
-0 0 20px rgba(212,175,55,0.8);
 
 }
 
@@ -104,17 +116,13 @@ text-shadow:
 
 }
 
-/* CONTENT ABOVE EFFECT */
+/* HOVER */
 
-.language-switch,
-.back-link,
-h1,
-.books-container,
-.image-hint {
+.language-switch a:hover {
 
-position: relative;
-
-z-index: 2;
+text-shadow:
+0 0 10px #d4af37,
+0 0 20px rgba(212,175,55,0.8);
 
 }
 
@@ -266,9 +274,11 @@ padding: 0 10px;
 
 .language-switch {
 
-right: 15px;
-
 top: 12px;
+
+right: 12px;
+
+gap: 14px;
 
 }
 
@@ -294,8 +304,7 @@ font-size: 20px;
 
 <div class="language-switch">
 
-<a href="knihy.html"
-class="active-lang">
+<a href="knihy.html" class="active-lang">
 CZ
 </a>
 
