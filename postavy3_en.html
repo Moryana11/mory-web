@@ -1,1 +1,501 @@
+<!DOCTYPE html>
 
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Characters</title>
+
+<link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+
+<style>
+
+/* BODY */
+
+body {
+
+    margin: 0;
+
+    background-color: black;
+
+    text-align: center;
+
+    font-family: Arial, sans-serif;
+
+    color: white;
+
+    overflow-x: hidden;
+
+    position: relative;
+
+}
+
+/* MAGIC DUST */
+
+#magicDust {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+
+    z-index: 0;
+
+}
+
+/* CONTENT ABOVE EFFECT */
+
+.language-switch,
+.back-link,
+h1,
+.characters,
+.pagination {
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+/* LANGUAGE SWITCH */
+
+.language-switch {
+
+    position: fixed;
+
+    top: 15px;
+
+    right: 20px;
+
+    z-index: 1000;
+
+    display: flex;
+
+    gap: 10px;
+
+}
+
+.language-switch a {
+
+    text-decoration: none;
+
+    font-size: 22px;
+
+}
+
+/* BACK */
+
+.back-link {
+
+    margin-top: 25px;
+
+}
+
+.back-link a {
+
+    font-family: 'MedievalSharp', cursive;
+
+    color: #d4af37;
+
+    text-decoration: none;
+
+    font-size: 20px;
+
+    transition: 0.3s;
+
+}
+
+.back-link a:hover {
+
+    text-shadow:
+        0 0 10px #d4af37,
+        0 0 20px rgba(212,175,55,0.8);
+
+}
+
+/* TITLE */
+
+h1 {
+
+    font-family: 'MedievalSharp', cursive;
+
+    color: #d4af37;
+
+    font-size: 48px;
+
+    margin-top: 15px;
+
+    text-shadow:
+        0 0 12px rgba(212,175,55,0.35);
+
+}
+
+/* CHARACTERS */
+
+.characters {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 45px;
+
+    margin-top: 55px;
+
+    flex-wrap: wrap;
+
+    padding: 0 20px;
+
+}
+
+/* CHARACTER */
+
+.character {
+
+    text-align: center;
+
+}
+
+/* IMAGE */
+
+.character img {
+
+    width: 100%;
+
+    max-width: 260px;
+
+    height: auto;
+
+    border-radius: 14px;
+
+    border: 2px solid #d4af37;
+
+    transition: 0.35s;
+
+    box-shadow:
+        0 0 0 2px #d4af37,
+        0 0 14px rgba(212,175,55,0.6);
+
+}
+
+.character img:hover {
+
+    transform: scale(1.03);
+
+    box-shadow:
+        0 0 0 2px #d4af37,
+        0 0 28px rgba(212,175,55,0.9);
+
+}
+
+/* NAME */
+
+.character-name {
+
+    font-family: 'MedievalSharp', cursive;
+
+    color: #d4af37;
+
+    font-size: 24px;
+
+    margin-top: 16px;
+
+    text-shadow:
+        0 0 10px rgba(212,175,55,0.25);
+
+}
+
+/* PAGINATION */
+
+.pagination {
+
+    margin-top: 50px;
+
+}
+
+.pagination a {
+
+    font-family: 'MedievalSharp', cursive;
+
+    color: #d4af37;
+
+    text-decoration: none;
+
+    font-size: 34px;
+
+    margin: 0 25px;
+
+    transition: 0.3s;
+
+}
+
+.pagination a:hover {
+
+    text-shadow:
+        0 0 10px #d4af37,
+        0 0 20px rgba(212,175,55,0.8);
+
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    h1 {
+
+        font-size: 38px;
+
+    }
+
+    .characters {
+
+        flex-direction: column;
+
+        align-items: center;
+
+    }
+
+    .character img {
+
+        max-width: 90%;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- MAGIC DUST -->
+
+<canvas id="magicDust"></canvas>
+
+<!-- LANGUAGE SWITCH -->
+
+<div class="language-switch">
+
+<a href="postavy3.html">🇨🇿</a>
+
+<a href="characters3.html">🇬🇧</a>
+
+</div>
+
+<!-- BACK -->
+
+<div class="back-link">
+
+<a href="book1.html">← Back to Fire and Water</a>
+
+</div>
+
+<!-- TITLE -->
+
+<h1>Characters</h1>
+
+<!-- CHARACTERS -->
+
+<div class="characters">
+
+<div class="character">
+
+<a href="brienne_en.html">
+
+<img src="brienne.png" alt="Brienne">
+
+</a>
+
+<div class="character-name">
+Brienne
+</div>
+
+</div>
+
+<div class="character">
+
+<a href="zarveth_en.html">
+
+<img src="zarveth.png" alt="Zarveth">
+
+</a>
+
+<div class="character-name">
+Zarveth
+</div>
+
+</div>
+
+<div class="character">
+
+<a href="morrkalil_en.html">
+
+<img src="morrkalil.png" alt="Morr’kalil">
+
+</a>
+
+<div class="character-name">
+Morr’kalil
+</div>
+
+</div>
+
+</div>
+
+<!-- PAGINATION -->
+
+<div class="pagination">
+
+<a href="postavy2_en.html">←</a>
+
+<a href="postavy4_en.html">→</a>
+
+</div>
+
+<!-- MAGIC DUST SCRIPT -->
+
+<script>
+
+const canvas = document.getElementById("magicDust");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const particles = [];
+
+class Particle {
+
+    constructor(){
+
+        this.reset();
+
+    }
+
+    reset(){
+
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+
+        this.size = Math.random() * 2 + 1;
+
+        this.speedX = (Math.random() - 0.5) * 0.25;
+        this.speedY = (Math.random() - 0.5) * 0.25;
+
+        this.opacity = Math.random() * 0.5 + 0.2;
+
+        this.glow = Math.random() * 18 + 8;
+
+    }
+
+    update(){
+
+        this.x += this.speedX;
+        this.y += this.speedY;
+
+        if(
+            this.x < -50 ||
+            this.x > canvas.width + 50 ||
+            this.y < -50 ||
+            this.y > canvas.height + 50
+        ){
+
+            this.reset();
+
+        }
+
+    }
+
+    draw(){
+
+        const gradient = ctx.createRadialGradient(
+            this.x,
+            this.y,
+            0,
+            this.x,
+            this.y,
+            this.glow
+        );
+
+        gradient.addColorStop(
+            0,
+            `rgba(255,215,120,${this.opacity})`
+        );
+
+        gradient.addColorStop(
+            1,
+            "rgba(255,215,120,0)"
+        );
+
+        ctx.beginPath();
+
+        ctx.fillStyle = gradient;
+
+        ctx.arc(
+            this.x,
+            this.y,
+            this.glow,
+            0,
+            Math.PI * 2
+        );
+
+        ctx.fill();
+
+    }
+
+}
+
+for(let i = 0; i < 80; i++){
+
+    particles.push(new Particle());
+
+}
+
+function animate(){
+
+    ctx.clearRect(
+        0,
+        0,
+        canvas.width,
+        canvas.height
+    );
+
+    particles.forEach(particle => {
+
+        particle.update();
+        particle.draw();
+
+    });
+
+    requestAnimationFrame(animate);
+
+}
+
+animate();
+
+window.addEventListener("resize", () => {
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+});
+
+</script>
+
+<!-- PROTECTION -->
+
+<script src="ochrana.js"></script>
+
+<!-- LANGUAGE SWITCH -->
+
+<script src="language-switch.js"></script>
+
+</body>
+</html>
