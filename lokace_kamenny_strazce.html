@@ -74,15 +74,15 @@ h1,
 
     top: 15px;
 
-    right: 15px;
+    right: 18px;
 
     z-index: 999999;
 
     display: flex;
 
-    gap: 12px;
-
     align-items: center;
+
+    gap: 18px;
 
 }
 
@@ -96,21 +96,16 @@ h1,
 
     color: #d4af37;
 
-    font-size: 22px;
+    font-size: 24px;
+
+    line-height: 1;
+
+    display: block;
 
     transition: 0.3s;
 
-    display: inline-block;
-
-}
-
-/* HOVER */
-
-.language-switch a:hover {
-
     text-shadow:
-        0 0 10px #d4af37,
-        0 0 20px rgba(212,175,55,0.8);
+        0 0 10px rgba(212,175,55,0.25);
 
 }
 
@@ -122,6 +117,16 @@ h1,
 
     text-shadow:
         0 0 10px rgba(255,255,255,0.7);
+
+}
+
+/* HOVER */
+
+.language-switch a:hover {
+
+    text-shadow:
+        0 0 10px #d4af37,
+        0 0 20px rgba(212,175,55,0.8);
 
 }
 
@@ -308,11 +313,13 @@ h1 {
 
         right: 12px;
 
+        gap: 14px;
+
     }
 
     .language-switch a {
 
-        font-size: 20px;
+        font-size: 21px;
 
     }
 
@@ -332,12 +339,13 @@ h1 {
 
 <div class="language-switch">
 
-<a href="lokace_kamenny_strazce.html" class="active-lang">
-🇨🇿
+<a href="lokace_kamenny_strazce.html"
+class="active-lang">
+CZ
 </a>
 
 <a href="location_stonegard_castle.html">
-🇬🇧
+GB
 </a>
 
 </div>
