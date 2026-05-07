@@ -11,42 +11,72 @@
 
 <style>
 
-/* PŘEPÍNAČ JAZYKA */
+/* LANGUAGE SWITCH */
 
 .language-switch {
+
 position: fixed;
+
 top: 15px;
-right: 20px;
-font-size: 22px;
-z-index: 1000;
+
+right: 25px;
+
+z-index: 99999;
+
+display: flex;
+
+gap: 12px;
+
+align-items: center;
+
 }
 
 .language-switch a {
+
 text-decoration: none;
-margin-left: 8px;
+
+color: white;
+
+font-size: 22px;
+
 }
 
 /* BODY */
 
 body {
+
 background-color: black;
+
 margin: 0;
+
 text-align: center;
+
 font-family: Arial, sans-serif;
+
 overflow-x: hidden;
+
 position: relative;
+
 }
 
 /* MAGIC DUST */
 
 #magicDust{
+
 position: fixed;
+
 top: 0;
+
 left: 0;
+
 width: 100%;
+
 height: 100%;
+
 pointer-events: none;
+
 z-index: 0;
+
 }
 
 /* CONTENT ABOVE EFFECT */
@@ -57,14 +87,19 @@ h1,
 .gallery,
 .pagination,
 .overlay {
+
 position: relative;
+
 z-index: 2;
+
 }
 
 /* NAV */
 
 nav {
+
 margin-top: 20px;
+
 }
 
 nav a {
@@ -161,9 +196,11 @@ display: none;
 position: fixed;
 
 top: 0;
+
 left: 0;
 
 width: 100%;
+
 height: 100%;
 
 background-color: rgba(0,0,0,0.95);
@@ -323,8 +360,8 @@ font-size: 36px;
 
 <div class="language-switch">
 
-<a href="galerie.html">🇨🇿</a>
-<a href="gallery_en.html">🇬🇧</a>
+<a href="galerie.html">CZ</a>
+<a href="gallery_en.html">GB</a>
 
 </div>
 
@@ -751,9 +788,6 @@ window.innerHeight;
 <!-- PROTECTION -->
 
 <script src="ochrana.js"></script>
-
-<!-- LANGUAGE SWITCH -->
-
 
 </body>
 </html>
