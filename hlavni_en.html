@@ -14,85 +14,164 @@
 /* BODY */
 
 body {
+
     margin: 0;
+
     background-color: black;
+
     text-align: center;
+
     font-family: Arial, sans-serif;
+
     overflow-x: hidden;
+
     position: relative;
+
 }
 
 /* MAGIC DUST */
 
-#magicDust{
+#magicDust {
+
     position: fixed;
+
     top: 0;
+
     left: 0;
+
     width: 100%;
+
     height: 100%;
+
     pointer-events: none;
+
     z-index: 0;
+
+}
+
+/* CONTENT ABOVE EFFECT */
+
+.language-switch,
+.menu,
+.main-image {
+
+    position: relative;
+
+    z-index: 2;
+
 }
 
 /* LANGUAGE SWITCH */
 
 .language-switch {
+
     position: fixed;
+
     top: 15px;
-    right: 20px;
-    z-index: 1000;
+
+    right: 15px;
+
+    z-index: 999999;
 
     display: flex;
-    gap: 10px;
+
+    gap: 12px;
+
+    align-items: center;
+
 }
+
+/* LANGUAGE LINKS */
 
 .language-switch a {
+
+    font-family: 'MedievalSharp', cursive;
+
     text-decoration: none;
+
+    color: #d4af37;
+
     font-size: 22px;
+
+    transition: 0.3s;
+
+    display: inline-block;
+
 }
 
-/* CONTENT ABOVE EFFECT */
+/* HOVER */
 
-.menu,
-.main-image {
-    position: relative;
-    z-index: 2;
+.language-switch a:hover {
+
+    text-shadow:
+        0 0 10px #d4af37,
+        0 0 20px rgba(212,175,55,0.8);
+
+}
+
+/* ACTIVE LANGUAGE */
+
+.language-switch a.active-lang {
+
+    color: white;
+
+    text-shadow:
+        0 0 10px rgba(255,255,255,0.7);
+
 }
 
 /* MENU */
 
 .menu {
+
     display: flex;
+
     justify-content: center;
+
     gap: 60px;
+
     margin-top: 30px;
+
     flex-wrap: wrap;
+
 }
 
 .menu a {
+
     font-family: 'MedievalSharp', cursive;
+
     color: #d4af37;
+
     text-decoration: none;
+
     font-size: 32px;
+
     transition: 0.3s;
+
 }
 
 .menu a:hover {
+
     text-shadow:
         0 0 10px #d4af37,
         0 0 20px rgba(212,175,55,0.8);
+
 }
 
 /* IMAGE */
 
 .main-image {
+
     margin-top: 60px;
+
 }
 
 .main-image img {
 
     width: 100%;
+
     max-width: 420px;
+
     height: auto;
 
     border-radius: 16px;
@@ -110,16 +189,37 @@ body {
 @media (max-width: 768px) {
 
     .menu {
+
         gap: 25px;
+
         margin-top: 25px;
+
     }
 
     .menu a {
+
         font-size: 25px;
+
     }
 
     .main-image img {
+
         max-width: 90%;
+
+    }
+
+    .language-switch {
+
+        top: 12px;
+
+        right: 12px;
+
+    }
+
+    .language-switch a {
+
+        font-size: 20px;
+
     }
 
 }
@@ -138,9 +238,13 @@ body {
 
 <div class="language-switch">
 
-<a href="hlavni.html">🇨🇿</a>
+<a href="hlavni.html">
+CZ
+</a>
 
-<a href="hlavni_en.html">EN</a>
+<a href="main.html" class="active-lang">
+EN
+</a>
 
 </div>
 
@@ -148,11 +252,17 @@ body {
 
 <div class="menu">
 
-<a href="aboutme.html">About Me</a>
+<a href="aboutme.html">
+About Me
+</a>
 
-<a href="books.html">Books</a>
+<a href="books.html">
+Books
+</a>
 
-<a href="messages.html">Messages</a>
+<a href="messages.html">
+Messages
+</a>
 
 </div>
 
@@ -168,38 +278,57 @@ body {
 
 <script>
 
-const canvas = document.getElementById("magicDust");
-const ctx = canvas.getContext("2d");
+const canvas =
+document.getElementById("magicDust");
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+const ctx =
+canvas.getContext("2d");
+
+canvas.width =
+window.innerWidth;
+
+canvas.height =
+window.innerHeight;
 
 const particles = [];
 
 class Particle {
 
     constructor(){
+
         this.reset();
+
     }
 
     reset(){
 
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
+        this.x =
+        Math.random() * canvas.width;
 
-        this.size = Math.random() * 2 + 1;
+        this.y =
+        Math.random() * canvas.height;
 
-        this.speedX = (Math.random() - 0.5) * 0.25;
-        this.speedY = (Math.random() - 0.5) * 0.25;
+        this.size =
+        Math.random() * 2 + 1;
 
-        this.opacity = Math.random() * 0.5 + 0.2;
+        this.speedX =
+        (Math.random() - 0.5) * 0.25;
 
-        this.glow = Math.random() * 18 + 8;
+        this.speedY =
+        (Math.random() - 0.5) * 0.25;
+
+        this.opacity =
+        Math.random() * 0.5 + 0.2;
+
+        this.glow =
+        Math.random() * 18 + 8;
+
     }
 
     update(){
 
         this.x += this.speedX;
+
         this.y += this.speedY;
 
         if(
@@ -208,13 +337,17 @@ class Particle {
             this.y < -50 ||
             this.y > canvas.height + 50
         ){
+
             this.reset();
+
         }
+
     }
 
     draw(){
 
-        const gradient = ctx.createRadialGradient(
+        const gradient =
+        ctx.createRadialGradient(
             this.x,
             this.y,
             0,
@@ -235,7 +368,8 @@ class Particle {
 
         ctx.beginPath();
 
-        ctx.fillStyle = gradient;
+        ctx.fillStyle =
+        gradient;
 
         ctx.arc(
             this.x,
@@ -246,12 +380,15 @@ class Particle {
         );
 
         ctx.fill();
+
     }
 
 }
 
 for(let i = 0; i < 80; i++){
+
     particles.push(new Particle());
+
 }
 
 function animate(){
@@ -264,27 +401,30 @@ function animate(){
     );
 
     particles.forEach(particle => {
+
         particle.update();
+
         particle.draw();
+
     });
 
     requestAnimationFrame(animate);
+
 }
 
 animate();
 
 window.addEventListener("resize", () => {
 
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    canvas.width =
+    window.innerWidth;
+
+    canvas.height =
+    window.innerHeight;
 
 });
 
 </script>
-
-<!-- LANGUAGE SWITCH SCRIPT -->
-
-<script src="language-switch.js"></script>
 
 <!-- PROTECTION -->
 
