@@ -14,25 +14,41 @@
 /* BODY */
 
 body {
+
     margin: 0;
+
     background-color: black;
-    text-align: center;
-    font-family: Arial, sans-serif;
+
     color: white;
+
+    text-align: center;
+
+    font-family: Arial, sans-serif;
+
     overflow-x: hidden;
+
     position: relative;
+
 }
 
 /* MAGIC DUST */
 
-#magicDust{
+#magicDust {
+
     position: fixed;
+
     top: 0;
+
     left: 0;
+
     width: 100%;
+
     height: 100%;
+
     pointer-events: none;
+
     z-index: 0;
+
 }
 
 /* CONTENT ABOVE EFFECT */
@@ -41,10 +57,13 @@ body {
 .back-link,
 h1,
 .location-image,
-.location-text,
+.text-box,
 .overlay {
+
     position: relative;
+
     z-index: 2;
+
 }
 
 /* LANGUAGE SWITCH */
@@ -55,34 +74,82 @@ h1,
 
     top: 15px;
 
-    right: 20px;
+    right: 18px;
 
-    font-size: 22px;
+    z-index: 999999;
 
-    z-index: 1000;
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
 
 }
 
+/* LANGUAGE LINKS */
+
 .language-switch a {
+
+    font-family: 'MedievalSharp', cursive;
 
     text-decoration: none;
 
-    margin-left: 8px;
+    color: #d4af37;
+
+    font-size: 24px;
+
+    line-height: 1;
+
+    display: block;
+
+    transition: 0.3s;
+
+    text-shadow:
+        0 0 10px rgba(212,175,55,0.25);
+
+}
+
+/* ACTIVE LANGUAGE */
+
+.language-switch a.active-lang {
+
+    color: white;
+
+    text-shadow:
+        0 0 10px rgba(255,255,255,0.7);
+
+}
+
+/* HOVER */
+
+.language-switch a:hover {
+
+    text-shadow:
+        0 0 10px #d4af37,
+        0 0 20px rgba(212,175,55,0.8);
 
 }
 
 /* BACK */
 
 .back-link {
+
     margin-top: 25px;
+
 }
 
 .back-link a {
+
     font-family: 'MedievalSharp', cursive;
+
     color: #d4af37;
+
     text-decoration: none;
+
     font-size: 20px;
+
     transition: 0.3s;
+
 }
 
 .back-link a:hover {
@@ -96,24 +163,32 @@ h1,
 /* TITLE */
 
 h1 {
+
     font-family: 'MedievalSharp', cursive;
+
     color: #d4af37;
-    font-size: 46px;
+
+    font-size: 48px;
+
     margin-top: 15px;
 
     text-shadow:
         0 0 12px rgba(212,175,55,0.35);
+
 }
 
 /* IMAGE */
 
 .location-image {
+
     margin-top: 35px;
+
 }
 
 .location-image img {
 
     width: 100%;
+
     max-width: 420px;
 
     border-radius: 14px;
@@ -142,9 +217,9 @@ h1 {
 
 /* TEXT */
 
-.location-text {
+.text-box {
 
-    max-width: 920px;
+    max-width: 950px;
 
     margin: 45px auto;
 
@@ -152,18 +227,16 @@ h1 {
 
     text-align: left;
 
-    line-height: 2;
+    line-height: 1.95;
 
     font-size: 19px;
-
-    color: rgba(255,255,255,0.95);
 
     text-shadow:
         0 0 8px rgba(255,255,255,0.05);
 
 }
 
-.location-text p {
+.text-box p {
 
     margin-bottom: 28px;
 
@@ -185,7 +258,7 @@ h1 {
 
     height: 100%;
 
-    background-color: rgba(0,0,0,0.92);
+    background-color: rgba(0,0,0,0.95);
 
     justify-content: center;
 
@@ -201,12 +274,12 @@ h1 {
 
     max-height: 95%;
 
-    border-radius: 12px;
+    border-radius: 14px;
 
     border: 2px solid #d4af37;
 
     box-shadow:
-        0 0 30px rgba(212,175,55,0.6);
+        0 0 35px rgba(212,175,55,0.6);
 
 }
 
@@ -215,16 +288,39 @@ h1 {
 @media (max-width: 768px) {
 
     h1 {
+
         font-size: 36px;
+
     }
 
-    .location-text {
+    .text-box {
+
         font-size: 18px;
+
         line-height: 1.85;
+
     }
 
     .location-image img {
+
         max-width: 90%;
+
+    }
+
+    .language-switch {
+
+        top: 12px;
+
+        right: 12px;
+
+        gap: 14px;
+
+    }
+
+    .language-switch a {
+
+        font-size: 21px;
+
     }
 
 }
@@ -243,16 +339,25 @@ h1 {
 
 <div class="language-switch">
 
-<a href="lokace_vienta.html">🇨🇿</a>
+<a href="lokace_vienta.html">
+CZ
+</a>
 
-<a href="location_vienta.html">EN</a>
+<a href="location_vienta.html"
+class="active-lang">
+EN
+</a>
 
 </div>
 
 <!-- BACK -->
 
 <div class="back-link">
-<a href="locations.html">← Back to Locations</a>
+
+<a href="locations.html">
+← Back to Locations
+</a>
+
 </div>
 
 <!-- TITLE -->
@@ -263,81 +368,112 @@ h1 {
 
 <div class="location-image">
 
-<img src="vienta.png"
-  onclick="openImage(this)"
-  alt="Vienta">
-
-</div>
-
-<!-- OVERLAY -->
-
-<div class="overlay"
-     id="overlay"
-     onclick="closeImage()">
-
-<img id="bigImage">
+<img
+src="vienta.png"
+onclick="openImage(this)"
+alt="Vienta">
 
 </div>
 
 <!-- TEXT -->
 
-<div class="location-text">
+<div class="text-box">
 
 <p>
+
 <strong>Vienta</strong> is a magnificent desert city located in the southwestern region of Stonegard on the continent of Solisium.
+
 </p>
 
 <p>
+
 To the west, the city borders the vast shimmering sea, while endless dunes of the <strong>Monolithic Wasteland</strong> stretch across the eastern horizon — a brutal desert realm shaped by scorching winds, blazing sunlight, and forgotten ruins buried beneath the sands.
+
 </p>
 
 <p>
+
 Because of its unique location, Vienta became a place where the strength of the ocean and the fury of fire exist side by side. Warm sea air mixes with desert heat, creating an atmosphere unlike anywhere else in Solisium.
+
 </p>
 
 <p>
+
 The city itself is built from pale sandstone and dark red stone that glows beneath the evening sun. Tall towers, open courtyards, and richly decorated arches dominate its streets, while countless braziers and sacred flames burn day and night across the city.
+
 </p>
 
 <p>
+
 Vienta is renowned throughout the continent as the birthplace of many of the world’s most powerful <strong>fire mages</strong>.
+
 </p>
 
 <p>
+
 For generations, children born with magical talent have been raised within disciplined academies and temples where they learn to control the destructive and life-giving nature of fire. In Vienta, fire is not viewed merely as a weapon — it is considered a sacred force representing willpower, passion, purification, and spiritual strength.
+
 </p>
 
 <p>
+
 It is common to see flames dancing across the hands of apprentices in the marketplaces or experienced masters shaping fire as naturally as breathing itself.
+
 </p>
 
 <p>
+
 At the very heart of the city stands the majestic sanctuary known as <strong>the Sanctuary of the Crimson Breath</strong>, the largest and most sacred temple in all of Stonegard.
+
 </p>
 
 <p>
+
 Its enormous halls are adorned with golden symbols, burning censers, and ancient murals depicting the origins of fire magic. Pilgrims, rulers, warriors, and mages travel from distant lands to seek blessings, wisdom, or answers hidden within its sacred chambers.
+
 </p>
 
 <p>
+
 The sanctuary is believed to house one of the oldest eternal flames in the world — a sacred fire said to have burned continuously since the founding of Vienta itself.
+
 </p>
 
 <p>
+
 Despite its beauty and spiritual significance, Vienta is also a city of strict order and fierce discipline. Its people value strength, honor, loyalty, and emotional control, believing that an uncontrolled flame can destroy everything around it.
+
 </p>
 
 <p>
+
 Yet beneath the city’s proud exterior lies constant tension between devotion and ambition, faith and power.
+
 </p>
 
 <p>
+
 Vienta is a city where every flame tells a story.
+
 </p>
 
 <p>
+
 A city where fire can become warmth, hope, and guidance… or rage powerful enough to reduce entire kingdoms to ash.
+
 </p>
+
+</div>
+
+<!-- OVERLAY -->
+
+<div
+class="overlay"
+id="overlay"
+onclick="closeImage()"
+>
+
+<img id="bigImage">
 
 </div>
 
@@ -347,25 +483,25 @@ A city where fire can become warmth, hope, and guidance… or rage powerful enou
 
 function openImage(img) {
 
-var overlay =
-document.getElementById("overlay");
+    var overlay =
+    document.getElementById("overlay");
 
-var bigImage =
-document.getElementById("bigImage");
+    var bigImage =
+    document.getElementById("bigImage");
 
-bigImage.src =
-img.src;
+    bigImage.src =
+    img.src;
 
-overlay.style.display =
-"flex";
+    overlay.style.display =
+    "flex";
 
 }
 
 function closeImage() {
 
-document.getElementById("overlay")
-.style.display =
-"none";
+    document.getElementById("overlay")
+    .style.display =
+    "none";
 
 }
 
@@ -492,10 +628,6 @@ window.addEventListener("resize", () => {
 <!-- PROTECTION -->
 
 <script src="ochrana.js"></script>
-
-<!-- LANGUAGE SWITCH -->
-
-<script src="language-switch.js"></script>
 
 </body>
 </html>
