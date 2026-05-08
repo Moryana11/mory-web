@@ -70,7 +70,11 @@ h1 {
 
     justify-content: center;
 
+    gap: 40px;
+
     margin: 50px 0 40px 0;
+
+    flex-wrap: wrap;
 
 }
 
@@ -116,16 +120,25 @@ h1 {
         padding: 0 16px;
     }
 
+    .chapter-navigation {
+
+        flex-direction: column;
+
+        gap: 15px;
+
+        align-items: center;
+
+    }
+
 }
 
 </style>
 
 </head>
 
-<script src="ochrana.js"></script>
+<body>
 
-</body>
-</html>
+<script src="ochrana.js"></script>
 
 <nav>
 <a href="kapitoly.html">← Zpět na kapitoly</a>
@@ -173,12 +186,11 @@ localStorage.setItem(
 <script>
 
 localStorage.setItem(
-"lastChapter",
-window.location.pathname.split("/").pop()
-
+    "lastChapter",
+    window.location.pathname.split("/").pop()
 );
 
 </script>
-    
+
 </body>
 </html>
