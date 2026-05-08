@@ -14,25 +14,41 @@
 /* BODY */
 
 body {
+
     margin: 0;
+
     background-color: black;
-    text-align: center;
-    font-family: Arial, sans-serif;
+
     color: white;
+
+    text-align: center;
+
+    font-family: Arial, sans-serif;
+
     overflow-x: hidden;
+
     position: relative;
+
 }
 
 /* MAGIC DUST */
 
-#magicDust{
+#magicDust {
+
     position: fixed;
+
     top: 0;
+
     left: 0;
+
     width: 100%;
+
     height: 100%;
+
     pointer-events: none;
+
     z-index: 0;
+
 }
 
 /* CONTENT ABOVE EFFECT */
@@ -41,10 +57,13 @@ body {
 .back-link,
 h1,
 .location-image,
-.location-text,
+.text-box,
 .overlay {
+
     position: relative;
+
     z-index: 2;
+
 }
 
 /* LANGUAGE SWITCH */
@@ -55,34 +74,82 @@ h1,
 
     top: 15px;
 
-    right: 20px;
+    right: 18px;
 
-    font-size: 22px;
+    z-index: 999999;
 
-    z-index: 1000;
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
 
 }
 
+/* LANGUAGE LINKS */
+
 .language-switch a {
+
+    font-family: 'MedievalSharp', cursive;
 
     text-decoration: none;
 
-    margin-left: 8px;
+    color: #d4af37;
+
+    font-size: 24px;
+
+    line-height: 1;
+
+    display: block;
+
+    transition: 0.3s;
+
+    text-shadow:
+        0 0 10px rgba(212,175,55,0.25);
+
+}
+
+/* ACTIVE LANGUAGE */
+
+.language-switch a.active-lang {
+
+    color: white;
+
+    text-shadow:
+        0 0 10px rgba(255,255,255,0.7);
+
+}
+
+/* HOVER */
+
+.language-switch a:hover {
+
+    text-shadow:
+        0 0 10px #d4af37,
+        0 0 20px rgba(212,175,55,0.8);
 
 }
 
 /* BACK */
 
 .back-link {
+
     margin-top: 25px;
+
 }
 
 .back-link a {
+
     font-family: 'MedievalSharp', cursive;
+
     color: #d4af37;
+
     text-decoration: none;
+
     font-size: 20px;
+
     transition: 0.3s;
+
 }
 
 .back-link a:hover {
@@ -96,24 +163,32 @@ h1,
 /* TITLE */
 
 h1 {
+
     font-family: 'MedievalSharp', cursive;
+
     color: #d4af37;
-    font-size: 46px;
+
+    font-size: 48px;
+
     margin-top: 15px;
 
     text-shadow:
         0 0 12px rgba(212,175,55,0.35);
+
 }
 
 /* IMAGE */
 
 .location-image {
+
     margin-top: 35px;
+
 }
 
 .location-image img {
 
     width: 100%;
+
     max-width: 420px;
 
     border-radius: 14px;
@@ -142,9 +217,9 @@ h1 {
 
 /* TEXT */
 
-.location-text {
+.text-box {
 
-    max-width: 920px;
+    max-width: 950px;
 
     margin: 45px auto;
 
@@ -152,18 +227,16 @@ h1 {
 
     text-align: left;
 
-    line-height: 2;
+    line-height: 1.95;
 
     font-size: 19px;
-
-    color: rgba(255,255,255,0.95);
 
     text-shadow:
         0 0 8px rgba(255,255,255,0.05);
 
 }
 
-.location-text p {
+.text-box p {
 
     margin-bottom: 28px;
 
@@ -185,7 +258,7 @@ h1 {
 
     height: 100%;
 
-    background-color: rgba(0,0,0,0.92);
+    background-color: rgba(0,0,0,0.95);
 
     justify-content: center;
 
@@ -201,12 +274,12 @@ h1 {
 
     max-height: 95%;
 
-    border-radius: 12px;
+    border-radius: 14px;
 
     border: 2px solid #d4af37;
 
     box-shadow:
-        0 0 30px rgba(212,175,55,0.6);
+        0 0 35px rgba(212,175,55,0.6);
 
 }
 
@@ -215,16 +288,39 @@ h1 {
 @media (max-width: 768px) {
 
     h1 {
+
         font-size: 36px;
+
     }
 
-    .location-text {
+    .text-box {
+
         font-size: 18px;
+
         line-height: 1.85;
+
     }
 
     .location-image img {
+
         max-width: 90%;
+
+    }
+
+    .language-switch {
+
+        top: 12px;
+
+        right: 12px;
+
+        gap: 14px;
+
+    }
+
+    .language-switch a {
+
+        font-size: 21px;
+
     }
 
 }
@@ -243,16 +339,25 @@ h1 {
 
 <div class="language-switch">
 
-<a href="lokace_turayne.html">🇨🇿</a>
+<a href="lokace_turayne.html">
+CZ
+</a>
 
-<a href="location_turayne.html">EN</a>
+<a href="location_turayne.html"
+class="active-lang">
+EN
+</a>
 
 </div>
 
 <!-- BACK -->
 
 <div class="back-link">
-<a href="locations2.html">← Back to Locations</a>
+
+<a href="locations2.html">
+← Back to Locations
+</a>
+
 </div>
 
 <!-- TITLE -->
@@ -263,73 +368,100 @@ h1 {
 
 <div class="location-image">
 
-<img src="turayne.png"
-  onclick="openImage(this)"
-  alt="Ruins of Turayne">
-
-</div>
-
-<!-- OVERLAY -->
-
-<div class="overlay"
-     id="overlay"
-     onclick="closeImage()">
-
-<img id="bigImage">
+<img
+src="turayne.png"
+onclick="openImage(this)"
+alt="Ruins of Turayne">
 
 </div>
 
 <!-- TEXT -->
 
-<div class="location-text">
+<div class="text-box">
 
 <p>
+
 <strong>Turayne</strong> was once one of the greatest and most prosperous cities in the land of Laslan, standing proudly along <strong>the Grassland Trail</strong> — an ancient trade route stretching between towering mountains, deep forests, and distant kingdoms across the continent of Solisium.
+
 </p>
 
 <p>
+
 Long before the rise of Kastleton, Turayne served as the heart of trade, culture, and magical knowledge in this part of the world. Merchants carrying silk, spices, weapons, and ancient relics passed through its gates every day, while pilgrims and scholars traveled from distant lands seeking wisdom hidden within the city’s libraries and sanctuaries.
+
 </p>
 
 <p>
+
 The city flourished under the protection of powerful mage bloodlines who had guarded Turayne for generations. These mages devoted their lives to defending the city and preserving balance within the surrounding lands. Their magical barriers and mastery of the arcane made Turayne seem untouchable.
+
 </p>
 
 <p>
+
 Its elegant towers, glowing halls, crowded marketplaces, and sacred temples became symbols of prosperity and safety throughout all of Laslan. The people believed their protectors could repel any threat that dared approach the city.
+
 </p>
 
 <p>
+
 But everything changed on the day of the funeral of the final High Mage.
+
 </p>
 
 <p>
+
 As the city gathered in mourning, <strong>the Shadowmages of the Sylvean Order</strong> launched a devastating assault upon Turayne.
+
 </p>
 
 <p>
+
 Dark magic swept through the streets like a plague. Fire consumed entire districts while shadow creatures and corrupted magic spread panic among the defenders. The remaining mages fought desperately against the invaders, but the attack was merciless, swift, and overwhelming.
+
 </p>
 
 <p>
+
 By the end of the battle, Turayne had fallen.
+
 </p>
 
 <p>
+
 Its once magnificent streets were reduced to shattered stone and ash. Towers collapsed, temples burned, and entire districts vanished beneath ruin and darkness.
+
 </p>
 
 <p>
+
 Today, the Ruins of Turayne remain one of the most feared places in all of Solisium. Travelers avoid the area, believing remnants of ancient shadow magic still linger among the broken halls and abandoned streets.
+
 </p>
 
 <p>
+
 Many claim strange whispers echo through the ruins after sunset. Others believe the souls of the fallen still wander the city, unable to find peace after the destruction that consumed their home.
+
 </p>
 
 <p>
+
 Despite the fear surrounding it, Turayne remains a powerful reminder of how quickly even the greatest civilizations can collapse when darkness is allowed to rise unchecked.
+
 </p>
+
+</div>
+
+<!-- OVERLAY -->
+
+<div
+class="overlay"
+id="overlay"
+onclick="closeImage()"
+>
+
+<img id="bigImage">
 
 </div>
 
@@ -339,25 +471,25 @@ Despite the fear surrounding it, Turayne remains a powerful reminder of how quic
 
 function openImage(img) {
 
-var overlay =
-document.getElementById("overlay");
+    var overlay =
+    document.getElementById("overlay");
 
-var bigImage =
-document.getElementById("bigImage");
+    var bigImage =
+    document.getElementById("bigImage");
 
-bigImage.src =
-img.src;
+    bigImage.src =
+    img.src;
 
-overlay.style.display =
-"flex";
+    overlay.style.display =
+    "flex";
 
 }
 
 function closeImage() {
 
-document.getElementById("overlay")
-.style.display =
-"none";
+    document.getElementById("overlay")
+    .style.display =
+    "none";
 
 }
 
@@ -484,10 +616,6 @@ window.addEventListener("resize", () => {
 <!-- PROTECTION -->
 
 <script src="ochrana.js"></script>
-
-<!-- LANGUAGE SWITCH -->
-
-<script src="language-switch.js"></script>
 
 </body>
 </html>
