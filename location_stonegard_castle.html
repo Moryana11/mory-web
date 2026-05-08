@@ -14,25 +14,41 @@
 /* BODY */
 
 body {
+
     margin: 0;
+
     background-color: black;
-    text-align: center;
-    font-family: Arial, sans-serif;
+
     color: white;
+
+    text-align: center;
+
+    font-family: Arial, sans-serif;
+
     overflow-x: hidden;
+
     position: relative;
+
 }
 
 /* MAGIC DUST */
 
-#magicDust{
+#magicDust {
+
     position: fixed;
+
     top: 0;
+
     left: 0;
+
     width: 100%;
+
     height: 100%;
+
     pointer-events: none;
+
     z-index: 0;
+
 }
 
 /* CONTENT ABOVE EFFECT */
@@ -41,10 +57,13 @@ body {
 .back-link,
 h1,
 .location-image,
-.location-text,
+.text-box,
 .overlay {
+
     position: relative;
+
     z-index: 2;
+
 }
 
 /* LANGUAGE SWITCH */
@@ -55,34 +74,82 @@ h1,
 
     top: 15px;
 
-    right: 20px;
+    right: 18px;
 
-    font-size: 22px;
+    z-index: 999999;
 
-    z-index: 1000;
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
 
 }
 
+/* LANGUAGE LINKS */
+
 .language-switch a {
+
+    font-family: 'MedievalSharp', cursive;
 
     text-decoration: none;
 
-    margin-left: 8px;
+    color: #d4af37;
+
+    font-size: 24px;
+
+    line-height: 1;
+
+    display: block;
+
+    transition: 0.3s;
+
+    text-shadow:
+        0 0 10px rgba(212,175,55,0.25);
+
+}
+
+/* ACTIVE LANGUAGE */
+
+.language-switch a.active-lang {
+
+    color: white;
+
+    text-shadow:
+        0 0 10px rgba(255,255,255,0.7);
+
+}
+
+/* HOVER */
+
+.language-switch a:hover {
+
+    text-shadow:
+        0 0 10px #d4af37,
+        0 0 20px rgba(212,175,55,0.8);
 
 }
 
 /* BACK */
 
 .back-link {
+
     margin-top: 25px;
+
 }
 
 .back-link a {
+
     font-family: 'MedievalSharp', cursive;
+
     color: #d4af37;
+
     text-decoration: none;
+
     font-size: 20px;
+
     transition: 0.3s;
+
 }
 
 .back-link a:hover {
@@ -96,24 +163,32 @@ h1,
 /* TITLE */
 
 h1 {
+
     font-family: 'MedievalSharp', cursive;
+
     color: #d4af37;
-    font-size: 46px;
+
+    font-size: 48px;
+
     margin-top: 15px;
 
     text-shadow:
         0 0 12px rgba(212,175,55,0.35);
+
 }
 
 /* IMAGE */
 
 .location-image {
+
     margin-top: 35px;
+
 }
 
 .location-image img {
 
     width: 100%;
+
     max-width: 420px;
 
     border-radius: 14px;
@@ -142,9 +217,9 @@ h1 {
 
 /* TEXT */
 
-.location-text {
+.text-box {
 
-    max-width: 900px;
+    max-width: 950px;
 
     margin: 45px auto;
 
@@ -152,12 +227,18 @@ h1 {
 
     text-align: left;
 
-    line-height: 1.9;
+    line-height: 1.95;
 
     font-size: 19px;
 
     text-shadow:
         0 0 8px rgba(255,255,255,0.05);
+
+}
+
+.text-box p {
+
+    margin-bottom: 28px;
 
 }
 
@@ -177,7 +258,7 @@ h1 {
 
     height: 100%;
 
-    background-color: rgba(0,0,0,0.92);
+    background-color: rgba(0,0,0,0.95);
 
     justify-content: center;
 
@@ -193,12 +274,12 @@ h1 {
 
     max-height: 95%;
 
-    border-radius: 12px;
+    border-radius: 14px;
 
     border: 2px solid #d4af37;
 
     box-shadow:
-        0 0 30px rgba(212,175,55,0.6);
+        0 0 35px rgba(212,175,55,0.6);
 
 }
 
@@ -207,16 +288,39 @@ h1 {
 @media (max-width: 768px) {
 
     h1 {
+
         font-size: 36px;
+
     }
 
-    .location-text {
+    .text-box {
+
         font-size: 18px;
-        line-height: 1.8;
+
+        line-height: 1.85;
+
     }
 
     .location-image img {
+
         max-width: 90%;
+
+    }
+
+    .language-switch {
+
+        top: 12px;
+
+        right: 12px;
+
+        gap: 14px;
+
+    }
+
+    .language-switch a {
+
+        font-size: 21px;
+
     }
 
 }
@@ -235,16 +339,25 @@ h1 {
 
 <div class="language-switch">
 
-<a href="lokace_kamenny_strazce.html">🇨🇿</a>
+<a href="lokace_kamenny_strazce.html">
+CZ
+</a>
 
-<a href="location_stonegard_castle.html">EN</a>
+<a href="location_stonegard_castle.html"
+class="active-lang">
+EN
+</a>
 
 </div>
 
 <!-- BACK -->
 
 <div class="back-link">
-<a href="locations.html">← Back to locations</a>
+
+<a href="locations.html">
+← Back to Locations
+</a>
+
 </div>
 
 <!-- TITLE -->
@@ -255,27 +368,19 @@ h1 {
 
 <div class="location-image">
 
-<img src="kamenny_strazce.png"
-  onclick="openImage(this)"
-  alt="Stonegard Castle">
-
-</div>
-
-<!-- OVERLAY -->
-
-<div class="overlay"
-     id="overlay"
-     onclick="closeImage()">
-
-<img id="bigImage">
+<img
+src="kamenny_strazce.png"
+onclick="openImage(this)"
+alt="Stonegard Castle">
 
 </div>
 
 <!-- TEXT -->
 
-<div class="location-text">
+<div class="text-box">
 
 <p>
+
 <strong>Stonegard Castle</strong> stands at the southern edge of the land of Stonegard on the continent of Solisium, rising above towering cliffs shaped by centuries of wind, storms, and war.
 
 Built from enormous dark stone blocks, the fortress is regarded as one of the most impregnable strongholds in all of Solisium and serves as the military heart of Stonegard.
@@ -293,7 +398,20 @@ The castle is ruled through discipline, loyalty, and strength. Its soldiers are 
 Yet Stonegard Castle is more than a military fortress.
 
 For many people across Solisium, it symbolizes resilience — a final bastion standing firm against chaos, darkness, and destruction. Even in the bleakest times, its towering walls remain a reminder that Stonegard still stands and continues to fight.
+
 </p>
+
+</div>
+
+<!-- OVERLAY -->
+
+<div
+class="overlay"
+id="overlay"
+onclick="closeImage()"
+>
+
+<img id="bigImage">
 
 </div>
 
@@ -303,25 +421,25 @@ For many people across Solisium, it symbolizes resilience — a final bastion st
 
 function openImage(img) {
 
-var overlay =
-document.getElementById("overlay");
+    var overlay =
+    document.getElementById("overlay");
 
-var bigImage =
-document.getElementById("bigImage");
+    var bigImage =
+    document.getElementById("bigImage");
 
-bigImage.src =
-img.src;
+    bigImage.src =
+    img.src;
 
-overlay.style.display =
-"flex";
+    overlay.style.display =
+    "flex";
 
 }
 
 function closeImage() {
 
-document.getElementById("overlay")
-.style.display =
-"none";
+    document.getElementById("overlay")
+    .style.display =
+    "none";
 
 }
 
@@ -448,10 +566,6 @@ window.addEventListener("resize", () => {
 <!-- PROTECTION -->
 
 <script src="ochrana.js"></script>
-
-<!-- LANGUAGE SWITCH -->
-
-<script src="language-switch.js"></script>
 
 </body>
 </html>
