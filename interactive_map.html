@@ -1,1 +1,304 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Interactive map</title>
+
+<link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+    margin:0;
+    background:black;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    overflow:auto;
+    font-family:Arial, sans-serif;
+}
+
+/* MAPA */
+
+.map-container{
+    position:relative;
+    width:95%;
+    max-width:1100px;
+}
+
+.map-container img{
+    width:100%;
+    border-radius:18px;
+    border:2px solid #d4af37;
+
+    box-shadow:
+        0 0 0 2px #d4af37,
+        0 0 25px rgba(212,175,55,0.55);
+}
+
+/* BODY */
+
+.city{
+    position:absolute;
+
+    width:18px;
+    height:18px;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    transform:translate(-50%, -50%);
+
+    border:2px solid white;
+
+    transition:0.25s;
+
+    box-shadow:
+        0 0 14px rgba(255,255,255,0.8);
+}
+
+.city:hover{
+
+    transform:
+        translate(-50%, -50%)
+        scale(1.35);
+
+}
+
+/* POPUP */
+
+.popup{
+
+    position:absolute;
+
+    background:
+        rgba(0,0,0,0.92);
+
+    color:#d4af37;
+
+    padding:10px 16px;
+
+    border-radius:12px;
+
+    border:
+        1px solid rgba(212,175,55,0.5);
+
+    display:none;
+
+    pointer-events:none;
+
+    font-family:
+        'MedievalSharp',
+        cursive;
+
+    font-size:22px;
+
+    box-shadow:
+        0 0 25px rgba(0,0,0,0.7);
+
+    backdrop-filter:blur(4px);
+}
+
+/* BACK BUTTON */
+
+.back-button{
+
+    position:fixed;
+
+    top:20px;
+    left:20px;
+
+    z-index:999;
+
+}
+
+.back-button a{
+
+    text-decoration:none;
+
+    color:#d4af37;
+
+    font-family:
+        'MedievalSharp',
+        cursive;
+
+    font-size:24px;
+
+    transition:0.3s;
+}
+
+.back-button a:hover{
+
+    text-shadow:
+        0 0 10px #d4af37,
+        0 0 20px rgba(212,175,55,0.8);
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- BACK -->
+
+<div class="back-button">
+
+<a href="locations.html">
+← Back to Locations
+</a>
+
+</div>
+
+<!-- MAP -->
+
+<div class="map-container">
+
+<img src="mapa2.png" alt="Fantasy mapa">
+
+<!-- HERBA -->
+
+<div
+class="city"
+style="
+top:18%;
+left:45%;
+background:red;
+"
+onclick="
+showCity('Herba', event)
+">
+</div>
+
+<!-- CRIMSON MANOR -->
+
+<div
+class="city"
+style="
+top:22%;
+left:50%;
+background:violet;
+"
+onclick="
+showCity('Crimson manor', event)
+">
+</div>
+
+<!-- RUINS OF TURAYNE -->
+
+<div
+class="city"
+style="
+top:32%;
+left:14%;
+background:yellow;
+"
+onclick="
+showCity('Ruins of Turayne', event)
+">
+</div>
+
+<!-- PURELIGHT TOWER -->
+
+<div
+class="city"
+style="
+top:34%;
+left:29%;
+background:pink;
+"
+onclick="
+showCity('Purelight tower', event)
+">
+</div>
+
+<!-- KASTLETON -->
+
+<div
+class="city"
+style="
+top:51%;
+left:6%;
+background:white;
+"
+onclick="
+showCity('Katleton', event)
+">
+</div>
+
+<!-- VIENTA -->
+
+<div
+class="city"
+style="
+top:65%;
+left:45%;
+background:limegreen;
+"
+onclick="
+showCity('Vienta', event)
+">
+</div>
+
+<!-- STONEGARD CASTLE -->
+
+<div
+class="city"
+style="
+top:81%;
+left:57%;
+background:deepskyblue;
+"
+onclick="
+showCity('Stonegrad castle', event)
+">
+</div>
+
+<div
+id="popup"
+class="popup">
+</div>
+
+</div>
+
+<script>
+
+function showCity(name, event){
+
+    const popup =
+        document.getElementById(
+            "popup"
+        );
+
+    popup.innerText = name;
+
+    popup.style.left =
+        `calc(${event.target.style.left} + 22px)`;
+
+    popup.style.top =
+        `calc(${event.target.style.top} - 12px)`;
+
+    popup.style.display = "block";
+
+    clearTimeout(
+        window.popupTimeout
+    );
+
+    window.popupTimeout =
+        setTimeout(() => {
+
+            popup.style.display =
+                "none";
+
+        }, 2500);
+
+}
+
+</script>
+
+</body>
+</html>
