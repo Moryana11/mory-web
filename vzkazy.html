@@ -106,8 +106,6 @@ text-shadow:
 
 }
 
-/* ACTIVE LANGUAGE */
-
 .language-switch a.active-lang {
 
 color: white;
@@ -237,11 +235,11 @@ button {
 
 margin-top: 12px;
 
-padding: 12px 24px;
+padding: 10px 20px;
 
 font-family: 'MedievalSharp', cursive;
 
-font-size: 18px;
+font-size: 16px;
 
 background-color: #d4af37;
 
@@ -254,6 +252,8 @@ border-radius: 8px;
 cursor: pointer;
 
 transition: 0.3s;
+
+margin-right: 10px;
 
 }
 
@@ -285,6 +285,8 @@ background: rgba(15,15,15,0.9);
 box-shadow:
 0 0 12px rgba(212,175,55,0.15);
 
+text-align: left;
+
 }
 
 .message-name {
@@ -314,6 +316,44 @@ margin-bottom: 10px;
 line-height: 1.7;
 
 word-wrap: break-word;
+
+margin-bottom: 10px;
+
+}
+
+/* REPLY */
+
+.reply-box {
+
+margin-top: 15px;
+
+padding-top: 15px;
+
+border-top: 1px solid rgba(212,175,55,0.3);
+
+}
+
+.reply {
+
+margin-top: 15px;
+
+padding: 12px;
+
+border-left: 3px solid #d4af37;
+
+background: rgba(212,175,55,0.08);
+
+border-radius: 8px;
+
+}
+
+.reply-name {
+
+font-family: 'MedievalSharp', cursive;
+
+color: #d4af37;
+
+margin-bottom: 6px;
 
 }
 
@@ -427,11 +467,16 @@ Odeslat vzkaz
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 
 import {
+
 getFirestore,
 collection,
 addDoc,
 getDocs,
-query
+query,
+deleteDoc,
+doc,
+updateDoc
+
 }
 from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
@@ -456,6 +501,10 @@ appId: "1:668572551776:web:24dbc649470e620f339105"
 const app = initializeApp(firebaseConfig);
 
 const db = getFirestore(app);
+
+/* ADMIN PASSWORD */
+
+const ADMIN_PASSWORD = "TVE_HESLO";
 
 /* ELEMENTS */
 
@@ -499,6 +548,30 @@ msg.date +
 
 "<div class='message-text'>" +
 escapeHtml(msg.text).replace(/\n/g, "<br>") +
+"</div>" +
+
+(msg.reply ? 
+
+"<div class='reply'>" +
+
+"<div class='reply-name'>Odpověď autora</div>" +
+
+escapeHtml(msg.reply).replace(/\n/g, "<br>") +
+
+"</div>"
+
+: "") +
+
+"<div class='reply-box'>" +
+
+"<button onclick='replyMessage(\"" +
+docItem.id +
+"\")'>Odpovědět</button>" +
+
+"<button onclick='deleteMessage(\"" +
+docItem.id +
+"\")'>Smazat</button>" +
+
 "</div>";
 
 messagesDiv.appendChild(div);
@@ -531,7 +604,8 @@ collection(db, "messages"),
 {
 name,
 text,
-date
+date,
+reply: ""
 }
 );
 
@@ -540,6 +614,69 @@ form.reset();
 loadMessages();
 
 });
+
+/* DELETE */
+
+window.deleteMessage = async function(id) {
+
+const password =
+prompt("Zadej heslo správce");
+
+if(password !== ADMIN_PASSWORD){
+
+alert("Špatné heslo");
+
+return;
+
+}
+
+const confirmDelete =
+confirm("Opravdu chceš smazat tento vzkaz?");
+
+if(!confirmDelete){
+return;
+}
+
+await deleteDoc(
+doc(db, "messages", id)
+);
+
+loadMessages();
+
+}
+
+/* REPLY */
+
+window.replyMessage = async function(id) {
+
+const password =
+prompt("Zadej heslo správce");
+
+if(password !== ADMIN_PASSWORD){
+
+alert("Špatné heslo");
+
+return;
+
+}
+
+const reply =
+prompt("Napiš odpověď:");
+
+if(reply === null || reply.trim() === ""){
+return;
+}
+
+await updateDoc(
+doc(db, "messages", id),
+{
+reply: reply
+}
+);
+
+loadMessages();
+
+}
 
 /* ESCAPE HTML */
 
