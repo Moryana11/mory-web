@@ -368,6 +368,15 @@ Enter
 
 <script>
 
+/* AUTOMATIC LOGIN */
+
+if(localStorage.getItem("libraryAccess") === "granted"){
+
+window.location.href =
+"hlavni_en.html";
+
+}
+
 /* SHOW / HIDE PASSWORD */
 
 function togglePassword() {
@@ -401,6 +410,13 @@ var zadane =
 heslo.trim().toLowerCase();
 
 if (zadane === spravneHeslo) {
+
+/* SAVE LOGIN */
+
+localStorage.setItem(
+"libraryAccess",
+"granted"
+);
 
 document.getElementById("dvere").src =
 "dvere_otevrene.png";
