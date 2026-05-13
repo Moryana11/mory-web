@@ -420,30 +420,69 @@ Odeslat vzkaz
 
 <div id="messages"></div>
 
-<!-- MESSAGE SCRIPT -->
+<!-- FIREBASE -->
 
-<script>
+<script type="module">
 
-var form =
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+import {
+getFirestore,
+collection,
+addDoc,
+getDocs,
+query
+}
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+/* FIREBASE CONFIG */
+
+const firebaseConfig = {
+
+apiKey: "AIzaSyAn9wU2f0jqQ0XVymjMLr8HSFM4fJbXiGI",
+
+authDomain: "ohen-a-voda.firebaseapp.com",
+
+projectId: "ohen-a-voda",
+
+storageBucket: "ohen-a-voda.firebasestorage.app",
+
+messagingSenderId: "668572551776",
+
+appId: "1:668572551776:web:24dbc649470e620f339105"
+
+};
+
+const app = initializeApp(firebaseConfig);
+
+const db = getFirestore(app);
+
+/* ELEMENTS */
+
+const form =
 document.getElementById("messageForm");
 
-var messagesDiv =
+const messagesDiv =
 document.getElementById("messages");
 
-function loadMessages() {
+/* LOAD MESSAGES */
+
+async function loadMessages() {
 
 messagesDiv.innerHTML = "";
 
-var messages =
-JSON.parse(
-localStorage.getItem("messages")
-) || [];
+const q = query(
+collection(db, "messages")
+);
 
-messages.reverse();
+const querySnapshot =
+await getDocs(q);
 
-messages.forEach(function(msg, index) {
+querySnapshot.forEach((docItem) => {
 
-var div =
+const msg = docItem.data();
+
+const div =
 document.createElement("div");
 
 div.className = "message";
@@ -460,13 +499,7 @@ msg.date +
 
 "<div class='message-text'>" +
 escapeHtml(msg.text).replace(/\n/g, "<br>") +
-"</div>" +
-
-"<br>" +
-
-"<button onclick='deleteMessage(" +
-(messages.length - 1 - index) +
-")'>Smazat</button>";
+"</div>";
 
 messagesDiv.appendChild(div);
 
@@ -474,39 +507,32 @@ messagesDiv.appendChild(div);
 
 }
 
-form.addEventListener("submit", function(e) {
+/* SEND MESSAGE */
+
+form.addEventListener("submit", async function(e) {
 
 e.preventDefault();
 
-var name =
+const name =
 document.getElementById("name").value.trim();
 
-var text =
+const text =
 document.getElementById("text").value.trim();
 
 if(name === "" || text === "") {
 return;
 }
 
-var date =
+const date =
 new Date().toLocaleString();
 
-var messages =
-JSON.parse(
-localStorage.getItem("messages")
-) || [];
-
-messages.push({
-
-name: name,
-text: text,
-date: date
-
-});
-
-localStorage.setItem(
-"messages",
-JSON.stringify(messages)
+await addDoc(
+collection(db, "messages"),
+{
+name,
+text,
+date
+}
 );
 
 form.reset();
@@ -515,34 +541,11 @@ loadMessages();
 
 });
 
-function deleteMessage(index) {
-
-var confirmDelete =
-confirm("Opravdu chceš tento vzkaz smazat?");
-
-if(!confirmDelete){
-return;
-}
-
-var messages =
-JSON.parse(
-localStorage.getItem("messages")
-) || [];
-
-messages.splice(index, 1);
-
-localStorage.setItem(
-"messages",
-JSON.stringify(messages)
-);
-
-loadMessages();
-
-}
+/* ESCAPE HTML */
 
 function escapeHtml(text) {
 
-var div =
+const div =
 document.createElement("div");
 
 div.innerText = text;
