@@ -190,7 +190,11 @@ flex-wrap: wrap;
 
 width: 100%;
 
-max-width: 300px;
+max-width: 240px;
+
+aspect-ratio: 2 / 3;
+
+object-fit: cover;
 
 cursor: pointer;
 
@@ -433,9 +437,12 @@ EN
 
 <img src="1.webp"
      loading="lazy"
+     onclick="openImage(0)">
+
 <img src="2.webp"
      loading="lazy"
      onclick="openImage(1)">
+
 <img src="3.webp"
      loading="lazy"
      onclick="openImage(2)">
@@ -843,8 +850,6 @@ window.innerHeight;
 <!-- PROTECTION -->
 
 <script src="ochrana.js"></script>
-
-<!-- LANGUAGE SWITCH -->
 
 </body>
 </html>
