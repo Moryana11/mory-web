@@ -190,7 +190,11 @@ flex-wrap: wrap;
 
 width: 100%;
 
-max-width: 300px;
+max-width: 240px;
+
+aspect-ratio: 2 / 3;
+
+object-fit: cover;
 
 cursor: pointer;
 
@@ -431,9 +435,17 @@ EN
 
 <div class="gallery">
 
-<img src="10.png" onclick="openImage(0)">
-<img src="11.png" onclick="openImage(1)">
-<img src="12.png" onclick="openImage(2)">
+<img src="10.webp"
+     loading="lazy"
+     onclick="openImage(0)">
+
+<img src="11.webp"
+     loading="lazy"
+     onclick="openImage(1)">
+
+<img src="12.webp"
+     loading="lazy"
+     onclick="openImage(2)">
 
 </div>
 
