@@ -2,6 +2,19 @@
 
 <html lang="cs">
 <head>
+
+<!-- LOGIN PROTECTION -->
+
+<script>
+
+if(localStorage.getItem("libraryAccess") !== "granted"){
+
+window.location.href = "index.html";
+
+}
+
+</script>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -184,6 +197,52 @@ body {
 
 }
 
+/* LOGOUT BUTTON */
+
+.logout-button {
+
+    margin-top: 40px;
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+.logout-button button {
+
+    padding: 10px 22px;
+
+    font-size: 16px;
+
+    font-family: 'MedievalSharp', cursive;
+
+    background-color: #d4af37;
+
+    color: black;
+
+    border: none;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    box-shadow:
+        0 0 15px rgba(212,175,55,0.45);
+
+}
+
+.logout-button button:hover {
+
+    transform: scale(1.05);
+
+    box-shadow:
+        0 0 25px rgba(212,175,55,0.8);
+
+}
+
 /* MOBILE */
 
 @media (max-width: 768px) {
@@ -265,6 +324,16 @@ EN
 <div class="main-image">
 
 <img src="knihyhlavni.png" alt="Knihy">
+
+</div>
+
+<!-- LOGOUT -->
+
+<div class="logout-button">
+
+<button onclick="logout()">
+Odhlásit se
+</button>
 
 </div>
 
@@ -417,6 +486,16 @@ window.addEventListener("resize", () => {
     window.innerHeight;
 
 });
+
+/* LOGOUT */
+
+function logout(){
+
+localStorage.removeItem("libraryAccess");
+
+window.location.href = "index.html";
+
+}
 
 </script>
 
