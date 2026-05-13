@@ -371,6 +371,27 @@ Vstoupit
 
 <script>
 
+/* AUTOMATICKÉ PŘIHLÁŠENÍ */
+
+if(localStorage.getItem("libraryAccess") === "granted"){
+
+var savedLang =
+localStorage.getItem("lang") || "cz";
+
+if(savedLang === "en"){
+
+window.location.href =
+"hlavni_en.html";
+
+} else {
+
+window.location.href =
+"hlavni.html";
+
+}
+
+}
+
 /* LANGUAGE */
 
 var lang =
@@ -480,6 +501,13 @@ if (
 (lang === "cz" && zadane === czHeslo) ||
 (lang === "en" && zadane === enHeslo)
 ) {
+
+/* ULOŽENÍ PŘIHLÁŠENÍ */
+
+localStorage.setItem(
+"libraryAccess",
+"granted"
+);
 
 document.getElementById("dvere").src =
 "dvere_otevrene.png";
