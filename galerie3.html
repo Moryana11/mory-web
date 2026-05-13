@@ -55,7 +55,7 @@ z-index: 0;
 nav,
 h1,
 .gallery,
-.pagination,
+pagination,
 .overlay {
 
 position: relative;
@@ -190,7 +190,11 @@ flex-wrap: wrap;
 
 width: 100%;
 
-max-width: 300px;
+max-width: 240px;
+
+aspect-ratio: 2 / 3;
+
+object-fit: cover;
 
 cursor: pointer;
 
@@ -431,9 +435,17 @@ EN
 
 <div class="gallery">
 
-<img src="7.png" onclick="openImage(0)">
-<img src="8.png" onclick="openImage(1)">
-<img src="9.png" onclick="openImage(2)">
+<img src="7.webp"
+     loading="lazy"
+     onclick="openImage(0)">
+
+<img src="8.webp"
+     loading="lazy"
+     onclick="openImage(1)">
+
+<img src="9.webp"
+     loading="lazy"
+     onclick="openImage(2)">
 
 </div>
 
