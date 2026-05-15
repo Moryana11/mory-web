@@ -4,6 +4,7 @@ const storageKey = "text-bookmark-" + window.location.pathname;
 const bookmarkButton = document.createElement("button");
 bookmarkButton.innerText = "📖 Zapamatovat místo";
 
+// styl tlačítka
 bookmarkButton.style.position = "absolute";
 bookmarkButton.style.display = "none";
 bookmarkButton.style.zIndex = "9999";
@@ -13,30 +14,33 @@ bookmarkButton.style.color = "gold";
 bookmarkButton.style.border = "1px solid gold";
 bookmarkButton.style.borderRadius = "8px";
 bookmarkButton.style.cursor = "pointer";
+bookmarkButton.style.fontSize = "14px";
 
 document.body.appendChild(bookmarkButton);
 
 let selectedText = "";
 
-// po označení textu zobrazí tlačítko
+// zobrazí tlačítko po označení textu
 document.addEventListener("mouseup", (e) => {
 
-    const selection = window.getSelection().toString().trim();
+    const selection = window.getSelection();
+    const text = selection.toString().trim();
 
-    if (selection.length > 0) {
+    if (text.length > 0) {
 
-        selectedText = selection;
+        selectedText = text;
 
         bookmarkButton.style.left = `${e.pageX + 10}px`;
         bookmarkButton.style.top = `${e.pageY + 10}px`;
         bookmarkButton.style.display = "block";
 
     } else {
+
         bookmarkButton.style.display = "none";
     }
 });
 
-// kliknutí na tlačítko uloží bookmark
+// uloží bookmark
 bookmarkButton.addEventListener("click", () => {
 
     localStorage.setItem(storageKey, selectedText);
@@ -46,31 +50,79 @@ bookmarkButton.addEventListener("click", () => {
     alert("📖 Místo bylo zapamatováno");
 });
 
-// po načtení stránky najde text
+// po načtení obnoví bookmark
 window.addEventListener("load", () => {
 
     const savedText = localStorage.getItem(storageKey);
 
     if (!savedText) return;
 
-    const bodyText = document.body.innerHTML;
+    // hledání textových uzlů
+    const walker = document.createTreeWalker(
+        document.body,
+        NodeFilter.SHOW_TEXT
+    );
 
-    if (bodyText.includes(savedText)) {
+    let node;
 
-        const regex = new RegExp(savedText, "g");
+    while ((node = walker.nextNode())) {
 
-        document.body.innerHTML = document.body.innerHTML.replace(
-            regex,
-            `<span id="savedBookmark" style="background: rgba(255,215,0,0.25);">${savedText}</span>`
-        );
+        if (node.nodeValue.includes(savedText)) {
 
-        const target = document.getElementById("savedBookmark");
+            const span = document.createElement("span");
 
-        if (target) {
-            target.scrollIntoView({
-                behavior: "smooth",
-                block: "center"
-            });
+            const highlightedText = node.nodeValue.replace(
+                savedText,
+                `|||BOOKMARK_START|||${savedText}|||BOOKMARK_END|||`
+            );
+
+            const wrapper = document.createElement("div");
+            wrapper.innerHTML = highlightedText
+                .replace(
+                    "|||BOOKMARK_START|||",
+                    `<span id="savedBookmark" style="background: rgba(255,215,0,0.25);">`
+                )
+                .replace(
+                    "|||BOOKMARK_END|||",
+                    `</span>`
+                );
+
+            while (wrapper.firstChild) {
+                node.parentNode.insertBefore(wrapper.firstChild, node);
+            }
+
+            node.parentNode.removeChild(node);
+
+            const target = document.getElementById("savedBookmark");
+
+            if (target) {
+
+                target.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center"
+                });
+            }
+
+            break;
         }
     }
+});
+
+// blokování kopírování
+document.addEventListener("copy", (e) => {
+    e.preventDefault();
+    alert("Kopírování textu není povoleno.");
+});
+
+// blokování CTRL+C
+document.addEventListener("keydown", (e) => {
+
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "c") {
+        e.preventDefault();
+    }
+});
+
+// blokování pravého kliknutí
+document.addEventListener("contextmenu", (e) => {
+    e.preventDefault();
 });
