@@ -1,51 +1,76 @@
-// unikátní klíč pro každou kapitolu
-const storageKey = "bookmark-" + window.location.pathname;
+const storageKey = "text-bookmark-" + window.location.pathname;
 
-// přidání ID všem odstavcům
-const paragraphs = document.querySelectorAll("p");
+// vytvoření tlačítka
+const bookmarkButton = document.createElement("button");
+bookmarkButton.innerText = "📖 Zapamatovat místo";
 
-paragraphs.forEach((p, index) => {
-    p.dataset.bookmarkId = index;
+bookmarkButton.style.position = "absolute";
+bookmarkButton.style.display = "none";
+bookmarkButton.style.zIndex = "9999";
+bookmarkButton.style.padding = "8px 12px";
+bookmarkButton.style.background = "black";
+bookmarkButton.style.color = "gold";
+bookmarkButton.style.border = "1px solid gold";
+bookmarkButton.style.borderRadius = "8px";
+bookmarkButton.style.cursor = "pointer";
 
-    // kliknutí na odstavec uloží záložku
-    p.addEventListener("click", () => {
+document.body.appendChild(bookmarkButton);
 
-        localStorage.setItem(storageKey, index);
+let selectedText = "";
 
-        // odstranění starého zvýraznění
-        paragraphs.forEach(el => {
-            el.style.background = "";
-            el.style.transition = "";
-        });
+// po označení textu zobrazí tlačítko
+document.addEventListener("mouseup", (e) => {
 
-        // zvýraznění vybraného odstavce
-        p.style.background = "rgba(255, 215, 0, 0.15)";
-        p.style.transition = "0.3s";
-    });
+    const selection = window.getSelection().toString().trim();
+
+    if (selection.length > 0) {
+
+        selectedText = selection;
+
+        bookmarkButton.style.left = `${e.pageX + 10}px`;
+        bookmarkButton.style.top = `${e.pageY + 10}px`;
+        bookmarkButton.style.display = "block";
+
+    } else {
+        bookmarkButton.style.display = "none";
+    }
 });
 
-// po načtení obnoví bookmark
+// kliknutí na tlačítko uloží bookmark
+bookmarkButton.addEventListener("click", () => {
+
+    localStorage.setItem(storageKey, selectedText);
+
+    bookmarkButton.style.display = "none";
+
+    alert("📖 Místo bylo zapamatováno");
+});
+
+// po načtení stránky najde text
 window.addEventListener("load", () => {
 
-    const savedBookmark = localStorage.getItem(storageKey);
+    const savedText = localStorage.getItem(storageKey);
 
-    if (savedBookmark !== null) {
+    if (!savedText) return;
 
-        const target = document.querySelector(
-            `[data-bookmark-id="${savedBookmark}"]`
+    const bodyText = document.body.innerHTML;
+
+    if (bodyText.includes(savedText)) {
+
+        const regex = new RegExp(savedText, "g");
+
+        document.body.innerHTML = document.body.innerHTML.replace(
+            regex,
+            `<span id="savedBookmark" style="background: rgba(255,215,0,0.25);">${savedText}</span>`
         );
 
-        if (target) {
+        const target = document.getElementById("savedBookmark");
 
-            // scroll na odstavec
+        if (target) {
             target.scrollIntoView({
                 behavior: "smooth",
                 block: "center"
             });
-
-            // zvýraznění
-            target.style.background = "rgba(255, 215, 0, 0.15)";
-            target.style.transition = "0.3s";
         }
     }
 });
