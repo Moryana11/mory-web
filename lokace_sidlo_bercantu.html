@@ -1,1 +1,432 @@
+<!DOCTYPE html>
 
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sídlo Bercantů</title>
+
+<link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+
+<style>
+
+/* BODY */
+
+body {
+
+    margin: 0;
+
+    background-color: black;
+
+    color: white;
+
+    text-align: center;
+
+    font-family: Arial, sans-serif;
+
+    overflow-x: hidden;
+
+    position: relative;
+
+}
+
+/* MAGIC DUST */
+
+#magicDust {
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    pointer-events: none;
+
+    z-index: 0;
+
+}
+
+/* CONTENT ABOVE EFFECT */
+
+.language-switch,
+.back-link,
+h1,
+.location-image,
+.text-box,
+.overlay {
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+/* LANGUAGE SWITCH */
+
+.language-switch {
+
+    position: fixed;
+
+    top: 15px;
+
+    right: 15px;
+
+    z-index: 999999;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+}
+
+.language-switch a {
+
+    font-family: 'MedievalSharp', cursive;
+
+    text-decoration: none;
+
+    color: #d4af37;
+
+    font-size: 24px;
+
+    line-height: 1;
+
+    display: block;
+
+    transition: 0.3s;
+
+}
+
+.language-switch a.active-lang {
+
+    color: white;
+
+    text-shadow:
+        0 0 10px rgba(255,255,255,0.7);
+
+}
+
+.language-switch a:hover {
+
+    text-shadow:
+        0 0 10px #d4af37,
+        0 0 20px rgba(212,175,55,0.8);
+
+}
+
+/* BACK */
+
+.back-link {
+
+    margin-top: 25px;
+
+}
+
+.back-link a {
+
+    font-family: 'MedievalSharp', cursive;
+
+    color: #d4af37;
+
+    text-decoration: none;
+
+    font-size: 20px;
+
+    transition: 0.3s;
+
+}
+
+.back-link a:hover {
+
+    text-shadow:
+        0 0 10px #d4af37,
+        0 0 20px rgba(212,175,55,0.8);
+
+}
+
+/* TITLE */
+
+h1 {
+
+    font-family: 'MedievalSharp', cursive;
+
+    color: #d4af37;
+
+    font-size: 48px;
+
+    margin-top: 15px;
+
+    text-shadow:
+        0 0 12px rgba(212,175,55,0.35);
+
+}
+
+/* IMAGE */
+
+.location-image {
+
+    margin-top: 35px;
+
+}
+
+.location-image img {
+
+    width: 100%;
+
+    max-width: 420px;
+
+    border-radius: 14px;
+
+    border: 2px solid #d4af37;
+
+    cursor: pointer;
+
+    transition: 0.35s;
+
+    box-shadow:
+        0 0 0 2px #d4af37,
+        0 0 14px rgba(212,175,55,0.6);
+
+}
+
+.location-image img:hover {
+
+    transform: scale(1.02);
+
+    box-shadow:
+        0 0 0 2px #d4af37,
+        0 0 28px rgba(212,175,55,0.9);
+
+}
+
+/* TEXT */
+
+.text-box {
+
+    max-width: 950px;
+
+    margin: 45px auto;
+
+    padding: 0 24px;
+
+    text-align: left;
+
+    line-height: 1.95;
+
+    font-size: 19px;
+
+    text-shadow:
+        0 0 8px rgba(255,255,255,0.05);
+
+}
+
+.text-box p {
+
+    margin-bottom: 28px;
+
+}
+
+/* OVERLAY */
+
+.overlay {
+
+    display: none;
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    background-color: rgba(0,0,0,0.95);
+
+    justify-content: center;
+
+    align-items: center;
+
+    z-index: 9999;
+
+}
+
+.overlay img {
+
+    max-width: 95%;
+
+    max-height: 95%;
+
+    border-radius: 14px;
+
+    border: 2px solid #d4af37;
+
+    box-shadow:
+        0 0 35px rgba(212,175,55,0.6);
+
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    h1 {
+
+        font-size: 36px;
+
+    }
+
+    .text-box {
+
+        font-size: 18px;
+
+        line-height: 1.85;
+
+    }
+
+    .location-image img {
+
+        max-width: 90%;
+
+    }
+
+    .language-switch {
+
+        top: 12px;
+
+        right: 12px;
+
+        gap: 14px;
+
+    }
+
+    .language-switch a {
+
+        font-size: 20px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- MAGIC DUST -->
+
+<canvas id="magicDust"></canvas>
+
+<!-- LANGUAGE SWITCH -->
+
+<div class="language-switch">
+
+<a href="lokace_sidlo_bercantu.html" class="active-lang">
+CZ
+</a>
+
+<a href="location_bercant_manor.html">
+EN
+</a>
+
+</div>
+
+<!-- BACK -->
+
+<div class="back-link">
+
+<a href="lokace3.html">
+← Zpět na Lokace
+</a>
+
+</div>
+
+<!-- TITLE -->
+
+<h1>Sídlo Bercantů</h1>
+
+<!-- IMAGE -->
+
+<div class="location-image">
+
+<img
+src="sidlo_bercantu.png"
+onclick="openImage(this)"
+alt="Sídlo Bercantů"
+>
+
+</div>
+
+<!-- TEXT -->
+
+<div class="text-box">
+
+<p>
+
+SEM VLOŽ POPIS LOKACE.
+
+</p>
+
+</div>
+
+<!-- OVERLAY -->
+
+<div
+class="overlay"
+id="overlay"
+onclick="closeImage()"
+>
+
+<img id="bigImage">
+
+</div>
+
+<!-- IMAGE SCRIPT -->
+
+<script>
+
+function openImage(img) {
+
+    var overlay =
+    document.getElementById("overlay");
+
+    var bigImage =
+    document.getElementById("bigImage");
+
+    bigImage.src =
+    img.src;
+
+    overlay.style.display =
+    "flex";
+
+}
+
+function closeImage() {
+
+    document.getElementById("overlay")
+    .style.display =
+    "none";
+
+}
+
+</script>
+
+<!-- MAGIC DUST SCRIPT -->
+
+<script src="magicdust.js"></script>
+
+<!-- PROTECTION -->
+
+<script src="ochrana.js"></script>
+
+</body>
+</html>
