@@ -85,6 +85,8 @@ h1,
 
 }
 
+/* LANGUAGE LINKS */
+
 .language-switch a {
 
     font-family: 'MedievalSharp', cursive;
@@ -103,6 +105,8 @@ h1,
 
 }
 
+/* ACTIVE LANGUAGE */
+
 .language-switch a.active-lang {
 
     color: white;
@@ -111,6 +115,8 @@ h1,
         0 0 10px rgba(255,255,255,0.7);
 
 }
+
+/* HOVER */
 
 .language-switch a:hover {
 
@@ -300,16 +306,15 @@ h1 {
 
     }
 
-    .locations img {
+.locations img {
 
-        width: 90%;
+    width: 90%;
 
-        height: auto;
+    height: auto;
 
-        max-width: 310px;
+    max-width: 310px;
 
-    }
-
+}
     .location-name {
 
         font-size: 22px;
@@ -340,7 +345,11 @@ h1 {
 
 <body>
 
+<!-- MAGIC DUST -->
+
 <canvas id="magicDust"></canvas>
+
+<!-- LANGUAGE SWITCH -->
 
 <div class="language-switch">
 
@@ -354,6 +363,8 @@ EN
 
 </div>
 
+<!-- BACK -->
+
 <div class="back-link">
 
 <a href="kniha1.html">
@@ -362,9 +373,15 @@ EN
 
 </div>
 
+<!-- TITLE -->
+
 <h1>Lokace</h1>
 
+<!-- LOCATIONS -->
+
 <div class="locations">
+
+<!-- SAURODOMA -->
 
 <div class="location-card">
 
@@ -378,6 +395,8 @@ Ostrov Saurodoma
 
 </div>
 
+<!-- OAZA -->
+
 <div class="location-card">
 
 <a href="lokace/lokace_svatynova_oaza.html">
@@ -389,7 +408,9 @@ Svatyňová oáza
 </div>
 
 </div>
-    
+
+<!-- SÍDLO BERCANTU -->
+
 <div class="location-card">
 
 <a href="lokace/lokace_sidlo_bercantu.html">
@@ -401,6 +422,8 @@ Sídlo Bercantů
 </div>
 
 </div>
+
+<!-- VESNICE CANINA -->
 
 <div class="location-card">
 
@@ -416,11 +439,17 @@ Vesnice Canina a Les šedého drápu
 
 </div>
 
+<!-- PAGINATION -->
+
 <div class="pagination">
 
 <a href="lokace2.html">←</a>
 
+<a href="lokace4.html">→</a>
+
 </div>
+
+<!-- MAGIC DUST SCRIPT -->
 
 <script>
 
@@ -512,7 +541,12 @@ for(let i = 0; i < 80; i++){
 
 function animate(){
 
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.clearRect(
+        0,
+        0,
+        canvas.width,
+        canvas.height
+    );
 
     particles.forEach(particle => {
         particle.update();
@@ -532,6 +566,8 @@ window.addEventListener("resize", () => {
 });
 
 </script>
+
+<!-- PROTECTION -->
 
 <script src="ochrana.js"></script>
 
