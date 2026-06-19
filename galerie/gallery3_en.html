@@ -190,7 +190,11 @@ flex-wrap: wrap;
 
 width: 100%;
 
-max-width: 300px;
+max-width: 240px;
+
+aspect-ratio: 2 / 3;
+
+object-fit: cover;
 
 cursor: pointer;
 
@@ -205,7 +209,6 @@ box-shadow:
 0 0 12px rgba(212,175,55,0.6);
 
 }
-
 .gallery img:hover {
 
 transform: scale(1.02);
@@ -418,9 +421,7 @@ EN
 <!-- NAV -->
 
 <nav>
-
-<a href="../book1.html">← Back to Fire and water</a>
-
+<a href="../book1.html">← Back to Fire and Water</a>
 </nav>
 
 <!-- TITLE -->
@@ -431,9 +432,17 @@ EN
 
 <div class="gallery">
 
-<img src="../obrazky/galerie/7.png" onclick="openImage(0)">
-<img src="../obrazky/galerie/8.png" onclick="openImage(1)">
-<img src="../obrazky/galerie/9.png" onclick="openImage(2)">
+<img src="../obrazky/galerie/7.webp"
+     loading="lazy"
+     onclick="openImage(0)">
+
+<img src="../obrazky/galerie/8.webp"
+     loading="lazy"
+     onclick="openImage(1)">
+
+<img src="../obrazky/galerie/9.webp"
+     loading="lazy"
+     onclick="openImage(2)">
 
 </div>
 
@@ -503,7 +512,7 @@ var currentIndex = 0;
 
 var nextPage = "gallery4_en.html";
 var prevPage = "gallery2_en.html";
-
+  
 /* ELEMENTS */
 
 var overlay =
