@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Planeta</title>
+
+<link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+
+<style>
+
+/* BODY */
+
+body{
+    margin:0;
+    background:black;
+    color:white;
+    font-family:Arial,sans-serif;
+    text-align:center;
+    overflow-x:hidden;
+    position:relative;
+}
+
+/* MAGIC DUST */
+
+#magicDust{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+    z-index:0;
+}
+
+/* CONTENT ABOVE EFFECT */
+
+.language-switch,
+.back-link,
+h1,
+.content{
+    position:relative;
+    z-index:2;
+}
+
+/* LANGUAGE SWITCH */
+
+.language-switch{
+    position:fixed;
+    top:15px;
+    right:15px;
+    z-index:999999;
+    display:flex;
+    gap:12px;
+    align-items:center;
+}
+
+.language-switch a{
+    font-family:'MedievalSharp',cursive;
+    text-decoration:none;
+    color:#d4af37;
+    font-size:22px;
+    transition:.3s;
+}
+
+.language-switch a:hover{
+    text-shadow:
+        0 0 10px #d4af37,
+        0 0 20px rgba(212,175,55,.8);
+}
+
+.language-switch a.active-lang{
+    color:white;
+    text-shadow:0 0 10px rgba(255,255,255,.7);
+}
+
+/* BACK */
+
+.back-link{
+    margin-top:25px;
+}
+
+.back-link a{
+    font-family:'MedievalSharp',cursive;
+    color:#d4af37;
+    text-decoration:none;
+    font-size:20px;
+    transition:.3s;
+}
+
+.back-link a:hover{
+    text-shadow:
+        0 0 10px #d4af37,
+        0 0 20px rgba(212,175,55,.8);
+}
+
+/* TITLE */
+
+h1{
+    font-family:'MedievalSharp',cursive;
+    color:#d4af37;
+    font-size:46px;
+    margin-top:15px;
+    text-shadow:0 0 12px rgba(212,175,55,.35);
+}
+
+/* CONTENT */
+
+.content{
+    max-width:1000px;
+    margin:45px auto 70px;
+    padding:0 30px;
+    text-align:left;
+    line-height:1.9;
+    font-size:20px;
+}
+
+.content h2{
+    font-family:'MedievalSharp',cursive;
+    color:#d4af37;
+    font-size:34px;
+    margin-top:50px;
+    margin-bottom:18px;
+}
+
+.content p{
+    margin-bottom:22px;
+}
+
+.content ul{
+    padding-left:30px;
+    margin-bottom:28px;
+}
+
+.content li{
+    margin-bottom:10px;
+}
+
+.content strong{
+    color:#d4af37;
+}
+
+.content a{
+    color:#d4af37;
+    text-decoration:none;
+}
+
+.content a:hover{
+    color:white;
+    text-shadow:
+        0 0 10px #d4af37,
+        0 0 20px rgba(212,175,55,.8);
+}
+
+/* MOBILE */
+
+@media (max-width:768px){
+
+h1{font-size:36px;}
+
+.content{
+    font-size:18px;
+    padding:0 20px;
+}
+
+.content h2{
+    font-size:28px;
+}
+
+.language-switch{
+    top:12px;
+    right:12px;
+}
+
+.language-switch a{
+    font-size:20px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<canvas id="magicDust"></canvas>
+
+<div class="language-switch">
+    <a href="planeta.html" class="active-lang">CZ</a>
+    <a href="planet.html">EN</a>
+</div>
+
+<div class="back-link">
+    <a href="kniha3.html">← Zpět na Bibli světa</a>
+</div>
+
+<h1>Planeta</h1>
+
+<div class="content">
+
+<p>
+Planeta, na níž se odehrávají všechny příběhy tohoto světa, vznikla přirozeným vývojem vesmíru. 
+Nevznikla působením bohů ani magie. V době svého vzniku byla pouze žhavým tělesem tvořeným roztavenými horninami a kovovým jádrem. 
+Po miliony let se její povrch postupně ochlazoval, až se vytvořila první pevná zemská kůra, oceány a atmosféra schopná udržet život.
+</p>
+
+<p> 
+Magická energie vzniká přirozeně v rozžhaveném kovovém jádru planety. 
+Stejně jako teplo a geologické síly je i magie produktem procesů probíhajících hluboko pod zemským povrchem. 
+Odtud postupně prostupuje zemským pláštěm a zemskou kůrou až na povrch planety, kde se stává součástí živé i neživé přírody.
+</p>
+  
+<p> 
+Pohyb hornin v zemském plášti ovlivňuje nejen vznik pohoří a sopek, ale také rozložení magické energie. 
+Oblasti s vysokou geologickou aktivitou proto obsahují větší množství magie a bývají bohatší na výskyt magických kamenů. 
+Naopak geologicky klidné oblasti mívají magie méně.
+</p>
+  
+<p>  
+Magie je jednou ze základních sil přírody. 
+Není živou bytostí ani vědomou silou, nemá vlastní vůli a nerozlišuje dobro od zla. 
+Existuje nezávisle na lidech, zvířatech i rostlinách a byla přítomna již od samotného vzniku planety. 
+Když se na planetě začal vyvíjet život, všechny organismy se její přítomnosti postupně přizpůsobily.
+</p>
+
+<p> 
+Rostliny, zvířata i lidé během života magickou energii přijímají, vytvářejí, ukládají a využívají. 
+Po smrti organismu se jeho magická energie postupně vrací zpět do okolního prostředí, odkud se znovu zapojuje do přirozeného koloběhu.
+</p>
+
+<p> 
+Magie proto není jednorázovou silou ani nevyčerpatelným zdrojem. 
+Neustále vzniká v nitru planety i v živých organismech a nepřetržitě obíhá mezi planetou, přírodou a veškerým životem. 
+Množství magie v jednotlivých oblastech se může lišit podle geologických podmínek i dlouhodobého stavu místního ekosystému.
+</p>
+
+</div>
+
+<script>
+const canvas=document.getElementById("magicDust");
+const ctx=canvas.getContext("2d");
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+const particles=[];
+class Particle{
+constructor(){this.reset();}
+reset(){
+this.x=Math.random()*canvas.width;
+this.y=Math.random()*canvas.height;
+this.speedX=(Math.random()-0.5)*0.25;
+this.speedY=(Math.random()-0.5)*0.25;
+this.opacity=Math.random()*0.5+0.2;
+this.glow=Math.random()*18+8;
+}
+update(){
+this.x+=this.speedX;
+this.y+=this.speedY;
+if(this.x<-50||this.x>canvas.width+50||this.y<-50||this.y>canvas.height+50)this.reset();
+}
+draw(){
+const g=ctx.createRadialGradient(this.x,this.y,0,this.x,this.y,this.glow);
+g.addColorStop(0,`rgba(255,215,120,${this.opacity})`);
+g.addColorStop(1,"rgba(255,215,120,0)");
+ctx.beginPath();
+ctx.fillStyle=g;
+ctx.arc(this.x,this.y,this.glow,0,Math.PI*2);
+ctx.fill();
+}
+}
+for(let i=0;i<80;i++)particles.push(new Particle());
+function animate(){
+ctx.clearRect(0,0,canvas.width,canvas.height);
+particles.forEach(p=>{p.update();p.draw();});
+requestAnimationFrame(animate);
+}
+animate();
+window.addEventListener("resize",()=>{
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+});
+</script>
+
+<script src="../../ochrana.js"></script>
+
+</body>
+</html>
