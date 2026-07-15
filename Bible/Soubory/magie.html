@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Magie</title>
+
+<link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+
+<style>
+
+/* BODY */
+
+body{
+    margin:0;
+    background:black;
+    color:white;
+    font-family:Arial,sans-serif;
+    text-align:center;
+    overflow-x:hidden;
+}
+
+
+/* LANGUAGE SWITCH */
+
+.language-switch{
+    position:fixed;
+    top:15px;
+    right:15px;
+    z-index:999999;
+    display:flex;
+    gap:12px;
+    align-items:center;
+}
+
+.language-switch a{
+    font-family:'MedievalSharp',cursive;
+    text-decoration:none;
+    color:#d4af37;
+    font-size:22px;
+    transition:.3s;
+}
+
+.language-switch a:hover{
+    text-shadow:
+        0 0 10px #d4af37,
+        0 0 20px rgba(212,175,55,.8);
+}
+
+.language-switch a.active-lang{
+    color:white;
+    text-shadow:0 0 10px rgba(255,255,255,.7);
+}
+
+/* BACK */
+
+.back-link{
+    margin-top:25px;
+}
+
+.back-link a{
+    font-family:'MedievalSharp',cursive;
+    color:#d4af37;
+    text-decoration:none;
+    font-size:20px;
+    transition:.3s;
+}
+
+.back-link a:hover{
+    text-shadow:
+        0 0 10px #d4af37,
+        0 0 20px rgba(212,175,55,.8);
+}
+
+/* TITLE */
+
+h1{
+    font-family:'MedievalSharp',cursive;
+    color:#d4af37;
+    font-size:46px;
+    margin-top:15px;
+    text-shadow:0 0 12px rgba(212,175,55,.35);
+}
+
+/* CONTENT */
+
+.content{
+    max-width:1000px;
+    margin:45px auto 70px;
+    padding:0 30px;
+    text-align:left;
+    line-height:1.9;
+    font-size:20px;
+}
+
+.content h2{
+    font-family:'MedievalSharp',cursive;
+    color:#d4af37;
+    font-size:34px;
+    margin-top:50px;
+    margin-bottom:18px;
+}
+
+.content p{
+    margin-bottom:22px;
+}
+
+.content ul{
+    padding-left:30px;
+    margin-bottom:28px;
+}
+
+.content li{
+    margin-bottom:10px;
+}
+
+.content strong{
+    color:#d4af37;
+}
+
+.content a{
+    color:#d4af37;
+    text-decoration:none;
+}
+
+.content a:hover{
+    color:white;
+    text-shadow:
+        0 0 10px #d4af37,
+        0 0 20px rgba(212,175,55,.8);
+}
+
+/* MOBILE */
+
+@media (max-width:768px){
+
+h1{font-size:36px;}
+
+.content{
+    font-size:18px;
+    padding:0 20px;
+}
+
+.content h2{
+    font-size:28px;
+}
+
+.language-switch{
+    top:12px;
+    right:12px;
+}
+
+.language-switch a{
+    font-size:20px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="language-switch">
+    <a href="magie.html" class="active-lang">CZ</a>
+    <a href="magic.html">EN</a>
+</div>
+
+<div class="back-link">
+    <a href="kniha3.html">← Zpět na Bibli světa</a>
+</div>
+
+<h1>Magie</h1>
+
+<div class="content">
+
+<p>
+Magie je nedílnou součástí života i fungování celé společnosti. 
+Využívá se v boji, léčitelství, výrobě, obchodu i každodenním životě. 
+Přestože magická energie prostupuje všemi živými organismy, schopnost pracovat s ní se mezi jednotlivými lidmi výrazně liší..
+</p>
+
+<p> 
+Veškerá magie se dělí na dvě základní skupiny – přirozenou a umělou. 
+Přirozené magie se vyvinuly během přirozeného vývoje života na planetě, zatímco umělé magie vznikly lidským výzkumem jako nové způsoby využívání původní magické energie.
+</p>
+  
+<p> 
+Ve světě se nepoužívají zaklínadla ani magická slova. Magie se ovládá pomocí vůle, soustředění a jasné představy o požadovaném výsledku. 
+Pro zkušeného mága je práce s magií stejně přirozená jako pohyb vlastní rukou.
+</p>
+  
+<p>  
+Každé kouzlo spotřebovává magickou energii uloženou v těle svého uživatele. 
+Množství spotřebované energie závisí především na velikosti kouzla, jeho složitosti a době, po kterou je udržováno.
+Úplné vyčerpání magické energie vede k bezvědomí. Samotné vyčerpání není smrtelné, bezvědomý mág se však stává zcela bezbranným.
+</p>
+
+<p> 
+Magická energie se postupně obnovuje především během odpočinku a spánku. 
+Rychlost její obnovy závisí na mnoha faktorech, především na věku a celkovém stavu organismu. 
+Obecně platí, že mladší lidé obnovují magickou energii rychleji než starší.
+</p>
+
+<p>
+Existují lektvary, které dokážou obnovu magické energie výrazně urychlit. 
+Využívají se především v nouzových situacích, kdy není dostatek času na přirozenou regeneraci.
+Jejich časté nebo dlouhodobé užívání však může poškozovat organismus a vést k závislosti na jejich účincích. 
+</p>
+
+</div>
+
+<h2 class="section-title">
+Dělení magie
+</h2>
+<div class="chapter-list">
+
+<a href="magie/prirozenemagie.html">Přirozené magie</a>
+
+<a href="magie/umelemagie.html">Umělé magie</a>
+
+</div>
+
+<script src="../../ochrana.js"></script>
+
+</body>
+</html>
