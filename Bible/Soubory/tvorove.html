@@ -1,1 +1,227 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Tvorové</title>
+
+<link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+
+<style>
+
+/* BODY */
+
+body{
+    margin:0;
+    background:black;
+    color:white;
+    font-family:Arial,sans-serif;
+    text-align:center;
+    overflow-x:hidden;
+}
+
+
+/* LANGUAGE SWITCH */
+
+.language-switch{
+    position:fixed;
+    top:15px;
+    right:15px;
+    z-index:999999;
+    display:flex;
+    gap:12px;
+    align-items:center;
+}
+
+.language-switch a{
+    font-family:'MedievalSharp',cursive;
+    text-decoration:none;
+    color:#d4af37;
+    font-size:22px;
+    transition:.3s;
+}
+
+.language-switch a:hover{
+    text-shadow:
+        0 0 10px #d4af37,
+        0 0 20px rgba(212,175,55,.8);
+}
+
+.language-switch a.active-lang{
+    color:white;
+    text-shadow:0 0 10px rgba(255,255,255,.7);
+}
+
+/* BACK */
+
+.back-link{
+    margin-top:25px;
+}
+
+.back-link a{
+    font-family:'MedievalSharp',cursive;
+    color:#d4af37;
+    text-decoration:none;
+    font-size:20px;
+    transition:.3s;
+}
+
+.back-link a:hover{
+    text-shadow:
+        0 0 10px #d4af37,
+        0 0 20px rgba(212,175,55,.8);
+}
+
+/* TITLE */
+
+h1{
+    font-family:'MedievalSharp',cursive;
+    color:#d4af37;
+    font-size:46px;
+    margin-top:15px;
+    text-shadow:0 0 12px rgba(212,175,55,.35);
+}
+
+/* CONTENT */
+
+.content{
+    max-width:1000px;
+    margin:45px auto 70px;
+    padding:0 30px;
+    text-align:left;
+    line-height:1.9;
+    font-size:20px;
+}
+
+.content h2{
+    font-family:'MedievalSharp',cursive;
+    color:#d4af37;
+    font-size:34px;
+    margin-top:50px;
+    margin-bottom:18px;
+}
+
+.content p{
+    margin-bottom:22px;
+}
+
+.content ul{
+    padding-left:30px;
+    margin-bottom:28px;
+}
+
+.content li{
+    margin-bottom:10px;
+}
+
+.content strong{
+    color:#d4af37;
+}
+
+.content a{
+    color:#d4af37;
+    text-decoration:none;
+}
+
+.content a:hover{
+    color:white;
+    text-shadow:
+        0 0 10px #d4af37,
+        0 0 20px rgba(212,175,55,.8);
+}
+
+/* MOBILE */
+
+@media (max-width:768px){
+
+h1{font-size:36px;}
+
+.content{
+    font-size:18px;
+    padding:0 20px;
+}
+
+.content h2{
+    font-size:28px;
+}
+
+.language-switch{
+    top:12px;
+    right:12px;
+}
+
+.language-switch a{
+    font-size:20px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="language-switch">
+    <a href="tvorove.html" class="active-lang">CZ</a>
+    <a href="creatures.html">EN</a>
+</div>
+
+<div class="back-link">
+    <a href="kniha3.html">← Zpět na Bibli světa</a>
+</div>
+
+<h1>Tvorové</h1>
+
+<div class="content">
+
+<p>
+Veškeré organismy známého světa lze podle svého původu rozdělit na přirozeně vzniklé a uměle vytvořené druhy.  
+</p>
+
+Přirozeně vzniklé druhy
+<p> 
+Přirozené druhy tvoří většinu života na planetě. Patří mezi ně všechny organismy, které vznikly přirozeným evolučním vývojem, nikoliv zásahy člověka. 
+</p>
+Magické bestie 
+<p> 
+Magické bestie představují zvláštní skupinu přirozených druhů. Obývají oblasti s vysokou koncentrací magické energie, která během milionů let ovlivnila jejich evoluční vývoj. Postupně ovlivnila jejich schopnosti i stavbu těla. Mnohé druhy si vyvinuly jedové ostny, magické rohy, krystalické výrůstky, zesílený krunýř nebo jiné orgány umožňující přirozeně využívat magickou energii.
+</p>
+<p> 
+Na rozdíl od lidí nepoužívají kouzla ani vědomě neovládají magickou energii. Jejich schopnosti jsou instinktivní a tvoří přirozenou součást jejich těla i způsobu života. Jednotlivé druhy se mohou výrazně lišit velikostí, inteligencí, vzhledem i schopnostmi.
+</p>
+  
+<p>  
+Uměle vytvořené organismy
+Uměle vytvořené organismy jsou výsledkem cílených zásahů člověka pomocí zakázaných magických oborů.
+</p>
+
+<p> 
+Experimenty
+Experimenty představovaly první organismy vytvořené Biomancií. Šlo o zmutované bytosti s deformovanými těly a často i narušenou myslí. Mnoho experimentů během výzkumu zahynulo, jiné uprchly nebo byly svými tvůrci záměrně vypuštěny do volné přírody. Právě tito přeživší se stali předky dnešních Biomorfů.
+</p>
+
+<p> 
+Biomorfové
+Biomorfové jsou potomci prvních biomantických experimentů. Přestože jejich předci vznikli uměle, dnešní Biomorfové se již po mnoho generací rozmnožují přirozenou cestou.
+Žijí pouze na čtvrtém kontinentu, kde během mnoha generací vytvořili vlastní populace. Netvoří státy ani vyspělé civilizace, ale žijí v malých smečkách, kmenech nebo tlupách a dorozumívají se jednoduchými zvuky a gesty.
+Biomorfové vznikali spojováním různých organismů, a proto existuje velké množství jejich forem. Nejčastější jsou kombinace dvou druhů, například:
+    • rostlina × rostlina, 
+    • rostlina × zvíře, 
+    • rostlina × člověk, 
+    • zvíře × zvíře, 
+    • zvíře × člověk. 
+Nejvzácnější a nejnebezpečnější skupinu Biomorfů představují Chiméry, které vznikly spojením tří nebo více různých organismů. 
+Spojení tolika odlišných organismů představovalo pro jejich tělo obrovskou zátěž. Většina prvních chimér trpěla rozsáhlými deformacemi a jejich těla nedokázala dlouhodobě fungovat, takže krátce po svém vytvoření uhynuly. Mnohé byly navíc neplodné, a nemohly se proto dále rozmnožovat. Pouze malému počtu chimér se podařilo přežít a založit další generace, jejichž potomci dodnes obývají nejodlehlejší oblasti čtvrtého kontinentu.
+</p>
+
+
+Nemrtví
+Nemrtví představují organismy vytvořené Nekromancií. Na rozdíl od experimentů nevznikají změnou živého organismu, ale oživením těla, které již zemřelo.
+Nekromancie nedokáže navrátit původní osobnost ani vědomí zemřelého. Nemrtvé pohání pouze Nekromancie a základní instinkty. Podle původu těla mohou vznikat různé druhy nemrtvých zvířat i lidí.
+</div>
+
+<script src="../../ochrana.js"></script>
+
+</body>
+</html>
